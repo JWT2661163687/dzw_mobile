@@ -18,7 +18,7 @@ public class MechanicstarAction {
 	private MechanicstarBiz biz;
 	
 	/**
-	 * 查询全部
+	 * 查询全部123123
 	 * @return
 	 */
 	@GetMapping("lzjquery")
