@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.MechanicstarMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Mechanicstar" >
+    <id column="meid" property="meid" jdbcType="INTEGER" />
+    <result column="starrating" property="starrating" jdbcType="VARCHAR" />
+    <result column="grade" property="grade" jdbcType="VARCHAR" />
+    <result column="weight" property="weight" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    meid, starrating, grade, weight
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mechanicstar
+    where meid = #{meid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="queryMechan">
+  select * from mechanicstar
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mechanicstar
+    where meid = #{meid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.Mechanicstar" >
+    insert into mechanicstar (meid, starrating, grade, 
+      weight)
+    values (#{meid,jdbcType=INTEGER}, #{starrating,jdbcType=VARCHAR}, #{grade,jdbcType=VARCHAR}, 
+      #{weight,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Mechanicstar" >
+    insert into mechanicstar
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="meid != null" >
+        meid,
+      </if>
+      <if test="starrating != null" >
+        starrating,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="meid != null" >
+        #{meid,jdbcType=INTEGER},
+      </if>
+      <if test="starrating != null" >
+        #{starrating,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Mechanicstar" >
+    update mechanicstar
+    <set >
+      <if test="starrating != null" >
+        starrating = #{starrating,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where meid = #{meid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Mechanicstar" >
+    update mechanicstar
+    set starrating = #{starrating,jdbcType=VARCHAR},
+      grade = #{grade,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=VARCHAR}
+    where meid = #{meid,jdbcType=INTEGER}
+  </update>
+</mapper>

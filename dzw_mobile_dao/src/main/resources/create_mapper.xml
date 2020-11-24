@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+<generatorConfiguration>  
+    <context id="mySqlTables"  targetRuntime="MyBatis3">  
+        <commentGenerator>  
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>  
+        </commentGenerator>  
+        <!--数据库链接URL，用户名、密码 -->  
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/dzw_moblie" userId="root" password="123">
+        </jdbcConnection>
+        <javaTypeResolver>  
+            <property name="forceBigDecimals" value="false"/>  
+        </javaTypeResolver>  
+        <!--pojo生成位置-->  
+        <javaModelGenerator targetPackage="com.accp.pojo" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator>  
+        <!--映射文件生成位置-->  
+        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">  
+            <property name="enableSubPackages" value="true"/>  
+        </sqlMapGenerator>  
+        <!--dao生成位置-->  
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.accp.dao" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+        </javaClientGenerator>  
+        <!-- 
+		tableName是数据库中的表名或视图名
+		domainObjectName是实体类名
+		-->  
+		<!--表1-->
+        <table tableName="chexing" domainObjectName="Chexing" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="client" domainObjectName="Client" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  		
+  		<!--表1-->
+        <table tableName="Closeanaccount" domainObjectName="Closeanaccount" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="completed" domainObjectName="Completed" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  <!--表1-->
+        <table tableName="dalei" domainObjectName="Dalei" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="department" domainObjectName="Department" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  <!--表1-->
+        <table tableName="employee" domainObjectName="Employee" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="engine" domainObjectName="Engine" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  <!--表1-->
+        <table tableName="fadongji" domainObjectName="Fadongji" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="fieldvehicles" domainObjectName="Fieldvehicles" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  <!--表1-->
+        <table tableName="forthe" domainObjectName="Forthe" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="front" domainObjectName="Front" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  <!--表1-->
+        <table tableName="maintainreceipts" domainObjectName="Maintainreceipts" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="make" domainObjectName="Make" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  <!--表1-->
+        <table tableName="mechanicstar" domainObjectName="Mechanicstar" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="member" domainObjectName="Member" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  <!--表1-->
+        <table tableName="post" domainObjectName="Post" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="production" domainObjectName="Production" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  <!--表1-->
+        <table tableName="property" domainObjectName="Property" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="shangpin" domainObjectName="Shangpin" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  
+  
+  
+  <!--表1-->
+        <table tableName="state" domainObjectName="State" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="team" domainObjectName="Team" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  
+  <!--表1-->
+        <table tableName="teamtechnician" domainObjectName="Teamtechnician" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="vehicle" domainObjectName="Vehicle" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  
+  <!--表1-->
+        <table tableName="weixiu" domainObjectName="Weixiu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--表2-->
+		<table tableName="xiaolei" domainObjectName="Xiaolei" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  
+    </context>  
+</generatorConfiguration>  
