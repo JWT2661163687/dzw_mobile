@@ -4,7 +4,11 @@ import com.accp.pojo.Chexing;
 
 public interface ChexingMapper {
     int deleteByPrimaryKey(Integer cid);
-
+/**
+ * ad
+ * @param record
+ * @return
+ */
     int insert(Chexing record);
 
     int insertSelective(Chexing record);
