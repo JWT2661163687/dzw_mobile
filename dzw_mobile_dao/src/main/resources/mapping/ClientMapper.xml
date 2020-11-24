@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.ClientMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Client" >
+    <id column="cId" property="cid" jdbcType="INTEGER" />
+    <result column="vId" property="vid" jdbcType="INTEGER" />
+    <result column="rId" property="rid" jdbcType="INTEGER" />
+    <result column="rNo" property="rno" jdbcType="INTEGER" />
+    <result column="mId" property="mid" jdbcType="INTEGER" />
+    <result column="cName" property="cname" jdbcType="VARCHAR" />
+    <result column="cPhone" property="cphone" jdbcType="VARCHAR" />
+    <result column="createDate" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="cLimit" property="climit" jdbcType="INTEGER" />
+    <result column="cIntegral" property="cintegral" jdbcType="INTEGER" />
+    <result column="cRemark" property="cremark" jdbcType="VARCHAR" />
+    <result column="cGrade" property="cgrade" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cId, vId, rId, rNo, mId, cName, cPhone, createDate, cLimit, cIntegral, cRemark, cGrade
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from client
+    where cId = #{cid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from client
+    where cId = #{cid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.Client" >
+    insert into client (cId, vId, rId, 
+      rNo, mId, cName, cPhone, 
+      createDate, cLimit, cIntegral, 
+      cRemark, cGrade)
+    values (#{cid,jdbcType=INTEGER}, #{vid,jdbcType=INTEGER}, #{rid,jdbcType=INTEGER}, 
+      #{rno,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR}, #{cphone,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{climit,jdbcType=INTEGER}, #{cintegral,jdbcType=INTEGER}, 
+      #{cremark,jdbcType=VARCHAR}, #{cgrade,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Client" >
+    insert into client
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        cId,
+      </if>
+      <if test="vid != null" >
+        vId,
+      </if>
+      <if test="rid != null" >
+        rId,
+      </if>
+      <if test="rno != null" >
+        rNo,
+      </if>
+      <if test="mid != null" >
+        mId,
+      </if>
+      <if test="cname != null" >
+        cName,
+      </if>
+      <if test="cphone != null" >
+        cPhone,
+      </if>
+      <if test="createdate != null" >
+        createDate,
+      </if>
+      <if test="climit != null" >
+        cLimit,
+      </if>
+      <if test="cintegral != null" >
+        cIntegral,
+      </if>
+      <if test="cremark != null" >
+        cRemark,
+      </if>
+      <if test="cgrade != null" >
+        cGrade,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="vid != null" >
+        #{vid,jdbcType=INTEGER},
+      </if>
+      <if test="rid != null" >
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="rno != null" >
+        #{rno,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null" >
+        #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="cname != null" >
+        #{cname,jdbcType=VARCHAR},
+      </if>
+      <if test="cphone != null" >
+        #{cphone,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="climit != null" >
+        #{climit,jdbcType=INTEGER},
+      </if>
+      <if test="cintegral != null" >
+        #{cintegral,jdbcType=INTEGER},
+      </if>
+      <if test="cremark != null" >
+        #{cremark,jdbcType=VARCHAR},
+      </if>
+      <if test="cgrade != null" >
+        #{cgrade,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Client" >
+    update client
+    <set >
+      <if test="vid != null" >
+        vId = #{vid,jdbcType=INTEGER},
+      </if>
+      <if test="rid != null" >
+        rId = #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="rno != null" >
+        rNo = #{rno,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null" >
+        mId = #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="cname != null" >
+        cName = #{cname,jdbcType=VARCHAR},
+      </if>
+      <if test="cphone != null" >
+        cPhone = #{cphone,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        createDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="climit != null" >
+        cLimit = #{climit,jdbcType=INTEGER},
+      </if>
+      <if test="cintegral != null" >
+        cIntegral = #{cintegral,jdbcType=INTEGER},
+      </if>
+      <if test="cremark != null" >
+        cRemark = #{cremark,jdbcType=VARCHAR},
+      </if>
+      <if test="cgrade != null" >
+        cGrade = #{cgrade,jdbcType=INTEGER},
+      </if>
+    </set>
+    where cId = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Client" >
+    update client
+    set vId = #{vid,jdbcType=INTEGER},
+      rId = #{rid,jdbcType=INTEGER},
+      rNo = #{rno,jdbcType=INTEGER},
+      mId = #{mid,jdbcType=INTEGER},
+      cName = #{cname,jdbcType=VARCHAR},
+      cPhone = #{cphone,jdbcType=VARCHAR},
+      createDate = #{createdate,jdbcType=TIMESTAMP},
+      cLimit = #{climit,jdbcType=INTEGER},
+      cIntegral = #{cintegral,jdbcType=INTEGER},
+      cRemark = #{cremark,jdbcType=VARCHAR},
+      cGrade = #{cgrade,jdbcType=INTEGER}
+    where cId = #{cid,jdbcType=INTEGER}
+  </update>
+</mapper>

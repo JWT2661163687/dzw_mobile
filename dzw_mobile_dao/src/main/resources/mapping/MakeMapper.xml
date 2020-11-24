@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.MakeMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Make" >
+    <id column="makeid" property="makeid" jdbcType="INTEGER" />
+    <result column="makename" property="makename" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    makeid, makename
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from make
+    where makeid = #{makeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from make
+    where makeid = #{makeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.Make" >
+    insert into make (makeid, makename)
+    values (#{makeid,jdbcType=INTEGER}, #{makename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Make" >
+    insert into make
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="makeid != null" >
+        makeid,
+      </if>
+      <if test="makename != null" >
+        makename,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="makeid != null" >
+        #{makeid,jdbcType=INTEGER},
+      </if>
+      <if test="makename != null" >
+        #{makename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Make" >
+    update make
+    <set >
+      <if test="makename != null" >
+        makename = #{makename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where makeid = #{makeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Make" >
+    update make
+    set makename = #{makename,jdbcType=VARCHAR}
+    where makeid = #{makeid,jdbcType=INTEGER}
+  </update>
+</mapper>

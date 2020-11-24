@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.ProductionMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Production" >
+    <id column="productionid" property="productionid" jdbcType="INTEGER" />
+    <result column="productionname" property="productionname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    productionid, productionname
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from production
+    where productionid = #{productionid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from production
+    where productionid = #{productionid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.Production" >
+    insert into production (productionid, productionname)
+    values (#{productionid,jdbcType=INTEGER}, #{productionname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Production" >
+    insert into production
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="productionid != null" >
+        productionid,
+      </if>
+      <if test="productionname != null" >
+        productionname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="productionid != null" >
+        #{productionid,jdbcType=INTEGER},
+      </if>
+      <if test="productionname != null" >
+        #{productionname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Production" >
+    update production
+    <set >
+      <if test="productionname != null" >
+        productionname = #{productionname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where productionid = #{productionid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Production" >
+    update production
+    set productionname = #{productionname,jdbcType=VARCHAR}
+    where productionid = #{productionid,jdbcType=INTEGER}
+  </update>
+</mapper>
