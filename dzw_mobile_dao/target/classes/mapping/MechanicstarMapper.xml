@@ -16,11 +16,14 @@
     from mechanicstar
     where meid = #{meid,jdbcType=INTEGER}
   </select>
+<<<<<<< HEAD
   
   <select id="queryMechan">
   select * from mechanicstar
   </select>
   
+=======
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mechanicstar
     where meid = #{meid,jdbcType=INTEGER}
