@@ -13,6 +13,28 @@
     <result column="cid" property="cid" jdbcType="INTEGER" />
     <result column="Fid" property="fid" jdbcType="INTEGER" />
   </resultMap>
+  <!-- 自写方法 -->
+  
+  <!-- 按维修id查询维修项目信息 -->
+  	<select id="selectcid"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  		SELECT * FROM `weixiu` WHERE cid=#{cid};
+  	</select>
+  	
+  	<insert id="insertweixiu">			<!-- 新增 -->
+  		INSERT INTO `weixiu` (`XMleixing`, `XMbianma`, `XMmingcheng`, `XMshoujia`, `XMzhonglei`, `XMbiaozhun`, `XMhuiyuan`, `cid`) 
+		VALUES (#{weixiu.xmleixing},#{weixiu.xmbianma},#{weixiu.xmmingcheng},#{weixiu.xmshoujia},#{weixiu.xmzhonglei},#{weixiu.xmbiaozhun},#{weixiu.xmhuiyuan},#{weixiu.cid}) ;
+  	</insert>
+  	
+  	<update id="updateweixiu">		<!-- 修改 -->
+  		UPDATE `weixiu` SET  `XMleixing` =#{xiugai.xmleixing},  `XMbianma` =#{xiugai.xmbianma},  `XMmingcheng` =#{xiugai.xmmingcheng},  `XMshoujia` =#{xiugai.xmshoujia},
+  		`XMzhonglei` = #{xiugai.xmzhonglei},  `XMbiaozhun` = #{xiugai.xmbiaozhun},  `XMhuiyuan` =#{xiugai.xmhuiyuan} WHERE `XMid` =#{xiugai.xmid} ;
+  	</update>
+  	
+  	<delete id="deleteweixiu">			<!-- 删除 -->
+  		  DELETE FROM `weixiu` WHERE `XMid` = #{xmid} ;
+  	</delete>
+  	
+  	<!-- 自动生成 -->
   <sql id="Base_Column_List" >
     XMid, XMleixing, XMbianma, XMmingcheng, XMshoujia, XMzhonglei, XMbiaozhun, XMhuiyuan, 
     cid, Fid
