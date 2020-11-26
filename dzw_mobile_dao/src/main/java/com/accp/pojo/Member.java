@@ -1,17 +1,17 @@
 package com.accp.pojo;
 
 public class Member {
-    private Integer mid;
+    private Integer mid;			//会员编号
 
-    private String mcardnumber;
+    private String mcardnumber;		//会员卡号
 
-    private String mpass;
+    private String mpass;			//会员密码
 
-    private Integer cid;
+    private Integer cid;			//客户编号
 
-    private String cname;
+    private String cname;			//客户姓名
 
-    private Integer mbalance;
+    private Integer mbalance;		//卡号余额
 
     public Integer getMid() {
         return mid;
@@ -60,4 +60,27 @@ public class Member {
     public void setMbalance(Integer mbalance) {
         this.mbalance = mbalance;
     }
+
+	public Member(Integer mid, String mcardnumber, String mpass, Integer cid, String cname, Integer mbalance) {
+		super();
+		this.mid = mid;
+		this.mcardnumber = mcardnumber;
+		this.mpass = mpass;
+		this.cid = cid;
+		this.cname = cname;
+		this.mbalance = mbalance;
+	}
+
+	public Member() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Member [mid=" + mid + ", mcardnumber=" + mcardnumber + ", mpass=" + mpass + ", cid=" + cid + ", cname="
+				+ cname + ", mbalance=" + mbalance + "]";
+	}
+    
+    
 }
