@@ -3,29 +3,29 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Front {
-    private Integer frontid;
+    private Integer frontid;//id
 
-    private Integer carnumber;
+    private Integer carnumber;//接车数量
 
-    private Integer closeanaccountnumber;
+    private Integer closeanaccountnumber;//结算数量
 
-    private Integer carrepairingnumber;
+    private Integer carrepairingnumber;//再修数量
 
-    private Integer repairnumber;
+    private Integer repairnumber;//返修数量
 
-    private Integer instationnumber;
+    private Integer instationnumber;//站内维修数量
 
-    private Integer outsidenumber;
+    private Integer outsidenumber;//站外维修数量
 
-    private Double generalincome;
+    private Double generalincome;//总收入
 
-    private Double realincome;
+    private Double realincome;//是收入
 
-    private Double owe;
+    private Double owe;//挂账金额
 
-    private Integer owenumber;
+    private Integer owenumber;//挂账人数
 
-    private Date frontdate;
+    private String frontdate;//今日时间
 
     public Integer getFrontid() {
         return frontid;
@@ -115,11 +115,22 @@ public class Front {
         this.owenumber = owenumber;
     }
 
-    public Date getFrontdate() {
-        return frontdate;
-    }
+	public String getFrontdate() {
+		return frontdate;
+	}
 
-    public void setFrontdate(Date frontdate) {
-        this.frontdate = frontdate;
-    }
+	public void setFrontdate(String frontdate) {
+		this.frontdate = frontdate;
+	}
+
+	@Override
+	public String toString() {
+		return "Front [frontid=" + frontid + ", carnumber=" + carnumber + ", closeanaccountnumber="
+				+ closeanaccountnumber + ", carrepairingnumber=" + carrepairingnumber + ", repairnumber=" + repairnumber
+				+ ", instationnumber=" + instationnumber + ", outsidenumber=" + outsidenumber + ", generalincome="
+				+ generalincome + ", realincome=" + realincome + ", owe=" + owe + ", owenumber=" + owenumber
+				+ ", frontdate=" + frontdate + "]";
+	}
+
+   
 }

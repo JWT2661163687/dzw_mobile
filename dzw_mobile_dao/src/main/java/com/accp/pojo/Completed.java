@@ -3,25 +3,25 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Completed {
-    private Integer completionid;
+    private Integer completionid;//竣工id
 
-    private Date completiondate;
+    private String completiondate;//竣工时间
 
-    private Date completiontdate;
+    private String completiontdate;//预计完工时间
 
-    private String inspector;
+    private String inspector;//质检员
 
-    private Double penalty;
+    private Double penalty;//处罚金额
 
-    private String rework;
+    private String rework;//返工原因
 
-    private Integer personid;
+    private Integer personid;//责任id
 
-    private String personname;
+    private String personname;//责任人
 
-    private String delaytext;
+    private String delaytext;//吴工原因
 
-    private Integer completiontype;
+    private Integer completiontype;//竣工类型0/1
 
     public Integer getCompletionid() {
         return completionid;
@@ -31,23 +31,33 @@ public class Completed {
         this.completionid = completionid;
     }
 
-    public Date getCompletiondate() {
-        return completiondate;
-    }
+  
 
-    public void setCompletiondate(Date completiondate) {
-        this.completiondate = completiondate;
-    }
+    @Override
+	public String toString() {
+		return "Completed [completionid=" + completionid + ", completiondate=" + completiondate + ", completiontdate="
+				+ completiontdate + ", inspector=" + inspector + ", penalty=" + penalty + ", rework=" + rework
+				+ ", personid=" + personid + ", personname=" + personname + ", delaytext=" + delaytext
+				+ ", completiontype=" + completiontype + "]";
+	}
 
-    public Date getCompletiontdate() {
-        return completiontdate;
-    }
+	public String getCompletiondate() {
+		return completiondate;
+	}
 
-    public void setCompletiontdate(Date completiontdate) {
-        this.completiontdate = completiontdate;
-    }
+	public void setCompletiondate(String completiondate) {
+		this.completiondate = completiondate;
+	}
 
-    public String getInspector() {
+	public String getCompletiontdate() {
+		return completiontdate;
+	}
+
+	public void setCompletiontdate(String completiontdate) {
+		this.completiontdate = completiontdate;
+	}
+
+	public String getInspector() {
         return inspector;
     }
 
