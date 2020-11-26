@@ -1,9 +1,9 @@
 package com.accp.pojo;
 
 public class Maintainreceipts {
-    private Integer receiptsid;
+    private Integer receiptsid;//Î¬ÐÞ×´Ì¬id
 
-    private String receiptsname;
+    private String receiptsname;//×´Ì¬Ãû
 
     public Integer getReceiptsid() {
         return receiptsid;
