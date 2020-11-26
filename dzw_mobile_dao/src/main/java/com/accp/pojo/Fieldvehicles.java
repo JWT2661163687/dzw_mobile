@@ -13,9 +13,17 @@ public class Fieldvehicles {
 
     private String currentmileage;
 
-    private String ascriptionteam;
+    private String tename;
 
-    public Integer getId() {
+    public String getTename() {
+		return tename;
+	}
+
+	public void setTename(String tename) {
+		this.tename = tename;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -63,11 +71,5 @@ public class Fieldvehicles {
         this.currentmileage = currentmileage == null ? null : currentmileage.trim();
     }
 
-    public String getAscriptionteam() {
-        return ascriptionteam;
-    }
-
-    public void setAscriptionteam(String ascriptionteam) {
-        this.ascriptionteam = ascriptionteam == null ? null : ascriptionteam.trim();
-    }
+   
 }
