@@ -1,42 +1,50 @@
 package com.accp.pojo;
 
-public class Weixiu {
-    private Integer xmid;
+public class Maintaincarxiangmu {
+    private Integer xmid;//项目id
 
-    private String xmleixing;
+    private Integer fid;//发动机id
 
-    private String xmbianma;
+    private Integer cid;//车型id
 
-    private String xmmingcheng;
+    private String xmleixing;//项目类别
 
-    private String xmshoujia;
+    private String xmbianma;//项目编码
 
-    private String xmzhonglei;
+    private String xmmingcheng;//项目名称
 
-    private Integer xmbiaozhun;
+    private String xmshoujia;//售价类型
 
-    private Integer xmhuiyuan;
+    private String xmzhonglei;//收入种类
 
-    private Integer cid;
+    private Integer xmbiaozhun;//标准价
 
-    private Integer fid;
-    
-    private Integer maintainno;//维修接车表id
+    private Integer xmhuiyuan;//会员价
 
-    public Integer getMaintainno() {
-		return maintainno;
-	}
+    private Integer mainno;//维修接车id
 
-	public void setMaintainno(Integer maintainno) {
-		this.maintainno = maintainno;
-	}
-
-	public Integer getXmid() {
+    public Integer getXmid() {
         return xmid;
     }
 
     public void setXmid(Integer xmid) {
         this.xmid = xmid;
+    }
+
+    public Integer getFid() {
+        return fid;
+    }
+
+    public void setFid(Integer fid) {
+        this.fid = fid;
+    }
+
+    public Integer getCid() {
+        return cid;
+    }
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
     public String getXmleixing() {
@@ -95,19 +103,11 @@ public class Weixiu {
         this.xmhuiyuan = xmhuiyuan;
     }
 
-    public Integer getCid() {
-        return cid;
+    public Integer getMainno() {
+        return mainno;
     }
 
-    public void setCid(Integer cid) {
-        this.cid = cid;
-    }
-
-    public Integer getFid() {
-        return fid;
-    }
-
-    public void setFid(Integer fid) {
-        this.fid = fid;
+    public void setMainno(Integer mainno) {
+        this.mainno = mainno;
     }
 }
