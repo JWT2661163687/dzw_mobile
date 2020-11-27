@@ -1,5 +1,9 @@
 package com.accp.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Select;
+
 import com.accp.pojo.Maintainreceipts;
 
 public interface MaintainreceiptsMapper {
@@ -14,4 +18,12 @@ public interface MaintainreceiptsMapper {
     int updateByPrimaryKeySelective(Maintainreceipts record);
 
     int updateByPrimaryKey(Maintainreceipts record);
+    /**
+     * ²éÑ¯×´Ì¬±í
+     * @return
+     */
+    @Select("select * from maintainreceipts")
+    List<Maintainreceipts> selectAllMaintainreceipts();
+    
+    
 }

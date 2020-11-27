@@ -1,6 +1,7 @@
 package com.accp.pojo;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Maintaincar {
     private Integer maintainid;//维修id
@@ -56,8 +57,18 @@ public class Maintaincar {
     private Integer carid;//车主客户编号
 
     private String maintaindate;//单据时间
+    
+    public List<Weixiu> weixius=new ArrayList<Weixiu>();//维修项目集合
 
-    public Integer getMaintainid() {
+    public List<Weixiu> getWeixius() {
+		return weixius;
+	}
+
+	public void setWeixius(List<Weixiu> weixius) {
+		this.weixius = weixius;
+	}
+
+	public Integer getMaintainid() {
         return maintainid;
     }
 

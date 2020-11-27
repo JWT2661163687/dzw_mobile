@@ -71,9 +71,6 @@
   <insert id="insertSelective" parameterType="com.accp.pojo.Maintaincar" >
     insert into maintaincar
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="maintainid != null" >
-        maintainid,
-      </if>
       <if test="receiptsid != null" >
         receiptsid,
       </if>
@@ -154,9 +151,7 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="maintainid != null" >
-        #{maintainid,jdbcType=INTEGER},
-      </if>
+     
       <if test="receiptsid != null" >
         #{receiptsid,jdbcType=INTEGER},
       </if>
