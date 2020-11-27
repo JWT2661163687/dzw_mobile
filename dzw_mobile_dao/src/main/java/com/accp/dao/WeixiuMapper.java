@@ -23,7 +23,7 @@ public interface WeixiuMapper {
 	 * 	    @param cid	 
 	 * 		@return
 	 */
-    List<Weixiu> selectcid(@Param("cid") Integer cid);
+    List<Weixiu> selectcid(@Param("cid") Integer cid,@Param("sousuo") String sousuo);
     
    /*
     * 	ĞÂÔö
@@ -41,4 +41,8 @@ public interface WeixiuMapper {
     * 	É¾³ı
     */ 
    int deleteweixiu(@Param("xmid") Integer xmid);
+   
+   
+   
+   
 }

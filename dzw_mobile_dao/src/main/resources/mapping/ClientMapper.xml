@@ -171,4 +171,14 @@
       cGrade = #{cgrade,jdbcType=INTEGER}
     where cId = #{cid,jdbcType=INTEGER}
   </update>
+  
+  <!-- 根据条件查询客户 -->
+  <select id="queryClient" resultType="com.accp.pojo.Client">
+  		SELECT * FROM `client`
+  		<where>
+  			<if test="cid!=0">
+  				and cId = #{cid}
+  			</if>
+  		</where>
+  </select>
 </mapper>
