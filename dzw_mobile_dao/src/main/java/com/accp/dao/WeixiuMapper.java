@@ -1,5 +1,9 @@
 package com.accp.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.accp.pojo.Weixiu;
 
 public interface WeixiuMapper {
@@ -14,4 +18,31 @@ public interface WeixiuMapper {
     int updateByPrimaryKeySelective(Weixiu record);
 
     int updateByPrimaryKey(Weixiu record);
+    
+    /* 		按维修cid 查询 维修项目信息
+	 * 	    @param cid	 
+	 * 		@return
+	 */
+    List<Weixiu> selectcid(@Param("cid") Integer cid);
+    
+   /*
+    * 	新增
+    * 	@param  weixiu
+    */
+   int insertweixiu(@Param("weixiu") Weixiu weixiu);
+   
+   /*
+    * 	修改
+    * 	@param  xiugai
+    */
+   int updateweixiu(@Param("xiugai") Weixiu xiugai);
+   
+   /*
+    * 	删除
+    */ 
+   int deleteweixiu(@Param("xmid") Integer xmid);
+   
+   
+   
+   
 }

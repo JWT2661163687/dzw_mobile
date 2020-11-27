@@ -1,6 +1,11 @@
 package com.accp.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Select;
+
 import com.accp.pojo.Fieldvehicles;
+import com.accp.pojo.Team;
 
 public interface FieldvehiclesMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +19,13 @@ public interface FieldvehiclesMapper {
     int updateByPrimaryKeySelective(Fieldvehicles record);
 
     int updateByPrimaryKey(Fieldvehicles record);
+    
+    //查询外勤车辆
+    @Select("SELECT * FROM `fieldvehicles` f INNER JOIN `team` t WHERE f.`teamid`=t.`teamid`")
+    public List<Fieldvehicles> queryFiel();
+    
+    //查询班组
+    @Select("select * from team")
+    public List<Team> queryTeam();
+    
 }

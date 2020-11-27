@@ -20,8 +20,18 @@ public class Weixiu {
     private Integer cid;
 
     private Integer fid;
+    
+    private Integer maintainno;//Î¬ĞŞ½Ó³µ±íid
 
-    public Integer getXmid() {
+    public Integer getMaintainno() {
+		return maintainno;
+	}
+
+	public void setMaintainno(Integer maintainno) {
+		this.maintainno = maintainno;
+	}
+
+	public Integer getXmid() {
         return xmid;
     }
 

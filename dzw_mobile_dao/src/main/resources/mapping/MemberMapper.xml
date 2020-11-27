@@ -103,4 +103,26 @@
       mBalance = #{mbalance,jdbcType=INTEGER}
     where mId = #{mid,jdbcType=INTEGER}
   </update>
+  
+  
+  <!-- 根据条件查询会员 -->
+  <select id="queryMember" resultType="com.accp.pojo.Member" parameterType="String">
+  		select * from member
+  		<where>
+  			<if test="KaHao!=0">
+  				and mCardNumber like '%${KaHao}%'
+  			</if>
+  		</where>
+  </select>
+  
+  <!-- 根据条件查询不是会员的客户 -->
+  <select id="queryClient" resultType="com.accp.pojo.Client">
+  		SELECT * FROM `client`
+  		<where>
+  			cGrade = 1
+  			<if test="cId != 0">
+  				AND cId = #{cId}
+  			</if>
+  		</where>
+  </select>
 </mapper>

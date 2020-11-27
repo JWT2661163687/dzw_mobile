@@ -3,6 +3,12 @@ package com.accp.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
 import com.accp.pojo.Mechanicstar;
 
 public interface MechanicstarMapper {
@@ -19,6 +25,20 @@ public interface MechanicstarMapper {
     int updateByPrimaryKey(Mechanicstar record);
     
     //查询技工星级
+    @Select("select * from mechanicstar")
     public List<Mechanicstar> queryMechan();
+    
+    //新增技工
+    @Insert("INSERT INTO `mechanicstar` VALUES(#{mechanicstar.meid},#{mechanicstar.starrating},#{mechanicstar.grade},#{mechanicstar.weight})")
+    public int insertMechan(@Param("mechanicstar") Mechanicstar mechanicstar);
+    
+    //修改技工
+    @Update("UPDATE `mechanicstar` SET `starrating`= #{mechanicstar.starrating},`grade`= #{mechanicstar.grade},`weight`= #{mechanicstar.weight} \r\n"
+    		+ "WHERE `meid`=#{mechanicstar.meid}")
+    public int updateMechan(@Param("mechanicstar") Mechanicstar mechanicstar);
+    
+    //删除技工
+    @Delete("DELETE FROM `mechanicstar` WHERE `meid` =#{meid}")
+    public int deleteMechan(@Param("meid")String meid);
 
 }

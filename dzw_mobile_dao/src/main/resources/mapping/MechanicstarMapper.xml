@@ -17,9 +17,9 @@
     where meid = #{meid,jdbcType=INTEGER}
   </select>
   
-  <select id="queryMechan">
+ <!--  <select id="queryMechan">
   select * from mechanicstar
-  </select>
+  </select> -->
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mechanicstar
