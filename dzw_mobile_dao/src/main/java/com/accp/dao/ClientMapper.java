@@ -32,13 +32,13 @@ public interface ClientMapper {
     /**
      * 	新增新客户
      */
-    @Insert("INSERT INTO `client`(`cName`,`cPhone`,`createDate`,`cLimit`,`cIntegral`,`cRemark`,`cGrade`) VALUES(#{client.cname},#{client.cphone},NOW(),0,0,#{client.cremark},1)")
+    @Insert("INSERT INTO `client`(`cName`,`cPhone`,`createDate`,`cLimit`,`cIntegral`,`cRemark`,`cGrade`) VALUES(#{client.cname},#{client.cphone},NOW(),#{client.climit},#{client.cintegral},#{client.cremark},1)")
     int insertClient(@Param("client")Client client);
     
     /**
      * 	修改客户信息
      */
-    @Update("UPDATE `client` SET `cName` = #{client.cname},`cPhone` = #{client.cphone},`cLimit` = 0,`cIntegral` = 0,`cRemark` = #{client.cremark} WHERE cId = #{client.cid}")
+    @Update("UPDATE `client` SET `cName` = #{client.cname},`cPhone` = #{client.cphone},`cLimit` = #{client.climit},`cIntegral` = #{client.cintegral},`cRemark` = #{client.cremark} WHERE cId = #{client.cid}")
     int updateClient(@Param("client")Client client);
     
     /**

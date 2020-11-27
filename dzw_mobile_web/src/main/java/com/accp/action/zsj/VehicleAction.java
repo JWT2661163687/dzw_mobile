@@ -15,32 +15,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.accp.biz.zsj.ClientBiz;
-import com.accp.dao.ClientMapper;
+import com.accp.biz.zsj.VehicleBiz;
+import com.accp.dao.VehicleMapper;
 import com.accp.pojo.Client;
 import com.accp.pojo.Vehicle;
 
 @RestController
-@RequestMapping("api/clients")
-public class ClientAction {
+@RequestMapping("api/vehicles")
+public class VehicleAction {
 
 	@Autowired
-	private ClientBiz biz;
+	private VehicleBiz biz;
 	
 	/**
-     * 	根据条件查询客户
+     * 根据条件查询车辆信息
      */
-	@GetMapping("{cid}")
+	@GetMapping("{vid}")
+    public List<Vehicle> queryVehicle(@PathVariable Integer vid){
+    	return biz.queryVehicle(vid);
+    }
+    
+    /**
+     * 双击车辆信息显示对应的用户信息
+     */
+	@GetMapping("client/{cid}")
     public List<Client> queryClient(@PathVariable Integer cid){
     	return biz.queryClient(cid);
     }
     
     /**
-     * 	新增新客户
+     * 新增车辆信息
      */
-	@PostMapping("client")
-    public Map<String, String> insertClient(@RequestBody Client client) {
-		int count = biz.insertClient(client);
+	@PostMapping("vehicle")
+    public Map<String, String> insertVehicle(@RequestBody Vehicle vehicle) {
+		int count = biz.insertVehicle(vehicle);
 		Map<String, String> map = new HashMap<String, String>();
 		if(count>0) {
 			map.put("code", "200");
@@ -49,11 +57,11 @@ public class ClientAction {
     }
     
     /**
-     * 	修改客户信息
+     * 修改车辆信息
      */
-	@PutMapping("client")
-    public Map<String, String> updateClient(@RequestBody Client client) {
-		int count = biz.updateClient(client);
+	@PutMapping("vehicle")
+    public Map<String, String> updateVehicle(@RequestBody Vehicle vehicle) {
+		int count = biz.updateVehicle(vehicle);
 		Map<String, String> map = new HashMap<String, String>();
 		if(count>0) {
 			map.put("code", "200");
@@ -62,27 +70,15 @@ public class ClientAction {
     }
     
     /**
-     * 	删除客户信息
+     * 删除车辆信息
      */
-	@DeleteMapping("client/{cid}")
-    public Map<String, String> deleteClient(@PathVariable Integer cid) {
-		int count = biz.deleteClient(cid);
+	@DeleteMapping("vehicle/{vid}")
+    public Map<String, String> deleteVehicle(@PathVariable Integer vid) {
+		int count = biz.deleteVehicle(vid);
 		Map<String, String> map = new HashMap<String, String>();
 		if(count>0) {
 			map.put("code", "200");
 		}
     	return map;
-    }
-    
-    /**
-     *	 双击客户查询该客户的车辆信息
-     */
-	@GetMapping("client1/{cid}")
-    public List<Vehicle> queryVehicle(@PathVariable Integer cid){
-		System.out.println("c  "+cid);
-		biz.queryVehicle(cid).forEach(temp->{
-			System.out.println("a "+temp);
-		});
-    	return biz.queryVehicle(cid);
     }
 }

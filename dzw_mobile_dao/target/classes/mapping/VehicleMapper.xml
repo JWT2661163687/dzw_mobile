@@ -162,12 +162,12 @@
     where vId = #{vid,jdbcType=INTEGER}
   </update>
   
-  <!-- 根据条件查询客户 -->
-  <select id="queryClient" resultType="com.accp.pojo.Vehicle">
-  		SELECT * FROM `client`
+  <!-- 根据条件查询车辆信息 -->
+  <select id="queryVehicle" resultType="com.accp.pojo.Vehicle">
+  		SELECT * FROM `vehicle`
   		<where>
-  			<if test="cid!=0">
-  				and cId = #{cid}
+  			<if test="vid!=0">
+  				and vId = #{vid}
   			</if>
   		</where>
   </select>
