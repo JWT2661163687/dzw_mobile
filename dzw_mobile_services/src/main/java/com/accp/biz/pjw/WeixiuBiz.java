@@ -20,10 +20,11 @@ public class WeixiuBiz {
 		 * 	    @param cid	 
 		 * 		@return
 		 */
-	   public PageInfo<Weixiu> selectcid(Integer page1,Integer page2,Integer cid){
+	   public PageInfo<Weixiu> selectcid(Integer page1,Integer page2,Integer cid,String sousuo){
 	    	PageHelper.startPage(page1,page2);
-	    	List<Weixiu> list=weixiumapper.selectcid(cid);
+	    	List<Weixiu> list=weixiumapper.selectcid(cid,sousuo );
 	    	PageInfo<Weixiu> pageinfo=new PageInfo<Weixiu>(list);
+	    	System.out.println("分页"+pageinfo);
 	    	return pageinfo;
 	    }
 	   
