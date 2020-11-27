@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.MotorcycleMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Motorcycle" >
+    <id column="motorcycleid" property="motorcycleid" jdbcType="INTEGER" />
+    <result column="engineid" property="engineid" jdbcType="INTEGER" />
+    <result column="productionid" property="productionid" jdbcType="INTEGER" />
+    <result column="makeid" property="makeid" jdbcType="INTEGER" />
+    <result column="motorcyclename" property="motorcyclename" jdbcType="VARCHAR" />
+    <result column="makename" property="makename" jdbcType="VARCHAR" />
+    <result column="productionname" property="productionname" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DOUBLE" />
+    <result column="yearprice" property="yearprice" jdbcType="DOUBLE" />
+    <result column="power" property="power" jdbcType="DOUBLE" />
+    <result column="Fuellabel" property="fuellabel" jdbcType="INTEGER" />
+    <result column="load" property="load" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    motorcycleid, engineid, productionid, makeid, motorcyclename, makename, productionname, 
+    price, yearprice, power, Fuellabel, load
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from motorcycle
+    where motorcycleid = #{motorcycleid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from motorcycle
+    where motorcycleid = #{motorcycleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.Motorcycle" >
+    insert into motorcycle (motorcycleid, engineid, productionid, 
+      makeid, motorcyclename, makename, 
+      productionname, price, yearprice, 
+      power, Fuellabel, load
+      )
+    values (#{motorcycleid,jdbcType=INTEGER}, #{engineid,jdbcType=INTEGER}, #{productionid,jdbcType=INTEGER}, 
+      #{makeid,jdbcType=INTEGER}, #{motorcyclename,jdbcType=VARCHAR}, #{makename,jdbcType=VARCHAR}, 
+      #{productionname,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{yearprice,jdbcType=DOUBLE}, 
+      #{power,jdbcType=DOUBLE}, #{fuellabel,jdbcType=INTEGER}, #{load,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Motorcycle" >
+    insert into motorcycle
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="motorcycleid != null" >
+        motorcycleid,
+      </if>
+      <if test="engineid != null" >
+        engineid,
+      </if>
+      <if test="productionid != null" >
+        productionid,
+      </if>
+      <if test="makeid != null" >
+        makeid,
+      </if>
+      <if test="motorcyclename != null" >
+        motorcyclename,
+      </if>
+      <if test="makename != null" >
+        makename,
+      </if>
+      <if test="productionname != null" >
+        productionname,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="yearprice != null" >
+        yearprice,
+      </if>
+      <if test="power != null" >
+        power,
+      </if>
+      <if test="fuellabel != null" >
+        Fuellabel,
+      </if>
+      <if test="load != null" >
+        load,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="motorcycleid != null" >
+        #{motorcycleid,jdbcType=INTEGER},
+      </if>
+      <if test="engineid != null" >
+        #{engineid,jdbcType=INTEGER},
+      </if>
+      <if test="productionid != null" >
+        #{productionid,jdbcType=INTEGER},
+      </if>
+      <if test="makeid != null" >
+        #{makeid,jdbcType=INTEGER},
+      </if>
+      <if test="motorcyclename != null" >
+        #{motorcyclename,jdbcType=VARCHAR},
+      </if>
+      <if test="makename != null" >
+        #{makename,jdbcType=VARCHAR},
+      </if>
+      <if test="productionname != null" >
+        #{productionname,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="yearprice != null" >
+        #{yearprice,jdbcType=DOUBLE},
+      </if>
+      <if test="power != null" >
+        #{power,jdbcType=DOUBLE},
+      </if>
+      <if test="fuellabel != null" >
+        #{fuellabel,jdbcType=INTEGER},
+      </if>
+      <if test="load != null" >
+        #{load,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Motorcycle" >
+    update motorcycle
+    <set >
+      <if test="engineid != null" >
+        engineid = #{engineid,jdbcType=INTEGER},
+      </if>
+      <if test="productionid != null" >
+        productionid = #{productionid,jdbcType=INTEGER},
+      </if>
+      <if test="makeid != null" >
+        makeid = #{makeid,jdbcType=INTEGER},
+      </if>
+      <if test="motorcyclename != null" >
+        motorcyclename = #{motorcyclename,jdbcType=VARCHAR},
+      </if>
+      <if test="makename != null" >
+        makename = #{makename,jdbcType=VARCHAR},
+      </if>
+      <if test="productionname != null" >
+        productionname = #{productionname,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="yearprice != null" >
+        yearprice = #{yearprice,jdbcType=DOUBLE},
+      </if>
+      <if test="power != null" >
+        power = #{power,jdbcType=DOUBLE},
+      </if>
+      <if test="fuellabel != null" >
+        Fuellabel = #{fuellabel,jdbcType=INTEGER},
+      </if>
+      <if test="load != null" >
+        load = #{load,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where motorcycleid = #{motorcycleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Motorcycle" >
+    update motorcycle
+    set engineid = #{engineid,jdbcType=INTEGER},
+      productionid = #{productionid,jdbcType=INTEGER},
+      makeid = #{makeid,jdbcType=INTEGER},
+      motorcyclename = #{motorcyclename,jdbcType=VARCHAR},
+      makename = #{makename,jdbcType=VARCHAR},
+      productionname = #{productionname,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE},
+      yearprice = #{yearprice,jdbcType=DOUBLE},
+      power = #{power,jdbcType=DOUBLE},
+      Fuellabel = #{fuellabel,jdbcType=INTEGER},
+      load = #{load,jdbcType=DOUBLE}
+    where motorcycleid = #{motorcycleid,jdbcType=INTEGER}
+  </update>
+</mapper>
