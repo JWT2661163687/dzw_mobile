@@ -41,4 +41,8 @@ public interface WeixiuMapper {
     * 	É¾³ý
     */ 
    int deleteweixiu(@Param("xmid") Integer xmid);
+   
+   
+   
+   
 }
