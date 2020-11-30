@@ -2,6 +2,7 @@ package com.accp.biz.lzj;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,12 @@ public class TeamtechnicianBiz {
 	 */
 	public List<Teamtechnician> queryTe(){
 		return dao.queryTe();
+	}
+	
+	/**
+	 * 新增班组
+	 */
+	public int insertTe(Teamtechnician te) {
+		return dao.insertTe(te);
 	}
 }

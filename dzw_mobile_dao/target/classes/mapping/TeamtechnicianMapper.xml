@@ -233,10 +233,10 @@
     where technicianno = #{technicianno,jdbcType=INTEGER}
   </update>
   <insert id="insertTe">
-  	INSERT INTO `teamtechnician` VALUES('tename','technicianno', 'teamid', 'meid','mename','mesex','mephone','meaddress','mebirthday',
-	'groupleader', 'menumber','accountaddress','openbank','bankaccount', 'starrating', 'repairwork', 'repairbrand')
-	
-	INSERT INTO `team` VALUES ('teamid', 'tename')
+  	INSERT INTO `teamtechnician` VALUES(#{te.technicianno},#{te.teamid}, #{te.meid},#{te.mename},#{te.mesex},#{te.mephone},#{te.meaddress},#{te.mebirthday},
+		#{te.groupleader}, #{te.menumber},#{te.accountaddress},#{te.openbank},#{te.bankaccount}, #{te.starrating}, #{te.repairwork},#{te.repairbrand}) 
+
+	INSERT INTO `team` VALUES (#{te.teamid}, #{te.tename}) 
   
   </insert>
   
