@@ -3,6 +3,8 @@ package com.accp.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.accp.dao.TeamtechniciantwoMapper;
+
 public class Maintaincar {
     private Integer maintainid;//维修id
 
@@ -57,10 +59,40 @@ public class Maintaincar {
     private Integer carid;//车主客户编号
 
     private String maintaindate;//单据时间
+    private Integer maintainling;//维修次数
     
-    public List<Weixiu> weixius=new ArrayList<Weixiu>();//维修项目集合
+    public Integer getMaintainling() {
+		return maintainling;
+	}
 
-    public List<Weixiu> getWeixius() {
+	public void setMaintainling(Integer maintainling) {
+		this.maintainling = maintainling;
+	}
+
+	public List<Weixiu> weixius=new ArrayList<Weixiu>();//维修项目集合
+    
+    public List<Maintaincarxiangmu> maintaincarxiangmus=new ArrayList<Maintaincarxiangmu>();//维修项目集合
+    public List<Teamtechniciantwo> teamtechniciantwos=new ArrayList<Teamtechniciantwo>();//维修技工集合
+
+    public List<Teamtechniciantwo> getTeamtechniciantwos() {
+		return teamtechniciantwos;
+	}
+
+	public void setTeamtechniciantwos(List<Teamtechniciantwo> teamtechniciantwos) {
+		this.teamtechniciantwos = teamtechniciantwos;
+	}
+
+	public List<Maintaincarxiangmu> getMaintaincarxiangmus() {
+		return maintaincarxiangmus;
+	}
+
+	public void setMaintaincarxiangmus(List<Maintaincarxiangmu> maintaincarxiangmus) {
+		this.maintaincarxiangmus = maintaincarxiangmus;
+	}
+
+	
+
+	public List<Weixiu> getWeixius() {
 		return weixius;
 	}
 

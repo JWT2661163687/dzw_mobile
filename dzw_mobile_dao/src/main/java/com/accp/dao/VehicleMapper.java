@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.accp.pojo.Client;
+
+
 import com.accp.pojo.Make;
 import com.accp.pojo.Motorcycle;
 import com.accp.pojo.Vehicle;
@@ -70,4 +72,12 @@ public interface VehicleMapper {
      */
     @Delete("DELETE FROM `vehicle` WHERE vId = #{vid}")
     int deleteVehicle(@Param("vid")Integer vid);
+    
+    /**
+     * 查询不在维修中的车辆
+     * @return
+     */
+    @Select("select * from `vehicle` ve  where ve.`vId` not in(select `maintainvehicleid` from `maintaincar` ma where ma.`receiptsid` NOT IN(5,4,3));")
+    List<Vehicle> selectzhuangtai();
+    
 }

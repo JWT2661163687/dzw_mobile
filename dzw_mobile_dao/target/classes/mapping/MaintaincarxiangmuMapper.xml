@@ -1,170 +1,194 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.MaintaincarxiangmuMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Maintaincarxiangmu" >
-    <id column="XMid" property="xmid" jdbcType="INTEGER" />
-    <result column="Fid" property="fid" jdbcType="INTEGER" />
-    <result column="cid" property="cid" jdbcType="INTEGER" />
-    <result column="XMleixing" property="xmleixing" jdbcType="VARCHAR" />
-    <result column="XMbianma" property="xmbianma" jdbcType="VARCHAR" />
-    <result column="XMmingcheng" property="xmmingcheng" jdbcType="VARCHAR" />
-    <result column="XMshoujia" property="xmshoujia" jdbcType="VARCHAR" />
-    <result column="XMzhonglei" property="xmzhonglei" jdbcType="VARCHAR" />
-    <result column="XMbiaozhun" property="xmbiaozhun" jdbcType="INTEGER" />
-    <result column="XMhuiyuan" property="xmhuiyuan" jdbcType="INTEGER" />
-    <result column="mainno" property="mainno" jdbcType="INTEGER" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    XMid, Fid, cid, XMleixing, XMbianma, XMmingcheng, XMshoujia, XMzhonglei, XMbiaozhun, 
-    XMhuiyuan, mainno
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from maintaincarxiangmu
-    where XMid = #{xmid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from maintaincarxiangmu
-    where XMid = #{xmid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Maintaincarxiangmu" >
-    insert into maintaincarxiangmu (XMid, Fid, cid, 
-      XMleixing, XMbianma, XMmingcheng, 
-      XMshoujia, XMzhonglei, XMbiaozhun, 
-      XMhuiyuan, mainno)
-    values (#{xmid,jdbcType=INTEGER}, #{fid,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, 
-      #{xmleixing,jdbcType=VARCHAR}, #{xmbianma,jdbcType=VARCHAR}, #{xmmingcheng,jdbcType=VARCHAR}, 
-      #{xmshoujia,jdbcType=VARCHAR}, #{xmzhonglei,jdbcType=VARCHAR}, #{xmbiaozhun,jdbcType=INTEGER}, 
-      #{xmhuiyuan,jdbcType=INTEGER}, #{mainno,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Maintaincarxiangmu" >
-    insert into maintaincarxiangmu
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="xmid != null" >
-        XMid,
-      </if>
-      <if test="fid != null" >
-        Fid,
-      </if>
-      <if test="cid != null" >
-        cid,
-      </if>
-      <if test="xmleixing != null" >
-        XMleixing,
-      </if>
-      <if test="xmbianma != null" >
-        XMbianma,
-      </if>
-      <if test="xmmingcheng != null" >
-        XMmingcheng,
-      </if>
-      <if test="xmshoujia != null" >
-        XMshoujia,
-      </if>
-      <if test="xmzhonglei != null" >
-        XMzhonglei,
-      </if>
-      <if test="xmbiaozhun != null" >
-        XMbiaozhun,
-      </if>
-      <if test="xmhuiyuan != null" >
-        XMhuiyuan,
-      </if>
-      <if test="mainno != null" >
-        mainno,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="xmid != null" >
-        #{xmid,jdbcType=INTEGER},
-      </if>
-      <if test="fid != null" >
-        #{fid,jdbcType=INTEGER},
-      </if>
-      <if test="cid != null" >
-        #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="xmleixing != null" >
-        #{xmleixing,jdbcType=VARCHAR},
-      </if>
-      <if test="xmbianma != null" >
-        #{xmbianma,jdbcType=VARCHAR},
-      </if>
-      <if test="xmmingcheng != null" >
-        #{xmmingcheng,jdbcType=VARCHAR},
-      </if>
-      <if test="xmshoujia != null" >
-        #{xmshoujia,jdbcType=VARCHAR},
-      </if>
-      <if test="xmzhonglei != null" >
-        #{xmzhonglei,jdbcType=VARCHAR},
-      </if>
-      <if test="xmbiaozhun != null" >
-        #{xmbiaozhun,jdbcType=INTEGER},
-      </if>
-      <if test="xmhuiyuan != null" >
-        #{xmhuiyuan,jdbcType=INTEGER},
-      </if>
-      <if test="mainno != null" >
-        #{mainno,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Maintaincarxiangmu" >
-    update maintaincarxiangmu
-    <set >
-      <if test="fid != null" >
-        Fid = #{fid,jdbcType=INTEGER},
-      </if>
-      <if test="cid != null" >
-        cid = #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="xmleixing != null" >
-        XMleixing = #{xmleixing,jdbcType=VARCHAR},
-      </if>
-      <if test="xmbianma != null" >
-        XMbianma = #{xmbianma,jdbcType=VARCHAR},
-      </if>
-      <if test="xmmingcheng != null" >
-        XMmingcheng = #{xmmingcheng,jdbcType=VARCHAR},
-      </if>
-      <if test="xmshoujia != null" >
-        XMshoujia = #{xmshoujia,jdbcType=VARCHAR},
-      </if>
-      <if test="xmzhonglei != null" >
-        XMzhonglei = #{xmzhonglei,jdbcType=VARCHAR},
-      </if>
-      <if test="xmbiaozhun != null" >
-        XMbiaozhun = #{xmbiaozhun,jdbcType=INTEGER},
-      </if>
-      <if test="xmhuiyuan != null" >
-        XMhuiyuan = #{xmhuiyuan,jdbcType=INTEGER},
-      </if>
-      <if test="mainno != null" >
-        mainno = #{mainno,jdbcType=INTEGER},
-      </if>
-    </set>
-    where XMid = #{xmid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Maintaincarxiangmu" >
-    update maintaincarxiangmu
-    set Fid = #{fid,jdbcType=INTEGER},
-      cid = #{cid,jdbcType=INTEGER},
-      XMleixing = #{xmleixing,jdbcType=VARCHAR},
-      XMbianma = #{xmbianma,jdbcType=VARCHAR},
-      XMmingcheng = #{xmmingcheng,jdbcType=VARCHAR},
-      XMshoujia = #{xmshoujia,jdbcType=VARCHAR},
-      XMzhonglei = #{xmzhonglei,jdbcType=VARCHAR},
-      XMbiaozhun = #{xmbiaozhun,jdbcType=INTEGER},
-      XMhuiyuan = #{xmhuiyuan,jdbcType=INTEGER},
-      mainno = #{mainno,jdbcType=INTEGER}
-    where XMid = #{xmid,jdbcType=INTEGER}
-  </update>
-  
-  
- 
-  
-  
-  
+<mapper namespace="com.accp.dao.MaintaincarxiangmuMapper">
+	<resultMap id="BaseResultMap"
+		type="com.accp.pojo.Maintaincarxiangmu">
+		<id column="XMid" property="xmid" jdbcType="INTEGER" />
+		<result column="Fid" property="fid" jdbcType="INTEGER" />
+		<result column="cid" property="cid" jdbcType="INTEGER" />
+		<result column="XMleixing" property="xmleixing"
+			jdbcType="VARCHAR" />
+		<result column="XMbianma" property="xmbianma"
+			jdbcType="VARCHAR" />
+		<result column="XMmingcheng" property="xmmingcheng"
+			jdbcType="VARCHAR" />
+		<result column="XMshoujia" property="xmshoujia"
+			jdbcType="VARCHAR" />
+		<result column="XMzhonglei" property="xmzhonglei"
+			jdbcType="VARCHAR" />
+		<result column="XMbiaozhun" property="xmbiaozhun"
+			jdbcType="INTEGER" />
+		<result column="XMhuiyuan" property="xmhuiyuan"
+			jdbcType="INTEGER" />
+		<result column="mainno" property="mainno" jdbcType="INTEGER" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		XMid, Fid, cid, XMleixing, XMbianma, XMmingcheng, XMshoujia, XMzhonglei,
+		XMbiaozhun,
+		XMhuiyuan, mainno
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from maintaincarxiangmu
+		where XMid = #{xmid,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey"
+		parameterType="java.lang.Integer">
+		delete from maintaincarxiangmu
+		where XMid = #{xmid,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert"
+		parameterType="com.accp.pojo.Maintaincarxiangmu">
+		insert into maintaincarxiangmu (XMid, Fid, cid,
+		XMleixing, XMbianma, XMmingcheng,
+		XMshoujia, XMzhonglei, XMbiaozhun,
+		XMhuiyuan, mainno)
+		values (#{xmid,jdbcType=INTEGER}, #{fid,jdbcType=INTEGER},
+		#{cid,jdbcType=INTEGER},
+		#{xmleixing,jdbcType=VARCHAR}, #{xmbianma,jdbcType=VARCHAR}, #{xmmingcheng,jdbcType=VARCHAR},
+		#{xmshoujia,jdbcType=VARCHAR}, #{xmzhonglei,jdbcType=VARCHAR},
+		#{xmbiaozhun,jdbcType=INTEGER},
+		#{xmhuiyuan,jdbcType=INTEGER}, #{mainno,jdbcType=INTEGER})
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.accp.pojo.Maintaincarxiangmu">
+		insert into maintaincarxiangmu
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				XMid,
+			<if test="fid != null">
+				Fid,
+			</if>
+			<if test="cid != null">
+				cid,
+			</if>
+			<if test="xmleixing != null">
+				XMleixing,
+			</if>
+			<if test="xmbianma != null">
+				XMbianma,
+			</if>
+			<if test="xmmingcheng != null">
+				XMmingcheng,
+			</if>
+			<if test="xmshoujia != null">
+				XMshoujia,
+			</if>
+			<if test="xmzhonglei != null">
+				XMzhonglei,
+			</if>
+			<if test="xmbiaozhun != null">
+				XMbiaozhun,
+			</if>
+			<if test="xmhuiyuan != null">
+				XMhuiyuan,
+			</if>
+			
+			mainno,
+			<if test="maintainling != null">
+				maintainling,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			null,
+			<if test="fid != null">
+				#{fid,jdbcType=INTEGER},
+			</if>
+			<if test="cid != null">
+				#{cid,jdbcType=INTEGER},
+			</if>
+			<if test="xmleixing != null">
+				#{xmleixing,jdbcType=VARCHAR},
+			</if>
+			<if test="xmbianma != null">
+				#{xmbianma,jdbcType=VARCHAR},
+			</if>
+			<if test="xmmingcheng != null">
+				#{xmmingcheng,jdbcType=VARCHAR},
+			</if>
+			<if test="xmshoujia != null">
+				#{xmshoujia,jdbcType=VARCHAR},
+			</if>
+			<if test="xmzhonglei != null">
+				#{xmzhonglei,jdbcType=VARCHAR},
+			</if>
+			<if test="xmbiaozhun != null">
+				#{xmbiaozhun,jdbcType=INTEGER},
+			</if>
+			<if test="xmhuiyuan != null">
+				#{xmhuiyuan,jdbcType=INTEGER},
+			</if>
+			<choose>
+				<when test="mainno != null">
+					#{mainno,jdbcType=INTEGER},
+				</when>
+				<otherwise>
+					(select max(`maintainid`) from `maintaincar`),
+				</otherwise>
+			</choose>
+
+			<if test="maintainling != null">
+				#{maintainling,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.accp.pojo.Maintaincarxiangmu">
+		update maintaincarxiangmu
+		<set>
+			<if test="fid != null">
+				Fid = #{fid,jdbcType=INTEGER},
+			</if>
+			<if test="cid != null">
+				cid = #{cid,jdbcType=INTEGER},
+			</if>
+			<if test="xmleixing != null">
+				XMleixing = #{xmleixing,jdbcType=VARCHAR},
+			</if>
+			<if test="xmbianma != null">
+				XMbianma = #{xmbianma,jdbcType=VARCHAR},
+			</if>
+			<if test="xmmingcheng != null">
+				XMmingcheng = #{xmmingcheng,jdbcType=VARCHAR},
+			</if>
+			<if test="xmshoujia != null">
+				XMshoujia = #{xmshoujia,jdbcType=VARCHAR},
+			</if>
+			<if test="xmzhonglei != null">
+				XMzhonglei = #{xmzhonglei,jdbcType=VARCHAR},
+			</if>
+			<if test="xmbiaozhun != null">
+				XMbiaozhun = #{xmbiaozhun,jdbcType=INTEGER},
+			</if>
+			<if test="xmhuiyuan != null">
+				XMhuiyuan = #{xmhuiyuan,jdbcType=INTEGER},
+			</if>
+			<if test="mainno != null">
+				mainno = #{mainno,jdbcType=INTEGER},
+			</if>
+		</set>
+		where XMid = #{xmid,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.accp.pojo.Maintaincarxiangmu">
+		update maintaincarxiangmu
+		set Fid = #{fid,jdbcType=INTEGER},
+		cid = #{cid,jdbcType=INTEGER},
+		XMleixing = #{xmleixing,jdbcType=VARCHAR},
+		XMbianma = #{xmbianma,jdbcType=VARCHAR},
+		XMmingcheng = #{xmmingcheng,jdbcType=VARCHAR},
+		XMshoujia = #{xmshoujia,jdbcType=VARCHAR},
+		XMzhonglei = #{xmzhonglei,jdbcType=VARCHAR},
+		XMbiaozhun = #{xmbiaozhun,jdbcType=INTEGER},
+		XMhuiyuan = #{xmhuiyuan,jdbcType=INTEGER},
+		mainno = #{mainno,jdbcType=INTEGER}
+		where XMid = #{xmid,jdbcType=INTEGER}
+	</update>
+
+
+
+
+
+
 </mapper>

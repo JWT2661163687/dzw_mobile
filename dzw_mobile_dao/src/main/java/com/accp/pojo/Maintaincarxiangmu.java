@@ -22,8 +22,17 @@ public class Maintaincarxiangmu {
     private Integer xmhuiyuan;//会员价
 
     private Integer mainno;//维修接车id
+    private Integer maintainling;//维修次数
 
-    public Integer getXmid() {
+    public Integer getMaintainling() {
+		return maintainling;
+	}
+
+	public void setMaintainling(Integer maintainling) {
+		this.maintainling = maintainling;
+	}
+
+	public Integer getXmid() {
         return xmid;
     }
 

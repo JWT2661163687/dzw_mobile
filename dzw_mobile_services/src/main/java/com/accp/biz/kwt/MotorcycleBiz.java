@@ -25,4 +25,20 @@ public class MotorcycleBiz {
 		PageHelper.startPage(pageNum, pageSize);
 		return new PageInfo<Motorcycle>(motorcycleMapper.SelectAll());
 	}
+	/**
+	 * 新增车型表
+	 * @param record
+	 * @return
+	 */
+	public int addMotorcycle(Motorcycle record) {
+		return motorcycleMapper.inserts(record);
+	}
+	/**
+	 * 根据id查询
+	 * @param id
+	 * @return
+	 */
+	public List<Motorcycle> SelectByid(Integer id){
+		return motorcycleMapper.SelectById(id);
+	}
 }

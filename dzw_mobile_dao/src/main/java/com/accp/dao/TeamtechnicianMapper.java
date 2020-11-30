@@ -19,6 +19,16 @@ public interface TeamtechnicianMapper {
     int updateByPrimaryKeySelective(Teamtechnician record);
 
     int updateByPrimaryKey(Teamtechnician record);
+    /**
+     * 根据班组id和星级id查询技工
+     * @param meid
+     * @param teamid
+     * @return
+     */
+    @Select("SELECT * FROM `teamtechnician` WHERE meid=#{meid} AND teamid=#{teamid} AND `mename` NOT IN(SELECT te.`mename` FROM `teamtechniciantwo` te INNER JOIN `maintaincar` ma ON te.`maintainid`=ma.`maintainid` WHERE ma.`receiptsid`=1)")
+    List<Teamtechnician> selectMeidTeamid(@Param("meid")Integer meid,@Param("teamid")Integer teamid);
+    
+    
     
     //查询班组
     @Select("SELECT * FROM `teamtechnician` n\r\n"

@@ -149,6 +149,9 @@
       <if test="maintaindate != null" >
         maintaindate,
       </if>
+      <if test="maintainling != null" >
+        maintainling,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
      
@@ -229,6 +232,9 @@
       </if>
       <if test="maintaindate != null" >
         #{maintaindate,jdbcType=DATE},
+      </if>
+      <if test="maintainling != null" >
+      #{maintainling,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
