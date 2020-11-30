@@ -44,4 +44,11 @@ public class FieldvehiclesBiz {
 	public int updateFiel(Fieldvehicles ff) {
 		return dao.updateFiel(ff);
 	}
+	
+	/**
+	 * 删除车辆
+	 */
+	public int deleteFiel(int id) {
+		return dao.deleteFiel(id);
+	}
 }

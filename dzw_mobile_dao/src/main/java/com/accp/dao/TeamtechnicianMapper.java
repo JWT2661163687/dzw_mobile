@@ -29,4 +29,11 @@ public interface TeamtechnicianMapper {
     List<Teamtechnician> selectMeidTeamid(@Param("meid")Integer meid,@Param("teamid")Integer teamid);
     
     
+    
+    //查询班组
+    @Select("select * from teamtechnician")
+    public List<Teamtechnician> queryTe();
+    
+    //新增班组
+    public int insertTe();
 }

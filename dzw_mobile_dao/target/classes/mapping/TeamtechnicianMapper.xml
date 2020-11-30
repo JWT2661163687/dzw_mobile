@@ -232,4 +232,12 @@
       repairbrand = #{repairbrand,jdbcType=VARCHAR}
     where technicianno = #{technicianno,jdbcType=INTEGER}
   </update>
+  <insert id="insertTe">
+  	INSERT INTO `teamtechnician` VALUES('tename','technicianno', 'teamid', 'meid','mename','mesex','mephone','meaddress','mebirthday',
+	'groupleader', 'menumber','accountaddress','openbank','bankaccount', 'starrating', 'repairwork', 'repairbrand')
+	
+	INSERT INTO `team` VALUES ('teamid', 'tename')
+  
+  </insert>
+  
 </mapper>

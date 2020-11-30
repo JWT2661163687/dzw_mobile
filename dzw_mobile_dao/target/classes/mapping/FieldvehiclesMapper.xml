@@ -147,4 +147,8 @@
 		currentmileage = #{ff.currentmileage}
 		WHERE `id` = #{ff.id};
 	</update>
+	
+	<delete id="deleteFiel">
+	    DELETE FROM `fieldvehicles` WHERE `id` =#{id}
+	</delete>
 </mapper>
