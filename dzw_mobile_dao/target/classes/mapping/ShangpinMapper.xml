@@ -8,7 +8,22 @@
     <result column="SPdalei" property="spdalei" jdbcType="VARCHAR" />
     <result column="SPxiaolei" property="spxiaolei" jdbcType="VARCHAR" />
     <result column="SPshoujia" property="spshoujia" jdbcType="VARCHAR" />
+    <result column="DAid" property="daid" jdbcType="INTEGER" />
+    
   </resultMap>
+  <!-- 查询 -->
+  <select id="selectshangpin" resultMap="BaseResultMap" parameterType="com.accp.pojo.Shangpin">
+  		SELECT *  FROM `shangpin`
+  		<where>
+  			<if test="sousuo=='-1' ">
+  				(`SPbianma` LIKE '%${sousuo}%' OR `SPmingcheng` LIKE '%${sousuo}%'  OR `SPdalei` LIKE '%${sousuo}%' OR SPid>0) AND DAid=#{daid} 
+  			</if>
+  			<if test="sousuo!='-1' ">
+  				(`SPbianma` LIKE '%${sousuo}%' OR `SPmingcheng` LIKE '%${sousuo}%'  OR `SPdalei` LIKE '%${sousuo}%') AND DAid=#{daid}
+  			</if>
+  		</where>
+  </select>
+  <!--自动生成 -->
   <sql id="Base_Column_List" >
     SPid, SPbianma, SPmingcheng, SPdalei, SPxiaolei, SPshoujia
   </sql>

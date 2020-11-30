@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.accp.biz.zsj.VehicleBiz;
 import com.accp.dao.VehicleMapper;
 import com.accp.pojo.Client;
+import com.accp.pojo.Make;
+import com.accp.pojo.Motorcycle;
 import com.accp.pojo.Vehicle;
 
 @RestController
@@ -80,5 +82,29 @@ public class VehicleAction {
 			map.put("code", "200");
 		}
     	return map;
+    }
+	
+	/**
+     *	 根据品牌编号或者品牌名称查询品牌信息
+     */
+	@GetMapping("make/{id}")
+    public List<Make> queryMake(@PathVariable String id){
+    	return biz.queryMake(id);
+    }
+    
+    /**
+     * 	根据车型编号或者车型名称查询车辆信息
+     */
+	@GetMapping("moto/{makeid}/{id}")
+    public List<Motorcycle> queryMotorcycle(@PathVariable Integer makeid,@PathVariable String id){
+    	return biz.queryMotorcycle(makeid,id);
+    }
+    
+    /**
+     * 	点击品牌的时候查询对应的车型
+     */
+	@GetMapping("moto1/{id}")
+    public List<Motorcycle> queryMotorcycle1(@PathVariable("id")Integer id){
+    	return biz.queryMotorcycle1(id);
     }
 }
