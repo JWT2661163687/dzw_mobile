@@ -32,7 +32,7 @@ public class MaintaincarBiz {
 	private TeamtechniciantwoMapper teamtechniciantwoMapper;
 	
 	 /**
-     * 状态查询维修接车表
+     * 状态查询维修接车表sasdsada
      * @param receiptsid
      * @return
      */
