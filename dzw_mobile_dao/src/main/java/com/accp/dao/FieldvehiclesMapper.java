@@ -35,4 +35,7 @@ public interface FieldvehiclesMapper {
     //ÐÞ¸Ä³µÁ¾
     public int updateFiel(@Param("ff")Fieldvehicles ff);
     
+    //É¾³ý³µÁ¾
+    public int deleteFiel(@Param("id")int id);
+    
 }

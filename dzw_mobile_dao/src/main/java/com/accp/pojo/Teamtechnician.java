@@ -3,39 +3,39 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Teamtechnician {
-    private Integer technicianno;
+    private Integer technicianno;//技工编号
 
-    private String tename;
+    private String tename;//班组名称
 
-    private Integer teamid;
+    private Integer teamid;//班组编号
 
-    private Integer meid;
+    private Integer meid;//技工编码
 
-    private String mename;
+    private String mename;//技工姓名
 
-    private String mesex;
+    private String mesex;//性别
 
-    private String mephone;
+    private String mephone;//手机
 
-    private String meaddress;
+    private String meaddress;//地址
 
-    private Date mebirthday;
+    private Date mebirthday;//出生日期
 
-    private Integer groupleader;
+    private Integer groupleader;//组长
 
-    private String menumber;
+    private String menumber;//身份证号
 
-    private String accountaddress;
+    private String accountaddress;//户口地址
 
-    private String openbank;
+    private String openbank;//开户银行
 
-    private String bankaccount;
+    private String bankaccount;//银行账号
 
-    private String starrating;
+    private String starrating;//星级
 
-    private String repairwork;
+    private String repairwork;//维修工种
 
-    private String repairbrand;
+    private String repairbrand;//维修品牌
 
     public Integer getTechnicianno() {
         return technicianno;

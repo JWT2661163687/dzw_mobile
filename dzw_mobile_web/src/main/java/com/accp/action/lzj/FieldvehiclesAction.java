@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -64,6 +65,18 @@ public class FieldvehiclesAction {
 		System.out.println(ff.getId());
 		Map<String, String> message = new HashMap<String, String>();
 		biz.updateFiel(ff);
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
+	
+	/**
+	 * 删除技工
+	 */
+	@DeleteMapping("fiels/{id}")
+	public Map<String, String> deleteFiel(@PathVariable int id) {
+		Map<String, String> message = new HashMap<String, String>();
+		biz.deleteFiel(id);
 		message.put("code", "200");
 		message.put("msg", "ok");
 		return message;
