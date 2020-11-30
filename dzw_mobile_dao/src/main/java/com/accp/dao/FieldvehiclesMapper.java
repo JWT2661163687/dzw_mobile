@@ -2,6 +2,7 @@ package com.accp.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.accp.pojo.Fieldvehicles;
@@ -27,5 +28,11 @@ public interface FieldvehiclesMapper {
     //查询班组
     @Select("select * from team")
     public List<Team> queryTeam();
+    
+    //新增车辆
+    public int insertFiel(@Param("fiel")Fieldvehicles fiel);
+    
+    //修改车辆
+    public int updateFiel(@Param("ff")Fieldvehicles ff);
     
 }
