@@ -1,4 +1,4 @@
-package com.accp.test.kwt;
+package com.accp.test.pjw;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.accp.biz.pjw.WeixiuBiz;
 import com.accp.pojo.Weixiu;
+import com.github.pagehelper.PageInfo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-ctx.xml"})
@@ -20,7 +21,8 @@ public class WeixiuTest {
 		 */
 		@Test
 		public void selectid() {
-			weixiubiz.selectcid(1, 2, 1);
+			PageInfo<Weixiu> page=weixiubiz.selectcid(1, 1, 1,"1001");
+			System.out.println("分页"+page.getList().get(0).getXmleixing());
 		}
 		
 		/*

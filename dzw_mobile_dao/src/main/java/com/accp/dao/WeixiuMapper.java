@@ -23,7 +23,7 @@ public interface WeixiuMapper {
 	 * 	    @param cid	 
 	 * 		@return
 	 */
-    List<Weixiu> selectcid(@Param("cid") Integer cid);
+    List<Weixiu> selectcid(@Param("cid") Integer cid,@Param("sousuo") String sousuo);
     
    /*
     * 	ĞÂÔö

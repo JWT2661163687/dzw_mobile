@@ -62,7 +62,11 @@ public class MechanicstarAction {
 	 * 删除技工
 	 */
 	@DeleteMapping("mechs/{meid}")
-	public int deleteMechan(@PathVariable String meid) {
-		return biz.deleteMechan(meid);
+	public Map<String, String> deleteMechan(@PathVariable String meid) {
+		Map<String, String> message = new HashMap<String, String>();
+		biz.deleteMechan(meid);
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
 	}
 }

@@ -161,4 +161,35 @@
       purchaseDate = #{purchasedate,jdbcType=TIMESTAMP}
     where vId = #{vid,jdbcType=INTEGER}
   </update>
+  <!-- 根据条件查询车辆信息 -->
+  <select id="queryVehicle" resultType="com.accp.pojo.Vehicle">
+  		SELECT * FROM `vehicle`
+  		<where>
+  			<if test="vid!=0">
+  				and vId = #{vid}
+  			</if>
+  		</where>
+  </select>
+  
+  <!-- 根据品牌编号或者品牌名称查询品牌信息  -->
+  <select id="queryMake" resultType="com.accp.pojo.Make">
+  		SELECT * FROM make
+  		<where>
+  			<if test="id!='null'">
+  				makeid = #{id} or makename = #{id}
+  			</if>
+  		</where>
+  </select>
+  <!-- 根据车型编号或者车型名称查询车辆信息 -->
+  <select id="queryMotorcycle" resultType="com.accp.pojo.Motorcycle">
+  		SELECT * FROM motorcycle
+  		<where>
+  			<if test="id!='null'">
+  				(makeid = #{makeid} AND motorcycleid = #{id}) OR (makeid = #{makeid} AND motorcyclename = #{id})
+  			</if>
+  			<if test="id=='null'">
+  				and makeid = #{makeid}
+  			</if>
+  		</where>
+  </select>
 </mapper>
