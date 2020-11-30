@@ -54,10 +54,10 @@ public class MaintaincarAuction {
      * @param maintainid
      * @return
      */
-	@GetMapping("/maintaincarupdate/{maintainid}")
-    public Map<String, String> updateMaintaincarreceipts(@PathVariable Integer maintainid) {
+	@GetMapping("/maintaincarupdate/{maintainid}/{zhuangtai}")
+    public Map<String, String> updateMaintaincarreceipts(@PathVariable Integer maintainid,@PathVariable Integer zhuangtai) {
     	Map<String, String> map=new HashMap<String, String>();
-    	if(maintaincarBiz.updateMaintaincarreceipts(maintainid)>0) {
+    	if(maintaincarBiz.updateMaintaincarreceipts(maintainid,zhuangtai)>0) {
     		map.put("code", "200");
     	}else {
     		map.put("code", "400");

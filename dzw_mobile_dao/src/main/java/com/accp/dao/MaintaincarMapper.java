@@ -40,13 +40,29 @@ public interface MaintaincarMapper {
      * @param maintainid
      * @return
      */
-    @Update("update maintaincar set receiptsid=2 where maintainid=#{maintainid}")
-    int updateMaintaincarreceipts(@Param("maintainid")Integer maintainid);
+    @Update("update maintaincar set receiptsid=#{zhuangtai},accomplishdate=NOW() where maintainid=#{maintainid}")
+    int updateMaintaincarreceipts(@Param("maintainid")Integer maintainid,@Param("zhuangtai")Integer zhuangtai);
     /**
      * 查询维修状态完成
      * @return
      */
     @Select("SELECT * FROM `maintaincar` WHERE `receiptsid`=2")
     List<Maintaincar> selectAllReceiptsidload();
+    /**
+     * 修改维修次数
+     * @param maintainling
+     * @param maintainid
+     * @return
+     */
+    @Update("update maintaincar set maintainling=#{maintainling},receiptsid=1 where maintainid=#{maintainid}")
+    int updateMain(@Param("maintainling")Integer maintainling,@Param("maintainid")Integer maintainid);
+    /**
+     * 是否返工状态
+     * @param licence
+     * @return
+     */
+    @Select("select * from `maintaincar` where licence=#{licence} and `receiptsid`=4")
+    Maintaincar selectzhuangtai(@Param("licence")String licence);
+    
     
 }

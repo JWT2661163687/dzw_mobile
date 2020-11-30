@@ -70,6 +70,15 @@
       <if test="completiontype != null" >
         completiontype,
       </if>
+      <if test="mainid != null" >
+        mainid,
+      </if>
+      <if test="completiontype != null" >
+        compdate,
+      </if>
+      <if test="maintainling != null" >
+        maintainling,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="completionid != null" >
@@ -102,36 +111,43 @@
       <if test="completiontype != null" >
         #{completiontype,jdbcType=INTEGER},
       </if>
+      <if test="mainid != null" >
+       #{mainid,jdbcType=INTEGER},
+      </if>
+      <if test="completiontype != null" >
+        #{compdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainling != null" >
+      #{maintainling,jdbcType=INTEGER},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Completed" >
     update completed
     <set >
-      <if test="completiondate != null" >
-        completiondate = #{completiondate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="completiontdate != null" >
+      
+      <if test="completiontdate != null and completiontdate != '' " >
         completiontdate = #{completiontdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="inspector != null" >
+      <if test="inspector != null and inspector != '' " >
         inspector = #{inspector,jdbcType=VARCHAR},
       </if>
-      <if test="penalty != null" >
+      <if test="penalty != null and penalty != 0.0 " >
         penalty = #{penalty,jdbcType=DOUBLE},
       </if>
-      <if test="rework != null" >
+      <if test="rework != null and rework != '' " >
         rework = #{rework,jdbcType=VARCHAR},
       </if>
-      <if test="personid != null" >
+      <if test="personid != null and personid != 0 " >
         personid = #{personid,jdbcType=INTEGER},
       </if>
-      <if test="personname != null" >
+      <if test="personname != null and personname != '' " >
         personname = #{personname,jdbcType=VARCHAR},
       </if>
-      <if test="delaytext != null" >
+      <if test="delaytext != null and delaytext != '' " >
         delaytext = #{delaytext,jdbcType=VARCHAR},
       </if>
-      <if test="completiontype != null" >
+      <if test="completiontype != null and completiontype != 0 " >
         completiontype = #{completiontype,jdbcType=INTEGER},
       </if>
     </set>

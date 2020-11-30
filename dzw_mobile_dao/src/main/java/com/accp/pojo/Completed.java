@@ -22,8 +22,36 @@ public class Completed {
     private String delaytext;//吴工原因
 
     private Integer completiontype;//竣工类型0/1
+    
+    private Integer mainid;//维修表id
+    private String compdate;//创建时间
+    private Integer maintainling;//维修次数
 
-    public Integer getCompletionid() {
+    public Integer getMaintainling() {
+		return maintainling;
+	}
+
+	public void setMaintainling(Integer maintainling) {
+		this.maintainling = maintainling;
+	}
+
+	public Integer getMainid() {
+		return mainid;
+	}
+
+	public void setMainid(Integer mainid) {
+		this.mainid = mainid;
+	}
+
+	public String getCompdate() {
+		return compdate;
+	}
+
+	public void setCompdate(String compdate) {
+		this.compdate = compdate;
+	}
+
+	public Integer getCompletionid() {
         return completionid;
     }
 

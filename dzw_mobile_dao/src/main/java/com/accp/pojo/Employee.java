@@ -44,8 +44,19 @@ public class Employee {
     private Date entrytimes;
 
     private Date lztimes;
+    
+    
+    private Post post=new Post();//½ÇÉ«±í
 
-    private Date brithtimes;
+    public Post getPost() {
+		return post;
+	}
+
+	public void setPost(Post post) {
+		this.post = post;
+	}
+
+	private Date brithtimes;
 
     public Integer getEmployeeid() {
         return employeeid;

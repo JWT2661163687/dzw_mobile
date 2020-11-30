@@ -12,10 +12,12 @@ import com.accp.dao.CompletedMapper;
 import com.accp.dao.MaintaincarMapper;
 import com.accp.dao.MaintaincarxiangmuMapper;
 import com.accp.dao.MaintainreceiptsMapper;
+import com.accp.dao.TeamtechniciantwoMapper;
 import com.accp.pojo.Completed;
 import com.accp.pojo.Maintaincar;
 import com.accp.pojo.Maintaincarxiangmu;
 import com.accp.pojo.Maintainreceipts;
+import com.accp.pojo.Teamtechniciantwo;
 @Service
 public class MaintaincarBiz {
 	@Autowired
@@ -26,6 +28,8 @@ public class MaintaincarBiz {
 	private CompletedMapper completedMapper;
 	@Autowired 
 	private MaintainreceiptsMapper maintainreceiptsMapper;
+	@Autowired
+	private TeamtechniciantwoMapper teamtechniciantwoMapper;
 	
 	 /**
      * 状态查询维修接车表
@@ -45,6 +49,17 @@ public class MaintaincarBiz {
     public int insertSelective(Maintaincar record) {
     	//新增主表
     	int co= maintaincarMapper.insertSelective(record);
+    	for (Teamtechniciantwo item : record.getTeamtechniciantwos()) {
+    		
+    		item.setMaintainling(record.getMaintainling());
+    		item.setTeamid(null);
+    		co=teamtechniciantwoMapper.insertSelective(item);
+		}
+    	for (Maintaincarxiangmu item : record.getMaintaincarxiangmus()) {
+    		item.setMaintainling(record.getMaintainling());
+    		item.setXmid(null);
+    		co=maintaincarxiangmuMapper.insertSelective(item);
+		}
     	//新增循环从表
     	return co;
     }
@@ -65,8 +80,8 @@ public class MaintaincarBiz {
      * @param maintainid
      * @return
      */
-    public int updateMaintaincarreceipts(Integer maintainid) {
-    	return maintaincarMapper.updateMaintaincarreceipts(maintainid);
+    public int updateMaintaincarreceipts(Integer maintainid,Integer zhuangtai) {
+    	return maintaincarMapper.updateMaintaincarreceipts(maintainid,zhuangtai);
     }
     
 	

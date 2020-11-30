@@ -1,5 +1,7 @@
 package com.accp.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.accp.pojo.Employee;
 
 public interface EmployeeMapper {
@@ -14,4 +16,13 @@ public interface EmployeeMapper {
     int updateByPrimaryKeySelective(Employee record);
 
     int updateByPrimaryKey(Employee record);
+    /**
+     * µÇÂ¼
+     * @param username
+     * @param password
+     * @return
+     */
+    Employee selectlogin(@Param("username")String username,@Param("password")String password);
+    
+    
 }
