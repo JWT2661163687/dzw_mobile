@@ -3,7 +3,13 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Postmiddle {
-    private Integer pid;
+    @Override
+	public String toString() {
+		return "Postmiddle [pid=" + pid + ", rid=" + rid + ", fid=" + fid + ", creatdate=" + creatdate + ", createby="
+				+ createby + "]";
+	}
+
+	private Integer pid;
 
     private Integer rid;
 

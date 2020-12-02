@@ -39,7 +39,15 @@
 	</mvc:annotation-driven>
 	<mvc:default-servlet-handler />
 	
-	
+	<!-- 权限拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/api/**" />
+			<mvc:exclude-mapping path="/api/loginjurisdictions/employee/**" />
+			<mvc:exclude-mapping path="/api/loginjurisdictions/loginOut" />
+			<bean class="com.accp.interceptor.SessionValidateInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 
 	
