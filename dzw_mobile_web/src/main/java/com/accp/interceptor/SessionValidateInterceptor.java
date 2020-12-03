@@ -17,7 +17,9 @@ public class SessionValidateInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
+		
 		Employee employee = (Employee) request.getSession().getAttribute("employee");
+		System.out.println("sesstin值："+employee);
 		// 登陆认证
 		if (employee == null) {
 			// 跨域设置

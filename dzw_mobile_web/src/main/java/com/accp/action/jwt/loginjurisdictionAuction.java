@@ -143,9 +143,9 @@ public class loginjurisdictionAuction {
      * @return
      */
 	@PostMapping("/loginjurisdiction/postmidd")
-    public Map<String, Object> insertSelective(@RequestBody Postmiddle[] postmiddles,HttpSession session) {
+    public Map<String, Object> insertSelective(@RequestBody Postmiddle[] postmiddles) {
 		Map<String, Object> map=new HashMap<String, Object>();
-		Employee employee=(Employee) session.getAttribute("employee");
+		
 		int aas=0;
     	aas=loginjurisdictionBiz.deletepostmiddrid(postmiddles[0].getRid());
     	for (Postmiddle item : postmiddles) {
