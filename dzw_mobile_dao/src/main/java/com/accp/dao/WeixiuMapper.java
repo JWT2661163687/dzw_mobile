@@ -19,48 +19,54 @@ public interface WeixiuMapper {
     int updateByPrimaryKeySelective(Weixiu record);
 
     int updateByPrimaryKey(Weixiu record);
-    
-    /* 		°´Î¬ÐÞcid ²éÑ¯ Î¬ÐÞÏîÄ¿ÐÅÏ¢
-	 * 	    @param cid	 
-	 * 		@return
-	 */
-    List<Weixiu> selectcid(@Param("cid") Integer cid,@Param("sousuo") String sousuo);
-    
-   /*
-    * 	ÐÂÔö
-    * 	@param  weixiu
-    */
-   int insertweixiu(@Param("weixiu") Weixiu weixiu);
-   
-   /*
-    * 	ÐÞ¸Ä
-    * 	@param  xiugai
-    */
-   int updateweixiu(@Param("xiugai") Weixiu xiugai);
-   
-   /*
-    * 	É¾³ý
-    */ 
-   int deleteweixiu(@Param("xmid") Integer xmid);
-   /**
-    * ¸ù¾Ý·¢¶¯»úid²éÑ¯
-    * @param fid
-    * @return
-    */
-   @Select("SELECT * FROM `weixiu` WHERE `Fid`=#{fid}")
-   List<Weixiu> selectFid(@Param("fid")Integer fid);
-   /**
-    * ¸ù¾Ý³µÐÍ²éÑ¯
-    * @param cid
-    * @return
-    */
-   @Select("select * from `weixiu` where `cid`=#{cid}")
-   List<Weixiu> selectCid(@Param("cid")Integer cid);
-   /**
-    * ²éÑ¯ÆäËûÏîÄ¿
-    * @return
-    */
-   @Select("SELECT * FROM `weixiu` WHERE `cid` IS NULL AND `Fid` IS NULL")
-   List<Weixiu> selectNull();
-   
+
+    /* 		ï¿½ï¿½Î¬ï¿½ï¿½cid ï¿½ï¿½Ñ¯ Î¬ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ï¢
+     * 	    @param cid
+     * 		@return
+     */
+    List<Weixiu> selectcid(@Param("cid") Integer cid, @Param("sousuo") String sousuo);
+
+    /*
+     * 	ï¿½ï¿½ï¿½ï¿½
+     * 	@param  weixiu
+     */
+    int insertweixiu(@Param("weixiu") Weixiu weixiu);
+
+    /*
+     * 	ï¿½Þ¸ï¿½
+     * 	@param  xiugai
+     */
+    int updateweixiu(@Param("xiugai") Weixiu xiugai);
+
+    /*
+     * 	É¾ï¿½ï¿½
+     */
+    int deleteweixiu(@Param("xmid") Integer xmid);
+
+    /**
+     * ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½Ñ¯
+     *
+     * @param fid
+     * @return
+     */
+    @Select("SELECT * FROM `weixiu` WHERE `Fid`=#{fid}")
+    List<Weixiu> selectFid(@Param("fid") Integer fid);
+
+    /**
+     * ï¿½ï¿½ï¿½Ý³ï¿½ï¿½Í²ï¿½Ñ¯
+     *
+     * @param cid
+     * @return
+     */
+    @Select("select * from `weixiu` where `cid`=#{cid}")
+    List<Weixiu> selectCid(@Param("cid") Integer cid);
+
+    /**
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+     *
+     * @return
+     */
+    @Select("SELECT * FROM `weixiu` WHERE `cid` IS NULL AND `Fid` IS NULL")
+    List<Weixiu> selectNull();
+
 }

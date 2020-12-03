@@ -1,31 +1,44 @@
 package com.accp.pojo;
 
 public class Motorcycle {
-    private Integer motorcycleid;      //³µĞÍ¶¨Òåid
+    private Integer motorcycleid;      //é”Ÿæ–¤æ‹·é”Ÿé…µè®¹æ‹·é”Ÿæ–¤æ‹·id
 
-    private Integer engineid;          //·¢¶¯»úÆ·ÅÆ±àºÅ
+    private Integer engineid;          //é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·å“é”Ÿç‹¡æ†‹æ‹·é”Ÿï¿½
 
-    private Integer productionid;      //²úµØid
+    private Integer productionid;      //é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·id
 
-    private Integer makeid;            //Æû³µÆ·ÅÆid
+    private Integer makeid;            //é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·å“é”Ÿæ–¤æ‹·id
 
-    private String motorcyclename;     //³µĞÍÃû³Æ
+    private String motorcyclename;     //é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 
-    private String makename;           //Æ·ÅÆÃû³Æ
+    private String makename;           //å“é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 
-    private String productionname;     //²úµØÃû³Æ
+    private String productionname;     //é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 
-    private Double price;              //²Î¿¼¼Û¸ñ
+    private Double price;              //é”Ÿè½¿åŒ¡æ‹·é”Ÿæ¡”é©æ‹·
 
-    private Double yearprice;          //³µÁ¾Äê¿î
+    private Double yearprice;          //é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿï¿½
 
-    private Double power;              //¹¦ÂÊ
+    private Double power;              //é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 
-    private Integer fuellabel;         //È¼ÓÍ±êºÅ
+    private Integer fuellabel;         //ç‡ƒé”Ÿé…µæ†‹æ‹·é”Ÿï¿½
 
-    private Double load;               //ÔØÖØ
 
-    public Integer getMotorcycleid() {
+    private Double load;               //è½½é‡
+    
+    private String enginename;         //å‘åŠ¨æœºå“ç‰Œåç§°
+
+    
+    
+    public String getEnginename() {
+		return enginename;
+	}
+
+	public void setEnginename(String enginename) {
+		this.enginename = enginename;
+	}
+
+	public Integer getMotorcycleid() {
         return motorcycleid;
     }
 
@@ -121,17 +134,40 @@ public class Motorcycle {
         this.load = load;
     }
 
-	@Override
-	public String toString() {
-		return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
-				+ ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
-				+ ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
-				+ power + ", fuellabel=" + fuellabel + ", load=" + load + "]";
-	}
+    @Override
+    public String toString() {
+        return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
+                + ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
+                + ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
+                + power + ", fuellabel=" + fuellabel + ", load=" + load + "]";
+    }
+
+    public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
+                      String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
+                      Integer fuellabel, Double load) {
+        super();
+        this.motorcycleid = motorcycleid;
+        this.engineid = engineid;
+        this.productionid = productionid;
+        this.makeid = makeid;
+        this.motorcyclename = motorcyclename;
+        this.makename = makename;
+        this.productionname = productionname;
+        this.price = price;
+        this.yearprice = yearprice;
+        this.power = power;
+        this.fuellabel = fuellabel;
+        this.load = load;
+    }
+
+    public Motorcycle() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
 			String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
-			Integer fuellabel, Double load) {
+			Integer fuellabel, Double load, String enginename) {
 		super();
 		this.motorcycleid = motorcycleid;
 		this.engineid = engineid;
@@ -145,11 +181,6 @@ public class Motorcycle {
 		this.power = power;
 		this.fuellabel = fuellabel;
 		this.load = load;
+		this.enginename = enginename;
 	}
-
-	public Motorcycle() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-    
 }

@@ -26,85 +26,85 @@ import com.accp.pojo.Vehicle;
 @RequestMapping("api/vehicles")
 public class VehicleAction {
 
-	@Autowired
-	private VehicleBiz biz;
-	
-	/**
+    @Autowired
+    private VehicleBiz biz;
+
+    /**
      * 根据条件查询车辆信息
      */
-	@GetMapping("{vid}")
-    public List<Vehicle> queryVehicle(@PathVariable Integer vid){
-    	return biz.queryVehicle(vid);
+    @GetMapping("{vid}")
+    public List<Vehicle> queryVehicle(@PathVariable Integer vid) {
+        return biz.queryVehicle(vid);
     }
-    
+
     /**
      * 双击车辆信息显示对应的用户信息
      */
-	@GetMapping("client/{cid}")
-    public List<Client> queryClient(@PathVariable Integer cid){
-    	return biz.queryClient(cid);
+    @GetMapping("client/{cid}")
+    public List<Client> queryClient(@PathVariable Integer cid) {
+        return biz.queryClient(cid);
     }
-    
+
     /**
      * 新增车辆信息
      */
-	@PostMapping("vehicle")
+    @PostMapping("vehicle")
     public Map<String, String> insertVehicle(@RequestBody Vehicle vehicle) {
-		int count = biz.insertVehicle(vehicle);
-		Map<String, String> map = new HashMap<String, String>();
-		if(count>0) {
-			map.put("code", "200");
-		}
-    	return map;
+        int count = biz.insertVehicle(vehicle);
+        Map<String, String> map = new HashMap<String, String>();
+        if (count > 0) {
+            map.put("code", "200");
+        }
+        return map;
     }
-    
+
     /**
      * 修改车辆信息
      */
-	@PutMapping("vehicle")
+    @PutMapping("vehicle")
     public Map<String, String> updateVehicle(@RequestBody Vehicle vehicle) {
-		int count = biz.updateVehicle(vehicle);
-		Map<String, String> map = new HashMap<String, String>();
-		if(count>0) {
-			map.put("code", "200");
-		}
-    	return map;
+        int count = biz.updateVehicle(vehicle);
+        Map<String, String> map = new HashMap<String, String>();
+        if (count > 0) {
+            map.put("code", "200");
+        }
+        return map;
     }
-    
+
     /**
      * 删除车辆信息
      */
-	@DeleteMapping("vehicle/{vid}")
+    @DeleteMapping("vehicle/{vid}")
     public Map<String, String> deleteVehicle(@PathVariable Integer vid) {
-		int count = biz.deleteVehicle(vid);
-		Map<String, String> map = new HashMap<String, String>();
-		if(count>0) {
-			map.put("code", "200");
-		}
-    	return map;
+        int count = biz.deleteVehicle(vid);
+        Map<String, String> map = new HashMap<String, String>();
+        if (count > 0) {
+            map.put("code", "200");
+        }
+        return map;
     }
-	
-	/**
-     *	 根据品牌编号或者品牌名称查询品牌信息
-     */
-	@GetMapping("make/{id}")
-    public List<Make> queryMake(@PathVariable String id){
-    	return biz.queryMake(id);
-    }
-    
+
     /**
-     * 	根据车型编号或者车型名称查询车辆信息
+     * 根据品牌编号或者品牌名称查询品牌信息
      */
-	@GetMapping("moto/{makeid}/{id}")
-    public List<Motorcycle> queryMotorcycle(@PathVariable Integer makeid,@PathVariable String id){
-    	return biz.queryMotorcycle(makeid,id);
+    @GetMapping("make/{id}")
+    public List<Make> queryMake(@PathVariable String id) {
+        return biz.queryMake(id);
     }
-    
+
     /**
-     * 	点击品牌的时候查询对应的车型
+     * 根据车型编号或者车型名称查询车辆信息
      */
-	@GetMapping("moto1/{id}")
-    public List<Motorcycle> queryMotorcycle1(@PathVariable("id")Integer id){
-    	return biz.queryMotorcycle1(id);
+    @GetMapping("moto/{makeid}/{id}")
+    public List<Motorcycle> queryMotorcycle(@PathVariable Integer makeid, @PathVariable String id) {
+        return biz.queryMotorcycle(makeid, id);
+    }
+
+    /**
+     * 点击品牌的时候查询对应的车型
+     */
+    @GetMapping("moto1/{id}")
+    public List<Motorcycle> queryMotorcycle1(@PathVariable("id") Integer id) {
+        return biz.queryMotorcycle1(id);
     }
 }

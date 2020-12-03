@@ -6,101 +6,106 @@ import java.util.List;
 import com.accp.dao.TeamtechniciantwoMapper;
 
 public class Maintaincar {
-    private Integer maintainid;//Î¬ĞŞid
+    private Integer maintainid;//ç»´é”Ÿæ–¤æ‹·id
 
-    private Integer receiptsid;//Î¬ĞŞ×´Ì¬id
+    private Integer receiptsid;//ç»´é”Ÿæ–¤æ‹·çŠ¶æ€id
 
-    private Integer teamid;//°à×é±àºÅ
+    private Integer teamid;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 
     private Integer id;//id
 
-    private String departdate;//¿ªµ¥³ö·¢Ê±¼ä
+    private String departdate;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·æ—¶é”Ÿæ–¤æ‹·
 
-    private String departaddress;//³ö·¢µØÖ·
+    private String departaddress;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·å€
 
-    private String constructiondate;//Ê©¹¤Ê±¼ä
+    private String constructiondate;//æ–½é”Ÿæ–¤æ‹·æ—¶é”Ÿæ–¤æ‹·
 
-    private String rescuevehicleaddress;//¾ÈÔ®Ê±¼ä
+    private String rescuevehicleaddress;//é”Ÿæ–¤æ‹·æ´æ—¶é”Ÿæ–¤æ‹·
 
-    private String accomplishdate;//Íê³ÉÊ±¼ä
+    private String accomplishdate;//é”Ÿæ–¤æ‹·é”Ÿç»æ†‹æ‹·é”Ÿï¿½
 
-    private Integer maintainvehicleid;//Î¬ĞŞ³µÁ¾id
+    private Integer maintainvehicleid;//ç»´é”Ÿç«ç­¹æ‹·é”Ÿæ–¤æ‹·id
 
-    private Integer inside;//Õ¾ÄÚÕ¾Íâ0/1
+    private Integer inside;//ç«™é”Ÿæ–¤æ‹·ç«™é”Ÿæ–¤æ‹·0/1
 
-    private Integer mileage;//×ÜÀï³Ì
+    private Integer mileage;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿï¿½
 
-    private Integer counselorid;//·şÎñ¹ËÎÊid
+    private Integer counselorid;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿçµ d
 
-    private String beizhu;//Î¬ĞŞ±¸×¢
+    private String beizhu;//ç»´é”Ÿç«æ†‹æ‹·æ³¨
 
-    private Double maintainmoney;//Î¬ĞŞ½ğ¶î
+    private Double maintainmoney;//ç»´é”Ÿç«æ–¤æ‹·é”Ÿï¿½
 
-    private String drivername;//¼İÊ»Ô±
+    private String drivername;//é”Ÿæ–¤æ‹·é©¶å‘˜
 
-    private String maintainphone;//ÁªÏµµç»°
+    private String maintainphone;//é”Ÿæ–¤æ‹·ç³»é”Ÿç•Œè¯
 
-    private String licence;//³µÅÆºÅ
+    private String licence;//é”Ÿæ–¤æ‹·é”Ÿç‹¡çŒ´æ‹·
 
-    private String vehiclebrand;//³µÁ¾Æ·ÅÆ
+    private String vehiclebrand;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·å“é”Ÿæ–¤æ‹·
 
-    private String vehiclemodel;//³µÁ¾ĞÍºÅ
+    private String vehiclemodel;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿé…µçŒ´æ‹·
 
-    private Integer clearingfrom;//½áËã·½Ê½0/1
+    private Integer clearingfrom;//é”Ÿæ–¤æ‹·é”Ÿå§æ–¹å¼0/1
 
-    private String enginename;//·¢¶¯»úÆ·ÅÆ
+    private String enginename;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·å“é”Ÿæ–¤æ‹·
 
-    private String vin;//³µ¼ÜºÅ
+    private String vin;//é”Ÿæ–¤æ‹·é”Ÿæ°çŒ´æ‹·
 
-    private String enginehao;//·¢¶¯»úºÅ
+    private String enginehao;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 
-    private String carownername;//³µÖ÷Ãû
+    private String carownername;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 
-    private Integer carid;//³µÖ÷¿Í»§±àºÅ
+    private Integer carid;//é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿé…µä¼™æ‹·é”Ÿæ–¤æ‹·é”Ÿï¿½
 
-    private String maintaindate;//µ¥¾İÊ±¼ä
-    private Integer maintainling;//Î¬ĞŞ´ÎÊı
+    private String maintaindate;//å•æ®æ—¶é—´
     
+    private String receiptsname;	//è®¢å•çŠ¶æ€
+    
+    private String tename;			//ç­ç»„å
+    
+    public List<Weixiu> weixius=new ArrayList<Weixiu>();//ç»´ä¿®é¡¹ç›®é›†åˆ
+
+    private Integer maintainling;//ç»´é”Ÿç«è¾¾æ‹·é”Ÿæ–¤æ‹·
+
     public Integer getMaintainling() {
-		return maintainling;
-	}
+        return maintainling;
+    }
 
-	public void setMaintainling(Integer maintainling) {
-		this.maintainling = maintainling;
-	}
+    public void setMaintainling(Integer maintainling) {
+        this.maintainling = maintainling;
+    }
 
-	public List<Weixiu> weixius=new ArrayList<Weixiu>();//Î¬ĞŞÏîÄ¿¼¯ºÏ
-    
-    public List<Maintaincarxiangmu> maintaincarxiangmus=new ArrayList<Maintaincarxiangmu>();//Î¬ĞŞÏîÄ¿¼¯ºÏ
-    public List<Teamtechniciantwo> teamtechniciantwos=new ArrayList<Teamtechniciantwo>();//Î¬ĞŞ¼¼¹¤¼¯ºÏ
+
+    public List<Maintaincarxiangmu> maintaincarxiangmus = new ArrayList<Maintaincarxiangmu>();//ç»´é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·ç›®é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
+    public List<Teamtechniciantwo> teamtechniciantwos = new ArrayList<Teamtechniciantwo>();//ç»´é”Ÿç«ç¡·æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 
     public List<Teamtechniciantwo> getTeamtechniciantwos() {
-		return teamtechniciantwos;
-	}
+        return teamtechniciantwos;
+    }
 
-	public void setTeamtechniciantwos(List<Teamtechniciantwo> teamtechniciantwos) {
-		this.teamtechniciantwos = teamtechniciantwos;
-	}
+    public void setTeamtechniciantwos(List<Teamtechniciantwo> teamtechniciantwos) {
+        this.teamtechniciantwos = teamtechniciantwos;
+    }
 
-	public List<Maintaincarxiangmu> getMaintaincarxiangmus() {
-		return maintaincarxiangmus;
-	}
+    public List<Maintaincarxiangmu> getMaintaincarxiangmus() {
+        return maintaincarxiangmus;
+    }
 
-	public void setMaintaincarxiangmus(List<Maintaincarxiangmu> maintaincarxiangmus) {
-		this.maintaincarxiangmus = maintaincarxiangmus;
-	}
+    public void setMaintaincarxiangmus(List<Maintaincarxiangmu> maintaincarxiangmus) {
+        this.maintaincarxiangmus = maintaincarxiangmus;
+    }
 
-	
 
-	public List<Weixiu> getWeixius() {
-		return weixius;
-	}
+    public List<Weixiu> getWeixius() {
+        return weixius;
+    }
 
-	public void setWeixius(List<Weixiu> weixius) {
-		this.weixius = weixius;
-	}
+    public void setWeixius(List<Weixiu> weixius) {
+        this.weixius = weixius;
+    }
 
-	public Integer getMaintainid() {
+    public Integer getMaintainid() {
         return maintainid;
     }
 
@@ -133,7 +138,6 @@ public class Maintaincar {
     }
 
 
-
     public String getDepartaddress() {
         return departaddress;
     }
@@ -143,7 +147,6 @@ public class Maintaincar {
     }
 
 
-
     public String getRescuevehicleaddress() {
         return rescuevehicleaddress;
     }
@@ -151,7 +154,6 @@ public class Maintaincar {
     public void setRescuevehicleaddress(String rescuevehicleaddress) {
         this.rescuevehicleaddress = rescuevehicleaddress == null ? null : rescuevehicleaddress.trim();
     }
-
 
 
     public Integer getMaintainvehicleid() {
@@ -290,36 +292,53 @@ public class Maintaincar {
         this.carid = carid;
     }
 
-	public String getDepartdate() {
-		return departdate;
+    public String getDepartdate() {
+        return departdate;
+    }
+
+    public void setDepartdate(String departdate) {
+        this.departdate = departdate;
+    }
+
+    public String getConstructiondate() {
+        return constructiondate;
+    }
+
+    public void setConstructiondate(String constructiondate) {
+        this.constructiondate = constructiondate;
+    }
+
+    public String getAccomplishdate() {
+        return accomplishdate;
+    }
+
+    public void setAccomplishdate(String accomplishdate) {
+        this.accomplishdate = accomplishdate;
+    }
+
+    public String getMaintaindate() {
+        return maintaindate;
+    }
+
+    public void setMaintaindate(String maintaindate) {
+        this.maintaindate = maintaindate;
+    }
+
+	
+	public String getReceiptsname() {
+		return receiptsname;
 	}
 
-	public void setDepartdate(String departdate) {
-		this.departdate = departdate;
+	public void setReceiptsname(String receiptsname) {
+		this.receiptsname = receiptsname;
 	}
 
-	public String getConstructiondate() {
-		return constructiondate;
+	public String getTename() {
+		return tename;
 	}
 
-	public void setConstructiondate(String constructiondate) {
-		this.constructiondate = constructiondate;
-	}
-
-	public String getAccomplishdate() {
-		return accomplishdate;
-	}
-
-	public void setAccomplishdate(String accomplishdate) {
-		this.accomplishdate = accomplishdate;
-	}
-
-	public String getMaintaindate() {
-		return maintaindate;
-	}
-
-	public void setMaintaindate(String maintaindate) {
-		this.maintaindate = maintaindate;
+	public void setTename(String tename) {
+		this.tename = tename;
 	}
 
 	@Override
@@ -334,6 +353,4 @@ public class Maintaincar {
 				+ ", enginename=" + enginename + ", vin=" + vin + ", enginehao=" + enginehao + ", carownername="
 				+ carownername + ", carid=" + carid + ", maintaindate=" + maintaindate + "]";
 	}
-
-  
 }

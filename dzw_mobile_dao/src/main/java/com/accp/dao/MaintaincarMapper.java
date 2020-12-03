@@ -7,17 +7,20 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.accp.pojo.Maintaincar;
+
 /**
- * ½Ó³µ±í
- * @author ½¯ÎÄèº
+ * ï¿½Ó³ï¿½ï¿½ï¿½
  *
+ * @author ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public interface MaintaincarMapper {
     int deleteByPrimaryKey(Integer maintainid);
 
     int insert(Maintaincar record);
+
     /**
-     * ÐÂÔö½Ó³µ±í
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½
+     *
      * @param record
      * @return
      */
@@ -28,41 +31,51 @@ public interface MaintaincarMapper {
     int updateByPrimaryKeySelective(Maintaincar record);
 
     int updateByPrimaryKey(Maintaincar record);
+
     /**
-     * ×´Ì¬²éÑ¯Î¬ÐÞ½Ó³µ±í
+     * ×´Ì¬ï¿½ï¿½Ñ¯Î¬ï¿½Þ½Ó³ï¿½ï¿½ï¿½
+     *
      * @param receiptsid
      * @return
      */
     @Select("SELECT * FROM `maintaincar` WHERE `receiptsid`=#{receiptsid} and inside=#{inside}")
-    List<Maintaincar> selectAllReceiptsid(@Param("receiptsid")Integer receiptsid,@Param("inside")Integer inside);
+    List<Maintaincar> selectAllReceiptsid(@Param("receiptsid") Integer receiptsid, @Param("inside") Integer inside);
+
     /**
-     * ÐÞ¸Ä×´Ì¬
+     * ï¿½Þ¸ï¿½×´Ì¬
+     *
      * @param maintainid
      * @return
      */
     @Update("update maintaincar set receiptsid=#{zhuangtai},accomplishdate=NOW() where maintainid=#{maintainid}")
-    int updateMaintaincarreceipts(@Param("maintainid")Integer maintainid,@Param("zhuangtai")Integer zhuangtai);
+    int updateMaintaincarreceipts(@Param("maintainid") Integer maintainid, @Param("zhuangtai") Integer zhuangtai);
+
     /**
-     * ²éÑ¯Î¬ÐÞ×´Ì¬Íê³É
+     * ï¿½ï¿½Ñ¯Î¬ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½
+     *
      * @return
      */
     @Select("SELECT * FROM `maintaincar` WHERE `receiptsid`=2")
     List<Maintaincar> selectAllReceiptsidload();
+
     /**
-     * ÐÞ¸ÄÎ¬ÐÞ´ÎÊý
+     * ï¿½Þ¸ï¿½Î¬ï¿½Þ´ï¿½ï¿½ï¿½
+     *
      * @param maintainling
      * @param maintainid
      * @return
      */
     @Update("update maintaincar set maintainling=#{maintainling},receiptsid=1 where maintainid=#{maintainid}")
-    int updateMain(@Param("maintainling")Integer maintainling,@Param("maintainid")Integer maintainid);
+    int updateMain(@Param("maintainling") Integer maintainling, @Param("maintainid") Integer maintainid);
+
     /**
-     * ÊÇ·ñ·µ¹¤×´Ì¬
+     * ï¿½Ç·ñ·µ¹ï¿½×´Ì¬
+     *
      * @param licence
      * @return
      */
     @Select("select * from `maintaincar` where licence=#{licence} and `receiptsid`=4")
-    Maintaincar selectzhuangtai(@Param("licence")String licence);
-    
-    
+    Maintaincar selectzhuangtai(@Param("licence") String licence);
+
+
 }

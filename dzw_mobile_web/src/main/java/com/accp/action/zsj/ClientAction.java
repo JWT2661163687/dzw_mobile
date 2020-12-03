@@ -24,65 +24,65 @@ import com.accp.pojo.Vehicle;
 @RequestMapping("api/clients")
 public class ClientAction {
 
-	@Autowired
-	private ClientBiz biz;
-	
-	/**
-     * 	根据条件查询客户
-     */
-	@GetMapping("{cid}")
-    public List<Client> queryClient(@PathVariable Integer cid){
-    	return biz.queryClient(cid);
-    }
-    
+    @Autowired
+    private ClientBiz biz;
+
     /**
-     * 	新增新客户
+     * 根据条件查询客户
      */
-	@PostMapping("client")
+    @GetMapping("{cid}")
+    public List<Client> queryClient(@PathVariable Integer cid) {
+        return biz.queryClient(cid);
+    }
+
+    /**
+     * 新增新客户
+     */
+    @PostMapping("client")
     public Map<String, String> insertClient(@RequestBody Client client) {
-		int count = biz.insertClient(client);
-		Map<String, String> map = new HashMap<String, String>();
-		if(count>0) {
-			map.put("code", "200");
-		}
-    	return map;
+        int count = biz.insertClient(client);
+        Map<String, String> map = new HashMap<String, String>();
+        if (count > 0) {
+            map.put("code", "200");
+        }
+        return map;
     }
-    
+
     /**
-     * 	修改客户信息
+     * 修改客户信息
      */
-	@PutMapping("client")
+    @PutMapping("client")
     public Map<String, String> updateClient(@RequestBody Client client) {
-		int count = biz.updateClient(client);
-		Map<String, String> map = new HashMap<String, String>();
-		if(count>0) {
-			map.put("code", "200");
-		}
-    	return map;
+        int count = biz.updateClient(client);
+        Map<String, String> map = new HashMap<String, String>();
+        if (count > 0) {
+            map.put("code", "200");
+        }
+        return map;
     }
-    
+
     /**
-     * 	删除客户信息
+     * 删除客户信息
      */
-	@DeleteMapping("client/{cid}")
+    @DeleteMapping("client/{cid}")
     public Map<String, String> deleteClient(@PathVariable Integer cid) {
-		int count = biz.deleteClient(cid);
-		Map<String, String> map = new HashMap<String, String>();
-		if(count>0) {
-			map.put("code", "200");
-		}
-    	return map;
+        int count = biz.deleteClient(cid);
+        Map<String, String> map = new HashMap<String, String>();
+        if (count > 0) {
+            map.put("code", "200");
+        }
+        return map;
     }
-    
+
     /**
-     *	 双击客户查询该客户的车辆信息
+     * 双击客户查询该客户的车辆信息
      */
-	@GetMapping("client1/{cid}")
-    public List<Vehicle> queryVehicle(@PathVariable Integer cid){
-		System.out.println("c  "+cid);
-		biz.queryVehicle(cid).forEach(temp->{
-			System.out.println("a "+temp);
-		});
-    	return biz.queryVehicle(cid);
+    @GetMapping("client1/{cid}")
+    public List<Vehicle> queryVehicle(@PathVariable Integer cid) {
+        System.out.println("c  " + cid);
+        biz.queryVehicle(cid).forEach(temp -> {
+            System.out.println("a " + temp);
+        });
+        return biz.queryVehicle(cid);
     }
 }

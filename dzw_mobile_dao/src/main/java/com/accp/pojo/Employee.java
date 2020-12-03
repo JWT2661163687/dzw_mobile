@@ -44,19 +44,19 @@ public class Employee {
     private Date entrytimes;
 
     private Date lztimes;
-    
-    
-    private Post post=new Post();//╫ги╚╠М
+
+
+    private Post post = new Post();//О©╫О©╫и╚О©╫О©╫
 
     public Post getPost() {
-		return post;
-	}
+        return post;
+    }
 
-	public void setPost(Post post) {
-		this.post = post;
-	}
+    public void setPost(Post post) {
+        this.post = post;
+    }
 
-	private Date brithtimes;
+    private Date brithtimes;
 
     @Override
 	public String toString() {

@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.ChexingMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Chexing" >
-    <id column="Cid" property="cid" jdbcType="INTEGER" />
-    <result column="Cleixing" property="cleixing" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    Cid, Cleixing
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from chexing
-    where Cid = #{cid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from chexing
-    where Cid = #{cid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Chexing" >
-    insert into chexing (Cid, Cleixing)
-    values (#{cid,jdbcType=INTEGER}, #{cleixing,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Chexing" >
-    insert into chexing
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="cid != null" >
-        Cid,
-      </if>
-      <if test="cleixing != null" >
-        Cleixing,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="cid != null" >
-        #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="cleixing != null" >
-        #{cleixing,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Chexing" >
-    update chexing
-    <set >
-      <if test="cleixing != null" >
-        Cleixing = #{cleixing,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where Cid = #{cid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Chexing" >
-    update chexing
-    set Cleixing = #{cleixing,jdbcType=VARCHAR}
-    where Cid = #{cid,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.accp.dao.ChexingMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Chexing">
+        <id column="Cid" property="cid" jdbcType="INTEGER"/>
+        <result column="Cleixing" property="cleixing" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        Cid, Cleixing
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from chexing
+        where Cid = #{cid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from chexing
+        where Cid = #{cid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Chexing">
+        insert into chexing (Cid, Cleixing)
+        values (#{cid,jdbcType=INTEGER}, #{cleixing,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Chexing">
+        insert into chexing
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cid != null">
+                Cid,
+            </if>
+            <if test="cleixing != null">
+                Cleixing,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cid != null">
+                #{cid,jdbcType=INTEGER},
+            </if>
+            <if test="cleixing != null">
+                #{cleixing,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Chexing">
+        update chexing
+        <set>
+            <if test="cleixing != null">
+                Cleixing = #{cleixing,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where Cid = #{cid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Chexing">
+        update chexing
+        set Cleixing = #{cleixing,jdbcType=VARCHAR}
+        where Cid = #{cid,jdbcType=INTEGER}
+    </update>
 </mapper>

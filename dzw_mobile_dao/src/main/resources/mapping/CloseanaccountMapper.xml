@@ -1,152 +1,153 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.CloseanaccountMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Closeanaccount" >
-    <id column="rNo" property="rno" jdbcType="INTEGER" />
-    <result column="rWay" property="rway" jdbcType="INTEGER" />
-    <result column="cId" property="cid" jdbcType="INTEGER" />
-    <result column="cName" property="cname" jdbcType="VARCHAR" />
-    <result column="cBalance" property="cbalance" jdbcType="INTEGER" />
-    <result column="rOdd" property="rodd" jdbcType="VARCHAR" />
-    <result column="rCashier" property="rcashier" jdbcType="VARCHAR" />
-    <result column="rDealWith" property="rdealwith" jdbcType="INTEGER" />
-    <result column="rOutOfPocket" property="routofpocket" jdbcType="INTEGER" />
-    <result column="rDiscounts" property="rdiscounts" jdbcType="INTEGER" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    rNo, rWay, cId, cName, cBalance, rOdd, rCashier, rDealWith, rOutOfPocket, rDiscounts, 
-    remark
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from closeanaccount
-    where rNo = #{rno,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from closeanaccount
-    where rNo = #{rno,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Closeanaccount" >
-    insert into closeanaccount (rNo, rWay, cId, 
-      cName, cBalance, rOdd, 
-      rCashier, rDealWith, rOutOfPocket, 
-      rDiscounts, remark)
-    values (#{rno,jdbcType=INTEGER}, #{rway,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, 
-      #{cname,jdbcType=VARCHAR}, #{cbalance,jdbcType=INTEGER}, #{rodd,jdbcType=VARCHAR}, 
-      #{rcashier,jdbcType=VARCHAR}, #{rdealwith,jdbcType=INTEGER}, #{routofpocket,jdbcType=INTEGER}, 
-      #{rdiscounts,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Closeanaccount" >
-    insert into closeanaccount
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="rno != null" >
-        rNo,
-      </if>
-      <if test="rway != null" >
-        rWay,
-      </if>
-      <if test="cid != null" >
-        cId,
-      </if>
-      <if test="cname != null" >
-        cName,
-      </if>
-      <if test="cbalance != null" >
-        cBalance,
-      </if>
-      <if test="rodd != null" >
-        rOdd,
-      </if>
-      <if test="rcashier != null" >
-        rCashier,
-      </if>
-      <if test="rdealwith != null" >
-        rDealWith,
-      </if>
-      <if test="routofpocket != null" >
-        rOutOfPocket,
-      </if>
-      <if test="rdiscounts != null" >
-        rDiscounts,
-      </if>
-      <if test="remark != null" >
-        remark,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="rno != null" >
-        #{rno,jdbcType=INTEGER},
-      </if>
-      <if test="rway != null" >
-        #{rway,jdbcType=INTEGER},
-      </if>
-      <if test="cid != null" >
-        #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="cname != null" >
-        #{cname,jdbcType=VARCHAR},
-      </if>
-      <if test="cbalance != null" >
-        #{cbalance,jdbcType=INTEGER},
-      </if>
-      <if test="rodd != null" >
-        #{rodd,jdbcType=VARCHAR},
-      </if>
-      <if test="rcashier != null" >
-        #{rcashier,jdbcType=VARCHAR},
-      </if>
-      <if test="rdealwith != null" >
-        #{rdealwith,jdbcType=INTEGER},
-      </if>
-      <if test="routofpocket != null" >
-        #{routofpocket,jdbcType=INTEGER},
-      </if>
-      <if test="rdiscounts != null" >
-        #{rdiscounts,jdbcType=INTEGER},
-      </if>
-      <if test="remark != null" >
-        #{remark,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Closeanaccount" >
-    update closeanaccount
-    <set >
-      <if test="rway != null" >
-        rWay = #{rway,jdbcType=INTEGER},
-      </if>
-      <if test="cid != null" >
-        cId = #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="cname != null" >
-        cName = #{cname,jdbcType=VARCHAR},
-      </if>
-      <if test="cbalance != null" >
-        cBalance = #{cbalance,jdbcType=INTEGER},
-      </if>
-      <if test="rodd != null" >
-        rOdd = #{rodd,jdbcType=VARCHAR},
-      </if>
-      <if test="rcashier != null" >
-        rCashier = #{rcashier,jdbcType=VARCHAR},
-      </if>
-      <if test="rdealwith != null" >
-        rDealWith = #{rdealwith,jdbcType=INTEGER},
-      </if>
-      <if test="routofpocket != null" >
-        rOutOfPocket = #{routofpocket,jdbcType=INTEGER},
-      </if>
-      <if test="rdiscounts != null" >
-        rDiscounts = #{rdiscounts,jdbcType=INTEGER},
-      </if>
-      <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where rNo = #{rno,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.accp.dao.CloseanaccountMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Closeanaccount">
+        <id column="rNo" property="rno" jdbcType="INTEGER"/>
+        <result column="rWay" property="rway" jdbcType="INTEGER"/>
+        <result column="cId" property="cid" jdbcType="INTEGER"/>
+        <result column="cName" property="cname" jdbcType="VARCHAR"/>
+        <result column="cBalance" property="cbalance" jdbcType="INTEGER"/>
+        <result column="rOdd" property="rodd" jdbcType="VARCHAR"/>
+        <result column="rCashier" property="rcashier" jdbcType="VARCHAR"/>
+        <result column="rDealWith" property="rdealwith" jdbcType="INTEGER"/>
+        <result column="rOutOfPocket" property="routofpocket" jdbcType="INTEGER"/>
+        <result column="rDiscounts" property="rdiscounts" jdbcType="INTEGER"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        rNo, rWay, cId, cName, cBalance, rOdd, rCashier, rDealWith, rOutOfPocket, rDiscounts,
+        remark
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from closeanaccount
+        where rNo = #{rno,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from closeanaccount
+        where rNo = #{rno,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Closeanaccount">
+        insert into closeanaccount (rNo, rWay, cId,
+        cName, cBalance, rOdd,
+        rCashier, rDealWith, rOutOfPocket,
+        rDiscounts, remark)
+        values (#{rno,jdbcType=INTEGER}, #{rway,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER},
+        #{cname,jdbcType=VARCHAR}, #{cbalance,jdbcType=INTEGER}, #{rodd,jdbcType=VARCHAR},
+        #{rcashier,jdbcType=VARCHAR}, #{rdealwith,jdbcType=INTEGER}, #{routofpocket,jdbcType=INTEGER},
+        #{rdiscounts,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Closeanaccount">
+        insert into closeanaccount
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="rno != null">
+                rNo,
+            </if>
+            <if test="rway != null">
+                rWay,
+            </if>
+            <if test="cid != null">
+                cId,
+            </if>
+            <if test="cname != null">
+                cName,
+            </if>
+            <if test="cbalance != null">
+                cBalance,
+            </if>
+            <if test="rodd != null">
+                rOdd,
+            </if>
+            <if test="rcashier != null">
+                rCashier,
+            </if>
+            <if test="rdealwith != null">
+                rDealWith,
+            </if>
+            <if test="routofpocket != null">
+                rOutOfPocket,
+            </if>
+            <if test="rdiscounts != null">
+                rDiscounts,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="rno != null">
+                #{rno,jdbcType=INTEGER},
+            </if>
+            <if test="rway != null">
+                #{rway,jdbcType=INTEGER},
+            </if>
+            <if test="cid != null">
+                #{cid,jdbcType=INTEGER},
+            </if>
+            <if test="cname != null">
+                #{cname,jdbcType=VARCHAR},
+            </if>
+            <if test="cbalance != null">
+                #{cbalance,jdbcType=INTEGER},
+            </if>
+            <if test="rodd != null">
+                #{rodd,jdbcType=VARCHAR},
+            </if>
+            <if test="rcashier != null">
+                #{rcashier,jdbcType=VARCHAR},
+            </if>
+            <if test="rdealwith != null">
+                #{rdealwith,jdbcType=INTEGER},
+            </if>
+            <if test="routofpocket != null">
+                #{routofpocket,jdbcType=INTEGER},
+            </if>
+            <if test="rdiscounts != null">
+                #{rdiscounts,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Closeanaccount">
+        update closeanaccount
+        <set>
+            <if test="rway != null">
+                rWay = #{rway,jdbcType=INTEGER},
+            </if>
+            <if test="cid != null">
+                cId = #{cid,jdbcType=INTEGER},
+            </if>
+            <if test="cname != null">
+                cName = #{cname,jdbcType=VARCHAR},
+            </if>
+            <if test="cbalance != null">
+                cBalance = #{cbalance,jdbcType=INTEGER},
+            </if>
+            <if test="rodd != null">
+                rOdd = #{rodd,jdbcType=VARCHAR},
+            </if>
+            <if test="rcashier != null">
+                rCashier = #{rcashier,jdbcType=VARCHAR},
+            </if>
+            <if test="rdealwith != null">
+                rDealWith = #{rdealwith,jdbcType=INTEGER},
+            </if>
+            <if test="routofpocket != null">
+                rOutOfPocket = #{routofpocket,jdbcType=INTEGER},
+            </if>
+            <if test="rdiscounts != null">
+                rDiscounts = #{rdiscounts,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where rNo = #{rno,jdbcType=INTEGER}
+    </update>
+ 
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Closeanaccount" >
     update closeanaccount
     set rWay = #{rway,jdbcType=INTEGER},
@@ -161,4 +162,32 @@
       remark = #{remark,jdbcType=VARCHAR}
     where rNo = #{rno,jdbcType=INTEGER}
   </update>
+  
+  <select id="queryCar" resultType="com.accp.pojo.Maintaincar">
+  		SELECT car.*,s.`receiptsname`,t.`tename` FROM maintaincar car 
+		LEFT JOIN maintainreceipts s ON s.`receiptsid` = car.`receiptsid`
+		LEFT JOIN team t ON t.`teamid` = car.`teamid`
+		<where>
+			car.`teamid` = 3
+			<if test="mId!=0">
+				AND car.`maintainid` = #{mId}
+			</if>
+			<if test="cId!=0">
+				AND car.`carid` = #{cId}
+			</if>
+		</where>
+  </select>
+  
+  <select id="queryCount" resultType="com.accp.pojo.Closeanaccount">
+  		SELECT * FROM closeanaccount
+  		<where>
+  			<if test="rid!=0">
+  				and  rNo = #{rid}
+  			</if>
+  			<if test="cid!=0">
+  				and  cId = #{cid}
+  			</if>
+  		</where>
+  </select>
+
 </mapper>
