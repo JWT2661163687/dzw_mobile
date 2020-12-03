@@ -58,6 +58,10 @@ public class Maintaincar {
 
     private String maintaindate;//单据时间
     
+    private String receiptsname;	//订单状态
+    
+    private String tename;			//班组名
+    
     public List<Weixiu> weixius=new ArrayList<Weixiu>();//维修项目集合
 
     public List<Weixiu> getWeixius() {
@@ -288,6 +292,23 @@ public class Maintaincar {
 
 	public void setMaintaindate(String maintaindate) {
 		this.maintaindate = maintaindate;
+	}
+
+	
+	public String getReceiptsname() {
+		return receiptsname;
+	}
+
+	public void setReceiptsname(String receiptsname) {
+		this.receiptsname = receiptsname;
+	}
+
+	public String getTename() {
+		return tename;
+	}
+
+	public void setTename(String tename) {
+		this.tename = tename;
 	}
 
 	@Override

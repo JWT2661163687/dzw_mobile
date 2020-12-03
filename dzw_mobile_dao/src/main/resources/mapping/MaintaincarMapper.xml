@@ -346,4 +346,5 @@
       maintaindate = #{maintaindate,jdbcType=DATE}
     where maintainid = #{maintainid,jdbcType=INTEGER}
   </update>
+  
 </mapper>
