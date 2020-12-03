@@ -1,5 +1,7 @@
 package com.accp.test.kwt;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +35,12 @@ public class MotorcycleTest {
 		m.setMotorcyclename("ss");
 		int count=biz.addMotorcycle(m);
 	}
+//	@Test
+////	public void SelectByinput() {
+////		List<Motorcycle> lists=
+////		lists.forEach(i->{
+////			System.err.println(i);
+////		});
+////	}
 
 }

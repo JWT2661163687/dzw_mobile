@@ -24,8 +24,20 @@ public class Motorcycle {
     private Integer fuellabel;         //燃油标号
 
     private Double load;               //载重
+    
+    private String enginename;         //发动机品牌名称
 
-    public Integer getMotorcycleid() {
+    
+    
+    public String getEnginename() {
+		return enginename;
+	}
+
+	public void setEnginename(String enginename) {
+		this.enginename = enginename;
+	}
+
+	public Integer getMotorcycleid() {
         return motorcycleid;
     }
 
@@ -126,7 +138,7 @@ public class Motorcycle {
 		return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
 				+ ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
 				+ ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
-				+ power + ", fuellabel=" + fuellabel + ", load=" + load + "]";
+				+ power + ", fuellabel=" + fuellabel + ", load=" + load + ", enginename=" + enginename + "]";
 	}
 
 	public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
@@ -145,6 +157,25 @@ public class Motorcycle {
 		this.power = power;
 		this.fuellabel = fuellabel;
 		this.load = load;
+	}
+
+	public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
+			String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
+			Integer fuellabel, Double load, String enginename) {
+		super();
+		this.motorcycleid = motorcycleid;
+		this.engineid = engineid;
+		this.productionid = productionid;
+		this.makeid = makeid;
+		this.motorcyclename = motorcyclename;
+		this.makename = makename;
+		this.productionname = productionname;
+		this.price = price;
+		this.yearprice = yearprice;
+		this.power = power;
+		this.fuellabel = fuellabel;
+		this.load = load;
+		this.enginename = enginename;
 	}
 
 	public Motorcycle() {
