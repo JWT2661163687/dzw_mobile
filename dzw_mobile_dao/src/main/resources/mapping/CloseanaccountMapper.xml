@@ -147,25 +147,7 @@
         </set>
         where rNo = #{rno,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Closeanaccount">
-        update closeanaccount
-        set rWay = #{rway,jdbcType=INTEGER},
-        cId = #{cid,jdbcType=INTEGER},
-        cName = #{cname,jdbcType=VARCHAR},
-        cBalance = #{cbalance,jdbcType=INTEGER},
-        rOdd = #{rodd,jdbcType=VARCHAR},
-        rCashier = #{rcashier,jdbcType=VARCHAR},
-        rDealWith = #{rdealwith,jdbcType=INTEGER},
-        rOutOfPocket = #{routofpocket,jdbcType=INTEGER},
-        rDiscounts = #{rdiscounts,jdbcType=INTEGER},
-<<<<<<< HEAD
-      </if>
-      <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where rNo = #{rno,jdbcType=INTEGER}
-  </update>
+ 
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Closeanaccount" >
     update closeanaccount
     set rWay = #{rway,jdbcType=INTEGER},
