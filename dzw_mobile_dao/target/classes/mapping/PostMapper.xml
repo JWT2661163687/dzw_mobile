@@ -114,4 +114,20 @@
       createby = #{createby,jdbcType=VARCHAR}
     where postid = #{postid,jdbcType=INTEGER}
   </update>
+  
+  
+  <select id="selectPost" resultMap="postAll">
+  SELECT * FROM `post` po LEFT JOIN `postmiddle` pm ON po.`postid`=pm.`rid`
+  </select>
+  <resultMap type="com.accp.pojo.Post" id="postAll" autoMapping="true">
+  	<id column="postid" property="postid"/>
+  	<collection property="postmiddles" javaType="com.accp.pojo.Postmiddle">
+  		<id column="pid" property="pid"/>
+  		<result column="codenumber" property="codenumber"/>
+  		<result column="fname" property="fname"/>
+  		<result column="fid" property="fid"/>
+  	</collection>
+  </resultMap>
+  
+  
 </mapper>

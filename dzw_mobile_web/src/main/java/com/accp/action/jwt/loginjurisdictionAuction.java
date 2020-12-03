@@ -13,12 +13,16 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.accp.biz.jwt.LoginjurisdictionBiz;
 import com.accp.pojo.Employee;
 import com.accp.pojo.Functiontable;
+import com.accp.pojo.Post;
+import com.accp.pojo.Postmiddle;
 
 @RestController()
 @RequestMapping("/api/loginjurisdictions")
@@ -32,7 +36,7 @@ public class loginjurisdictionAuction {
 	 * @param session
 	 * @return
 	 */
-	@GetMapping("/loginjurisdiction/{username}/{password}")
+	@GetMapping("/employee/{username}/{password}")
 	public Map<String, Object> login(@PathVariable String username,@PathVariable String password,HttpSession session){
 		Employee employee=loginjurisdictionBiz.selectlogin(username, password);
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -55,7 +59,7 @@ public class loginjurisdictionAuction {
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/loginjurisdiction/loginOut")
+	@GetMapping("/employee/loginOut")
 	public Map<String, Object> loginOut(HttpSession session) throws Exception {
 		Map<String, Object> message = new HashMap<String, Object>();
 		session.removeAttribute("USER");
@@ -84,6 +88,7 @@ public class loginjurisdictionAuction {
 	public List getUserFunTree(HttpSession session) {
 		// 从session获得用户，以便得到权限
 		Employee employee = (Employee) session.getAttribute("employee");
+		System.out.println(employee);
 		List tree = new ArrayList();
 		Set<String> menuNames = new TreeSet<String>();// 剔除重复值，保存一级菜单名称
 		for (Functiontable fun : employee.getPost().getFunctiontables()) {
@@ -111,6 +116,48 @@ public class loginjurisdictionAuction {
 		return tree;
 	}
 	
+    /**
+     * 查询所有功能
+     * @return
+     */
+	@GetMapping("/loginjurisdiction/getfunctiontable")
+    public List<Functiontable> selectAllfunctiontable(){
+    	return loginjurisdictionBiz.selectAllfunctiontable();
+    }
+	
+	
+	 /**
+     * 查询所有岗位和功能
+     * @return
+     */
+	@GetMapping("/loginjurisdiction/postAll")
+    public List<Post> selectPost(){
+    	return loginjurisdictionBiz.selectPost();
+    }
+	
+	
+    
+    /**
+     * 新增权限
+     * @param record
+     * @return
+     */
+	@PostMapping("/loginjurisdiction/postmidd")
+    public Map<String, Object> insertSelective(@RequestBody Postmiddle[] postmiddles,HttpSession session) {
+		Map<String, Object> map=new HashMap<String, Object>();
+		Employee employee=(Employee) session.getAttribute("employee");
+		int aas=0;
+    	aas=loginjurisdictionBiz.deletepostmiddrid(postmiddles[0].getRid());
+    	for (Postmiddle item : postmiddles) {
+			aas=loginjurisdictionBiz.insertSelective(item);
+		}
+    	if(aas>0) {
+    		map.put("code", "200");
+    	}else {
+    		map.put("code", "400");
+    	}
+    	return map;
+    }
 	
 	
 	

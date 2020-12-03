@@ -90,4 +90,22 @@
       createdate = #{createdate,jdbcType=DATE}
     where fid = #{fid,jdbcType=INTEGER}
   </update>
+  
+  
+  <select id="selectAllfunctiontable" resultMap="functiontableselect">
+  	SELECT * FROM `functiontable` WHERE fpid=0
+  </select>
+  <resultMap type="com.accp.pojo.Functiontable" id="functiontableselect" autoMapping="true">
+  		<id column="fid" property="fid"/>
+  		<collection property="functionlist" column="fid" select="selectFid"></collection>
+  </resultMap>
+  <select id="selectFid" resultType="com.accp.pojo.Functiontable">
+  	SELECT * FROM `functiontable` WHERE fpid=#{0}
+  </select>
+  
+  
+  
+  
+  
+  
 </mapper>
