@@ -1,35 +1,32 @@
 package com.accp.pojo;
 
 public class Motorcycle {
-    private Integer motorcycleid;      //���Ͷ���id
+    private Integer motorcycleid;      //锟斤拷锟酵讹拷锟斤拷id
 
-    private Integer engineid;          //������Ʒ�Ʊ��
+    private Integer engineid;          //锟斤拷锟斤拷锟斤拷品锟狡憋拷锟�
 
-    private Integer productionid;      //����id
+    private Integer productionid;      //锟斤拷锟斤拷id
 
-    private Integer makeid;            //����Ʒ��id
+    private Integer makeid;            //锟斤拷锟斤拷品锟斤拷id
 
-    private String motorcyclename;     //��������
+    private String motorcyclename;     //锟斤拷锟斤拷锟斤拷锟斤拷
 
-    private String makename;           //Ʒ������
+    private String makename;           //品锟斤拷锟斤拷锟斤拷
 
-    private String productionname;     //��������
+    private String productionname;     //锟斤拷锟斤拷锟斤拷锟斤拷
 
-    private Double price;              //�ο��۸�
+    private Double price;              //锟轿匡拷锟桔革拷
 
-    private Double yearprice;          //�������
+    private Double yearprice;          //锟斤拷锟斤拷锟斤拷锟�
 
-    private Double power;              //����
+    private Double power;              //锟斤拷锟斤拷
 
-    private Integer fuellabel;         //ȼ�ͱ��
+    private Integer fuellabel;         //燃锟酵憋拷锟�
 
-<<<<<<< HEAD
-    private Double load;               //����
-=======
-    private Double load;               //����
+
+    private Double load;               //载重
     
-    private String enginename;         //������Ʒ������
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
+    private String enginename;         //发动机品牌名称
 
     
     
@@ -137,7 +134,6 @@ public class Motorcycle {
         this.load = load;
     }
 
-<<<<<<< HEAD
     @Override
     public String toString() {
         return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
@@ -145,15 +141,6 @@ public class Motorcycle {
                 + ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
                 + power + ", fuellabel=" + fuellabel + ", load=" + load + "]";
     }
-=======
-	@Override
-	public String toString() {
-		return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
-				+ ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
-				+ ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
-				+ power + ", fuellabel=" + fuellabel + ", load=" + load + ", enginename=" + enginename + "]";
-	}
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 
     public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
                       String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
@@ -173,13 +160,11 @@ public class Motorcycle {
         this.load = load;
     }
 
-<<<<<<< HEAD
     public Motorcycle() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-=======
 	public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
 			String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
 			Integer fuellabel, Double load, String enginename) {
@@ -198,11 +183,4 @@ public class Motorcycle {
 		this.load = load;
 		this.enginename = enginename;
 	}
-
-	public Motorcycle() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-    
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 }

@@ -45,10 +45,8 @@ public interface MotorcycleMapper {
      * @return
      */
     @Select("SELECT * FROM `motorcycle` WHERE `motorcycleid`=#{id}")
-<<<<<<< HEAD
     List<Motorcycle> SelectById(@Param("id") Integer id);
-=======
-    List<Motorcycle> SelectById(@Param("id")Integer id);
+
     /**
      * ÎÄ±¾¿ò²éÑ¯
      * @param name
@@ -70,5 +68,4 @@ public interface MotorcycleMapper {
      */
     @Update("UPDATE `motorcycle` SET `engineid`=#{m.engineid},`makeid`=#{m.makeid},`motorcyclename`=#{m.motorcyclename},`price`=#{m.price} WHERE `motorcycleid`=#{m.motorcycleid}")
     public int updateById(@Param("m")Motorcycle m);
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 }

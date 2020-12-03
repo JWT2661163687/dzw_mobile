@@ -6,69 +6,67 @@ import java.util.List;
 import com.accp.dao.TeamtechniciantwoMapper;
 
 public class Maintaincar {
-    private Integer maintainid;//ά��id
+    private Integer maintainid;//维锟斤拷id
 
-    private Integer receiptsid;//ά��״̬id
+    private Integer receiptsid;//维锟斤拷状态id
 
-    private Integer teamid;//������
+    private Integer teamid;//锟斤拷锟斤拷锟斤拷
 
     private Integer id;//id
 
-    private String departdate;//��������ʱ��
+    private String departdate;//锟斤拷锟斤拷锟斤拷锟斤拷时锟斤拷
 
-    private String departaddress;//������ַ
+    private String departaddress;//锟斤拷锟斤拷锟斤拷址
 
-    private String constructiondate;//ʩ��ʱ��
+    private String constructiondate;//施锟斤拷时锟斤拷
 
-    private String rescuevehicleaddress;//��Ԯʱ��
+    private String rescuevehicleaddress;//锟斤拷援时锟斤拷
 
-    private String accomplishdate;//���ʱ��
+    private String accomplishdate;//锟斤拷锟绞憋拷锟�
 
-    private Integer maintainvehicleid;//ά�޳���id
+    private Integer maintainvehicleid;//维锟睫筹拷锟斤拷id
 
-    private Integer inside;//վ��վ��0/1
+    private Integer inside;//站锟斤拷站锟斤拷0/1
 
-    private Integer mileage;//�����
+    private Integer mileage;//锟斤拷锟斤拷锟�
 
-    private Integer counselorid;//�������id
+    private Integer counselorid;//锟斤拷锟斤拷锟斤拷锟絠d
 
-    private String beizhu;//ά�ޱ�ע
+    private String beizhu;//维锟睫憋拷注
 
-    private Double maintainmoney;//ά�޽��
+    private Double maintainmoney;//维锟睫斤拷锟�
 
-    private String drivername;//��ʻԱ
+    private String drivername;//锟斤拷驶员
 
-    private String maintainphone;//��ϵ�绰
+    private String maintainphone;//锟斤拷系锟界话
 
-    private String licence;//���ƺ�
+    private String licence;//锟斤拷锟狡猴拷
 
-    private String vehiclebrand;//����Ʒ��
+    private String vehiclebrand;//锟斤拷锟斤拷品锟斤拷
 
-    private String vehiclemodel;//�����ͺ�
+    private String vehiclemodel;//锟斤拷锟斤拷锟酵猴拷
 
-    private Integer clearingfrom;//���㷽ʽ0/1
+    private Integer clearingfrom;//锟斤拷锟姐方式0/1
 
-    private String enginename;//������Ʒ��
+    private String enginename;//锟斤拷锟斤拷锟斤拷品锟斤拷
 
-    private String vin;//���ܺ�
+    private String vin;//锟斤拷锟杰猴拷
 
-    private String enginehao;//��������
+    private String enginehao;//锟斤拷锟斤拷锟斤拷锟斤拷
 
-    private String carownername;//������
+    private String carownername;//锟斤拷锟斤拷锟斤拷
 
-    private Integer carid;//�����ͻ����
+    private Integer carid;//锟斤拷锟斤拷锟酵伙拷锟斤拷锟�
 
-<<<<<<< HEAD
-    private String maintaindate;//����ʱ��
+    private String maintaindate;//单据时间
     
-    private String receiptsname;	//����״̬
+    private String receiptsname;	//订单状态
     
-    private String tename;			//������
+    private String tename;			//班组名
     
-    public List<Weixiu> weixius=new ArrayList<Weixiu>();//ά����Ŀ����
-=======
-    private String maintaindate;//����ʱ��
-    private Integer maintainling;//ά�޴���
+    public List<Weixiu> weixius=new ArrayList<Weixiu>();//维修项目集合
+
+    private Integer maintainling;//维锟睫达拷锟斤拷
 
     public Integer getMaintainling() {
         return maintainling;
@@ -78,10 +76,9 @@ public class Maintaincar {
         this.maintainling = maintainling;
     }
 
-    public List<Weixiu> weixius = new ArrayList<Weixiu>();//ά����Ŀ����
 
-    public List<Maintaincarxiangmu> maintaincarxiangmus = new ArrayList<Maintaincarxiangmu>();//ά����Ŀ����
-    public List<Teamtechniciantwo> teamtechniciantwos = new ArrayList<Teamtechniciantwo>();//ά�޼�������
+    public List<Maintaincarxiangmu> maintaincarxiangmus = new ArrayList<Maintaincarxiangmu>();//维锟斤拷锟斤拷目锟斤拷锟斤拷
+    public List<Teamtechniciantwo> teamtechniciantwos = new ArrayList<Teamtechniciantwo>();//维锟睫硷拷锟斤拷锟斤拷锟斤拷
 
     public List<Teamtechniciantwo> getTeamtechniciantwos() {
         return teamtechniciantwos;
@@ -99,7 +96,6 @@ public class Maintaincar {
         this.maintaincarxiangmus = maintaincarxiangmus;
     }
 
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 
     public List<Weixiu> getWeixius() {
         return weixius;
@@ -328,7 +324,6 @@ public class Maintaincar {
         this.maintaindate = maintaindate;
     }
 
-<<<<<<< HEAD
 	
 	public String getReceiptsname() {
 		return receiptsname;
@@ -358,20 +353,4 @@ public class Maintaincar {
 				+ ", enginename=" + enginename + ", vin=" + vin + ", enginehao=" + enginehao + ", carownername="
 				+ carownername + ", carid=" + carid + ", maintaindate=" + maintaindate + "]";
 	}
-=======
-    @Override
-    public String toString() {
-        return "Maintaincar [maintainid=" + maintainid + ", receiptsid=" + receiptsid + ", teamid=" + teamid + ", id="
-                + id + ", departdate=" + departdate + ", departaddress=" + departaddress + ", constructiondate="
-                + constructiondate + ", rescuevehicleaddress=" + rescuevehicleaddress + ", accomplishdate="
-                + accomplishdate + ", maintainvehicleid=" + maintainvehicleid + ", inside=" + inside + ", mileage="
-                + mileage + ", counselorid=" + counselorid + ", beizhu=" + beizhu + ", maintainmoney=" + maintainmoney
-                + ", drivername=" + drivername + ", maintainphone=" + maintainphone + ", licence=" + licence
-                + ", vehiclebrand=" + vehiclebrand + ", vehiclemodel=" + vehiclemodel + ", clearingfrom=" + clearingfrom
-                + ", enginename=" + enginename + ", vin=" + vin + ", enginehao=" + enginehao + ", carownername="
-                + carownername + ", carid=" + carid + ", maintaindate=" + maintaindate + "]";
-    }
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
-
-
 }

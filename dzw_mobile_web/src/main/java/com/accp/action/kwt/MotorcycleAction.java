@@ -22,7 +22,6 @@ import com.github.pagehelper.PageInfo;
 @RequestMapping("/api/Motorcycles")
 public class MotorcycleAction {
 
-<<<<<<< HEAD
     @Autowired
     private MotorcycleBiz biz;
 
@@ -66,44 +65,7 @@ public class MotorcycleAction {
     public List<Motorcycle> SelectById(@PathVariable Integer id) {
         return biz.SelectByid(id);
     }
-=======
-	@Autowired
-	private MotorcycleBiz biz;
-	/**
-	 * 分页查询
-	 * @param pageNum
-	 * @param pageSize
-	 * @return
-	 */
-	@GetMapping("/Motorcycle/{pageNum}/{pageSize}")
-	public PageInfo<Motorcycle> SelectPageAll(@PathVariable int pageNum,@PathVariable int pageSize){
-		return biz.SelectPage(pageNum, pageSize);
-	}
-	/**
-	 * 新增车型表
-	 * @param record
-	 * @return
-	 */
-	@PostMapping("/Motorcycle")
-	public Map<String, Object> insertMotorcycle(@RequestBody Motorcycle record){
-		Map<String, Object> map=new HashMap<String, Object>();
-		int count=biz.addMotorcycle(record);
-		if(count>0) {
-			map.put("code", "200");
-		}else {
-			map.put("code", "500");
-		}
-		return map;
-	}
-	/**
-	 * 查询id是否相同
-	 * @param id
-	 * @return
-	 */
-	@GetMapping("/Motorcycle/{id}")
-	public List<Motorcycle> SelectById(@PathVariable Integer id){
-		return biz.SelectByid(id);
-	}
+
 	/**
 	 * 根据文本框的值进行多条件查询
 	 * @param name
@@ -145,5 +107,4 @@ public class MotorcycleAction {
 		}
 		return map;
 	}
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 }
