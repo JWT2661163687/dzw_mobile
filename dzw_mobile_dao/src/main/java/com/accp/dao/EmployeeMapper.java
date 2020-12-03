@@ -16,13 +16,15 @@ public interface EmployeeMapper {
     int updateByPrimaryKeySelective(Employee record);
 
     int updateByPrimaryKey(Employee record);
+
     /**
-     * µÇÂ¼
+     * ï¿½ï¿½Â¼
+     *
      * @param username
      * @param password
      * @return
      */
-    Employee selectlogin(@Param("username")String username,@Param("password")String password);
-    
-    
+    Employee selectlogin(@Param("username") String username, @Param("password") String password);
+
+
 }

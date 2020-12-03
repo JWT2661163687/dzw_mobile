@@ -18,10 +18,10 @@ public interface ShangpinMapper {
     int updateByPrimaryKeySelective(Shangpin record);
 
     int updateByPrimaryKey(Shangpin record);
-    
+
     /*
-     *  ·ÖÒ³²éÑ¯ÉÌÆ·±í  ÐÅÏ¢
+     *  ï¿½ï¿½Ò³ï¿½ï¿½Ñ¯ï¿½ï¿½Æ·ï¿½ï¿½  ï¿½ï¿½Ï¢
      *  @Param   sousuo  daid
      */
-    List<Shangpin> selectshangpin(@Param("sousuo") String sousuo,@Param("daid") Integer daid);
+    List<Shangpin> selectshangpin(@Param("sousuo") String sousuo, @Param("daid") Integer daid);
 }

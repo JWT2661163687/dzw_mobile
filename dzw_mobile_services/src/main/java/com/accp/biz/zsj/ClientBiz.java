@@ -13,41 +13,41 @@ import com.accp.pojo.Vehicle;
 @Service("clientBiz")
 public class ClientBiz {
 
-	@Autowired
-	private ClientMapper dao;
-	
-	/**
-     * 	根据条件查询客户
-     */
-    public List<Client> queryClient(@Param("cid")Integer cid){
-    	return dao.queryClient(cid);
-    }
-    
+    @Autowired
+    private ClientMapper dao;
+
     /**
-     * 	新增新客户
+     * 根据条件查询客户
      */
-    public int insertClient(@Param("client")Client client) {
-    	return dao.insertClient(client);
+    public List<Client> queryClient(@Param("cid") Integer cid) {
+        return dao.queryClient(cid);
     }
-    
+
     /**
-     * 	修改客户信息
+     * 新增新客户
      */
-    public int updateClient(@Param("client")Client client) {
-    	return dao.updateClient(client);
+    public int insertClient(@Param("client") Client client) {
+        return dao.insertClient(client);
     }
-    
+
     /**
-     * 	删除客户信息
+     * 修改客户信息
      */
-    public int deleteClient(@Param("cid")Integer cid) {
-    	return dao.deleteClient(cid);
+    public int updateClient(@Param("client") Client client) {
+        return dao.updateClient(client);
     }
-    
+
     /**
-     *	 双击客户查询该客户的车辆信息
+     * 删除客户信息
      */
-    public List<Vehicle> queryVehicle(@Param("cid")Integer cid){
-    	return dao.queryVehicle(cid);
+    public int deleteClient(@Param("cid") Integer cid) {
+        return dao.deleteClient(cid);
+    }
+
+    /**
+     * 双击客户查询该客户的车辆信息
+     */
+    public List<Vehicle> queryVehicle(@Param("cid") Integer cid) {
+        return dao.queryVehicle(cid);
     }
 }

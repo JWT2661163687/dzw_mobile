@@ -3,29 +3,29 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Client {
-    private Integer cid;			//¿Í»§±àºÅ
+    private Integer cid;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½
 
-    private Integer vid;			//³µÁ¾±àºÅ
-    
-    private Integer rid;			//µ¥¾Ý±àºÅ
+    private Integer vid;            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer rno;			//½áËãµ¥¾Ý±àºÅ
+    private Integer rid;            //ï¿½ï¿½ï¿½Ý±ï¿½ï¿½
 
-    private Integer mid;			//»áÔ±±àºÅ
+    private Integer rno;            //ï¿½ï¿½ï¿½ãµ¥ï¿½Ý±ï¿½ï¿½
 
-    private String cname;			//¿Í»§Ãû³Æ
+    private Integer mid;            //ï¿½ï¿½Ô±ï¿½ï¿½ï¿½
 
-    private String cphone;			//¿Í»§ÊÖ»úºÅ
+    private String cname;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Date createdate;		//´´½¨Ê±¼ä
+    private String cphone;            //ï¿½Í»ï¿½ï¿½Ö»ï¿½ï¿½ï¿½
 
-    private Integer climit;			//¶î¶È
+    private Date createdate;        //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 
-    private Integer cintegral;		//»ý·Ö
+    private Integer climit;            //ï¿½ï¿½ï¿½
 
-    private String cremark;			//±¸×¢
+    private Integer cintegral;        //ï¿½ï¿½ï¿½ï¿½
 
-    private Integer cgrade;			//¿Í»§µÈ¼¶
+    private String cremark;            //ï¿½ï¿½×¢
+
+    private Integer cgrade;            //ï¿½Í»ï¿½ï¿½È¼ï¿½
 
     public Integer getCid() {
         return cid;
@@ -123,29 +123,29 @@ public class Client {
         this.cgrade = cgrade;
     }
 
-	public Client(Integer cid, String cname, String cphone, Date createdate, Integer climit, Integer cintegral,
-			String cremark, Integer cgrade) {
-		super();
-		this.cid = cid;
-		this.cname = cname;
-		this.cphone = cphone;
-		this.createdate = createdate;
-		this.climit = climit;
-		this.cintegral = cintegral;
-		this.cremark = cremark;
-		this.cgrade = cgrade;
-	}
+    public Client(Integer cid, String cname, String cphone, Date createdate, Integer climit, Integer cintegral,
+                  String cremark, Integer cgrade) {
+        super();
+        this.cid = cid;
+        this.cname = cname;
+        this.cphone = cphone;
+        this.createdate = createdate;
+        this.climit = climit;
+        this.cintegral = cintegral;
+        this.cremark = cremark;
+        this.cgrade = cgrade;
+    }
 
-	public Client() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Client() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	@Override
-	public String toString() {
-		return "Client [cid=" + cid + ", vid=" + vid + ", rid=" + rid + ", rno=" + rno + ", mid=" + mid + ", cname="
-				+ cname + ", cphone=" + cphone + ", createdate=" + createdate + ", climit=" + climit + ", cintegral="
-				+ cintegral + ", cremark=" + cremark + ", cgrade=" + cgrade + "]";
-	}
-    
+    @Override
+    public String toString() {
+        return "Client [cid=" + cid + ", vid=" + vid + ", rid=" + rid + ", rno=" + rno + ", mid=" + mid + ", cname="
+                + cname + ", cphone=" + cphone + ", createdate=" + createdate + ", climit=" + climit + ", cintegral="
+                + cintegral + ", cremark=" + cremark + ", cgrade=" + cgrade + "]";
+    }
+
 }

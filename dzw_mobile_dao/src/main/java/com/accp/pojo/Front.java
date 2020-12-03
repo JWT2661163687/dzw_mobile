@@ -5,27 +5,27 @@ import java.util.Date;
 public class Front {
     private Integer frontid;//id
 
-    private Integer carnumber;//½Ó³µÊıÁ¿
+    private Integer carnumber;//ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer closeanaccountnumber;//½áËãÊıÁ¿
+    private Integer closeanaccountnumber;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer carrepairingnumber;//ÔÙĞŞÊıÁ¿
+    private Integer carrepairingnumber;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer repairnumber;//·µĞŞÊıÁ¿
+    private Integer repairnumber;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer instationnumber;//Õ¾ÄÚÎ¬ĞŞÊıÁ¿
+    private Integer instationnumber;//Õ¾ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer outsidenumber;//Õ¾ÍâÎ¬ĞŞÊıÁ¿
+    private Integer outsidenumber;//Õ¾ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Double generalincome;//×ÜÊÕÈë
+    private Double generalincome;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Double realincome;//ÊÇÊÕÈë
+    private Double realincome;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Double owe;//¹ÒÕË½ğ¶î
+    private Double owe;//ï¿½ï¿½ï¿½Ë½ï¿½ï¿½
 
-    private Integer owenumber;//¹ÒÕËÈËÊı
+    private Integer owenumber;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String frontdate;//½ñÈÕÊ±¼ä
+    private String frontdate;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 
     public Integer getFrontid() {
         return frontid;
@@ -115,22 +115,22 @@ public class Front {
         this.owenumber = owenumber;
     }
 
-	public String getFrontdate() {
-		return frontdate;
-	}
+    public String getFrontdate() {
+        return frontdate;
+    }
 
-	public void setFrontdate(String frontdate) {
-		this.frontdate = frontdate;
-	}
+    public void setFrontdate(String frontdate) {
+        this.frontdate = frontdate;
+    }
 
-	@Override
-	public String toString() {
-		return "Front [frontid=" + frontid + ", carnumber=" + carnumber + ", closeanaccountnumber="
-				+ closeanaccountnumber + ", carrepairingnumber=" + carrepairingnumber + ", repairnumber=" + repairnumber
-				+ ", instationnumber=" + instationnumber + ", outsidenumber=" + outsidenumber + ", generalincome="
-				+ generalincome + ", realincome=" + realincome + ", owe=" + owe + ", owenumber=" + owenumber
-				+ ", frontdate=" + frontdate + "]";
-	}
+    @Override
+    public String toString() {
+        return "Front [frontid=" + frontid + ", carnumber=" + carnumber + ", closeanaccountnumber="
+                + closeanaccountnumber + ", carrepairingnumber=" + carrepairingnumber + ", repairnumber=" + repairnumber
+                + ", instationnumber=" + instationnumber + ", outsidenumber=" + outsidenumber + ", generalincome="
+                + generalincome + ", realincome=" + realincome + ", owe=" + owe + ", owenumber=" + owenumber
+                + ", frontdate=" + frontdate + "]";
+    }
 
-   
+
 }

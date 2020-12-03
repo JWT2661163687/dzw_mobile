@@ -18,19 +18,19 @@ public class Post {
     private Date createdate;
 
     private String createby;
-    
-    public List<Functiontable> functiontables=new ArrayList<Functiontable>();
-    
+
+    public List<Functiontable> functiontables = new ArrayList<Functiontable>();
+
 
     public List<Functiontable> getFunctiontables() {
-		return functiontables;
-	}
+        return functiontables;
+    }
 
-	public void setFunctiontables(List<Functiontable> functiontables) {
-		this.functiontables = functiontables;
-	}
+    public void setFunctiontables(List<Functiontable> functiontables) {
+        this.functiontables = functiontables;
+    }
 
-	public Integer getPostid() {
+    public Integer getPostid() {
         return postid;
     }
 

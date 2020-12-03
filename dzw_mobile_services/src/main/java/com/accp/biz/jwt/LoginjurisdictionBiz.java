@@ -9,18 +9,19 @@ import com.accp.pojo.Employee;
 
 @Service
 public class LoginjurisdictionBiz {
-	@Autowired 
-	private EmployeeMapper employeeMapper;
-	
-	
-	 /**
+    @Autowired
+    private EmployeeMapper employeeMapper;
+
+
+    /**
      * 登录
+     *
      * @param username
      * @param password
      * @return
      */
-    public Employee selectlogin(String username,String password) {
-    	return employeeMapper.selectlogin(username, password);
+    public Employee selectlogin(String username, String password) {
+        return employeeMapper.selectlogin(username, password);
     }
-	
+
 }

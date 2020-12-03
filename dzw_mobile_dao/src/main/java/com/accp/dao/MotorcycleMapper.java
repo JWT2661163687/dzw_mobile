@@ -12,7 +12,8 @@ public interface MotorcycleMapper {
     int deleteByPrimaryKey(Integer motorcycleid);
 
     /**
-     * ÐÂÔö³µÐÍ±í
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½
+     *
      * @param record
      * @return
      */
@@ -26,18 +27,21 @@ public interface MotorcycleMapper {
     int updateByPrimaryKeySelective(Motorcycle record);
 
     int updateByPrimaryKey(Motorcycle record);
-    
+
     /**
-     * ²éÑ¯ËùÓÐ
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
+     *
      * @return
      */
     @Select("SELECT m.`motorcycleid`,m.`engineid`,m.`motorcyclename`,m.`price`,a.`makename`  FROM `motorcycle` m INNER JOIN `make` a ON m.`makeid`=a.`makeid`")
     List<Motorcycle> SelectAll();
+
     /**
-     * ²éÑ¯idÊÇ·ñÏàÍ¬
+     * ï¿½ï¿½Ñ¯idï¿½Ç·ï¿½ï¿½ï¿½Í¬
+     *
      * @param id
      * @return
      */
     @Select("SELECT * FROM `motorcycle` WHERE `motorcycleid`=#{id}")
-    List<Motorcycle> SelectById(@Param("id")Integer id);
+    List<Motorcycle> SelectById(@Param("id") Integer id);
 }

@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.DaleiMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Dalei" >
-    <id column="DAid" property="daid" jdbcType="INTEGER" />
-    <result column="DAmingcheng" property="damingcheng" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    DAid, DAmingcheng
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from dalei
-    where DAid = #{daid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from dalei
-    where DAid = #{daid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Dalei" >
-    insert into dalei (DAid, DAmingcheng)
-    values (#{daid,jdbcType=INTEGER}, #{damingcheng,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Dalei" >
-    insert into dalei
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="daid != null" >
-        DAid,
-      </if>
-      <if test="damingcheng != null" >
-        DAmingcheng,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="daid != null" >
-        #{daid,jdbcType=INTEGER},
-      </if>
-      <if test="damingcheng != null" >
-        #{damingcheng,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Dalei" >
-    update dalei
-    <set >
-      <if test="damingcheng != null" >
-        DAmingcheng = #{damingcheng,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where DAid = #{daid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Dalei" >
-    update dalei
-    set DAmingcheng = #{damingcheng,jdbcType=VARCHAR}
-    where DAid = #{daid,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.accp.dao.DaleiMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Dalei">
+        <id column="DAid" property="daid" jdbcType="INTEGER"/>
+        <result column="DAmingcheng" property="damingcheng" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        DAid, DAmingcheng
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from dalei
+        where DAid = #{daid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from dalei
+        where DAid = #{daid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Dalei">
+        insert into dalei (DAid, DAmingcheng)
+        values (#{daid,jdbcType=INTEGER}, #{damingcheng,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Dalei">
+        insert into dalei
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="daid != null">
+                DAid,
+            </if>
+            <if test="damingcheng != null">
+                DAmingcheng,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="daid != null">
+                #{daid,jdbcType=INTEGER},
+            </if>
+            <if test="damingcheng != null">
+                #{damingcheng,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Dalei">
+        update dalei
+        <set>
+            <if test="damingcheng != null">
+                DAmingcheng = #{damingcheng,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where DAid = #{daid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Dalei">
+        update dalei
+        set DAmingcheng = #{damingcheng,jdbcType=VARCHAR}
+        where DAid = #{daid,jdbcType=INTEGER}
+    </update>
 </mapper>

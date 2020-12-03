@@ -18,12 +18,14 @@ public interface MaintainreceiptsMapper {
     int updateByPrimaryKeySelective(Maintainreceipts record);
 
     int updateByPrimaryKey(Maintainreceipts record);
+
     /**
-     * ²éÑ¯×´Ì¬±í
+     * ï¿½ï¿½Ñ¯×´Ì¬ï¿½ï¿½
+     *
      * @return
      */
     @Select("select * from maintainreceipts")
     List<Maintainreceipts> selectAllMaintainreceipts();
-    
-    
+
+
 }

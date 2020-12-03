@@ -11,10 +11,11 @@ import com.accp.biz.jwt.LoginjurisdictionBiz;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-ctx.xml"})
 public class logintest {
-	@Autowired
-	private LoginjurisdictionBiz loginjurisdictionBiz;
-	@Test
-	public void  aaa() {
-		System.out.println(loginjurisdictionBiz.selectlogin("张三", "123"));
-	}
+    @Autowired
+    private LoginjurisdictionBiz loginjurisdictionBiz;
+
+    @Test
+    public void aaa() {
+        System.out.println(loginjurisdictionBiz.selectlogin("张三", "123"));
+    }
 }
