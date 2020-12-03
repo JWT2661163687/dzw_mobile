@@ -111,7 +111,43 @@
         rcode = #{rcode,jdbcType=VARCHAR},
         rstatus = #{rstatus,jdbcType=INTEGER},
         createdate = #{createdate,jdbcType=DATE},
+<<<<<<< HEAD
         createby = #{createby,jdbcType=VARCHAR}
         where postid = #{postid,jdbcType=INTEGER}
     </update>
+=======
+      </if>
+      <if test="createby != null" >
+        createby = #{createby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where postid = #{postid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Post" >
+    update post
+    set departmentid = #{departmentid,jdbcType=INTEGER},
+      postname = #{postname,jdbcType=VARCHAR},
+      rcode = #{rcode,jdbcType=VARCHAR},
+      rstatus = #{rstatus,jdbcType=INTEGER},
+      createdate = #{createdate,jdbcType=DATE},
+      createby = #{createby,jdbcType=VARCHAR}
+    where postid = #{postid,jdbcType=INTEGER}
+  </update>
+  
+  
+  <select id="selectPost" resultMap="postAll">
+  SELECT * FROM `post` po LEFT JOIN `postmiddle` pm ON po.`postid`=pm.`rid`
+  </select>
+  <resultMap type="com.accp.pojo.Post" id="postAll" autoMapping="true">
+  	<id column="postid" property="postid"/>
+  	<collection property="postmiddles" javaType="com.accp.pojo.Postmiddle">
+  		<id column="pid" property="pid"/>
+  		<result column="codenumber" property="codenumber"/>
+  		<result column="fname" property="fname"/>
+  		<result column="fid" property="fid"/>
+  	</collection>
+  </resultMap>
+  
+  
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 </mapper>

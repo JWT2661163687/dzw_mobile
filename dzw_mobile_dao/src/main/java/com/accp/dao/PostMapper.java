@@ -1,5 +1,7 @@
 package com.accp.dao;
 
+import java.util.List;
+
 import com.accp.pojo.Post;
 
 public interface PostMapper {
@@ -14,4 +16,12 @@ public interface PostMapper {
     int updateByPrimaryKeySelective(Post record);
 
     int updateByPrimaryKey(Post record);
+    
+    /**
+     * 查询所有岗位和功能
+     * @return
+     */
+    List<Post> selectPost();
+    
+    
 }

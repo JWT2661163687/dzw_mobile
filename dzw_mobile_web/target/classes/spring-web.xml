@@ -8,8 +8,49 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
+<<<<<<< HEAD
     <!-- 导入子文件 -->
     <import resource="spring-ctx.xml"/>
+=======
+	<context:component-scan base-package="com.accp.action"/>
+	<mvc:annotation-driven>
+		<mvc:message-converters
+			register-defaults="true">
+			<bean
+				class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/json;charset=UTF-8</value>
+					</list>
+				</property>
+				<property name="features">
+					<list>
+						<value>WriteMapNullValue</value>
+						<value>WriteNullNumberAsZero</value>
+						<value>WriteNullStringAsEmpty</value>
+						<value>WriteDateUseDateFormat</value>
+						<value>WriteEnumUsingToString</value>
+						<value>QuoteFieldNames</value>
+						<!-- 非常重要，解决重复引用对象异常($ref) -->
+						<value>DisableCircularReferenceDetect</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	<mvc:default-servlet-handler />
+	
+	<!-- 权限拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/api/**" />
+			<mvc:exclude-mapping path="/api/loginjurisdictions/employee/**" />
+			<mvc:exclude-mapping path="/api/loginjurisdictions/loginOut" />
+			<bean class="com.accp.interceptor.SessionValidateInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 
     <context:component-scan base-package="com.accp.action"/>
     <mvc:annotation-driven>

@@ -23,9 +23,25 @@ public class Motorcycle {
 
     private Integer fuellabel;         //È¼ï¿½Í±ï¿½ï¿½
 
+<<<<<<< HEAD
     private Double load;               //ï¿½ï¿½ï¿½ï¿½
+=======
+    private Double load;               //ÔØÖØ
+    
+    private String enginename;         //·¢¶¯»úÆ·ÅÆÃû³Æ
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 
-    public Integer getMotorcycleid() {
+    
+    
+    public String getEnginename() {
+		return enginename;
+	}
+
+	public void setEnginename(String enginename) {
+		this.enginename = enginename;
+	}
+
+	public Integer getMotorcycleid() {
         return motorcycleid;
     }
 
@@ -121,6 +137,7 @@ public class Motorcycle {
         this.load = load;
     }
 
+<<<<<<< HEAD
     @Override
     public String toString() {
         return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
@@ -128,6 +145,15 @@ public class Motorcycle {
                 + ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
                 + power + ", fuellabel=" + fuellabel + ", load=" + load + "]";
     }
+=======
+	@Override
+	public String toString() {
+		return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
+				+ ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
+				+ ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
+				+ power + ", fuellabel=" + fuellabel + ", load=" + load + ", enginename=" + enginename + "]";
+	}
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 
     public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
                       String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
@@ -147,9 +173,36 @@ public class Motorcycle {
         this.load = load;
     }
 
+<<<<<<< HEAD
     public Motorcycle() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+=======
+	public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
+			String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
+			Integer fuellabel, Double load, String enginename) {
+		super();
+		this.motorcycleid = motorcycleid;
+		this.engineid = engineid;
+		this.productionid = productionid;
+		this.makeid = makeid;
+		this.motorcyclename = motorcyclename;
+		this.makename = makename;
+		this.productionname = productionname;
+		this.price = price;
+		this.yearprice = yearprice;
+		this.power = power;
+		this.fuellabel = fuellabel;
+		this.load = load;
+		this.enginename = enginename;
+	}
+
+	public Motorcycle() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+    
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 }
