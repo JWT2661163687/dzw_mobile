@@ -104,25 +104,7 @@
         </set>
         where postid = #{postid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Post">
-        update post
-        set departmentid = #{departmentid,jdbcType=INTEGER},
-        postname = #{postname,jdbcType=VARCHAR},
-        rcode = #{rcode,jdbcType=VARCHAR},
-        rstatus = #{rstatus,jdbcType=INTEGER},
-        createdate = #{createdate,jdbcType=DATE},
-<<<<<<< HEAD
-        createby = #{createby,jdbcType=VARCHAR}
-        where postid = #{postid,jdbcType=INTEGER}
-    </update>
-=======
-      </if>
-      <if test="createby != null" >
-        createby = #{createby,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where postid = #{postid,jdbcType=INTEGER}
-  </update>
+    
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Post" >
     update post
     set departmentid = #{departmentid,jdbcType=INTEGER},
@@ -149,5 +131,4 @@
   </resultMap>
   
   
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 </mapper>

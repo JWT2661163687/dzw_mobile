@@ -82,23 +82,6 @@
         </set>
         where fid = #{fid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Functiontable">
-        update functiontable
-        set codenumber = #{codenumber,jdbcType=VARCHAR},
-        fname = #{fname,jdbcType=VARCHAR},
-        fpid = #{fpid,jdbcType=INTEGER},
-<<<<<<< HEAD
-        createdate = #{createdate,jdbcType=DATE}
-        where fid = #{fid,jdbcType=INTEGER}
-    </update>
-=======
-      </if>
-      <if test="createdate != null" >
-        createdate = #{createdate,jdbcType=DATE},
-      </if>
-    </set>
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Functiontable" >
     update functiontable
     set codenumber = #{codenumber,jdbcType=VARCHAR},
@@ -125,5 +108,4 @@
   
   
   
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 </mapper>

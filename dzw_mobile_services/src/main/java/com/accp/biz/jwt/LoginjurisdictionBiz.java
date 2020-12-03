@@ -18,13 +18,7 @@ import com.accp.pojo.Postmiddle;
 
 @Service
 public class LoginjurisdictionBiz {
-<<<<<<< HEAD
-    @Autowired
-    private EmployeeMapper employeeMapper;
 
-
-    /**
-=======
 	@Autowired 
 	private EmployeeMapper employeeMapper;
 	@Autowired
@@ -35,7 +29,6 @@ public class LoginjurisdictionBiz {
 	private PostmiddleMapper postmiddleMapper;
 	
 	 /**
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
      * 登录
      *
      * @param username
@@ -45,9 +38,7 @@ public class LoginjurisdictionBiz {
     public Employee selectlogin(String username, String password) {
         return employeeMapper.selectlogin(username, password);
     }
-<<<<<<< HEAD
 
-=======
     
     
     
@@ -86,5 +77,4 @@ public class LoginjurisdictionBiz {
     }
     
     
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 }
