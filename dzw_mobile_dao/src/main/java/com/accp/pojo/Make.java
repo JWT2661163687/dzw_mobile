@@ -1,15 +1,16 @@
 package com.accp.pojo;
+
 /**
- * ³µÁ¾Æ·ÅÆ±í
- * @author 86181
+ * ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Æ±ï¿½
  *
+ * @author 86181
  */
 public class Make {
-    private Integer makeid;    //³µÁ¾Æ·ÅÆid
+    private Integer makeid;    //ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½id
 
-    private String makename;   //³µÁ¾Æ·ÅÆÃû³Æ
-    
-    private String acronym;    //³µÁ¾Æ·ÅÆÊ××ÖÄ¸
+    private String makename;   //ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    private String acronym;    //ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸
 
     public Integer getMakeid() {
         return makeid;
@@ -27,29 +28,29 @@ public class Make {
         this.makename = makename == null ? null : makename.trim();
     }
 
-	public String getAcronym() {
-		return acronym;
-	}
+    public String getAcronym() {
+        return acronym;
+    }
 
-	public void setAcronym(String acronym) {
-		this.acronym = acronym;
-	}
+    public void setAcronym(String acronym) {
+        this.acronym = acronym;
+    }
 
-	@Override
-	public String toString() {
-		return "Make [makeid=" + makeid + ", makename=" + makename + ", acronym=" + acronym + "]";
-	}
+    @Override
+    public String toString() {
+        return "Make [makeid=" + makeid + ", makename=" + makename + ", acronym=" + acronym + "]";
+    }
 
-	public Make(Integer makeid, String makename, String acronym) {
-		super();
-		this.makeid = makeid;
-		this.makename = makename;
-		this.acronym = acronym;
-	}
+    public Make(Integer makeid, String makename, String acronym) {
+        super();
+        this.makeid = makeid;
+        this.makename = makename;
+        this.acronym = acronym;
+    }
 
-	public Make() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-    
+    public Make() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
 }

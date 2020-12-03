@@ -3,59 +3,62 @@ package com.accp.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.accp.dao.TeamtechniciantwoMapper;
+
 public class Maintaincar {
-    private Integer maintainid;//Î¬ÐÞid
+    private Integer maintainid;//Î¬ï¿½ï¿½id
 
-    private Integer receiptsid;//Î¬ÐÞ×´Ì¬id
+    private Integer receiptsid;//Î¬ï¿½ï¿½×´Ì¬id
 
-    private Integer teamid;//°à×é±àºÅ
+    private Integer teamid;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     private Integer id;//id
 
-    private String departdate;//¿ªµ¥³ö·¢Ê±¼ä
+    private String departdate;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 
-    private String departaddress;//³ö·¢µØÖ·
+    private String departaddress;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
 
-    private String constructiondate;//Ê©¹¤Ê±¼ä
+    private String constructiondate;//Ê©ï¿½ï¿½Ê±ï¿½ï¿½
 
-    private String rescuevehicleaddress;//¾ÈÔ®Ê±¼ä
+    private String rescuevehicleaddress;//ï¿½ï¿½Ô®Ê±ï¿½ï¿½
 
-    private String accomplishdate;//Íê³ÉÊ±¼ä
+    private String accomplishdate;//ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 
-    private Integer maintainvehicleid;//Î¬ÐÞ³µÁ¾id
+    private Integer maintainvehicleid;//Î¬ï¿½Þ³ï¿½ï¿½ï¿½id
 
-    private Integer inside;//Õ¾ÄÚÕ¾Íâ0/1
+    private Integer inside;//Õ¾ï¿½ï¿½Õ¾ï¿½ï¿½0/1
 
-    private Integer mileage;//×ÜÀï³Ì
+    private Integer mileage;//ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer counselorid;//·þÎñ¹ËÎÊid
+    private Integer counselorid;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id
 
-    private String beizhu;//Î¬ÐÞ±¸×¢
+    private String beizhu;//Î¬ï¿½Þ±ï¿½×¢
 
-    private Double maintainmoney;//Î¬ÐÞ½ð¶î
+    private Double maintainmoney;//Î¬ï¿½Þ½ï¿½ï¿½
 
-    private String drivername;//¼ÝÊ»Ô±
+    private String drivername;//ï¿½ï¿½Ê»Ô±
 
-    private String maintainphone;//ÁªÏµµç»°
+    private String maintainphone;//ï¿½ï¿½Ïµï¿½ç»°
 
-    private String licence;//³µÅÆºÅ
+    private String licence;//ï¿½ï¿½ï¿½Æºï¿½
 
-    private String vehiclebrand;//³µÁ¾Æ·ÅÆ
+    private String vehiclebrand;//ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½
 
-    private String vehiclemodel;//³µÁ¾ÐÍºÅ
+    private String vehiclemodel;//ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½
 
-    private Integer clearingfrom;//½áËã·½Ê½0/1
+    private Integer clearingfrom;//ï¿½ï¿½ï¿½ã·½Ê½0/1
 
-    private String enginename;//·¢¶¯»úÆ·ÅÆ
+    private String enginename;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½
 
-    private String vin;//³µ¼ÜºÅ
+    private String vin;//ï¿½ï¿½ï¿½Üºï¿½
 
-    private String enginehao;//·¢¶¯»úºÅ
+    private String enginehao;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String carownername;//³µÖ÷Ãû
+    private String carownername;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer carid;//³µÖ÷¿Í»§±àºÅ
+    private Integer carid;//ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½
 
+<<<<<<< HEAD
     private String maintaindate;//µ¥¾ÝÊ±¼ä
     
     private String receiptsname;	//¶©µ¥×´Ì¬
@@ -63,16 +66,50 @@ public class Maintaincar {
     private String tename;			//°à×éÃû
     
     public List<Weixiu> weixius=new ArrayList<Weixiu>();//Î¬ÐÞÏîÄ¿¼¯ºÏ
+=======
+    private String maintaindate;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+    private Integer maintainling;//Î¬ï¿½Þ´ï¿½ï¿½ï¿½
+
+    public Integer getMaintainling() {
+        return maintainling;
+    }
+
+    public void setMaintainling(Integer maintainling) {
+        this.maintainling = maintainling;
+    }
+
+    public List<Weixiu> weixius = new ArrayList<Weixiu>();//Î¬ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
+
+    public List<Maintaincarxiangmu> maintaincarxiangmus = new ArrayList<Maintaincarxiangmu>();//Î¬ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
+    public List<Teamtechniciantwo> teamtechniciantwos = new ArrayList<Teamtechniciantwo>();//Î¬ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    public List<Teamtechniciantwo> getTeamtechniciantwos() {
+        return teamtechniciantwos;
+    }
+
+    public void setTeamtechniciantwos(List<Teamtechniciantwo> teamtechniciantwos) {
+        this.teamtechniciantwos = teamtechniciantwos;
+    }
+
+    public List<Maintaincarxiangmu> getMaintaincarxiangmus() {
+        return maintaincarxiangmus;
+    }
+
+    public void setMaintaincarxiangmus(List<Maintaincarxiangmu> maintaincarxiangmus) {
+        this.maintaincarxiangmus = maintaincarxiangmus;
+    }
+
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 
     public List<Weixiu> getWeixius() {
-		return weixius;
-	}
+        return weixius;
+    }
 
-	public void setWeixius(List<Weixiu> weixius) {
-		this.weixius = weixius;
-	}
+    public void setWeixius(List<Weixiu> weixius) {
+        this.weixius = weixius;
+    }
 
-	public Integer getMaintainid() {
+    public Integer getMaintainid() {
         return maintainid;
     }
 
@@ -105,7 +142,6 @@ public class Maintaincar {
     }
 
 
-
     public String getDepartaddress() {
         return departaddress;
     }
@@ -115,7 +151,6 @@ public class Maintaincar {
     }
 
 
-
     public String getRescuevehicleaddress() {
         return rescuevehicleaddress;
     }
@@ -123,7 +158,6 @@ public class Maintaincar {
     public void setRescuevehicleaddress(String rescuevehicleaddress) {
         this.rescuevehicleaddress = rescuevehicleaddress == null ? null : rescuevehicleaddress.trim();
     }
-
 
 
     public Integer getMaintainvehicleid() {
@@ -262,38 +296,39 @@ public class Maintaincar {
         this.carid = carid;
     }
 
-	public String getDepartdate() {
-		return departdate;
-	}
+    public String getDepartdate() {
+        return departdate;
+    }
 
-	public void setDepartdate(String departdate) {
-		this.departdate = departdate;
-	}
+    public void setDepartdate(String departdate) {
+        this.departdate = departdate;
+    }
 
-	public String getConstructiondate() {
-		return constructiondate;
-	}
+    public String getConstructiondate() {
+        return constructiondate;
+    }
 
-	public void setConstructiondate(String constructiondate) {
-		this.constructiondate = constructiondate;
-	}
+    public void setConstructiondate(String constructiondate) {
+        this.constructiondate = constructiondate;
+    }
 
-	public String getAccomplishdate() {
-		return accomplishdate;
-	}
+    public String getAccomplishdate() {
+        return accomplishdate;
+    }
 
-	public void setAccomplishdate(String accomplishdate) {
-		this.accomplishdate = accomplishdate;
-	}
+    public void setAccomplishdate(String accomplishdate) {
+        this.accomplishdate = accomplishdate;
+    }
 
-	public String getMaintaindate() {
-		return maintaindate;
-	}
+    public String getMaintaindate() {
+        return maintaindate;
+    }
 
-	public void setMaintaindate(String maintaindate) {
-		this.maintaindate = maintaindate;
-	}
+    public void setMaintaindate(String maintaindate) {
+        this.maintaindate = maintaindate;
+    }
 
+<<<<<<< HEAD
 	
 	public String getReceiptsname() {
 		return receiptsname;
@@ -323,6 +358,20 @@ public class Maintaincar {
 				+ ", enginename=" + enginename + ", vin=" + vin + ", enginehao=" + enginehao + ", carownername="
 				+ carownername + ", carid=" + carid + ", maintaindate=" + maintaindate + "]";
 	}
+=======
+    @Override
+    public String toString() {
+        return "Maintaincar [maintainid=" + maintainid + ", receiptsid=" + receiptsid + ", teamid=" + teamid + ", id="
+                + id + ", departdate=" + departdate + ", departaddress=" + departaddress + ", constructiondate="
+                + constructiondate + ", rescuevehicleaddress=" + rescuevehicleaddress + ", accomplishdate="
+                + accomplishdate + ", maintainvehicleid=" + maintainvehicleid + ", inside=" + inside + ", mileage="
+                + mileage + ", counselorid=" + counselorid + ", beizhu=" + beizhu + ", maintainmoney=" + maintainmoney
+                + ", drivername=" + drivername + ", maintainphone=" + maintainphone + ", licence=" + licence
+                + ", vehiclebrand=" + vehiclebrand + ", vehiclemodel=" + vehiclemodel + ", clearingfrom=" + clearingfrom
+                + ", enginename=" + enginename + ", vin=" + vin + ", enginehao=" + enginehao + ", carownername="
+                + carownername + ", carid=" + carid + ", maintaindate=" + maintaindate + "]";
+    }
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 
-  
+
 }

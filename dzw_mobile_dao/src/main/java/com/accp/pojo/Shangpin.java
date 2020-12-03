@@ -13,6 +13,16 @@ public class Shangpin {
 
     private String spshoujia;
 
+    private Integer daid;
+
+    public Integer getDaid() {
+        return daid;
+    }
+
+    public void setDaid(Integer daid) {
+        this.daid = daid;
+    }
+
     public Integer getSpid() {
         return spid;
     }
@@ -60,4 +70,6 @@ public class Shangpin {
     public void setSpshoujia(String spshoujia) {
         this.spshoujia = spshoujia == null ? null : spshoujia.trim();
     }
+
+
 }

@@ -19,16 +19,16 @@ public interface MaintaincarxiangmuMapper {
     int updateByPrimaryKeySelective(Maintaincarxiangmu record);
 
     int updateByPrimaryKey(Maintaincarxiangmu record);
-    
-    
+
+
     /**
-     * ½Ó³µid²éÑ¯ËùÓÐÎ¬ÐÞÏîÄ¿
+     * ï¿½Ó³ï¿½idï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½Ä¿
+     *
      * @param mainno
      * @return
      */
     @Select("select * from maintaincarxiangmu where mainno=#{mainno}")
-    List<Maintaincarxiangmu> selectAllid(@Param("mainno")Integer mainno);
-    
-    
-    
+    List<Maintaincarxiangmu> selectAllid(@Param("mainno") Integer mainno);
+
+
 }

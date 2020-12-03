@@ -14,12 +14,13 @@ public interface MakeMapper {
     int deleteByPrimaryKey(Integer makeid);
 
     /**
-     * ÐÂÔöÆ·ÅÆ±í
+     * ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Æ±ï¿½
+     *
      * @param make
      * @return
      */
     @Insert("INSERT INTO `make` VALUES(#{make.makeid},#{make.makename},#{make.acronym})")
-    int inserts(@Param("make")Make make);
+    int inserts(@Param("make") Make make);
 
     int insertSelective(Make record);
 
@@ -28,38 +29,48 @@ public interface MakeMapper {
     int updateByPrimaryKeySelective(Make record);
 
     int updateByPrimaryKey(Make record);
+
     /**
-     * ²éÑ¯ËùÓÐ
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
+     *
      * @return
      */
     @Select("SELECT * FROM make ")
     List<Make> SelectMake();
+
     /**
-     * ¸ù¾ÝidÉ¾³ý
+     * ï¿½ï¿½ï¿½ï¿½idÉ¾ï¿½ï¿½
+     *
      * @param id
      * @return
      */
     @Delete("DELETE FROM `make` WHERE `makeid`=#{id}")
-    int deletaById(@Param("id")Integer id);
+    int deletaById(@Param("id") Integer id);
+
     /**
-     * ¸ù¾Ýid²éÑ¯ÊÇ·ñÓÐÏàÍ¬µÄÖµ
+     * ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½Ñ¯ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½Öµ
+     *
      * @param id
      * @return
      */
     @Select("SELECT * FROM `make` WHERE `makeid`=#{id}")
-    List<Make> SelectById(@Param("id")Integer id);
+    List<Make> SelectById(@Param("id") Integer id);
+
     /**
-     * ÊäÈë¿ò²éÑ¯
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯
+     *
      * @param name
      * @return
      */
     @Select("SELECT * FROM `make` WHERE `makeid` LIKE '%${name}%' OR `makename` LIKE '%${name}%' OR `acronym` LIKE '%${name}%'")
-    List<Make> SelectByAll(@Param("name")String name);
+    List<Make> SelectByAll(@Param("name") String name);
+
     /**
-     * ÐÞ¸Ä
+     * ï¿½Þ¸ï¿½
+     *
      * @param make
      * @return
      */
     @Update("UPDATE `make` SET `makename`=#{make.makename},`acronym`=#{make.acronym} WHERE `makeid`=#{make.makeid}")
-    int updateById(@Param("make")Make make);
+    int updateById(@Param("make") Make make);
 }

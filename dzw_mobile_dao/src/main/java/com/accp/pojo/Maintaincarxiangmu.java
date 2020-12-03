@@ -1,27 +1,36 @@
 package com.accp.pojo;
 
 public class Maintaincarxiangmu {
-    private Integer xmid;//ÏîÄ¿id
+    private Integer xmid;//ï¿½ï¿½Ä¿id
 
-    private Integer fid;//·¢¶¯»úid
+    private Integer fid;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id
 
-    private Integer cid;//³µĞÍid
+    private Integer cid;//ï¿½ï¿½ï¿½ï¿½id
 
-    private String xmleixing;//ÏîÄ¿Àà±ğ
+    private String xmleixing;//ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½
 
-    private String xmbianma;//ÏîÄ¿±àÂë
+    private String xmbianma;//ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
 
-    private String xmmingcheng;//ÏîÄ¿Ãû³Æ
+    private String xmmingcheng;//ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
 
-    private String xmshoujia;//ÊÛ¼ÛÀàĞÍ
+    private String xmshoujia;//ï¿½Û¼ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String xmzhonglei;//ÊÕÈëÖÖÀà
+    private String xmzhonglei;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer xmbiaozhun;//±ê×¼¼Û
+    private Integer xmbiaozhun;//ï¿½ï¿½×¼ï¿½ï¿½
 
-    private Integer xmhuiyuan;//»áÔ±¼Û
+    private Integer xmhuiyuan;//ï¿½ï¿½Ô±ï¿½ï¿½
 
-    private Integer mainno;//Î¬ĞŞ½Ó³µid
+    private Integer mainno;//Î¬ï¿½Ş½Ó³ï¿½id
+    private Integer maintainling;//Î¬ï¿½Ş´ï¿½ï¿½ï¿½
+
+    public Integer getMaintainling() {
+        return maintainling;
+    }
+
+    public void setMaintainling(Integer maintainling) {
+        this.maintainling = maintainling;
+    }
 
     public Integer getXmid() {
         return xmid;

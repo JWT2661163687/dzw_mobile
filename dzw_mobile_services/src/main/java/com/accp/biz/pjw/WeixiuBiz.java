@@ -13,42 +13,42 @@ import com.github.pagehelper.PageInfo;
 
 @Service("WeixiuBiz")
 public class WeixiuBiz {
-		@Autowired
-		private WeixiuMapper weixiumapper;
-		
-		/* 		按维修cid 查询 维修项目信息
-		 * 	    @param cid	 
-		 * 		@return
-		 */
-	   public PageInfo<Weixiu> selectcid(Integer page1,Integer page2,Integer cid,String sousuo){
-	    	PageHelper.startPage(page1,page2);
-	    	List<Weixiu> list=weixiumapper.selectcid(cid,sousuo );
-	    	PageInfo<Weixiu> pageinfo=new PageInfo<Weixiu>(list);
-	    	System.out.println("分页"+pageinfo);
-	    	return pageinfo;
-	    }
-	   
-	   /*
-	    * 	新增
-	    * 	@param
-	    */
-	   public  int insertweixiu(Weixiu weixiu) {
-		 return  weixiumapper.insertweixiu(weixiu);
-	   }
-	   
-	   /*
-	    * 	修改
-	    * 	@param  xiugai
-	    */
-	 public  int updateweixiu(Weixiu xiugai) {
-		   return weixiumapper.updateweixiu(xiugai);
-	   }
-	 
-	   /*
-	    * 	删除
-	    * @param  xmid
-	    */ 
-	  public int deleteweixiu(Integer xmid) {
-		   return weixiumapper.deleteweixiu(xmid);
-	   }
+    @Autowired
+    private WeixiuMapper weixiumapper;
+
+    /* 		按维修cid 查询 维修项目信息
+     * 	    @param cid
+     * 		@return
+     */
+    public PageInfo<Weixiu> selectcid(Integer page1, Integer page2, Integer cid, String sousuo) {
+        PageHelper.startPage(page1, page2);
+        List<Weixiu> list = weixiumapper.selectcid(cid, sousuo);
+        PageInfo<Weixiu> pageinfo = new PageInfo<Weixiu>(list);
+        System.out.println("分页" + pageinfo);
+        return pageinfo;
+    }
+
+    /*
+     * 	新增
+     * 	@param
+     */
+    public int insertweixiu(Weixiu weixiu) {
+        return weixiumapper.insertweixiu(weixiu);
+    }
+
+    /*
+     * 	修改
+     * 	@param  xiugai
+     */
+    public int updateweixiu(Weixiu xiugai) {
+        return weixiumapper.updateweixiu(xiugai);
+    }
+
+    /*
+     * 	删除
+     * @param  xmid
+     */
+    public int deleteweixiu(Integer xmid) {
+        return weixiumapper.deleteweixiu(xmid);
+    }
 }

@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.accp.pojo.Client;
+
+
 import com.accp.pojo.Make;
 import com.accp.pojo.Motorcycle;
 import com.accp.pojo.Vehicle;
@@ -25,49 +27,58 @@ public interface VehicleMapper {
     int updateByPrimaryKeySelective(Vehicle record);
 
     int updateByPrimaryKey(Vehicle record);
-    
+
     /**
-     * ¸ù¾ÝÌõ¼þ²éÑ¯³µÁ¾ÐÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      */
-    List<Vehicle> queryVehicle(@Param("vid")Integer vid);
-    
+    List<Vehicle> queryVehicle(@Param("vid") Integer vid);
+
     /**
-     * Ë«»÷³µÁ¾ÐÅÏ¢ÏÔÊ¾¶ÔÓ¦µÄÓÃ»§ÐÅÏ¢
+     * Ë«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ê¾ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï¢
      */
     @Select("SELECT * FROM `client` WHERE cId = #{cid}")
-    List<Client> queryClient(@Param("cid")Integer cid);
-    
+    List<Client> queryClient(@Param("cid") Integer cid);
+
     /**
-     * ÐÂÔö³µÁ¾ÐÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      */
     @Insert("INSERT INTO `vehicle`(`cId`,`vDriver`,`vLicense`,`vBrand`,`vModel`,`vPhone`,`vAffiliation`,`vMileage`,`registeredDate`,`purchaseDate`) VALUES(#{vehicle.cid},#{vehicle.vdriver},#{vehicle.vlicense},#{vehicle.vbrand},#{vehicle.vmodel},#{vehicle.vphone},#{vehicle.vaffiliation},#{vehicle.vmileage},#{vehicle.registereddate},#{vehicle.purchasedate})")
-    int insertVehicle(@Param("vehicle")Vehicle vehicle);
-    
+    int insertVehicle(@Param("vehicle") Vehicle vehicle);
+
     /**
-     * 	ÐÞ¸Ä³µÁ¾ÐÅÏ¢
+     * ï¿½Þ¸Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      */
     @Update("UPDATE `vehicle` SET `vDriver` = #{vehicle.vdriver},`vLicense` = #{vehicle.vlicense},`vBrand` = #{vehicle.vbrand},`vModel` = #{vehicle.vmodel},`vPhone` = #{vehicle.vphone},`vAffiliation` = #{vehicle.vaffiliation},`vMileage` = #{vehicle.vmileage},`registeredDate` = #{vehicle.registereddate},`purchaseDate` = #{vehicle.purchasedate} WHERE `vId` = #{vehicle.vid}")
-    int updateVehicle(@Param("vehicle")Vehicle vehicle);
-    
+    int updateVehicle(@Param("vehicle") Vehicle vehicle);
+
     /**
-     * 	¸ù¾ÝÆ·ÅÆ±àºÅ»òÕßÆ·ÅÆÃû³Æ²éÑ¯Æ·ÅÆÐÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Æ±ï¿½Å»ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯Æ·ï¿½ï¿½ï¿½ï¿½Ï¢
      */
-    List<Make> queryMake(@Param("id")String id);
-    
+    List<Make> queryMake(@Param("id") String id);
+
     /**
-     * 	¸ù¾Ý³µÐÍ±àºÅ»òÕß³µÐÍÃû³Æ²éÑ¯³µÁ¾ÐÅÏ¢
+     * ï¿½ï¿½ï¿½Ý³ï¿½ï¿½Í±ï¿½Å»ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      */
-    List<Motorcycle> queryMotorcycle(@Param("makeid") Integer makeid,@Param("id")String id);
-    
+    List<Motorcycle> queryMotorcycle(@Param("makeid") Integer makeid, @Param("id") String id);
+
     /**
-     * 	µã»÷Æ·ÅÆµÄÊ±ºò²éÑ¯¶ÔÓ¦µÄ³µÐÍ
+     * ï¿½ï¿½ï¿½Æ·ï¿½Æµï¿½Ê±ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½Ó¦ï¿½Ä³ï¿½ï¿½ï¿½
      */
     @Select("SELECT * FROM motorcycle WHERE makeid = #{id}")
-    List<Motorcycle> queryMotorcycle1(@Param("id")Integer id);
-    
+    List<Motorcycle> queryMotorcycle1(@Param("id") Integer id);
+
     /**
-     * 	É¾³ý³µÁ¾ÐÅÏ¢
+     * É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      */
     @Delete("DELETE FROM `vehicle` WHERE vId = #{vid}")
-    int deleteVehicle(@Param("vid")Integer vid);
+    int deleteVehicle(@Param("vid") Integer vid);
+
+    /**
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ÐµÄ³ï¿½ï¿½ï¿½
+     *
+     * @return
+     */
+    @Select("select * from `vehicle` ve  where ve.`vId` not in(select `maintainvehicleid` from `maintaincar` ma where ma.`receiptsid` NOT IN(5,4,3));")
+    List<Vehicle> selectzhuangtai();
+
 }

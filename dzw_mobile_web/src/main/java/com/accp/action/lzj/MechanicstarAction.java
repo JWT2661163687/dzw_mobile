@@ -23,50 +23,52 @@ import com.accp.pojo.Mechanicstar;
 @RequestMapping("/api/mech")
 @CrossOrigin
 public class MechanicstarAction {
-	@Autowired
-	private MechanicstarBiz biz;
-	
-	/**
-	 * 查询全部123123
-	 * @return
-	 */
-	@GetMapping("lzjquery")
-	public List<Mechanicstar> queryMechanicstar(){
-		return biz.queryMechan();
-	}
-	
-	/**
-	 * 新增技工
-	 */
-	@PostMapping("insert")
-	public Map<String, String> insertStudent(@RequestBody Mechanicstar mechanicstar) {
-		Map<String, String> message = new HashMap<String, String>();
-		biz.insertMechan(mechanicstar);
-		message.put("code", "200");
-		message.put("msg", "ok");
-		return message;
-	}
-	/**
-	 * 修改技工
-	 */
-	@PutMapping("update")
-	public Map<String, String> updatePersonInfo(@RequestBody Mechanicstar mechanicstar) {
-		Map<String, String> message = new HashMap<String, String>();
-		biz.updateMechan(mechanicstar);
-		message.put("code", "200");
-		message.put("msg", "ok");
-		return message;
-	}
-	
-	/**
-	 * 删除技工
-	 */
-	@DeleteMapping("mechs/{meid}")
-	public Map<String, String> deleteMechan(@PathVariable String meid) {
-		Map<String, String> message = new HashMap<String, String>();
-		biz.deleteMechan(meid);
-		message.put("code", "200");
-		message.put("msg", "ok");
-		return message;
-	}
+    @Autowired
+    private MechanicstarBiz biz;
+
+    /**
+     * 查询全部123123
+     *
+     * @return
+     */
+    @GetMapping("lzjquery")
+    public List<Mechanicstar> queryMechanicstar() {
+        return biz.queryMechan();
+    }
+
+    /**
+     * 新增技工
+     */
+    @PostMapping("insert")
+    public Map<String, String> insertStudent(@RequestBody Mechanicstar mechanicstar) {
+        Map<String, String> message = new HashMap<String, String>();
+        biz.insertMechan(mechanicstar);
+        message.put("code", "200");
+        message.put("msg", "ok");
+        return message;
+    }
+
+    /**
+     * 修改技工
+     */
+    @PutMapping("update")
+    public Map<String, String> updatePersonInfo(@RequestBody Mechanicstar mechanicstar) {
+        Map<String, String> message = new HashMap<String, String>();
+        biz.updateMechan(mechanicstar);
+        message.put("code", "200");
+        message.put("msg", "ok");
+        return message;
+    }
+
+    /**
+     * 删除技工
+     */
+    @DeleteMapping("mechs/{meid}")
+    public Map<String, String> deleteMechan(@PathVariable String meid) {
+        Map<String, String> message = new HashMap<String, String>();
+        biz.deleteMechan(meid);
+        message.put("code", "200");
+        message.put("msg", "ok");
+        return message;
+    }
 }

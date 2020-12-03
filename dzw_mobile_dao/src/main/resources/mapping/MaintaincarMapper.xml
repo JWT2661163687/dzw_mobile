@@ -1,314 +1,355 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.MaintaincarMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Maintaincar" >
-    <id column="maintainid" property="maintainid" jdbcType="INTEGER" />
-    <result column="receiptsid" property="receiptsid" jdbcType="INTEGER" />
-    <result column="teamid" property="teamid" jdbcType="INTEGER" />
-    <result column="id" property="id" jdbcType="INTEGER" />
-    <result column="departdate" property="departdate" jdbcType="TIMESTAMP" />
-    <result column="departaddress" property="departaddress" jdbcType="VARCHAR" />
-    <result column="constructiondate" property="constructiondate" jdbcType="TIMESTAMP" />
-    <result column="rescuevehicleaddress" property="rescuevehicleaddress" jdbcType="VARCHAR" />
-    <result column="accomplishdate" property="accomplishdate" jdbcType="TIMESTAMP" />
-    <result column="maintainvehicleid" property="maintainvehicleid" jdbcType="INTEGER" />
-    <result column="inside" property="inside" jdbcType="INTEGER" />
-    <result column="mileage" property="mileage" jdbcType="INTEGER" />
-    <result column="counselorid" property="counselorid" jdbcType="INTEGER" />
-    <result column="beizhu" property="beizhu" jdbcType="VARCHAR" />
-    <result column="maintainmoney" property="maintainmoney" jdbcType="DOUBLE" />
-    <result column="drivername" property="drivername" jdbcType="VARCHAR" />
-    <result column="maintainphone" property="maintainphone" jdbcType="VARCHAR" />
-    <result column="licence" property="licence" jdbcType="VARCHAR" />
-    <result column="vehiclebrand" property="vehiclebrand" jdbcType="VARCHAR" />
-    <result column="vehiclemodel" property="vehiclemodel" jdbcType="VARCHAR" />
-    <result column="clearingfrom" property="clearingfrom" jdbcType="INTEGER" />
-    <result column="enginename" property="enginename" jdbcType="VARCHAR" />
-    <result column="vin" property="vin" jdbcType="VARCHAR" />
-    <result column="enginehao" property="enginehao" jdbcType="VARCHAR" />
-    <result column="carownername" property="carownername" jdbcType="VARCHAR" />
-    <result column="carid" property="carid" jdbcType="INTEGER" />
-    <result column="maintaindate" property="maintaindate" jdbcType="DATE" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    maintainid, receiptsid, teamid, id, departdate, departaddress, constructiondate, 
-    rescuevehicleaddress, accomplishdate, maintainvehicleid, inside, mileage, counselorid, 
-    beizhu, maintainmoney, drivername, maintainphone, licence, vehiclebrand, vehiclemodel, 
-    clearingfrom, enginename, vin, enginehao, carownername, carid, maintaindate
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from maintaincar
-    where maintainid = #{maintainid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from maintaincar
-    where maintainid = #{maintainid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Maintaincar" >
-    insert into maintaincar (maintainid, receiptsid, teamid, 
-      id, departdate, departaddress, 
-      constructiondate, rescuevehicleaddress, 
-      accomplishdate, maintainvehicleid, inside, 
-      mileage, counselorid, beizhu, 
-      maintainmoney, drivername, maintainphone, 
-      licence, vehiclebrand, vehiclemodel, 
-      clearingfrom, enginename, vin, 
-      enginehao, carownername, carid, 
-      maintaindate)
-    values (#{maintainid,jdbcType=INTEGER}, #{receiptsid,jdbcType=INTEGER}, #{teamid,jdbcType=INTEGER}, 
-      #{id,jdbcType=INTEGER}, #{departdate,jdbcType=TIMESTAMP}, #{departaddress,jdbcType=VARCHAR}, 
-      #{constructiondate,jdbcType=TIMESTAMP}, #{rescuevehicleaddress,jdbcType=VARCHAR}, 
-      #{accomplishdate,jdbcType=TIMESTAMP}, #{maintainvehicleid,jdbcType=INTEGER}, #{inside,jdbcType=INTEGER}, 
-      #{mileage,jdbcType=INTEGER}, #{counselorid,jdbcType=INTEGER}, #{beizhu,jdbcType=VARCHAR}, 
-      #{maintainmoney,jdbcType=DOUBLE}, #{drivername,jdbcType=VARCHAR}, #{maintainphone,jdbcType=VARCHAR}, 
-      #{licence,jdbcType=VARCHAR}, #{vehiclebrand,jdbcType=VARCHAR}, #{vehiclemodel,jdbcType=VARCHAR}, 
-      #{clearingfrom,jdbcType=INTEGER}, #{enginename,jdbcType=VARCHAR}, #{vin,jdbcType=VARCHAR}, 
-      #{enginehao,jdbcType=VARCHAR}, #{carownername,jdbcType=VARCHAR}, #{carid,jdbcType=INTEGER}, 
-      #{maintaindate,jdbcType=DATE})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Maintaincar" >
-    insert into maintaincar
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="receiptsid != null" >
-        receiptsid,
-      </if>
-      <if test="teamid != null" >
-        teamid,
-      </if>
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="departdate != null" >
-        departdate,
-      </if>
-      <if test="departaddress != null" >
-        departaddress,
-      </if>
-      <if test="constructiondate != null" >
-        constructiondate,
-      </if>
-      <if test="rescuevehicleaddress != null" >
-        rescuevehicleaddress,
-      </if>
-      <if test="accomplishdate != null" >
-        accomplishdate,
-      </if>
-      <if test="maintainvehicleid != null" >
-        maintainvehicleid,
-      </if>
-      <if test="inside != null" >
-        inside,
-      </if>
-      <if test="mileage != null" >
-        mileage,
-      </if>
-      <if test="counselorid != null" >
-        counselorid,
-      </if>
-      <if test="beizhu != null" >
-        beizhu,
-      </if>
-      <if test="maintainmoney != null" >
-        maintainmoney,
-      </if>
-      <if test="drivername != null" >
-        drivername,
-      </if>
-      <if test="maintainphone != null" >
-        maintainphone,
-      </if>
-      <if test="licence != null" >
-        licence,
-      </if>
-      <if test="vehiclebrand != null" >
-        vehiclebrand,
-      </if>
-      <if test="vehiclemodel != null" >
-        vehiclemodel,
-      </if>
-      <if test="clearingfrom != null" >
-        clearingfrom,
-      </if>
-      <if test="enginename != null" >
-        enginename,
-      </if>
-      <if test="vin != null" >
-        vin,
-      </if>
-      <if test="enginehao != null" >
-        enginehao,
-      </if>
-      <if test="carownername != null" >
-        carownername,
-      </if>
-      <if test="carid != null" >
-        carid,
-      </if>
-      <if test="maintaindate != null" >
-        maintaindate,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-     
-      <if test="receiptsid != null" >
-        #{receiptsid,jdbcType=INTEGER},
-      </if>
-      <if test="teamid != null" >
-        #{teamid,jdbcType=INTEGER},
-      </if>
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="departdate != null" >
-        #{departdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="departaddress != null" >
-        #{departaddress,jdbcType=VARCHAR},
-      </if>
-      <if test="constructiondate != null" >
-        #{constructiondate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="rescuevehicleaddress != null" >
-        #{rescuevehicleaddress,jdbcType=VARCHAR},
-      </if>
-      <if test="accomplishdate != null" >
-        #{accomplishdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="maintainvehicleid != null" >
-        #{maintainvehicleid,jdbcType=INTEGER},
-      </if>
-      <if test="inside != null" >
-        #{inside,jdbcType=INTEGER},
-      </if>
-      <if test="mileage != null" >
-        #{mileage,jdbcType=INTEGER},
-      </if>
-      <if test="counselorid != null" >
-        #{counselorid,jdbcType=INTEGER},
-      </if>
-      <if test="beizhu != null" >
-        #{beizhu,jdbcType=VARCHAR},
-      </if>
-      <if test="maintainmoney != null" >
-        #{maintainmoney,jdbcType=DOUBLE},
-      </if>
-      <if test="drivername != null" >
-        #{drivername,jdbcType=VARCHAR},
-      </if>
-      <if test="maintainphone != null" >
-        #{maintainphone,jdbcType=VARCHAR},
-      </if>
-      <if test="licence != null" >
-        #{licence,jdbcType=VARCHAR},
-      </if>
-      <if test="vehiclebrand != null" >
-        #{vehiclebrand,jdbcType=VARCHAR},
-      </if>
-      <if test="vehiclemodel != null" >
-        #{vehiclemodel,jdbcType=VARCHAR},
-      </if>
-      <if test="clearingfrom != null" >
-        #{clearingfrom,jdbcType=INTEGER},
-      </if>
-      <if test="enginename != null" >
-        #{enginename,jdbcType=VARCHAR},
-      </if>
-      <if test="vin != null" >
-        #{vin,jdbcType=VARCHAR},
-      </if>
-      <if test="enginehao != null" >
-        #{enginehao,jdbcType=VARCHAR},
-      </if>
-      <if test="carownername != null" >
-        #{carownername,jdbcType=VARCHAR},
-      </if>
-      <if test="carid != null" >
-        #{carid,jdbcType=INTEGER},
-      </if>
-      <if test="maintaindate != null" >
-        #{maintaindate,jdbcType=DATE},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Maintaincar" >
-    update maintaincar
-    <set >
-      <if test="receiptsid != null" >
-        receiptsid = #{receiptsid,jdbcType=INTEGER},
-      </if>
-      <if test="teamid != null" >
+<mapper namespace="com.accp.dao.MaintaincarMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Maintaincar">
+        <id column="maintainid" property="maintainid" jdbcType="INTEGER"/>
+        <result column="receiptsid" property="receiptsid" jdbcType="INTEGER"/>
+        <result column="teamid" property="teamid" jdbcType="INTEGER"/>
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="departdate" property="departdate" jdbcType="TIMESTAMP"/>
+        <result column="departaddress" property="departaddress" jdbcType="VARCHAR"/>
+        <result column="constructiondate" property="constructiondate" jdbcType="TIMESTAMP"/>
+        <result column="rescuevehicleaddress" property="rescuevehicleaddress" jdbcType="VARCHAR"/>
+        <result column="accomplishdate" property="accomplishdate" jdbcType="TIMESTAMP"/>
+        <result column="maintainvehicleid" property="maintainvehicleid" jdbcType="INTEGER"/>
+        <result column="inside" property="inside" jdbcType="INTEGER"/>
+        <result column="mileage" property="mileage" jdbcType="INTEGER"/>
+        <result column="counselorid" property="counselorid" jdbcType="INTEGER"/>
+        <result column="beizhu" property="beizhu" jdbcType="VARCHAR"/>
+        <result column="maintainmoney" property="maintainmoney" jdbcType="DOUBLE"/>
+        <result column="drivername" property="drivername" jdbcType="VARCHAR"/>
+        <result column="maintainphone" property="maintainphone" jdbcType="VARCHAR"/>
+        <result column="licence" property="licence" jdbcType="VARCHAR"/>
+        <result column="vehiclebrand" property="vehiclebrand" jdbcType="VARCHAR"/>
+        <result column="vehiclemodel" property="vehiclemodel" jdbcType="VARCHAR"/>
+        <result column="clearingfrom" property="clearingfrom" jdbcType="INTEGER"/>
+        <result column="enginename" property="enginename" jdbcType="VARCHAR"/>
+        <result column="vin" property="vin" jdbcType="VARCHAR"/>
+        <result column="enginehao" property="enginehao" jdbcType="VARCHAR"/>
+        <result column="carownername" property="carownername" jdbcType="VARCHAR"/>
+        <result column="carid" property="carid" jdbcType="INTEGER"/>
+        <result column="maintaindate" property="maintaindate" jdbcType="DATE"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        maintainid, receiptsid, teamid, id, departdate, departaddress, constructiondate,
+        rescuevehicleaddress, accomplishdate, maintainvehicleid, inside, mileage, counselorid,
+        beizhu, maintainmoney, drivername, maintainphone, licence, vehiclebrand, vehiclemodel,
+        clearingfrom, enginename, vin, enginehao, carownername, carid, maintaindate
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from maintaincar
+        where maintainid = #{maintainid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from maintaincar
+        where maintainid = #{maintainid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Maintaincar">
+        insert into maintaincar (maintainid, receiptsid, teamid,
+        id, departdate, departaddress,
+        constructiondate, rescuevehicleaddress,
+        accomplishdate, maintainvehicleid, inside,
+        mileage, counselorid, beizhu,
+        maintainmoney, drivername, maintainphone,
+        licence, vehiclebrand, vehiclemodel,
+        clearingfrom, enginename, vin,
+        enginehao, carownername, carid,
+        maintaindate)
+        values (#{maintainid,jdbcType=INTEGER}, #{receiptsid,jdbcType=INTEGER}, #{teamid,jdbcType=INTEGER},
+        #{id,jdbcType=INTEGER}, #{departdate,jdbcType=TIMESTAMP}, #{departaddress,jdbcType=VARCHAR},
+        #{constructiondate,jdbcType=TIMESTAMP}, #{rescuevehicleaddress,jdbcType=VARCHAR},
+        #{accomplishdate,jdbcType=TIMESTAMP}, #{maintainvehicleid,jdbcType=INTEGER}, #{inside,jdbcType=INTEGER},
+        #{mileage,jdbcType=INTEGER}, #{counselorid,jdbcType=INTEGER}, #{beizhu,jdbcType=VARCHAR},
+        #{maintainmoney,jdbcType=DOUBLE}, #{drivername,jdbcType=VARCHAR}, #{maintainphone,jdbcType=VARCHAR},
+        #{licence,jdbcType=VARCHAR}, #{vehiclebrand,jdbcType=VARCHAR}, #{vehiclemodel,jdbcType=VARCHAR},
+        #{clearingfrom,jdbcType=INTEGER}, #{enginename,jdbcType=VARCHAR}, #{vin,jdbcType=VARCHAR},
+        #{enginehao,jdbcType=VARCHAR}, #{carownername,jdbcType=VARCHAR}, #{carid,jdbcType=INTEGER},
+        #{maintaindate,jdbcType=DATE})
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Maintaincar">
+        insert into maintaincar
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="receiptsid != null">
+                receiptsid,
+            </if>
+            <if test="teamid != null">
+                teamid,
+            </if>
+            <if test="id != null">
+                id,
+            </if>
+            <if test="departdate != null">
+                departdate,
+            </if>
+            <if test="departaddress != null">
+                departaddress,
+            </if>
+            <if test="constructiondate != null">
+                constructiondate,
+            </if>
+            <if test="rescuevehicleaddress != null">
+                rescuevehicleaddress,
+            </if>
+            <if test="accomplishdate != null">
+                accomplishdate,
+            </if>
+            <if test="maintainvehicleid != null">
+                maintainvehicleid,
+            </if>
+            <if test="inside != null">
+                inside,
+            </if>
+            <if test="mileage != null">
+                mileage,
+            </if>
+            <if test="counselorid != null">
+                counselorid,
+            </if>
+            <if test="beizhu != null">
+                beizhu,
+            </if>
+            <if test="maintainmoney != null">
+                maintainmoney,
+            </if>
+            <if test="drivername != null">
+                drivername,
+            </if>
+            <if test="maintainphone != null">
+                maintainphone,
+            </if>
+            <if test="licence != null">
+                licence,
+            </if>
+            <if test="vehiclebrand != null">
+                vehiclebrand,
+            </if>
+            <if test="vehiclemodel != null">
+                vehiclemodel,
+            </if>
+            <if test="clearingfrom != null">
+                clearingfrom,
+            </if>
+            <if test="enginename != null">
+                enginename,
+            </if>
+            <if test="vin != null">
+                vin,
+            </if>
+            <if test="enginehao != null">
+                enginehao,
+            </if>
+            <if test="carownername != null">
+                carownername,
+            </if>
+            <if test="carid != null">
+                carid,
+            </if>
+            <if test="maintaindate != null">
+                maintaindate,
+            </if>
+            <if test="maintainling != null">
+                maintainling,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+            <if test="receiptsid != null">
+                #{receiptsid,jdbcType=INTEGER},
+            </if>
+            <if test="teamid != null">
+                #{teamid,jdbcType=INTEGER},
+            </if>
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="departdate != null">
+                #{departdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="departaddress != null">
+                #{departaddress,jdbcType=VARCHAR},
+            </if>
+            <if test="constructiondate != null">
+                #{constructiondate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="rescuevehicleaddress != null">
+                #{rescuevehicleaddress,jdbcType=VARCHAR},
+            </if>
+            <if test="accomplishdate != null">
+                #{accomplishdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="maintainvehicleid != null">
+                #{maintainvehicleid,jdbcType=INTEGER},
+            </if>
+            <if test="inside != null">
+                #{inside,jdbcType=INTEGER},
+            </if>
+            <if test="mileage != null">
+                #{mileage,jdbcType=INTEGER},
+            </if>
+            <if test="counselorid != null">
+                #{counselorid,jdbcType=INTEGER},
+            </if>
+            <if test="beizhu != null">
+                #{beizhu,jdbcType=VARCHAR},
+            </if>
+            <if test="maintainmoney != null">
+                #{maintainmoney,jdbcType=DOUBLE},
+            </if>
+            <if test="drivername != null">
+                #{drivername,jdbcType=VARCHAR},
+            </if>
+            <if test="maintainphone != null">
+                #{maintainphone,jdbcType=VARCHAR},
+            </if>
+            <if test="licence != null">
+                #{licence,jdbcType=VARCHAR},
+            </if>
+            <if test="vehiclebrand != null">
+                #{vehiclebrand,jdbcType=VARCHAR},
+            </if>
+            <if test="vehiclemodel != null">
+                #{vehiclemodel,jdbcType=VARCHAR},
+            </if>
+            <if test="clearingfrom != null">
+                #{clearingfrom,jdbcType=INTEGER},
+            </if>
+            <if test="enginename != null">
+                #{enginename,jdbcType=VARCHAR},
+            </if>
+            <if test="vin != null">
+                #{vin,jdbcType=VARCHAR},
+            </if>
+            <if test="enginehao != null">
+                #{enginehao,jdbcType=VARCHAR},
+            </if>
+            <if test="carownername != null">
+                #{carownername,jdbcType=VARCHAR},
+            </if>
+            <if test="carid != null">
+                #{carid,jdbcType=INTEGER},
+            </if>
+            <if test="maintaindate != null">
+                #{maintaindate,jdbcType=DATE},
+            </if>
+            <if test="maintainling != null">
+                #{maintainling,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Maintaincar">
+        update maintaincar
+        <set>
+            <if test="receiptsid != null">
+                receiptsid = #{receiptsid,jdbcType=INTEGER},
+            </if>
+            <if test="teamid != null">
+                teamid = #{teamid,jdbcType=INTEGER},
+            </if>
+            <if test="id != null">
+                id = #{id,jdbcType=INTEGER},
+            </if>
+            <if test="departdate != null">
+                departdate = #{departdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="departaddress != null">
+                departaddress = #{departaddress,jdbcType=VARCHAR},
+            </if>
+            <if test="constructiondate != null">
+                constructiondate = #{constructiondate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="rescuevehicleaddress != null">
+                rescuevehicleaddress = #{rescuevehicleaddress,jdbcType=VARCHAR},
+            </if>
+            <if test="accomplishdate != null">
+                accomplishdate = #{accomplishdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="maintainvehicleid != null">
+                maintainvehicleid = #{maintainvehicleid,jdbcType=INTEGER},
+            </if>
+            <if test="inside != null">
+                inside = #{inside,jdbcType=INTEGER},
+            </if>
+            <if test="mileage != null">
+                mileage = #{mileage,jdbcType=INTEGER},
+            </if>
+            <if test="counselorid != null">
+                counselorid = #{counselorid,jdbcType=INTEGER},
+            </if>
+            <if test="beizhu != null">
+                beizhu = #{beizhu,jdbcType=VARCHAR},
+            </if>
+            <if test="maintainmoney != null">
+                maintainmoney = #{maintainmoney,jdbcType=DOUBLE},
+            </if>
+            <if test="drivername != null">
+                drivername = #{drivername,jdbcType=VARCHAR},
+            </if>
+            <if test="maintainphone != null">
+                maintainphone = #{maintainphone,jdbcType=VARCHAR},
+            </if>
+            <if test="licence != null">
+                licence = #{licence,jdbcType=VARCHAR},
+            </if>
+            <if test="vehiclebrand != null">
+                vehiclebrand = #{vehiclebrand,jdbcType=VARCHAR},
+            </if>
+            <if test="vehiclemodel != null">
+                vehiclemodel = #{vehiclemodel,jdbcType=VARCHAR},
+            </if>
+            <if test="clearingfrom != null">
+                clearingfrom = #{clearingfrom,jdbcType=INTEGER},
+            </if>
+            <if test="enginename != null">
+                enginename = #{enginename,jdbcType=VARCHAR},
+            </if>
+            <if test="vin != null">
+                vin = #{vin,jdbcType=VARCHAR},
+            </if>
+            <if test="enginehao != null">
+                enginehao = #{enginehao,jdbcType=VARCHAR},
+            </if>
+            <if test="carownername != null">
+                carownername = #{carownername,jdbcType=VARCHAR},
+            </if>
+            <if test="carid != null">
+                carid = #{carid,jdbcType=INTEGER},
+            </if>
+            <if test="maintaindate != null">
+                maintaindate = #{maintaindate,jdbcType=DATE},
+            </if>
+        </set>
+        where maintainid = #{maintainid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Maintaincar">
+        update maintaincar
+        set receiptsid = #{receiptsid,jdbcType=INTEGER},
         teamid = #{teamid,jdbcType=INTEGER},
-      </if>
-      <if test="id != null" >
         id = #{id,jdbcType=INTEGER},
-      </if>
-      <if test="departdate != null" >
         departdate = #{departdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="departaddress != null" >
         departaddress = #{departaddress,jdbcType=VARCHAR},
-      </if>
-      <if test="constructiondate != null" >
         constructiondate = #{constructiondate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="rescuevehicleaddress != null" >
         rescuevehicleaddress = #{rescuevehicleaddress,jdbcType=VARCHAR},
-      </if>
-      <if test="accomplishdate != null" >
         accomplishdate = #{accomplishdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="maintainvehicleid != null" >
         maintainvehicleid = #{maintainvehicleid,jdbcType=INTEGER},
-      </if>
-      <if test="inside != null" >
         inside = #{inside,jdbcType=INTEGER},
-      </if>
-      <if test="mileage != null" >
         mileage = #{mileage,jdbcType=INTEGER},
-      </if>
-      <if test="counselorid != null" >
         counselorid = #{counselorid,jdbcType=INTEGER},
-      </if>
-      <if test="beizhu != null" >
         beizhu = #{beizhu,jdbcType=VARCHAR},
-      </if>
-      <if test="maintainmoney != null" >
         maintainmoney = #{maintainmoney,jdbcType=DOUBLE},
-      </if>
-      <if test="drivername != null" >
         drivername = #{drivername,jdbcType=VARCHAR},
-      </if>
-      <if test="maintainphone != null" >
         maintainphone = #{maintainphone,jdbcType=VARCHAR},
-      </if>
-      <if test="licence != null" >
         licence = #{licence,jdbcType=VARCHAR},
-      </if>
-      <if test="vehiclebrand != null" >
         vehiclebrand = #{vehiclebrand,jdbcType=VARCHAR},
-      </if>
-      <if test="vehiclemodel != null" >
         vehiclemodel = #{vehiclemodel,jdbcType=VARCHAR},
-      </if>
-      <if test="clearingfrom != null" >
         clearingfrom = #{clearingfrom,jdbcType=INTEGER},
-      </if>
-      <if test="enginename != null" >
         enginename = #{enginename,jdbcType=VARCHAR},
-      </if>
-      <if test="vin != null" >
         vin = #{vin,jdbcType=VARCHAR},
-      </if>
-      <if test="enginehao != null" >
         enginehao = #{enginehao,jdbcType=VARCHAR},
-      </if>
-      <if test="carownername != null" >
         carownername = #{carownername,jdbcType=VARCHAR},
-      </if>
-      <if test="carid != null" >
         carid = #{carid,jdbcType=INTEGER},
+<<<<<<< HEAD
       </if>
       <if test="maintaindate != null" >
         maintaindate = #{maintaindate,jdbcType=DATE},
@@ -347,4 +388,9 @@
     where maintainid = #{maintainid,jdbcType=INTEGER}
   </update>
   
+=======
+        maintaindate = #{maintaindate,jdbcType=DATE}
+        where maintainid = #{maintainid,jdbcType=INTEGER}
+    </update>
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 </mapper>

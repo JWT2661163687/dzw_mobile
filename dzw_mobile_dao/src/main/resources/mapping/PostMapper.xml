@@ -1,71 +1,134 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.PostMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Post" >
-    <id column="postid" property="postid" jdbcType="INTEGER" />
-    <result column="departmentid" property="departmentid" jdbcType="INTEGER" />
-    <result column="postname" property="postname" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    postid, departmentid, postname
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from post
-    where postid = #{postid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from post
-    where postid = #{postid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Post" >
-    insert into post (postid, departmentid, postname
-      )
-    values (#{postid,jdbcType=INTEGER}, #{departmentid,jdbcType=INTEGER}, #{postname,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Post" >
-    insert into post
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="postid != null" >
-        postid,
-      </if>
-      <if test="departmentid != null" >
-        departmentid,
-      </if>
-      <if test="postname != null" >
-        postname,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="postid != null" >
-        #{postid,jdbcType=INTEGER},
-      </if>
-      <if test="departmentid != null" >
-        #{departmentid,jdbcType=INTEGER},
-      </if>
-      <if test="postname != null" >
-        #{postname,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Post" >
-    update post
-    <set >
-      <if test="departmentid != null" >
-        departmentid = #{departmentid,jdbcType=INTEGER},
-      </if>
-      <if test="postname != null" >
-        postname = #{postname,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where postid = #{postid,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.accp.dao.PostMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Post">
+        <id column="postid" property="postid" jdbcType="INTEGER"/>
+        <result column="departmentid" property="departmentid" jdbcType="INTEGER"/>
+        <result column="postname" property="postname" jdbcType="VARCHAR"/>
+        <result column="rcode" property="rcode" jdbcType="VARCHAR"/>
+        <result column="rstatus" property="rstatus" jdbcType="INTEGER"/>
+        <result column="createdate" property="createdate" jdbcType="DATE"/>
+        <result column="createby" property="createby" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        postid, departmentid, postname, rcode, rstatus, createdate, createby
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from post
+        where postid = #{postid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from post
+        where postid = #{postid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Post">
+        insert into post (postid, departmentid, postname,
+        rcode, rstatus, createdate,
+        createby)
+        values (#{postid,jdbcType=INTEGER}, #{departmentid,jdbcType=INTEGER}, #{postname,jdbcType=VARCHAR},
+        #{rcode,jdbcType=VARCHAR}, #{rstatus,jdbcType=INTEGER}, #{createdate,jdbcType=DATE},
+        #{createby,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Post">
+        insert into post
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="postid != null">
+                postid,
+            </if>
+            <if test="departmentid != null">
+                departmentid,
+            </if>
+            <if test="postname != null">
+                postname,
+            </if>
+            <if test="rcode != null">
+                rcode,
+            </if>
+            <if test="rstatus != null">
+                rstatus,
+            </if>
+            <if test="createdate != null">
+                createdate,
+            </if>
+            <if test="createby != null">
+                createby,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="postid != null">
+                #{postid,jdbcType=INTEGER},
+            </if>
+            <if test="departmentid != null">
+                #{departmentid,jdbcType=INTEGER},
+            </if>
+            <if test="postname != null">
+                #{postname,jdbcType=VARCHAR},
+            </if>
+            <if test="rcode != null">
+                #{rcode,jdbcType=VARCHAR},
+            </if>
+            <if test="rstatus != null">
+                #{rstatus,jdbcType=INTEGER},
+            </if>
+            <if test="createdate != null">
+                #{createdate,jdbcType=DATE},
+            </if>
+            <if test="createby != null">
+                #{createby,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Post">
+        update post
+        <set>
+            <if test="departmentid != null">
+                departmentid = #{departmentid,jdbcType=INTEGER},
+            </if>
+            <if test="postname != null">
+                postname = #{postname,jdbcType=VARCHAR},
+            </if>
+            <if test="rcode != null">
+                rcode = #{rcode,jdbcType=VARCHAR},
+            </if>
+            <if test="rstatus != null">
+                rstatus = #{rstatus,jdbcType=INTEGER},
+            </if>
+            <if test="createdate != null">
+                createdate = #{createdate,jdbcType=DATE},
+            </if>
+            <if test="createby != null">
+                createby = #{createby,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where postid = #{postid,jdbcType=INTEGER}
+    </update>
+    
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Post" >
     update post
     set departmentid = #{departmentid,jdbcType=INTEGER},
-      postname = #{postname,jdbcType=VARCHAR}
+      postname = #{postname,jdbcType=VARCHAR},
+      rcode = #{rcode,jdbcType=VARCHAR},
+      rstatus = #{rstatus,jdbcType=INTEGER},
+      createdate = #{createdate,jdbcType=DATE},
+      createby = #{createby,jdbcType=VARCHAR}
     where postid = #{postid,jdbcType=INTEGER}
   </update>
+  
+  
+  <select id="selectPost" resultMap="postAll">
+  SELECT * FROM `post` po LEFT JOIN `postmiddle` pm ON po.`postid`=pm.`rid`
+  </select>
+  <resultMap type="com.accp.pojo.Post" id="postAll" autoMapping="true">
+  	<id column="postid" property="postid"/>
+  	<collection property="postmiddles" javaType="com.accp.pojo.Postmiddle">
+  		<id column="pid" property="pid"/>
+  		<result column="codenumber" property="codenumber"/>
+  		<result column="fname" property="fname"/>
+  		<result column="fid" property="fid"/>
+  	</collection>
+  </resultMap>
+  
+  
 </mapper>

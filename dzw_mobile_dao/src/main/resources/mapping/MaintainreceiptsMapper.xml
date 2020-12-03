@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.MaintainreceiptsMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Maintainreceipts" >
-    <id column="receiptsid" property="receiptsid" jdbcType="INTEGER" />
-    <result column="receiptsname" property="receiptsname" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    receiptsid, receiptsname
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from maintainreceipts
-    where receiptsid = #{receiptsid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from maintainreceipts
-    where receiptsid = #{receiptsid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Maintainreceipts" >
-    insert into maintainreceipts (receiptsid, receiptsname)
-    values (#{receiptsid,jdbcType=INTEGER}, #{receiptsname,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Maintainreceipts" >
-    insert into maintainreceipts
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="receiptsid != null" >
-        receiptsid,
-      </if>
-      <if test="receiptsname != null" >
-        receiptsname,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="receiptsid != null" >
-        #{receiptsid,jdbcType=INTEGER},
-      </if>
-      <if test="receiptsname != null" >
-        #{receiptsname,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Maintainreceipts" >
-    update maintainreceipts
-    <set >
-      <if test="receiptsname != null" >
-        receiptsname = #{receiptsname,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where receiptsid = #{receiptsid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Maintainreceipts" >
-    update maintainreceipts
-    set receiptsname = #{receiptsname,jdbcType=VARCHAR}
-    where receiptsid = #{receiptsid,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.accp.dao.MaintainreceiptsMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Maintainreceipts">
+        <id column="receiptsid" property="receiptsid" jdbcType="INTEGER"/>
+        <result column="receiptsname" property="receiptsname" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        receiptsid, receiptsname
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from maintainreceipts
+        where receiptsid = #{receiptsid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from maintainreceipts
+        where receiptsid = #{receiptsid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Maintainreceipts">
+        insert into maintainreceipts (receiptsid, receiptsname)
+        values (#{receiptsid,jdbcType=INTEGER}, #{receiptsname,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Maintainreceipts">
+        insert into maintainreceipts
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="receiptsid != null">
+                receiptsid,
+            </if>
+            <if test="receiptsname != null">
+                receiptsname,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="receiptsid != null">
+                #{receiptsid,jdbcType=INTEGER},
+            </if>
+            <if test="receiptsname != null">
+                #{receiptsname,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Maintainreceipts">
+        update maintainreceipts
+        <set>
+            <if test="receiptsname != null">
+                receiptsname = #{receiptsname,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where receiptsid = #{receiptsid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Maintainreceipts">
+        update maintainreceipts
+        set receiptsname = #{receiptsname,jdbcType=VARCHAR}
+        where receiptsid = #{receiptsid,jdbcType=INTEGER}
+    </update>
 </mapper>

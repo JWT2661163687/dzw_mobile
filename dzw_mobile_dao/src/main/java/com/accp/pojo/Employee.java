@@ -45,9 +45,31 @@ public class Employee {
 
     private Date lztimes;
 
+
+    private Post post = new Post();//��ɫ��
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
     private Date brithtimes;
 
-    public Integer getEmployeeid() {
+    @Override
+	public String toString() {
+		return "Employee [employeeid=" + employeeid + ", propertyid=" + propertyid + ", stateid=" + stateid
+				+ ", departmentid=" + departmentid + ", postid=" + postid + ", empname=" + empname + ", esex=" + esex
+				+ ", emplogenid=" + emplogenid + ", emplogepasword=" + emplogepasword + ", education=" + education
+				+ ", graduationschool=" + graduationschool + ", major=" + major + ", crrdid=" + crrdid + ", address="
+				+ address + ", newaddress=" + newaddress + ", empphone=" + empphone + ", emergencyphone="
+				+ emergencyphone + ", molphone=" + molphone + ", email=" + email + ", entrytimes=" + entrytimes
+				+ ", lztimes=" + lztimes + ", post=" + post + ", brithtimes=" + brithtimes + "]";
+	}
+
+	public Integer getEmployeeid() {
         return employeeid;
     }
 

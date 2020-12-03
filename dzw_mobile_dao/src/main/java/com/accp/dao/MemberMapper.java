@@ -22,58 +22,64 @@ public interface MemberMapper {
     int updateByPrimaryKeySelective(Member record);
 
     int updateByPrimaryKey(Member record);
-    
-    
+
+
     /**
-     * 	¸ù¾ÝÌõ¼þ²éÑ¯»áÔ±
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½Ô±
+     *
      * @param KaHao
      * @return
      */
-    List<Member> queryMember(@Param("KaHao")String KaHao);
-    
+    List<Member> queryMember(@Param("KaHao") String KaHao);
+
     /**
-     * 	¸ù¾ÝÌõ¼þ²éÑ¯²»ÊÇ»áÔ±µÄ¿Í»§
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ç»ï¿½Ô±ï¿½Ä¿Í»ï¿½
+     *
      * @param cId
      * @return
      */
-    List<Client> queryClient(@Param("cId")Integer cId);
-    
+    List<Client> queryClient(@Param("cId") Integer cId);
+
     /**
-     * 	ÐÞ¸Ä¿Í»§µÄµÈ¼¶
+     * ï¿½Þ¸Ä¿Í»ï¿½ï¿½ÄµÈ¼ï¿½
+     *
      * @param cId
      * @return
      */
     @Update("UPDATE `client` SET cGrade = 2 WHERE cId = #{cId};")
-    int updateClientGrand(@Param("cId")Integer cId);
-    
+    int updateClientGrand(@Param("cId") Integer cId);
+
     /**
-     * 	ÐÂÔö»áÔ±¿Í»§
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½Í»ï¿½
+     *
      * @param memBer
      * @return
      */
     @Insert("INSERT INTO member(`mCardNumber`,`mPass`,`cId`,`cName`,`mBalance`) VALUES(#{memBer.mcardnumber},#{memBer.mpass},#{memBer.cid},#{memBer.cname},0);")
-    int insertMemberClient(@Param("memBer")Member memBer);
-    
+    int insertMemberClient(@Param("memBer") Member memBer);
+
     /**
-     * 	»áÔ±³äÖµ½ð¶î(ÐÞ¸Ä»áÔ±Óà¶î)
+     * ï¿½ï¿½Ô±ï¿½ï¿½Öµï¿½ï¿½ï¿½(ï¿½Þ¸Ä»ï¿½Ô±ï¿½ï¿½ï¿½)
+     *
      * @param mId
      * @param jine
      * @return
      */
     @Update("UPDATE `member` SET mBalance=mBalance+#{jine} WHERE `mId` = #{mId};")
-    int updateMember(@Param("mId")Integer mId,@Param("jine")Integer jine);
-    
+    int updateMember(@Param("mId") Integer mId, @Param("jine") Integer jine);
+
     /**
-     *	 É¾³ý»áÔ±
+     * É¾ï¿½ï¿½ï¿½ï¿½Ô±
+     *
      * @param mId
      * @return
      */
     @Delete("DELETE FROM member WHERE `mId` = #{mId};")
-    int deleteMember(@Param("mId")Integer mId);
-    
+    int deleteMember(@Param("mId") Integer mId);
+
     /**
-     * 	°Ñ»áÔ±ÐÞ¸ÄÎªÆÕÍ¨ÓÃ»§
+     * ï¿½Ñ»ï¿½Ô±ï¿½Þ¸ï¿½Îªï¿½ï¿½Í¨ï¿½Ã»ï¿½
      */
     @Update("UPDATE `client` SET cGrade = 1 WHERE cId = #{cid}")
-    int updateMemerGrade(@Param("cid")Integer cid);
+    int updateMemerGrade(@Param("cid") Integer cid);
 }

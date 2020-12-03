@@ -1,195 +1,195 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.VehicleMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Vehicle" >
-    <id column="vId" property="vid" jdbcType="INTEGER" />
-    <result column="cId" property="cid" jdbcType="INTEGER" />
-    <result column="vDriver" property="vdriver" jdbcType="VARCHAR" />
-    <result column="vLicense" property="vlicense" jdbcType="VARCHAR" />
-    <result column="vBrand" property="vbrand" jdbcType="VARCHAR" />
-    <result column="vModel" property="vmodel" jdbcType="VARCHAR" />
-    <result column="vPhone" property="vphone" jdbcType="VARCHAR" />
-    <result column="vAffiliation" property="vaffiliation" jdbcType="VARCHAR" />
-    <result column="vMileage" property="vmileage" jdbcType="INTEGER" />
-    <result column="registeredDate" property="registereddate" jdbcType="TIMESTAMP" />
-    <result column="purchaseDate" property="purchasedate" jdbcType="TIMESTAMP" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    vId, cId, vDriver, vLicense, vBrand, vModel, vPhone, vAffiliation, vMileage, registeredDate, 
-    purchaseDate
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from vehicle
-    where vId = #{vid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from vehicle
-    where vId = #{vid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Vehicle" >
-    insert into vehicle (vId, cId, vDriver, 
-      vLicense, vBrand, vModel, 
-      vPhone, vAffiliation, vMileage, 
-      registeredDate, purchaseDate)
-    values (#{vid,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, #{vdriver,jdbcType=VARCHAR}, 
-      #{vlicense,jdbcType=VARCHAR}, #{vbrand,jdbcType=VARCHAR}, #{vmodel,jdbcType=VARCHAR}, 
-      #{vphone,jdbcType=VARCHAR}, #{vaffiliation,jdbcType=VARCHAR}, #{vmileage,jdbcType=INTEGER}, 
-      #{registereddate,jdbcType=TIMESTAMP}, #{purchasedate,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Vehicle" >
-    insert into vehicle
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="vid != null" >
-        vId,
-      </if>
-      <if test="cid != null" >
-        cId,
-      </if>
-      <if test="vdriver != null" >
-        vDriver,
-      </if>
-      <if test="vlicense != null" >
-        vLicense,
-      </if>
-      <if test="vbrand != null" >
-        vBrand,
-      </if>
-      <if test="vmodel != null" >
-        vModel,
-      </if>
-      <if test="vphone != null" >
-        vPhone,
-      </if>
-      <if test="vaffiliation != null" >
-        vAffiliation,
-      </if>
-      <if test="vmileage != null" >
-        vMileage,
-      </if>
-      <if test="registereddate != null" >
-        registeredDate,
-      </if>
-      <if test="purchasedate != null" >
-        purchaseDate,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="vid != null" >
-        #{vid,jdbcType=INTEGER},
-      </if>
-      <if test="cid != null" >
-        #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="vdriver != null" >
-        #{vdriver,jdbcType=VARCHAR},
-      </if>
-      <if test="vlicense != null" >
-        #{vlicense,jdbcType=VARCHAR},
-      </if>
-      <if test="vbrand != null" >
-        #{vbrand,jdbcType=VARCHAR},
-      </if>
-      <if test="vmodel != null" >
-        #{vmodel,jdbcType=VARCHAR},
-      </if>
-      <if test="vphone != null" >
-        #{vphone,jdbcType=VARCHAR},
-      </if>
-      <if test="vaffiliation != null" >
-        #{vaffiliation,jdbcType=VARCHAR},
-      </if>
-      <if test="vmileage != null" >
-        #{vmileage,jdbcType=INTEGER},
-      </if>
-      <if test="registereddate != null" >
-        #{registereddate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="purchasedate != null" >
-        #{purchasedate,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Vehicle" >
-    update vehicle
-    <set >
-      <if test="cid != null" >
-        cId = #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="vdriver != null" >
+<mapper namespace="com.accp.dao.VehicleMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Vehicle">
+        <id column="vId" property="vid" jdbcType="INTEGER"/>
+        <result column="cId" property="cid" jdbcType="INTEGER"/>
+        <result column="vDriver" property="vdriver" jdbcType="VARCHAR"/>
+        <result column="vLicense" property="vlicense" jdbcType="VARCHAR"/>
+        <result column="vBrand" property="vbrand" jdbcType="VARCHAR"/>
+        <result column="vModel" property="vmodel" jdbcType="VARCHAR"/>
+        <result column="vPhone" property="vphone" jdbcType="VARCHAR"/>
+        <result column="vAffiliation" property="vaffiliation" jdbcType="VARCHAR"/>
+        <result column="vMileage" property="vmileage" jdbcType="INTEGER"/>
+        <result column="registeredDate" property="registereddate" jdbcType="TIMESTAMP"/>
+        <result column="purchaseDate" property="purchasedate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        vId, cId, vDriver, vLicense, vBrand, vModel, vPhone, vAffiliation, vMileage, registeredDate,
+        purchaseDate
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from vehicle
+        where vId = #{vid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from vehicle
+        where vId = #{vid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Vehicle">
+        insert into vehicle (vId, cId, vDriver,
+        vLicense, vBrand, vModel,
+        vPhone, vAffiliation, vMileage,
+        registeredDate, purchaseDate)
+        values (#{vid,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, #{vdriver,jdbcType=VARCHAR},
+        #{vlicense,jdbcType=VARCHAR}, #{vbrand,jdbcType=VARCHAR}, #{vmodel,jdbcType=VARCHAR},
+        #{vphone,jdbcType=VARCHAR}, #{vaffiliation,jdbcType=VARCHAR}, #{vmileage,jdbcType=INTEGER},
+        #{registereddate,jdbcType=TIMESTAMP}, #{purchasedate,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Vehicle">
+        insert into vehicle
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="vid != null">
+                vId,
+            </if>
+            <if test="cid != null">
+                cId,
+            </if>
+            <if test="vdriver != null">
+                vDriver,
+            </if>
+            <if test="vlicense != null">
+                vLicense,
+            </if>
+            <if test="vbrand != null">
+                vBrand,
+            </if>
+            <if test="vmodel != null">
+                vModel,
+            </if>
+            <if test="vphone != null">
+                vPhone,
+            </if>
+            <if test="vaffiliation != null">
+                vAffiliation,
+            </if>
+            <if test="vmileage != null">
+                vMileage,
+            </if>
+            <if test="registereddate != null">
+                registeredDate,
+            </if>
+            <if test="purchasedate != null">
+                purchaseDate,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="vid != null">
+                #{vid,jdbcType=INTEGER},
+            </if>
+            <if test="cid != null">
+                #{cid,jdbcType=INTEGER},
+            </if>
+            <if test="vdriver != null">
+                #{vdriver,jdbcType=VARCHAR},
+            </if>
+            <if test="vlicense != null">
+                #{vlicense,jdbcType=VARCHAR},
+            </if>
+            <if test="vbrand != null">
+                #{vbrand,jdbcType=VARCHAR},
+            </if>
+            <if test="vmodel != null">
+                #{vmodel,jdbcType=VARCHAR},
+            </if>
+            <if test="vphone != null">
+                #{vphone,jdbcType=VARCHAR},
+            </if>
+            <if test="vaffiliation != null">
+                #{vaffiliation,jdbcType=VARCHAR},
+            </if>
+            <if test="vmileage != null">
+                #{vmileage,jdbcType=INTEGER},
+            </if>
+            <if test="registereddate != null">
+                #{registereddate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="purchasedate != null">
+                #{purchasedate,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Vehicle">
+        update vehicle
+        <set>
+            <if test="cid != null">
+                cId = #{cid,jdbcType=INTEGER},
+            </if>
+            <if test="vdriver != null">
+                vDriver = #{vdriver,jdbcType=VARCHAR},
+            </if>
+            <if test="vlicense != null">
+                vLicense = #{vlicense,jdbcType=VARCHAR},
+            </if>
+            <if test="vbrand != null">
+                vBrand = #{vbrand,jdbcType=VARCHAR},
+            </if>
+            <if test="vmodel != null">
+                vModel = #{vmodel,jdbcType=VARCHAR},
+            </if>
+            <if test="vphone != null">
+                vPhone = #{vphone,jdbcType=VARCHAR},
+            </if>
+            <if test="vaffiliation != null">
+                vAffiliation = #{vaffiliation,jdbcType=VARCHAR},
+            </if>
+            <if test="vmileage != null">
+                vMileage = #{vmileage,jdbcType=INTEGER},
+            </if>
+            <if test="registereddate != null">
+                registeredDate = #{registereddate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="purchasedate != null">
+                purchaseDate = #{purchasedate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where vId = #{vid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Vehicle">
+        update vehicle
+        set cId = #{cid,jdbcType=INTEGER},
         vDriver = #{vdriver,jdbcType=VARCHAR},
-      </if>
-      <if test="vlicense != null" >
         vLicense = #{vlicense,jdbcType=VARCHAR},
-      </if>
-      <if test="vbrand != null" >
         vBrand = #{vbrand,jdbcType=VARCHAR},
-      </if>
-      <if test="vmodel != null" >
         vModel = #{vmodel,jdbcType=VARCHAR},
-      </if>
-      <if test="vphone != null" >
         vPhone = #{vphone,jdbcType=VARCHAR},
-      </if>
-      <if test="vaffiliation != null" >
         vAffiliation = #{vaffiliation,jdbcType=VARCHAR},
-      </if>
-      <if test="vmileage != null" >
         vMileage = #{vmileage,jdbcType=INTEGER},
-      </if>
-      <if test="registereddate != null" >
         registeredDate = #{registereddate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="purchasedate != null" >
-        purchaseDate = #{purchasedate,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where vId = #{vid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Vehicle" >
-    update vehicle
-    set cId = #{cid,jdbcType=INTEGER},
-      vDriver = #{vdriver,jdbcType=VARCHAR},
-      vLicense = #{vlicense,jdbcType=VARCHAR},
-      vBrand = #{vbrand,jdbcType=VARCHAR},
-      vModel = #{vmodel,jdbcType=VARCHAR},
-      vPhone = #{vphone,jdbcType=VARCHAR},
-      vAffiliation = #{vaffiliation,jdbcType=VARCHAR},
-      vMileage = #{vmileage,jdbcType=INTEGER},
-      registeredDate = #{registereddate,jdbcType=TIMESTAMP},
-      purchaseDate = #{purchasedate,jdbcType=TIMESTAMP}
-    where vId = #{vid,jdbcType=INTEGER}
-  </update>
-  <!-- 根据条件查询车辆信息 -->
-  <select id="queryVehicle" resultType="com.accp.pojo.Vehicle">
-  		SELECT * FROM `vehicle`
-  		<where>
-  			<if test="vid!=0">
-  				and vId = #{vid}
-  			</if>
-  		</where>
-  </select>
-  
-  <!-- 根据品牌编号或者品牌名称查询品牌信息  -->
-  <select id="queryMake" resultType="com.accp.pojo.Make">
-  		SELECT * FROM make
-  		<where>
-  			<if test="id!='null'">
-  				makeid = #{id} or makename = #{id}
-  			</if>
-  		</where>
-  </select>
-  <!-- 根据车型编号或者车型名称查询车辆信息 -->
-  <select id="queryMotorcycle" resultType="com.accp.pojo.Motorcycle">
-  		SELECT * FROM motorcycle
-  		<where>
-  			<if test="id!='null'">
-  				(makeid = #{makeid} AND motorcycleid = #{id}) OR (makeid = #{makeid} AND motorcyclename = #{id})
-  			</if>
-  			<if test="id=='null'">
-  				and makeid = #{makeid}
-  			</if>
-  		</where>
-  </select>
+        purchaseDate = #{purchasedate,jdbcType=TIMESTAMP}
+        where vId = #{vid,jdbcType=INTEGER}
+    </update>
+    <!-- 根据条件查询车辆信息 -->
+    <select id="queryVehicle" resultType="com.accp.pojo.Vehicle">
+        SELECT * FROM `vehicle`
+        <where>
+            <if test="vid!=0">
+                and vId = #{vid}
+            </if>
+        </where>
+    </select>
+
+    <!-- 根据品牌编号或者品牌名称查询品牌信息  -->
+    <select id="queryMake" resultType="com.accp.pojo.Make">
+        SELECT * FROM make
+        <where>
+            <if test="id!='null'">
+                makeid = #{id} or makename = #{id}
+            </if>
+        </where>
+    </select>
+    <!-- 根据车型编号或者车型名称查询车辆信息 -->
+    <select id="queryMotorcycle" resultType="com.accp.pojo.Motorcycle">
+        SELECT * FROM motorcycle
+        <where>
+            <if test="id!='null'">
+                (makeid = #{makeid} AND motorcycleid = #{id}) OR (makeid = #{makeid} AND motorcyclename = #{id})
+            </if>
+            <if test="id=='null'">
+                and makeid = #{makeid}
+            </if>
+        </where>
+    </select>
 </mapper>

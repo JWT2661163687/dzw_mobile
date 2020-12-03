@@ -3,25 +3,53 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Completed {
-    private Integer completionid;//¿¢¹¤id
+    private Integer completionid;//ï¿½ï¿½ï¿½ï¿½id
 
-    private String completiondate;//¿¢¹¤Ê±¼ä
+    private String completiondate;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 
-    private String completiontdate;//Ô¤¼ÆÍê¹¤Ê±¼ä
+    private String completiontdate;//Ô¤ï¿½ï¿½ï¿½ê¹¤Ê±ï¿½ï¿½
 
-    private String inspector;//ÖÊ¼ìÔ±
+    private String inspector;//ï¿½Ê¼ï¿½Ô±
 
-    private Double penalty;//´¦·£½ð¶î
+    private Double penalty;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String rework;//·µ¹¤Ô­Òò
+    private String rework;//ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½
 
-    private Integer personid;//ÔðÈÎid
+    private Integer personid;//ï¿½ï¿½ï¿½ï¿½id
 
-    private String personname;//ÔðÈÎÈË
+    private String personname;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String delaytext;//Îâ¹¤Ô­Òò
+    private String delaytext;//ï¿½â¹¤Ô­ï¿½ï¿½
 
-    private Integer completiontype;//¿¢¹¤ÀàÐÍ0/1
+    private Integer completiontype;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0/1
+
+    private Integer mainid;//Î¬ï¿½Þ±ï¿½id
+    private String compdate;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+    private Integer maintainling;//Î¬ï¿½Þ´ï¿½ï¿½ï¿½
+
+    public Integer getMaintainling() {
+        return maintainling;
+    }
+
+    public void setMaintainling(Integer maintainling) {
+        this.maintainling = maintainling;
+    }
+
+    public Integer getMainid() {
+        return mainid;
+    }
+
+    public void setMainid(Integer mainid) {
+        this.mainid = mainid;
+    }
+
+    public String getCompdate() {
+        return compdate;
+    }
+
+    public void setCompdate(String compdate) {
+        this.compdate = compdate;
+    }
 
     public Integer getCompletionid() {
         return completionid;
@@ -31,33 +59,32 @@ public class Completed {
         this.completionid = completionid;
     }
 
-  
 
     @Override
-	public String toString() {
-		return "Completed [completionid=" + completionid + ", completiondate=" + completiondate + ", completiontdate="
-				+ completiontdate + ", inspector=" + inspector + ", penalty=" + penalty + ", rework=" + rework
-				+ ", personid=" + personid + ", personname=" + personname + ", delaytext=" + delaytext
-				+ ", completiontype=" + completiontype + "]";
-	}
+    public String toString() {
+        return "Completed [completionid=" + completionid + ", completiondate=" + completiondate + ", completiontdate="
+                + completiontdate + ", inspector=" + inspector + ", penalty=" + penalty + ", rework=" + rework
+                + ", personid=" + personid + ", personname=" + personname + ", delaytext=" + delaytext
+                + ", completiontype=" + completiontype + "]";
+    }
 
-	public String getCompletiondate() {
-		return completiondate;
-	}
+    public String getCompletiondate() {
+        return completiondate;
+    }
 
-	public void setCompletiondate(String completiondate) {
-		this.completiondate = completiondate;
-	}
+    public void setCompletiondate(String completiondate) {
+        this.completiondate = completiondate;
+    }
 
-	public String getCompletiontdate() {
-		return completiontdate;
-	}
+    public String getCompletiontdate() {
+        return completiontdate;
+    }
 
-	public void setCompletiontdate(String completiontdate) {
-		this.completiontdate = completiontdate;
-	}
+    public void setCompletiontdate(String completiontdate) {
+        this.completiontdate = completiontdate;
+    }
 
-	public String getInspector() {
+    public String getInspector() {
         return inspector;
     }
 

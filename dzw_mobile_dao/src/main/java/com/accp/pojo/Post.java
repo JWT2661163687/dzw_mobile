@@ -1,11 +1,66 @@
 package com.accp.pojo;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class Post {
     private Integer postid;
 
     private Integer departmentid;
 
     private String postname;
+
+    private String rcode;
+
+    private Integer rstatus;
+
+    private Date createdate;
+
+    private String createby;
+<<<<<<< HEAD
+
+    public List<Functiontable> functiontables = new ArrayList<Functiontable>();
+
+=======
+    
+    public List<Functiontable> functiontables=new ArrayList<Functiontable>();
+    
+    private List<Postmiddle> postmiddles=new ArrayList<Postmiddle>();
+    
+    
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
+
+<<<<<<< HEAD
+    public List<Functiontable> getFunctiontables() {
+        return functiontables;
+    }
+=======
+    @Override
+	public String toString() {
+		return "Post [postid=" + postid + ", departmentid=" + departmentid + ", postname=" + postname + ", rcode="
+				+ rcode + ", rstatus=" + rstatus + ", createdate=" + createdate + ", createby=" + createby
+				+ ", functiontables=" + functiontables + ", postmiddles=" + postmiddles + "]";
+	}
+
+	public List<Postmiddle> getPostmiddles() {
+		return postmiddles;
+	}
+
+	public void setPostmiddles(List<Postmiddle> postmiddles) {
+		this.postmiddles = postmiddles;
+	}
+
+	
+
+	public List<Functiontable> getFunctiontables() {
+		return functiontables;
+	}
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
+
+    public void setFunctiontables(List<Functiontable> functiontables) {
+        this.functiontables = functiontables;
+    }
 
     public Integer getPostid() {
         return postid;
@@ -29,5 +84,37 @@ public class Post {
 
     public void setPostname(String postname) {
         this.postname = postname == null ? null : postname.trim();
+    }
+
+    public String getRcode() {
+        return rcode;
+    }
+
+    public void setRcode(String rcode) {
+        this.rcode = rcode == null ? null : rcode.trim();
+    }
+
+    public Integer getRstatus() {
+        return rstatus;
+    }
+
+    public void setRstatus(Integer rstatus) {
+        this.rstatus = rstatus;
+    }
+
+    public Date getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(Date createdate) {
+        this.createdate = createdate;
+    }
+
+    public String getCreateby() {
+        return createby;
+    }
+
+    public void setCreateby(String createby) {
+        this.createby = createby == null ? null : createby.trim();
     }
 }
