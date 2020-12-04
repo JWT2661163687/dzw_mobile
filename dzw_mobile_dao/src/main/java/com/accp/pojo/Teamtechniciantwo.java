@@ -38,18 +38,18 @@ public class Teamtechniciantwo {
     private String repairbrand;
 
     private Integer maintainid;
-    
-    private Integer maintainling;//Î¬ĞŞ´ÎÊı
+
+    private Integer maintainling;//Î¬ï¿½Ş´ï¿½ï¿½ï¿½
 
     public Integer getMaintainling() {
-		return maintainling;
-	}
+        return maintainling;
+    }
 
-	public void setMaintainling(Integer maintainling) {
-		this.maintainling = maintainling;
-	}
+    public void setMaintainling(Integer maintainling) {
+        this.maintainling = maintainling;
+    }
 
-	public Integer getTechnicianno() {
+    public Integer getTechnicianno() {
         return technicianno;
     }
 

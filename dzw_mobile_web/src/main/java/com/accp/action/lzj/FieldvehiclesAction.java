@@ -25,61 +25,64 @@ import com.github.pagehelper.PageInfo;
 @RequestMapping("/api/fiel")
 @CrossOrigin
 public class FieldvehiclesAction {
-	@Autowired
-	private FieldvehiclesBiz biz;
-	
-	/**
-	 * 查询外勤车辆
-	 * @return
-	 */
-	@GetMapping("query")
-	public List<Fieldvehicles> getfielListByPage() {
-		return biz.queryFiel();
-	}
-	/**
-	 * 查询班组
-	 * @return
-	 */
-	@GetMapping("queryteam")
-	public List<Team> queryTeam() {
-		return biz.queryTeam();
-	}
-	
-	/**
-	 * 新增技工
-	 */
-	@PostMapping("insert")
-	public Map<String, String> insertFiel(@RequestBody Fieldvehicles fiel) {
-		Map<String, String> message = new HashMap<String, String>();
-		biz.insertFiel(fiel);
-		message.put("code", "200");
-		message.put("msg", "ok");
-		return message;
-	}
-	
-	/**
-	 * 修改车辆
-	 */
-	@PutMapping("update")
-	public Map<String, String> updateFiel(@RequestBody Fieldvehicles ff) {
-		System.out.println(ff.getId());
-		Map<String, String> message = new HashMap<String, String>();
-		biz.updateFiel(ff);
-		message.put("code", "200");
-		message.put("msg", "ok");
-		return message;
-	}
-	
-	/**
-	 * 删除技工
-	 */
-	@DeleteMapping("fiels/{id}")
-	public Map<String, String> deleteFiel(@PathVariable int id) {
-		Map<String, String> message = new HashMap<String, String>();
-		biz.deleteFiel(id);
-		message.put("code", "200");
-		message.put("msg", "ok");
-		return message;
-	}
-	
+    @Autowired
+    private FieldvehiclesBiz biz;
+
+    /**
+     * 查询外勤车辆
+     *
+     * @return
+     */
+    @GetMapping("query")
+    public List<Fieldvehicles> getfielListByPage() {
+        return biz.queryFiel();
+    }
+
+    /**
+     * 查询班组
+     *
+     * @return
+     */
+    @GetMapping("queryteam")
+    public List<Team> queryTeam() {
+        return biz.queryTeam();
+    }
+
+    /**
+     * 新增技工
+     */
+    @PostMapping("insert")
+    public Map<String, String> insertFiel(@RequestBody Fieldvehicles fiel) {
+        Map<String, String> message = new HashMap<String, String>();
+        biz.insertFiel(fiel);
+        message.put("code", "200");
+        message.put("msg", "ok");
+        return message;
+    }
+
+    /**
+     * 修改车辆
+     */
+    @PutMapping("update")
+    public Map<String, String> updateFiel(@RequestBody Fieldvehicles ff) {
+        System.out.println(ff.getId());
+        Map<String, String> message = new HashMap<String, String>();
+        biz.updateFiel(ff);
+        message.put("code", "200");
+        message.put("msg", "ok");
+        return message;
+    }
+
+    /**
+     * 删除技工
+     */
+    @DeleteMapping("fiels/{id}")
+    public Map<String, String> deleteFiel(@PathVariable int id) {
+        Map<String, String> message = new HashMap<String, String>();
+        biz.deleteFiel(id);
+        message.put("code", "200");
+        message.put("msg", "ok");
+        return message;
+    }
+
 }

@@ -3,27 +3,27 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Vehicle {
-    private Integer vid;			//³µÁ¾±àºÅ
+    private Integer vid;            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer cid;			//¿Í»§±àºÅ
+    private Integer cid;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½
 
-    private String vdriver;			//¼ÝÊ»Ô±
+    private String vdriver;            //ï¿½ï¿½Ê»Ô±
 
-    private String vlicense;		//³µÁ¾ºÅÂë
+    private String vlicense;        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String vbrand;			//³µÁ¾Æ·ÅÆ
+    private String vbrand;            //ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½
 
-    private String vmodel;			//³µÁ¾ÐÍºÅ
+    private String vmodel;            //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½
 
-    private String vphone;			//ÁªÏµµç»°
+    private String vphone;            //ï¿½ï¿½Ïµï¿½ç»°
 
-    private String vaffiliation;	//³µÁ¾¹éÊô
+    private String vaffiliation;    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer vmileage;		//Àï³Ì
+    private Integer vmileage;        //ï¿½ï¿½ï¿½
 
-    private Date registereddate;	//ÉÏÅÆÈÕÆÚ
+    private Date registereddate;    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Date purchasedate;		//¹ºÂòÈÕÆÚ
+    private Date purchasedate;        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     public Integer getVid() {
         return vid;

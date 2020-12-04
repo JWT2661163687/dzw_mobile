@@ -1,31 +1,43 @@
 package com.accp.pojo;
 
 public class Motorcycle {
-    private Integer motorcycleid;      //车型定义id
+    private Integer motorcycleid;      
+    private Integer engineid;        
 
-    private Integer engineid;          //发动机品牌编号
+    private Integer makeid;           
+    private Integer productionid;      
 
-    private Integer productionid;      //产地id
 
-    private Integer makeid;            //汽车品牌id
+    private String motorcyclename;     
 
-    private String motorcyclename;     //车型名称
+    private String makename;          
 
-    private String makename;           //品牌名称
+    private String productionname;     
 
-    private String productionname;     //产地名称
+    private Double yearprice;         
+    private Double price;              
 
-    private Double price;              //参考价格
+    private Double power;             
 
-    private Double yearprice;          //车辆年款
+    private Integer fuellabel;         
 
-    private Double power;              //功率
+    private Double load;               
 
-    private Integer fuellabel;         //燃油标号
 
-    private Double load;               //载重
+    
+    private String enginename;       
 
-    public Integer getMotorcycleid() {
+    
+    
+    public String getEnginename() {
+		return enginename;
+	}
+
+	public void setEnginename(String enginename) {
+		this.enginename = enginename;
+	}
+
+	public Integer getMotorcycleid() {
         return motorcycleid;
     }
 
@@ -121,17 +133,41 @@ public class Motorcycle {
         this.load = load;
     }
 
-	@Override
-	public String toString() {
-		return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
-				+ ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
-				+ ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
-				+ power + ", fuellabel=" + fuellabel + ", load=" + load + "]";
-	}
+   
+    @Override
+    public String toString() {
+        return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
+                + ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
+                + ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
+                + power + ", fuellabel=" + fuellabel + ", load=" + load + "]";
+    }
+
+    public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
+                      String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
+                      Integer fuellabel, Double load) {
+        super();
+        this.motorcycleid = motorcycleid;
+        this.engineid = engineid;
+        this.productionid = productionid;
+        this.makeid = makeid;
+        this.motorcyclename = motorcyclename;
+        this.makename = makename;
+        this.productionname = productionname;
+        this.price = price;
+        this.yearprice = yearprice;
+        this.power = power;
+        this.fuellabel = fuellabel;
+        this.load = load;
+    }
+
+    public Motorcycle() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
 			String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
-			Integer fuellabel, Double load) {
+			Integer fuellabel, Double load, String enginename) {
 		super();
 		this.motorcycleid = motorcycleid;
 		this.engineid = engineid;
@@ -145,11 +181,7 @@ public class Motorcycle {
 		this.power = power;
 		this.fuellabel = fuellabel;
 		this.load = load;
+		this.enginename = enginename;
 	}
 
-	public Motorcycle() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-    
 }

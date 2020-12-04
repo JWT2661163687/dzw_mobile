@@ -65,4 +65,16 @@ public interface WeixiuMapper {
    @Select("SELECT * FROM `weixiu` WHERE `cid` IS NULL AND `Fid` IS NULL")
    List<Weixiu> selectNull();
    
+
+    /* 		��ά��cid ��ѯ ά����Ŀ��Ϣ
+     * 	    @param cid
+     * 		@return
+     */
+    List<Weixiu> selectcid(@Param("cid") Integer cid, @Param("sousuo") String sousuo);
+
+
+
+ 
+    
+    
 }

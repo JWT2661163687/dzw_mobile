@@ -18,19 +18,42 @@ public class Post {
     private Date createdate;
 
     private String createby;
+
+    public List<Functiontable> functiontables = new ArrayList<Functiontable>();
+
     
-    public List<Functiontable> functiontables=new ArrayList<Functiontable>();
+    
+    private List<Postmiddle> postmiddles=new ArrayList<Postmiddle>();
+    
     
 
-    public List<Functiontable> getFunctiontables() {
+   
+    @Override
+	public String toString() {
+		return "Post [postid=" + postid + ", departmentid=" + departmentid + ", postname=" + postname + ", rcode="
+				+ rcode + ", rstatus=" + rstatus + ", createdate=" + createdate + ", createby=" + createby
+				+ ", functiontables=" + functiontables + ", postmiddles=" + postmiddles + "]";
+	}
+
+	public List<Postmiddle> getPostmiddles() {
+		return postmiddles;
+	}
+
+	public void setPostmiddles(List<Postmiddle> postmiddles) {
+		this.postmiddles = postmiddles;
+	}
+
+	
+
+	public List<Functiontable> getFunctiontables() {
 		return functiontables;
 	}
 
-	public void setFunctiontables(List<Functiontable> functiontables) {
-		this.functiontables = functiontables;
-	}
+    public void setFunctiontables(List<Functiontable> functiontables) {
+        this.functiontables = functiontables;
+    }
 
-	public Integer getPostid() {
+    public Integer getPostid() {
         return postid;
     }
 

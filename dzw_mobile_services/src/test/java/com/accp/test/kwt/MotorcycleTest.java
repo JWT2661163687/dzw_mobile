@@ -1,5 +1,7 @@
 package com.accp.test.kwt;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +15,14 @@ import com.github.pagehelper.PageInfo;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-ctx.xml"})
 public class MotorcycleTest {
+
+    @Autowired
+    private MotorcycleBiz biz;
+
+   
+
+    
 	
-	@Autowired
-	private MotorcycleBiz biz;
 	@Test
 	public void SelectAllPage() {
 		PageInfo<Motorcycle> lists=biz.SelectPage(1, 2);
@@ -33,5 +40,12 @@ public class MotorcycleTest {
 		m.setMotorcyclename("ss");
 		int count=biz.addMotorcycle(m);
 	}
+//	@Test
+////	public void SelectByinput() {
+////		List<Motorcycle> lists=
+////		lists.forEach(i->{
+////			System.err.println(i);
+////		});
+////	}
 
 }

@@ -15,7 +15,6 @@ import com.github.pagehelper.PageInfo;
 public class WeixiuTest {
 		@Autowired
 		private WeixiuBiz weixiubiz;
-		
 		/*
 		 *  	查询
 		 */
@@ -61,4 +60,11 @@ public class WeixiuTest {
 			System.out.println("修改:"+gai);
 		}
 		
+   
+
+   
+
+   
+
+
 }

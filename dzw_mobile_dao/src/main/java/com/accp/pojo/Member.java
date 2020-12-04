@@ -1,17 +1,17 @@
 package com.accp.pojo;
 
 public class Member {
-    private Integer mid;			//»áÔ±±àºÅ
+    private Integer mid;            //ï¿½ï¿½Ô±ï¿½ï¿½ï¿½
 
-    private String mcardnumber;		//»áÔ±¿¨ºÅ
+    private String mcardnumber;        //ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
 
-    private String mpass;			//»áÔ±ÃÜÂë
+    private String mpass;            //ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
 
-    private Integer cid;			//¿Í»§±àºÅ
+    private Integer cid;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½
 
-    private String cname;			//¿Í»§ÐÕÃû
+    private String cname;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private Integer mbalance;		//¿¨ºÅÓà¶î
+    private Integer mbalance;        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     public Integer getMid() {
         return mid;
@@ -61,26 +61,26 @@ public class Member {
         this.mbalance = mbalance;
     }
 
-	public Member(Integer mid, String mcardnumber, String mpass, Integer cid, String cname, Integer mbalance) {
-		super();
-		this.mid = mid;
-		this.mcardnumber = mcardnumber;
-		this.mpass = mpass;
-		this.cid = cid;
-		this.cname = cname;
-		this.mbalance = mbalance;
-	}
+    public Member(Integer mid, String mcardnumber, String mpass, Integer cid, String cname, Integer mbalance) {
+        super();
+        this.mid = mid;
+        this.mcardnumber = mcardnumber;
+        this.mpass = mpass;
+        this.cid = cid;
+        this.cname = cname;
+        this.mbalance = mbalance;
+    }
 
-	public Member() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Member() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	@Override
-	public String toString() {
-		return "Member [mid=" + mid + ", mcardnumber=" + mcardnumber + ", mpass=" + mpass + ", cid=" + cid + ", cname="
-				+ cname + ", mbalance=" + mbalance + "]";
-	}
-    
-    
+    @Override
+    public String toString() {
+        return "Member [mid=" + mid + ", mcardnumber=" + mcardnumber + ", mpass=" + mpass + ", cid=" + cid + ", cname="
+                + cname + ", mbalance=" + mbalance + "]";
+    }
+
+
 }

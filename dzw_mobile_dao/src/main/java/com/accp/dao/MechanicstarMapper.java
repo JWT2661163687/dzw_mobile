@@ -23,22 +23,22 @@ public interface MechanicstarMapper {
     int updateByPrimaryKeySelective(Mechanicstar record);
 
     int updateByPrimaryKey(Mechanicstar record);
-    
-    //²éÑ¯¼¼¹¤ÐÇ¼¶
+
+    //ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½
     @Select("select * from mechanicstar")
     public List<Mechanicstar> queryMechan();
-    
-    //ÐÂÔö¼¼¹¤
+
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     @Insert("INSERT INTO `mechanicstar` VALUES(#{mechanicstar.meid},#{mechanicstar.starrating},#{mechanicstar.grade},#{mechanicstar.weight})")
     public int insertMechan(@Param("mechanicstar") Mechanicstar mechanicstar);
-    
-    //ÐÞ¸Ä¼¼¹¤
+
+    //ï¿½Þ¸Ä¼ï¿½ï¿½ï¿½
     @Update("UPDATE `mechanicstar` SET `starrating`= #{mechanicstar.starrating},`grade`= #{mechanicstar.grade},`weight`= #{mechanicstar.weight} \r\n"
-    		+ "WHERE `meid`=#{mechanicstar.meid}")
+            + "WHERE `meid`=#{mechanicstar.meid}")
     public int updateMechan(@Param("mechanicstar") Mechanicstar mechanicstar);
-    
-    //É¾³ý¼¼¹¤
+
+    //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     @Delete("DELETE FROM `mechanicstar` WHERE `meid` =#{meid}")
-    public int deleteMechan(@Param("meid")String meid);
+    public int deleteMechan(@Param("meid") String meid);
 
 }

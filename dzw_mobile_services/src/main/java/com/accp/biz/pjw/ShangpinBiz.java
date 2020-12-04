@@ -51,4 +51,16 @@ public class ShangpinBiz {
 	    }
 
 
+
+    /*
+     *  分页查询商品表  信息
+     *  @Param   sousuo  daid
+     */
+    public PageInfo<Shangpin> selectshangpin(Integer page1, Integer page2, String sousuo, Integer daid) {
+        PageHelper.startPage(page1, page2);
+        List<Shangpin> list = shangpinmapper.selectshangpin(sousuo, daid);
+        PageInfo<Shangpin> pageinfo = new PageInfo<Shangpin>(list);
+        return pageinfo;
+    }
+
 }

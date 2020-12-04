@@ -1,29 +1,39 @@
 package com.accp.pojo;
 
 public class Closeanaccount {
-    private Integer rno;
+    private Integer rno;				//单据编号
 
-    private Integer rway;
+    private Integer rway;				//支付方式
 
-    private Integer cid;
+    private Integer cid;				//客户编号
 
-    private String cname;
+    private String cname;				//客户名
+    
+    private Integer cbalance;			//客户余额
 
-    private Integer cbalance;
+    private String rodd;				//维修单号
 
-    private String rodd;
+    private String rcashier;			//收银员
 
-    private String rcashier;
+    private Integer rdealwith;			//应收金额
 
-    private Integer rdealwith;
+    private Integer routofpocket;		//实付金额
 
-    private Integer routofpocket;
+    private Integer rdiscounts;			//优惠金额
 
-    private Integer rdiscounts;
+    private String remark;				//备注
+    
+    private String rCreateDate;			//结算时间
 
-    private String remark;
+    public String getrCreateDate() {
+		return rCreateDate;
+	}
 
-    public Integer getRno() {
+	public void setrCreateDate(String rCreateDate) {
+		this.rCreateDate = rCreateDate;
+	}
+
+	public Integer getRno() {
         return rno;
     }
 

@@ -93,6 +93,19 @@ public class ShangpinAction {
 			}
 			return message;	
 		    }
-
 		
+
+    /*
+     *  分页查询商品表  信息
+     *  @Param   sousuo  fid
+     */
+    @GetMapping("select/{page1}/{page2}/{sousuo}/{daid}")
+    public PageInfo<Shangpin> selectshangpin(@PathVariable Integer page1, @PathVariable Integer page2, @PathVariable String sousuo, @PathVariable Integer daid) {
+        System.out.println("进来了");
+        shangpinbiz.selectshangpin(page1, page2, sousuo, daid).getList().forEach(temp -> {
+            System.out.println("a " + temp);
+        });
+        return shangpinbiz.selectshangpin(page1, page2, sousuo, daid);
+    }
+
 }

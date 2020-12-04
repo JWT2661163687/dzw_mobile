@@ -13,8 +13,13 @@ import com.github.pagehelper.PageInfo;
 @Service("MotorcycleBiz")
 public class MotorcycleBiz {
 
-	@Autowired
-	private MotorcycleMapper motorcycleMapper;
+    @Autowired
+    private MotorcycleMapper motorcycleMapper;
+
+
+
+
+
 	/**
 	 * 查询车型所有，分页
 	 * @param pageNum
@@ -40,5 +45,30 @@ public class MotorcycleBiz {
 	 */
 	public List<Motorcycle> SelectByid(Integer id){
 		return motorcycleMapper.SelectById(id);
+	}
+	/**
+	 * 文本框多条件查询
+	 * @param name
+	 * @return
+	 */
+	public PageInfo<Motorcycle> SelectByInputs(String name,int pageNum,int pageSize){
+		PageHelper.startPage(pageNum, pageSize);
+		return new PageInfo<Motorcycle>(motorcycleMapper.SelectByInput(name));
+	}
+	/**
+	 * 根据id删除
+	 * @param id
+	 * @return
+	 */
+	public int deleteByid(Integer id) {
+		return motorcycleMapper.deleteById(id);
+	}
+	/**
+	 * 根据id修改
+	 * @param m
+	 * @return
+	 */
+	public int updateByid(Motorcycle m) {
+		return motorcycleMapper.updateById(m);
 	}
 }

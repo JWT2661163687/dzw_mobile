@@ -6,8 +6,10 @@ public interface CompletedMapper {
     int deleteByPrimaryKey(Integer completionid);
 
     int insert(Completed record);
+
     /**
-     * ÐÂÔö¿¢¹¤±í
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     *
      * @param record
      * @return
      */

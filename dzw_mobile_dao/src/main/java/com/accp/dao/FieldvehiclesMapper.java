@@ -20,22 +20,22 @@ public interface FieldvehiclesMapper {
     int updateByPrimaryKeySelective(Fieldvehicles record);
 
     int updateByPrimaryKey(Fieldvehicles record);
-    
-    //²éÑ¯ÍâÇÚ³µÁ¾
+
+    //ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ú³ï¿½ï¿½ï¿½
     @Select("SELECT * FROM `fieldvehicles` f INNER JOIN `team` t WHERE f.`teamid`=t.`teamid`")
     public List<Fieldvehicles> queryFiel();
-    
-    //²éÑ¯°à×é
+
+    //ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
     @Select("select * from team")
     public List<Team> queryTeam();
-    
-    //ÐÂÔö³µÁ¾
-    public int insertFiel(@Param("fiel")Fieldvehicles fiel);
-    
-    //ÐÞ¸Ä³µÁ¾
-    public int updateFiel(@Param("ff")Fieldvehicles ff);
-    
-    //É¾³ý³µÁ¾
-    public int deleteFiel(@Param("id")int id);
-    
+
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public int insertFiel(@Param("fiel") Fieldvehicles fiel);
+
+    //ï¿½Þ¸Ä³ï¿½ï¿½ï¿½
+    public int updateFiel(@Param("ff") Fieldvehicles ff);
+
+    //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public int deleteFiel(@Param("id") int id);
+
 }

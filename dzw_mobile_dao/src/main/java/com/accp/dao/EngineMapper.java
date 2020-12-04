@@ -13,11 +13,12 @@ public interface EngineMapper {
     int deleteByPrimaryKey(Integer engineid);
 
     /**
-     * ÐÂÔö
+     * ï¿½ï¿½ï¿½ï¿½
+     *
      * @param record
      * @return
      */
-    int insert(@Param("record")Engine record);
+    int insert(@Param("record") Engine record);
 
     int insertSelective(Engine record);
 
@@ -26,24 +27,30 @@ public interface EngineMapper {
     int updateByPrimaryKeySelective(Engine record);
 
     int updateByPrimaryKey(Engine record);
+
     /**
-     * ²éÑ¯ËùÓÐ
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
+     *
      * @return
      */
     @Select("SELECT * FROM `engine`")
     List<Engine> SelectAll();
+
     /**
-     * Ä£ºý²éÑ¯Ãû³Æ
+     * Ä£ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
+     *
      * @param name
      * @return
      */
     @Select("SELECT * FROM `engine` WHERE `enginename` LIKE '%${name}%'")
-    List<Engine> SelectByName(@Param("name")String name);
+    List<Engine> SelectByName(@Param("name") String name);
+
     /**
-     * ¸ù¾ÝidÉ¾³ý
+     * ï¿½ï¿½ï¿½ï¿½idÉ¾ï¿½ï¿½
+     *
      * @param id
      * @return
      */
     @Delete("DELETE FROM `engine` WHERE `engineid`=#{id}")
-    int deleteByid(@Param("id")Integer id);
+    int deleteByid(@Param("id") Integer id);
 }
