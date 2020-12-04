@@ -37,7 +37,12 @@ public interface MotorcycleMapper {
      */
     @Select("SELECT m.`motorcycleid`,e.`engineid`,e.`enginename`,m.`motorcyclename`,m.`price`,a.`makeid`,a.`makename`  FROM `motorcycle` m INNER JOIN `make` a ON m.`makeid`=a.`makeid` INNER JOIN  `engine` e ON m.`engineid`=e.`engineid`")
     List<Motorcycle> SelectAll();
-
+    /**
+     * ²éÑ¯ËùÓÐ³µÐÍ
+     * @return
+     */
+    @Select("select * from motorcycle")
+    List<Motorcycle> selectAlls();
     /**
      * ï¿½ï¿½Ñ¯idï¿½Ç·ï¿½ï¿½ï¿½Í¬
      *

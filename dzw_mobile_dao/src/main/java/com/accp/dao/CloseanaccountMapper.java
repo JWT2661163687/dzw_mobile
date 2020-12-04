@@ -74,6 +74,6 @@ public interface CloseanaccountMapper {
     /**
      * 把待结算订单修改为已结算
      */
-    @Update("UPDATE `maintaincar` SET teamid = #{teamid} WHERE maintainid = #{carid}")
+    @Update("UPDATE `maintaincar` SET receiptsid = #{teamid} WHERE maintainid = #{carid}")
     int updateCarTeamid(@Param("teamid")Integer teamid,@Param("carid")Integer carid);
 }

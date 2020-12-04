@@ -168,7 +168,7 @@
 		LEFT JOIN maintainreceipts s ON s.`receiptsid` = car.`receiptsid`
 		LEFT JOIN team t ON t.`teamid` = car.`teamid`
 		<where>
-			car.`teamid` = 3
+			car.`receiptsid` = 3
 			<if test="mId!=0">
 				AND car.`maintainid` = #{mId}
 			</if>

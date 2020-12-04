@@ -9,9 +9,9 @@ import org.apache.ibatis.annotations.Update;
 import com.accp.pojo.Maintaincar;
 
 /**
- * �ӳ���
+ * 锟接筹拷锟斤拷
  *
- * @author �����
+ * @author 锟斤拷锟斤拷锟�
  */
 public interface MaintaincarMapper {
     int deleteByPrimaryKey(Integer maintainid);
@@ -19,7 +19,7 @@ public interface MaintaincarMapper {
     int insert(Maintaincar record);
 
     /**
-     * �����ӳ���
+     * 锟斤拷锟斤拷锟接筹拷锟斤拷
      *
      * @param record
      * @return
@@ -28,12 +28,10 @@ public interface MaintaincarMapper {
 
     Maintaincar selectByPrimaryKey(Integer maintainid);
 
-    int updateByPrimaryKeySelective(Maintaincar record);
 
-    int updateByPrimaryKey(Maintaincar record);
 
     /**
-     * ״̬��ѯά�޽ӳ���
+     * 状态锟斤拷询维锟睫接筹拷锟斤拷
      *
      * @param receiptsid
      * @return
@@ -42,7 +40,7 @@ public interface MaintaincarMapper {
     List<Maintaincar> selectAllReceiptsid(@Param("receiptsid") Integer receiptsid, @Param("inside") Integer inside);
 
     /**
-     * �޸�״̬
+     * 锟睫革拷状态
      *
      * @param maintainid
      * @return
@@ -51,7 +49,7 @@ public interface MaintaincarMapper {
     int updateMaintaincarreceipts(@Param("maintainid") Integer maintainid, @Param("zhuangtai") Integer zhuangtai);
 
     /**
-     * ��ѯά��״̬���
+     * 锟斤拷询维锟斤拷状态锟斤拷锟�
      *
      * @return
      */
@@ -59,7 +57,7 @@ public interface MaintaincarMapper {
     List<Maintaincar> selectAllReceiptsidload();
 
     /**
-     * �޸�ά�޴���
+     * 锟睫革拷维锟睫达拷锟斤拷
      *
      * @param maintainling
      * @param maintainid
@@ -69,7 +67,7 @@ public interface MaintaincarMapper {
     int updateMain(@Param("maintainling") Integer maintainling, @Param("maintainid") Integer maintainid);
 
     /**
-     * �Ƿ񷵹�״̬
+     * 锟角否返癸拷状态
      *
      * @param licence
      * @return
