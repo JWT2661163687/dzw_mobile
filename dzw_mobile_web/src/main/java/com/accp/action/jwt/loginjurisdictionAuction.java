@@ -40,7 +40,7 @@ public class loginjurisdictionAuction {
      * @param session
      * @return
      */
-    @GetMapping("/loginjurisdiction/{username}/{password}")
+    @GetMapping("/employee/{username}/{password}")
     public Map<String, Object> login(@PathVariable String username, @PathVariable String password, HttpSession session) {
         Employee employee = loginjurisdictionBiz.selectlogin(username, password);
         Map<String, Object> map = new HashMap<String, Object>();
