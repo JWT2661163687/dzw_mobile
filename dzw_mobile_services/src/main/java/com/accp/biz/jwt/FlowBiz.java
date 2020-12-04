@@ -92,7 +92,7 @@ public class FlowBiz {
      * @return
      */
     public List<Motorcycle> SelectAllmoto() {
-        return motorcycleMapper.SelectAll();
+        return motorcycleMapper.selectAlls();
     }
 
     /**

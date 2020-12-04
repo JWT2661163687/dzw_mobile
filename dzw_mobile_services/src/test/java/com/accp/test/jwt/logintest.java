@@ -23,6 +23,7 @@ public class logintest {
         System.out.println(loginjurisdictionBiz.selectlogin("张三", "123"));
     }
 	
+
 	@Test
 	public void bbb() {
 		List<Functiontable> list=loginjurisdictionBiz.selectAllfunctiontable();
@@ -37,5 +38,7 @@ public class logintest {
 			System.out.println(item);
 		}
 	}
+	
+	
 	
 }

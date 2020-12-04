@@ -4,25 +4,26 @@ public class Motorcycle {
     private Integer motorcycleid;      
     private Integer engineid;        
 
-    private Integer productionid;     
-
     private Integer makeid;           
+    private Integer productionid;      
 
-    private String motorcyclename;   
+
+    private String motorcyclename;     
 
     private String makename;          
 
     private String productionname;     
 
-    private Double price;             
-
     private Double yearprice;         
+    private Double price;              
 
     private Double power;             
 
     private Integer fuellabel;         
 
     private Double load;               
+
+
     
     private String enginename;       
 
@@ -133,13 +134,13 @@ public class Motorcycle {
     }
 
    
-	@Override
-	public String toString() {
-		return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
-				+ ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
-				+ ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
-				+ power + ", fuellabel=" + fuellabel + ", load=" + load + ", enginename=" + enginename + "]";
-	}
+    @Override
+    public String toString() {
+        return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
+                + ", makeid=" + makeid + ", motorcyclename=" + motorcyclename + ", makename=" + makename
+                + ", productionname=" + productionname + ", price=" + price + ", yearprice=" + yearprice + ", power="
+                + power + ", fuellabel=" + fuellabel + ", load=" + load + "]";
+    }
 
     public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
                       String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,
@@ -163,7 +164,6 @@ public class Motorcycle {
         super();
         // TODO Auto-generated constructor stub
     }
-
 
 	public Motorcycle(Integer motorcycleid, Integer engineid, Integer productionid, Integer makeid,
 			String motorcyclename, String makename, String productionname, Double price, Double yearprice, Double power,

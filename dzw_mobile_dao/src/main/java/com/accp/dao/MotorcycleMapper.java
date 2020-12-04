@@ -37,7 +37,12 @@ public interface MotorcycleMapper {
      */
     @Select("SELECT m.`motorcycleid`,e.`engineid`,e.`enginename`,m.`motorcyclename`,m.`price`,a.`makeid`,a.`makename`  FROM `motorcycle` m INNER JOIN `make` a ON m.`makeid`=a.`makeid` INNER JOIN  `engine` e ON m.`engineid`=e.`engineid`")
     List<Motorcycle> SelectAll();
-
+    /**
+     * 查询所有车型
+     * @return
+     */
+    @Select("select * from motorcycle")
+    List<Motorcycle> selectAlls();
     /**
      * 锟斤拷询id锟角凤拷锟斤拷同
      *
@@ -46,6 +51,7 @@ public interface MotorcycleMapper {
      */
     @Select("SELECT * FROM `motorcycle` WHERE `motorcycleid`=#{id}")
     List<Motorcycle> SelectById(@Param("id") Integer id);
+
     /**
      * 文本框查询
      * @param name

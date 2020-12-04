@@ -56,6 +56,14 @@ public class loginjurisdictionAuction {
 
         return map;
     }
+	/**
+	 * 登录
+	 * @param username
+	 * @param password
+	 * @param session
+	 * @return
+	 */
+
 
     /**
      * 获得sesston
@@ -70,7 +78,43 @@ public class loginjurisdictionAuction {
         return employee;
     }
 
-	
+    /**
+     * 获得树
+     *
+     * @param session
+     * @return
+     */
+    @GetMapping("/loginjurisdiction/getFunTree")
+    public List getUserFunTree(HttpSession session) {
+        // 从session获得用户，以便得到权限
+        Employee employee = (Employee) session.getAttribute("employee");
+        List tree = new ArrayList();
+        Set<String> menuNames = new TreeSet<String>();// 剔除重复值，保存一级菜单名称
+        for (Functiontable fun : employee.getPost().getFunctiontables()) {
+            menuNames.add(fun.getFunctiontable().getFname());
+        }
+        // 遍历一级菜单名称，生成二级菜单项
+        for (String name : menuNames) {
+            // 节点【初始化】
+            Map<String, Object> node = new HashMap<String, Object>();
+            node.put("id", 0);// 0:根级菜单
+            node.put("text", name);
+            List nodeChild = new ArrayList();
+            for (Functiontable fun : employee.getPost().getFunctiontables()) {
+                // 匹配是否是当前菜单的子项
+                if (name.equals(fun.getFunctiontable().getFname())) {
+                    Map<String, Object> n = new HashMap<String, Object>();
+                    n.put("id", fun.getCodenumber());
+                    n.put("text", fun.getFname());
+                    nodeChild.add(n);
+                }
+            }
+            node.put("children", nodeChild);
+            tree.add(node);
+        }
+        return tree;
+    }
+
 	/**
 	 * 注销
 	 * @param session
@@ -87,42 +131,7 @@ public class loginjurisdictionAuction {
 		return message;
 	}
 	
-	/**
-	 * 获得树
-	 * @param session
-	 * @return
-	 */
-	@GetMapping("/loginjurisdiction/getFunTree")
-	public List getUserFunTree(HttpSession session) {
-		// 从session获得用户，以便得到权限
-		Employee employee = (Employee) session.getAttribute("employee");
-		System.out.println(employee);
-		List tree = new ArrayList();
-		Set<String> menuNames = new TreeSet<String>();// 剔除重复值，保存一级菜单名称
-		for (Functiontable fun : employee.getPost().getFunctiontables()) {
-			menuNames.add(fun.getFunctiontable().getFname());
-		}
-		// 遍历一级菜单名称，生成二级菜单项
-		for (String name : menuNames) {
-			// 节点【初始化】
-			Map<String, Object> node = new HashMap<String, Object>();
-			node.put("id", 0);// 0:根级菜单
-			node.put("text", name);
-			List nodeChild = new ArrayList();
-			for (Functiontable fun : employee.getPost().getFunctiontables()) {
-				// 匹配是否是当前菜单的子项
-				if (name.equals(fun.getFunctiontable().getFname())) {
-					Map<String, Object> n = new HashMap<String, Object>();
-					n.put("id", fun.getCodenumber());
-					n.put("text", fun.getFname());
-					nodeChild.add(n);
-				}
-			}
-			node.put("children", nodeChild);
-			tree.add(node);
-		}
-		return tree;
-	}
+
 	
     /**
      * 查询所有功能
@@ -151,9 +160,9 @@ public class loginjurisdictionAuction {
      * @return
      */
 	@PostMapping("/loginjurisdiction/postmidd")
-    public Map<String, Object> insertSelective(@RequestBody Postmiddle[] postmiddles,HttpSession session) {
+    public Map<String, Object> insertSelective(@RequestBody Postmiddle[] postmiddles) {
 		Map<String, Object> map=new HashMap<String, Object>();
-		Employee employee=(Employee) session.getAttribute("employee");
+		
 		int aas=0;
     	aas=loginjurisdictionBiz.deletepostmiddrid(postmiddles[0].getRid());
     	for (Postmiddle item : postmiddles) {

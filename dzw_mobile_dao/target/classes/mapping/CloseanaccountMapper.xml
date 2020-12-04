@@ -147,18 +147,47 @@
         </set>
         where rNo = #{rno,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Closeanaccount">
-        update closeanaccount
-        set rWay = #{rway,jdbcType=INTEGER},
-        cId = #{cid,jdbcType=INTEGER},
-        cName = #{cname,jdbcType=VARCHAR},
-        cBalance = #{cbalance,jdbcType=INTEGER},
-        rOdd = #{rodd,jdbcType=VARCHAR},
-        rCashier = #{rcashier,jdbcType=VARCHAR},
-        rDealWith = #{rdealwith,jdbcType=INTEGER},
-        rOutOfPocket = #{routofpocket,jdbcType=INTEGER},
-        rDiscounts = #{rdiscounts,jdbcType=INTEGER},
-        remark = #{remark,jdbcType=VARCHAR}
-        where rNo = #{rno,jdbcType=INTEGER}
-    </update>
+ 
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Closeanaccount" >
+    update closeanaccount
+    set rWay = #{rway,jdbcType=INTEGER},
+      cId = #{cid,jdbcType=INTEGER},
+      cName = #{cname,jdbcType=VARCHAR},
+      cBalance = #{cbalance,jdbcType=INTEGER},
+      rOdd = #{rodd,jdbcType=VARCHAR},
+      rCashier = #{rcashier,jdbcType=VARCHAR},
+      rDealWith = #{rdealwith,jdbcType=INTEGER},
+      rOutOfPocket = #{routofpocket,jdbcType=INTEGER},
+      rDiscounts = #{rdiscounts,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where rNo = #{rno,jdbcType=INTEGER}
+  </update>
+  
+  <select id="queryCar" resultType="com.accp.pojo.Maintaincar">
+  		SELECT car.*,s.`receiptsname`,t.`tename` FROM maintaincar car 
+		LEFT JOIN maintainreceipts s ON s.`receiptsid` = car.`receiptsid`
+		LEFT JOIN team t ON t.`teamid` = car.`teamid`
+		<where>
+			car.`receiptsid` = 3
+			<if test="mId!=0">
+				AND car.`maintainid` = #{mId}
+			</if>
+			<if test="cId!=0">
+				AND car.`carid` = #{cId}
+			</if>
+		</where>
+  </select>
+  
+  <select id="queryCount" resultType="com.accp.pojo.Closeanaccount">
+  		SELECT * FROM closeanaccount
+  		<where>
+  			<if test="rid!=0">
+  				and  rNo = #{rid}
+  			</if>
+  			<if test="cid!=0">
+  				and  cId = #{cid}
+  			</if>
+  		</where>
+  </select>
+
 </mapper>
