@@ -20,10 +20,10 @@
   		SELECT * FROM `weixiu`
   		<where>
   			<if test="sousuo=='-1' ">		<!-- -1表示为空 -->
-  				(`XMleixing` LIKE '%${sousuo}%' OR`XMbianma` LIKE '%${sousuo}%' OR `XMmingcheng` LIKE '%${sousuo}%' OR XMid>0) AND  `cid`=#{cid}
+  				(`XMleixing` LIKE '%${sousuo}%' OR`XMbianma` LIKE '%${sousuo}%' OR `XMmingcheng` LIKE '%${sousuo}%' OR XMid>0)
   			</if>
   			<if test="sousuo!='-1' ">		<!-- 不等于-1表示为有值 -->
-  				(`XMleixing` LIKE '%${sousuo}%' OR`XMbianma` LIKE '%${sousuo}%' OR `XMmingcheng` LIKE '%${sousuo}%') AND  `cid`=1
+  				(`XMleixing` LIKE '%${sousuo}%' OR`XMbianma` LIKE '%${sousuo}%' OR `XMmingcheng` LIKE '%${sousuo}%')
   			</if>
   		</where>
   	</select>

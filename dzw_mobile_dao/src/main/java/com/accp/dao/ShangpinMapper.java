@@ -20,8 +20,27 @@ public interface ShangpinMapper {
     int updateByPrimaryKey(Shangpin record);
     
     /*
-     *  分页查询商品表  信息
+     *  	  分页查询商品表  信息
      *  @Param   sousuo  daid
      */
-    List<Shangpin> selectshangpin(@Param("sousuo") String sousuo,@Param("daid") Integer daid);
+    List<Shangpin> selectshangpin(@Param("sousuo") String sousuo);
+
+    /*
+     *  	修改
+     *  	@param xiugai  spid
+     */
+    int updateshangpin(@Param("xiugai") Shangpin xiugai);
+    
+    /*
+     * 新增
+     * @param zeng
+     */
+    int insertshangpin(@Param("zeng") Shangpin zeng);
+    
+    /*
+     * 删除
+     * @param spid
+     */
+    int deleteshangpin(@Param("spid") Integer spid);
+
 }

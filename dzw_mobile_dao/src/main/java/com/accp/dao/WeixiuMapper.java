@@ -1,3 +1,5 @@
+
+
 package com.accp.dao;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public interface WeixiuMapper {
 	 * 	    @param cid	 
 	 * 		@return
 	 */
-    List<Weixiu> selectcid(@Param("cid") Integer cid,@Param("sousuo") String sousuo);
+    List<Weixiu> selectcid(@Param("sousuo") String sousuo);
     
    /*
     * 	ĞÂÔö

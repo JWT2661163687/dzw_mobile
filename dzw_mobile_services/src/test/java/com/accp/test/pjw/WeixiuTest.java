@@ -21,7 +21,7 @@ public class WeixiuTest {
 		 */
 		@Test
 		public void selectid() {
-			PageInfo<Weixiu> page=weixiubiz.selectcid(1, 1, 1,"1001");
+			PageInfo<Weixiu> page=weixiubiz.selectcid(1, 1,"1001");
 			System.out.println("分页"+page.getList().get(0).getXmleixing());
 		}
 		
