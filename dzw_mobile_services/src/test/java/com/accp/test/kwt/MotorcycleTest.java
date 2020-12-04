@@ -15,33 +15,14 @@ import com.github.pagehelper.PageInfo;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-ctx.xml"})
 public class MotorcycleTest {
-<<<<<<< HEAD
 
     @Autowired
     private MotorcycleBiz biz;
 
-    @Test
-    public void SelectAllPage() {
-        PageInfo<Motorcycle> lists = biz.SelectPage(1, 2);
-        lists.getList().forEach(i -> {
-            System.err.println(i);
-        });
-    }
+   
 
-    @Test
-    public void insert() {
-        Motorcycle m = new Motorcycle();
-        m.setMotorcycleid(3);
-        m.setEngineid(5);
-        m.setMakeid(1256);
-        m.setPrice(200000.00);
-        m.setMotorcyclename("ss");
-        int count = biz.addMotorcycle(m);
-    }
-=======
+    
 	
-	@Autowired
-	private MotorcycleBiz biz;
 	@Test
 	public void SelectAllPage() {
 		PageInfo<Motorcycle> lists=biz.SelectPage(1, 2);
@@ -66,6 +47,5 @@ public class MotorcycleTest {
 ////			System.err.println(i);
 ////		});
 ////	}
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 
 }
