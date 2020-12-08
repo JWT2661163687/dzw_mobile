@@ -1,7 +1,4 @@
 eclipse.preferences.version=1
-<<<<<<< HEAD
 encoding//src/main/java/com/accp/dao/MaintaincarMapper.java=UTF-8
 encoding//src/main/java/com/accp/dao/VehicleMapper.java=UTF-8
-=======
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 encoding//src/test/java=UTF-8
