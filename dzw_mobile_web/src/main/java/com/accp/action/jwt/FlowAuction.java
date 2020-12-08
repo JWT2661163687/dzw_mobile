@@ -20,6 +20,7 @@ import com.accp.biz.jwt.FlowBiz;
 import com.accp.biz.jwt.MaintaincarBiz;
 import com.accp.pojo.Completed;
 import com.accp.pojo.Engine;
+import com.accp.pojo.Fieldvehicles;
 import com.accp.pojo.Maintaincar;
 import com.accp.pojo.Mechanicstar;
 import com.accp.pojo.Motorcycle;
@@ -36,6 +37,27 @@ public class FlowAuction {
     private FlowBiz flowBiz;
     @Autowired
     private MaintaincarBiz maintaincarBiz;
+    
+    
+    
+    
+    /**
+     * 根据车辆id查询维修历史
+     * @param maintainvehicleid
+     * @return
+     */
+    @GetMapping("/flow/maintainvehicleid/{maintainvehicleid}")
+    public List<Maintaincar> selectMaintainvehicleid(@PathVariable Integer maintainvehicleid){
+    	return flowBiz.selectMaintainvehicleid(maintainvehicleid);
+    }
+    /**
+     * 查询可以派车的救援车辆
+     * @return
+     */
+    @GetMapping("/flow/fieldvehicles")
+    public List<Fieldvehicles> selectAlling(){
+    	return flowBiz.selectAlling();
+    }
 
     /**
      * 获得树
