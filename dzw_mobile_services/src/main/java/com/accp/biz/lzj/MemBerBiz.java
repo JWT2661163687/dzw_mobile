@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -88,5 +89,12 @@ public class MemBerBiz {
      */
     public int updateMemerGrade(@Param("cid") Integer cid) {
         return dao.updateMemerGrade(cid);
+    }
+    
+    /**
+     * 查询所有的会员卡号
+     */
+    public List<String> queryAllNumber(){
+    	return dao.queryAllNumber();
     }
 }

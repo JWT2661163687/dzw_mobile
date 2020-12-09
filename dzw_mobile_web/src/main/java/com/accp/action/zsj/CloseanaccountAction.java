@@ -35,10 +35,10 @@ public class CloseanaccountAction {
      * @param cid
      * @return
      */
-	@GetMapping("car/{mId}/{cId}")
-    public List<Maintaincar> queryCar(@PathVariable Integer mId,@PathVariable Integer cId){
-		System.out.println("a "+mId);
-    	return biz.queryCar(mId, cId);
+	@GetMapping("car/{mId}/{cId}/{date1}")
+    public List<Maintaincar> queryCar(@PathVariable Integer mId,@PathVariable Integer cId,@PathVariable Integer date1){
+		System.out.println("a "+date1);
+    	return biz.queryCar(mId, cId,date1);
     }
     
     /**
@@ -110,5 +110,14 @@ public class CloseanaccountAction {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("code", "200");
     	return map;
+    }
+	
+	/**
+     * 查询全部待结算的信息
+     * 
+     */
+	@GetMapping("queryCloseAll")
+    public List<Maintaincar> queryCloseAll(){
+    	return biz.queryCloseAll();
     }
 }

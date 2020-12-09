@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.accp.biz.lzj.MemBerBiz;
 import com.accp.pojo.Client;
 import com.accp.pojo.Member;
+import com.accp.util.SearcuUtils;
 import com.github.pagehelper.PageInfo;
 
 @RestController
@@ -94,6 +95,16 @@ public class MemberAction {
             map.put("code", "200");
         }
         return map;
+    }
+    
+    
+    /**
+     * 查询所有的会员卡号
+     */
+    @GetMapping("queryAllNumber/{aa}")
+    public List<String> queryAllNumber(@PathVariable String aa){
+    	List<String> list = biz.queryAllNumber();
+    	return list;
     }
 
 }
