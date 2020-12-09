@@ -3,6 +3,7 @@ package com.accp.biz.zsj;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,5 +50,12 @@ public class ClientBiz {
      */
     public List<Vehicle> queryVehicle(@Param("cid") Integer cid) {
         return dao.queryVehicle(cid);
+    }
+    
+    /**
+     * 查询所有客户信息
+     */
+    public List<Client> queryAllClient(){
+    	return dao.queryAllClient();
     }
 }

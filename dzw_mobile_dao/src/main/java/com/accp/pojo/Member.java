@@ -1,17 +1,17 @@
 package com.accp.pojo;
 
 public class Member {
-    private Integer mid;            //ï¿½ï¿½Ô±ï¿½ï¿½ï¿½
+    private Integer mid;            //»áÔ±±àºÅ
 
-    private String mcardnumber;        //ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
+    private String mcardnumber;        //»áÔ±¿¨ºÅ
 
-    private String mpass;            //ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
+    private String mpass;            //»áÔ±ÃÜÂë
 
-    private Integer cid;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½
+    private Integer cid;            //¿Í»§±àºÅ
 
-    private String cname;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½
+    private String cname;            //¿Í»§ÐÕÃû
 
-    private Integer mbalance;        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private Integer mbalance;        //¿¨ºÅÓà¶î
 
     public Integer getMid() {
         return mid;

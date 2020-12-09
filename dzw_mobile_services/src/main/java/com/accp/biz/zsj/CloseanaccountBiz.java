@@ -3,6 +3,7 @@ package com.accp.biz.zsj;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,8 @@ public class CloseanaccountBiz {
      * @param cid
      * @return
      */
-    public List<Maintaincar> queryCar(@Param("mId")Integer mid,@Param("cId")Integer cid){
-    	return dao.queryCar(mid, cid);
+    public List<Maintaincar> queryCar(@Param("mId")Integer mid,@Param("cId")Integer cid,@Param("date1")Integer date1){
+    	return dao.queryCar(mid, cid,date1);
     }
     
     /**
@@ -78,5 +79,13 @@ public class CloseanaccountBiz {
      */
     public int updateCarTeamid(@Param("teamid")Integer teamid,@Param("carid")Integer carid) {
     	return dao.updateCarTeamid(teamid,carid);
+    }
+    
+    /**
+     * 查询全部待结算的信息
+     * 
+     */
+    public List<Maintaincar> queryCloseAll(){
+    	return dao.queryCloseAll();
     }
 }

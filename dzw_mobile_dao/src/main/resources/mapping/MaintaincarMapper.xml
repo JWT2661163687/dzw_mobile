@@ -322,7 +322,7 @@
         </set>
         where maintainid = #{maintainid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Maintaincar">
+ <!--    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Maintaincar">
         update maintaincar
         set receiptsid = #{receiptsid,jdbcType=INTEGER},
         teamid = #{teamid,jdbcType=INTEGER},
@@ -349,14 +349,13 @@
         enginehao = #{enginehao,jdbcType=VARCHAR},
         carownername = #{carownername,jdbcType=VARCHAR},
         carid = #{carid,jdbcType=INTEGER},
-<<<<<<< HEAD
       </if>
       <if test="maintaindate != null" >
         maintaindate = #{maintaindate,jdbcType=DATE},
       </if>
     </set>
     where maintainid = #{maintainid,jdbcType=INTEGER}
-  </update>
+  </update> -->
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Maintaincar" >
     update maintaincar
     set receiptsid = #{receiptsid,jdbcType=INTEGER},
@@ -388,9 +387,7 @@
     where maintainid = #{maintainid,jdbcType=INTEGER}
   </update>
   
-=======
-        maintaindate = #{maintaindate,jdbcType=DATE}
+       <!--  maintaindate = #{maintaindate,jdbcType=DATE}
         where maintainid = #{maintainid,jdbcType=INTEGER}
-    </update>
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
+    </update> -->
 </mapper>

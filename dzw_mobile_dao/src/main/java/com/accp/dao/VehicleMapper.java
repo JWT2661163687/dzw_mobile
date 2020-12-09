@@ -29,52 +29,52 @@ public interface VehicleMapper {
     int updateByPrimaryKey(Vehicle record);
 
     /**
-     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+     * ¸ù¾ÝÌõ¼þ²éÑ¯³µÁ¾ÐÅÏ¢
      */
     List<Vehicle> queryVehicle(@Param("vid") Integer vid);
 
     /**
-     * Ë«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ê¾ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï¢
+     * ¸ù¾ÝÌõ¼þ²éÑ¯¸Ã³µÁ¾µÄ³µÖ÷ÐÅÏ¢
      */
     @Select("SELECT * FROM `client` WHERE cId = #{cid}")
     List<Client> queryClient(@Param("cid") Integer cid);
 
     /**
-     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+     * ÐÂÔö³µÁ¾ÐÅÏ¢
      */
     @Insert("INSERT INTO `vehicle`(`cId`,`vDriver`,`vLicense`,`vBrand`,`vModel`,`vPhone`,`vAffiliation`,`vMileage`,`registeredDate`,`purchaseDate`) VALUES(#{vehicle.cid},#{vehicle.vdriver},#{vehicle.vlicense},#{vehicle.vbrand},#{vehicle.vmodel},#{vehicle.vphone},#{vehicle.vaffiliation},#{vehicle.vmileage},#{vehicle.registereddate},#{vehicle.purchasedate})")
     int insertVehicle(@Param("vehicle") Vehicle vehicle);
 
     /**
-     * ï¿½Þ¸Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+     * ÐÞ¸Ä³µÁ¾ÐÅÏ¢
      */
     @Update("UPDATE `vehicle` SET `vDriver` = #{vehicle.vdriver},`vLicense` = #{vehicle.vlicense},`vBrand` = #{vehicle.vbrand},`vModel` = #{vehicle.vmodel},`vPhone` = #{vehicle.vphone},`vAffiliation` = #{vehicle.vaffiliation},`vMileage` = #{vehicle.vmileage},`registeredDate` = #{vehicle.registereddate},`purchaseDate` = #{vehicle.purchasedate} WHERE `vId` = #{vehicle.vid}")
     int updateVehicle(@Param("vehicle") Vehicle vehicle);
 
     /**
-     * ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Æ±ï¿½Å»ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯Æ·ï¿½ï¿½ï¿½ï¿½Ï¢
+     * ²éÑ¯³µÁ¾Æ·ÅÆ
      */
     List<Make> queryMake(@Param("id") String id);
 
     /**
-     * ï¿½ï¿½ï¿½Ý³ï¿½ï¿½Í±ï¿½Å»ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+     * ²éÑ¯³µÁ¾ÐÍºÅ
      */
     List<Motorcycle> queryMotorcycle(@Param("makeid") Integer makeid, @Param("id") String id);
 
     /**
-     * ï¿½ï¿½ï¿½Æ·ï¿½Æµï¿½Ê±ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½Ó¦ï¿½Ä³ï¿½ï¿½ï¿½
+     * ²éÑ¯³µÁ¾ÐÍºÅ
      */
     @Select("SELECT * FROM motorcycle WHERE makeid = #{id}")
     List<Motorcycle> queryMotorcycle1(@Param("id") Integer id);
 
     /**
-     * É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+     * É¾³ý³µÁ¾ÐÅÏ¢
      */
     @Delete("DELETE FROM `vehicle` WHERE vId = #{vid}")
     int deleteVehicle(@Param("vid") Integer vid);
 
     /**
-     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ÐµÄ³ï¿½ï¿½ï¿½
+     * ²éÑ¯³µÁ¾×´Ì¬
      *
      * @return
      */

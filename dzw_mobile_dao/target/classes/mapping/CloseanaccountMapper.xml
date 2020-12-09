@@ -168,14 +168,23 @@
 		LEFT JOIN maintainreceipts s ON s.`receiptsid` = car.`receiptsid`
 		LEFT JOIN team t ON t.`teamid` = car.`teamid`
 		<where>
-			car.`teamid` = 3
+			car.`receiptsid` = 3
 			<if test="mId!=0">
 				AND car.`maintainid` = #{mId}
 			</if>
 			<if test="cId!=0">
 				AND car.`carid` = #{cId}
 			</if>
+			<if test="date1==1">
+				AND maintaindate = CURRENT_DATE
+			</if>
+			<if test="date1==2">
+				AND  maintaindate = DATE_SUB(CURDATE(),INTERVAL 1 DAY)
+			</if>
 		</where>
+		<if test="date1==0">
+			ORDER BY maintaindate DESC
+		</if>
   </select>
   
   <select id="queryCount" resultType="com.accp.pojo.Closeanaccount">
