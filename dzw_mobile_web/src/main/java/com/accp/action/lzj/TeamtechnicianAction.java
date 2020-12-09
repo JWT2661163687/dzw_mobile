@@ -54,6 +54,7 @@ public class TeamtechnicianAction {
      */
     @PostMapping("insert")
     public Map<String, String> insertTeamtechnician(@RequestBody Teamtechnician te) {
+    	System.out.println(te.getTeamid());
         Map<String, String> message = new HashMap<String, String>();
         biz.insertTe(te);
         message.put("code", "200");

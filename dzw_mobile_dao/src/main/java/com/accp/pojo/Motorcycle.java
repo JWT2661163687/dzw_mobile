@@ -1,32 +1,31 @@
 package com.accp.pojo;
 
 public class Motorcycle {
-    private Integer motorcycleid;      //锟斤拷锟酵讹拷锟斤拷id
+    private Integer motorcycleid;      
+    private Integer engineid;        
 
-    private Integer engineid;          //锟斤拷锟斤拷锟斤拷品锟狡憋拷锟�
-
-    private Integer productionid;      //锟斤拷锟斤拷id
-
-    private Integer makeid;            //锟斤拷锟斤拷品锟斤拷id
-
-    private String motorcyclename;     //锟斤拷锟斤拷锟斤拷锟斤拷
-
-    private String makename;           //品锟斤拷锟斤拷锟斤拷
-
-    private String productionname;     //锟斤拷锟斤拷锟斤拷锟斤拷
-
-    private Double price;              //锟轿匡拷锟桔革拷
-
-    private Double yearprice;          //锟斤拷锟斤拷锟斤拷锟�
-
-    private Double power;              //锟斤拷锟斤拷
-
-    private Integer fuellabel;         //燃锟酵憋拷锟�
+    private Integer makeid;           
+    private Integer productionid;      
 
 
-    private Double load;               //载重
+    private String motorcyclename;     
+
+    private String makename;          
+
+    private String productionname;     
+
+    private Double yearprice;         
+    private Double price;              
+
+    private Double power;             
+
+    private Integer fuellabel;         
+
+    private Double load;               
+
+
     
-    private String enginename;         //发动机品牌名称
+    private String enginename;       
 
     
     
@@ -134,6 +133,7 @@ public class Motorcycle {
         this.load = load;
     }
 
+   
     @Override
     public String toString() {
         return "Motorcycle [motorcycleid=" + motorcycleid + ", engineid=" + engineid + ", productionid=" + productionid
@@ -183,4 +183,5 @@ public class Motorcycle {
 		this.load = load;
 		this.enginename = enginename;
 	}
+
 }

@@ -29,6 +29,33 @@ import com.accp.pojo.Postmiddle;
 public class loginjurisdictionAuction {
     @Autowired
     private LoginjurisdictionBiz loginjurisdictionBiz;
+	
+
+
+    /**
+     * 登录
+     *
+     * @param username
+     * @param password
+     * @param session
+     * @return
+     */
+    @GetMapping("/employee/{username}/{password}")
+    public Map<String, Object> login(@PathVariable String username, @PathVariable String password, HttpSession session) {
+        Employee employee = loginjurisdictionBiz.selectlogin(username, password);
+        Map<String, Object> map = new HashMap<String, Object>();
+        if (employee != null) {
+            session.setAttribute("employee", employee);// 服务器保存
+            map.put("code", "200");
+            map.put("msg", "ok");
+            map.put("employee", employee);// 客户端保存
+        } else {
+            map.put("code", "300");
+            map.put("msg", "login_error");
+        }
+
+        return map;
+    }
 	/**
 	 * 登录
 	 * @param username
@@ -36,38 +63,7 @@ public class loginjurisdictionAuction {
 	 * @param session
 	 * @return
 	 */
-	@GetMapping("/employee/{username}/{password}")
-	public Map<String, Object> login(@PathVariable String username,@PathVariable String password,HttpSession session){
-		Employee employee=loginjurisdictionBiz.selectlogin(username, password);
-		Map<String, Object> map = new HashMap<String, Object>();
-		if (employee != null) {
-			session.setAttribute("employee", employee);// 服务器保存
-			map.put("code", "200");
-			map.put("msg", "ok");
-			map.put("employee", employee);// 客户端保存
-		} else {
-			map.put("code", "300");
-			map.put("msg", "login_error");
-		}
-		return map;
-	}
 
-    /**
-     * 注销
-     *
-     * @param session
-     * @return
-     * @throws Exception
-     */
-    @GetMapping("/loginjurisdiction/loginOut")
-    public Map<String, Object> loginOut(HttpSession session) throws Exception {
-        Map<String, Object> message = new HashMap<String, Object>();
-        session.removeAttribute("USER");
-        session.invalidate();// 立即失效
-        message.put("code", "200");
-        message.put("msg", "ok");
-        return message;
-    }
 
     /**
      * 获得sesston
@@ -119,7 +115,23 @@ public class loginjurisdictionAuction {
         return tree;
     }
 
+	/**
+	 * 注销
+	 * @param session
+	 * @return
+	 * @throws Exception
+	 */
+	@GetMapping("/employee/loginOut")
+	public Map<String, Object> loginOut(HttpSession session) throws Exception {
+		Map<String, Object> message = new HashMap<String, Object>();
+		session.removeAttribute("employee");
+		session.invalidate();// 立即失效
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
 	
+
 	
     /**
      * 查询所有功能
@@ -148,9 +160,9 @@ public class loginjurisdictionAuction {
      * @return
      */
 	@PostMapping("/loginjurisdiction/postmidd")
-    public Map<String, Object> insertSelective(@RequestBody Postmiddle[] postmiddles,HttpSession session) {
+    public Map<String, Object> insertSelective(@RequestBody Postmiddle[] postmiddles) {
 		Map<String, Object> map=new HashMap<String, Object>();
-		Employee employee=(Employee) session.getAttribute("employee");
+		
 		int aas=0;
     	aas=loginjurisdictionBiz.deletepostmiddrid(postmiddles[0].getRid());
     	for (Postmiddle item : postmiddles) {

@@ -27,9 +27,7 @@ public class Post {
     
     
 
-    public List<Functiontable> getFunctiontables() {
-        return functiontables;
-    }
+   
     @Override
 	public String toString() {
 		return "Post [postid=" + postid + ", departmentid=" + departmentid + ", postname=" + postname + ", rcode="
@@ -45,6 +43,11 @@ public class Post {
 		this.postmiddles = postmiddles;
 	}
 
+	
+
+	public List<Functiontable> getFunctiontables() {
+		return functiontables;
+	}
 
     public void setFunctiontables(List<Functiontable> functiontables) {
         this.functiontables = functiontables;

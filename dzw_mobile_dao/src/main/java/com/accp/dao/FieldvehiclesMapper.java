@@ -37,5 +37,12 @@ public interface FieldvehiclesMapper {
 
     //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public int deleteFiel(@Param("id") int id);
-
+    /**
+     * ²éÑ¯¿ÉÒÔÅÉ³µµÄ¾ÈÔ®³µÁ¾
+     * @return
+     */
+    @Select("SELECT * FROM `fieldvehicles` WHERE `id`  IN(SELECT `id` FROM `maintaincar` WHERE `receiptsid` NOT IN(1) AND `id` IS NOT NULL)")
+    List<Fieldvehicles> selectAlling();
+    
+    
 }
