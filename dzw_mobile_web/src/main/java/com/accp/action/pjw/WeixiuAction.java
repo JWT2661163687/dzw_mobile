@@ -22,8 +22,26 @@ import com.github.pagehelper.PageInfo;
 @RestController
 @RequestMapping("/api/weixiu")
 public class WeixiuAction {
-    @Autowired
-    private WeixiuBiz weixiubiz;
+		@Autowired
+		private WeixiuBiz weixiubiz;
+		
+		/* 		按维修cid 查询 维修项目信息
+		 * 	    @param cid	 
+		 * 		@return
+		 */
+		@GetMapping("aa/{page1}/{page2}/{sousuo}")
+	   public PageInfo<Weixiu> selectcid(@PathVariable Integer page1,@PathVariable Integer page2,@PathVariable String sousuo){
+			System.out.println("进来了a:"+page1+"b:"+page2);
+			return	weixiubiz.selectcid(page1, page2, sousuo);	    	
+	    }
+		
+		
+		 
+		
+		   
+		   
+		
+
 
     /* 		按维修cid 查询 维修项目信息
      * 	    @param cid

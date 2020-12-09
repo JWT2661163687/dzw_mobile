@@ -21,7 +21,7 @@ public class SessionValidateInterceptor implements HandlerInterceptor {
 		Employee employee = (Employee) request.getSession().getAttribute("employee");
 		System.out.println("sesstin值："+employee);
 		// 登陆认证
-		if (employee == null) {
+		if (request.getMethod().equals("GET")&&employee == null) {
 			// 跨域设置
 			response.setHeader("Access-Control-Allow-Methods", "POST,GET,PUT,OPTIONS,DELETE");
 			response.setHeader("Access-Control-Max-Age", "3600");

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.accp.dao.CompletedMapper;
 import com.accp.dao.EngineMapper;
+import com.accp.dao.FieldvehiclesMapper;
 import com.accp.dao.MaintaincarMapper;
 import com.accp.dao.MaintaincarxiangmuMapper;
 import com.accp.dao.MechanicstarMapper;
@@ -20,6 +21,7 @@ import com.accp.dao.VehicleMapper;
 import com.accp.dao.WeixiuMapper;
 import com.accp.pojo.Completed;
 import com.accp.pojo.Engine;
+import com.accp.pojo.Fieldvehicles;
 import com.accp.pojo.Maintaincar;
 import com.accp.pojo.Maintaincarxiangmu;
 import com.accp.pojo.Mechanicstar;
@@ -55,6 +57,26 @@ public class FlowBiz {
     private TeamtechniciantwoMapper teamtechniciantwoMapper;
     @Autowired
     private MaintaincarxiangmuMapper maintaincarxiangmuMapper;
+    @Autowired
+    private FieldvehiclesMapper fieldvehiclesMapper;
+    
+    
+    /**
+     * 根据车辆id查询维修历史
+     * @param maintainvehicleid
+     * @return
+     */
+    public List<Maintaincar> selectMaintainvehicleid(Integer maintainvehicleid){
+    	return maintaincarMapper.selectMaintainvehicleid(maintainvehicleid);
+    }
+    
+    /**
+     * 查询可以派车的救援车辆
+     * @return
+     */
+    public List<Fieldvehicles> selectAlling(){
+    	return fieldvehiclesMapper.selectAlling();
+    }
 
     /**
      * 查询所有班组表
@@ -168,7 +190,7 @@ public class FlowBiz {
      * @return
      */
     public int insertupdatemaintainling(Maintaincar maintaincar) {
-        int co = maintaincarMapper.updateMain(maintaincar.getMaintainling(), maintaincar.getMaintainid());
+        int co = maintaincarMapper.updateMain(maintaincar.getMaintainling(), maintaincar.getMaintainid(),maintaincar.getMaintainmoney());
         for (Teamtechniciantwo item : maintaincar.getTeamtechniciantwos()) {
             item.setMaintainid(maintaincar.getMaintainid());
             item.setMaintainling(maintaincar.getMaintainling());

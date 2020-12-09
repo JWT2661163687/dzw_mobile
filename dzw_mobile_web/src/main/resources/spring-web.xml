@@ -39,16 +39,14 @@
 	<mvc:default-servlet-handler />
 	
 	<!-- 权限拦截器 -->
-	<!-- <mvc:interceptors>
- 	<mvc:interceptors>
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
+	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/api/loginjurisdictions/employee/**" />
 			<mvc:exclude-mapping path="/api/loginjurisdictions/loginOut" />
 			<bean class="com.accp.interceptor.SessionValidateInterceptor" />
 		</mvc:interceptor>
-	</mvc:interceptors> -->
+	</mvc:interceptors>
 	
 
     <context:component-scan base-package="com.accp.action"/>
