@@ -1,7 +1,10 @@
 package com.accp.biz.jwt;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.accp.dao.CompletedMapper;
 import com.accp.dao.EngineMapper;
 import com.accp.dao.FieldvehiclesMapper;
+import com.accp.dao.FrontMapper;
 import com.accp.dao.MaintaincarMapper;
 import com.accp.dao.MaintaincarxiangmuMapper;
 import com.accp.dao.MechanicstarMapper;
@@ -22,6 +26,7 @@ import com.accp.dao.WeixiuMapper;
 import com.accp.pojo.Completed;
 import com.accp.pojo.Engine;
 import com.accp.pojo.Fieldvehicles;
+import com.accp.pojo.Front;
 import com.accp.pojo.Maintaincar;
 import com.accp.pojo.Maintaincarxiangmu;
 import com.accp.pojo.Mechanicstar;
@@ -59,6 +64,8 @@ public class FlowBiz {
     private MaintaincarxiangmuMapper maintaincarxiangmuMapper;
     @Autowired
     private FieldvehiclesMapper fieldvehiclesMapper;
+    @Autowired 
+    private FrontMapper frontMapper;
     
     
     /**
@@ -172,11 +179,16 @@ public class FlowBiz {
      * @return
      */
     public int insertSelective(Completed record) {
-        //修改状态表
+    	//判断表是否存在
+    	Front front=selectAlldate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+        //修改状态表,竣工
         if (record.getRework() == null || "".equals(record.getRework().trim())) {
-
+        		front.setCarrepairingnumber(front.getCarrepairingnumber()-1);
+        		updateByPrimaryKeySelective(front);
             maintaincarMapper.updateMaintaincarreceipts(record.getMainid(), 3);
         } else {
+        		front.setRepairnumber(front.getRepairnumber()+1);
+        		updateByPrimaryKeySelective(front);
             record.setCompletiondate(null);
             maintaincarMapper.updateMaintaincarreceipts(record.getMainid(), 4);
         }
@@ -215,5 +227,28 @@ public class FlowBiz {
     public Maintaincar selectzhuangtai(String licence) {
         return maintaincarMapper.selectzhuangtai(licence);
     }
+    
+    /*8
+     * 创建今日首页数据表
+     */
+    public int insertdate() {
+    	return frontMapper.insertdate();
+    }
+    /**
+     * 查询今日首页数据表
+     * @return
+     */
+    public Front selectAlldate(String date) {
+    	return frontMapper.selectAlldate(date);
+    }
+    /**
+     * 修改数据
+     * @param record
+     * @return
+     */
+    public int updateByPrimaryKeySelective(Front record) {
+    	return frontMapper.updateByPrimaryKeySelective(record);
+    }
+    
 
 }

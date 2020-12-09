@@ -1,6 +1,8 @@
 package com.accp.action.jwt;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +23,7 @@ import com.accp.biz.jwt.MaintaincarBiz;
 import com.accp.pojo.Completed;
 import com.accp.pojo.Engine;
 import com.accp.pojo.Fieldvehicles;
+import com.accp.pojo.Front;
 import com.accp.pojo.Maintaincar;
 import com.accp.pojo.Mechanicstar;
 import com.accp.pojo.Motorcycle;
@@ -235,5 +238,28 @@ public class FlowAuction {
         return flowBiz.selectzhuangtai(licence);
     }
 
+    
+    /**
+     * 查询今日首页数据表
+     * @return
+     */
+    @GetMapping("/flow/getfront")
+    public Front selectAlldates() {
+    	return flowBiz.selectAlldate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+    }
+    
+    @GetMapping("/flow/addfront")
+    public Map<String, Object> addfront(){
+    	String date=new SimpleDateFormat("yyyy-MM-dd").format(new Date());   
+    	
+    	System.out.println(flowBiz.selectAlldate(date));
+    	if(flowBiz.selectAlldate(date)==null) {
+    		flowBiz.insertdate();
+    	}
+    	Map<String, Object> map=new HashMap<String, Object>();
+    	map.put("code", "200");
+    	return map;
+    }
+    
 
 }
