@@ -69,6 +69,15 @@ public class FlowBiz {
     
     
     /**
+     * 更具接车id查询
+     * @param maintainid
+     * @return
+     */
+    public Maintaincar selectByPrimaryKey(Integer maintainid) {
+    	return maintaincarMapper.selectByPrimaryKey(maintainid);
+    }
+    
+    /**
      * 根据车辆id查询维修历史
      * @param maintainvehicleid
      * @return
