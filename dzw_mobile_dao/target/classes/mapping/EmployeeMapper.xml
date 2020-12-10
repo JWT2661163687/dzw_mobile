@@ -24,7 +24,43 @@
         <result column="entrytimes" property="entrytimes" jdbcType="DATE"/>
         <result column="lztimes" property="lztimes" jdbcType="DATE"/>
         <result column="brithtimes" property="brithtimes" jdbcType="DATE"/>
+         <result column="yuanyin" property="yuanyin" jdbcType="VARCHAR"/>
+        
     </resultMap>
+    <!-- 大哥写的sql查询   在职员工 -->
+    <select id="selectyuangong" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    		SELECT  (SELECT `depnames` FROM `department` WHERE `departmentid`=e.`departmentid`) AS bumen,
+			(SELECT postname FROM `post` WHERE postid=e.`postid`) AS gangwei,
+			e.`employeeid`,e.`emplogenid`,e.`empphone`,e.`email`
+			 FROM `employee` AS e
+			 <where>
+			 	<if test="employeeid!=-1">
+			 		e.employeeid=#{employeeid}
+			 	</if>
+			 	 AND e.stateid=1
+			 </where> 				 
+    </select>
+    
+    <!-- 查询离职员工 -->
+    <select id="selectlizhi" resultMap="BaseResultMap">
+    		SELECT  (SELECT `depnames` FROM `department` WHERE `departmentid`=e.`departmentid`) AS bumen,
+			(SELECT postname FROM `post` WHERE postid=e.`postid`) AS gangwei,
+			e.`employeeid`,e.`emplogenid`,e.`empphone`,e.`email`,e.`lztimes`,e.`yuanyin`
+			 FROM `employee` AS e
+			 where e.stateid=2							 
+    </select>
+    
+    <!-- 修改成离职员工 -->
+    <update id="updateyuangong">
+    	UPDATE `employee` SET   `stateid` = 2,  `yuanyin` =#{yuanyin} ,`lztimes`=NOW()
+		WHERE `emplogenid` =#{emplogenid}
+    </update>
+    
+    
+    
+    
+    
+    <!-- 注释。。。 -->
     <sql id="Base_Column_List">
         employeeid, propertyid, stateid, departmentid, postid, empname, esex, emplogenid,
         emplogepasword, education, graduationschool, major, crrdID, address, newaddress,
