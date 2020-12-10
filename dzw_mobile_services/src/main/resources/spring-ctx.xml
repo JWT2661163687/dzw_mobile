@@ -20,6 +20,10 @@
         mapperLocations
         org.springframework.jdbc.datasource.DataSourceTransactionManager
      -->
+     
+     
+     
+     
 
     <!-- 配置基础连接池 -->
     <bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"

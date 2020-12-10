@@ -3,29 +3,29 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Client {
-    private Integer cid;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½
+    private Integer cid;            //¿Í»§±àºÅ
 
-    private Integer vid;            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private Integer vid;            //³µÁ¾±àºÅ
 
-    private Integer rid;            //ï¿½ï¿½ï¿½Ý±ï¿½ï¿½
+    private Integer rid;            //´ý½áËã±àºÅ
 
-    private Integer rno;            //ï¿½ï¿½ï¿½ãµ¥ï¿½Ý±ï¿½ï¿½
+    private Integer rno;            //½áËã±àºÅ
 
-    private Integer mid;            //ï¿½ï¿½Ô±ï¿½ï¿½ï¿½
+    private Integer mid;            //»áÔ±±àºÅ
 
-    private String cname;            //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½
+    private String cname;            //¿Í»§Ãû³Æ
 
-    private String cphone;            //ï¿½Í»ï¿½ï¿½Ö»ï¿½ï¿½ï¿½
+    private String cphone;            //¿Í»§ÊÖ»ú
 
-    private Date createdate;        //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+    private Date createdate;        //´´½¨Ê±¼ä
 
-    private Integer climit;            //ï¿½ï¿½ï¿½
+    private Integer climit;            //¶î¶È
 
-    private Integer cintegral;        //ï¿½ï¿½ï¿½ï¿½
+    private Integer cintegral;        //»ý·Ö
 
-    private String cremark;            //ï¿½ï¿½×¢
+    private String cremark;            //±¸×¢
 
-    private Integer cgrade;            //ï¿½Í»ï¿½ï¿½È¼ï¿½
+    private Integer cgrade;            //µÈ¼¶
 
     public Integer getCid() {
         return cid;

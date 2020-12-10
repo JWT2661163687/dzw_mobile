@@ -26,6 +26,17 @@ public interface EmployeeMapper {
      * @param password
      * @return
      */
+<<<<<<< HEAD
+    Employee selectlogin(@Param("username")String username,@Param("password")String password);
+    /**
+     * 根据名字查询
+     * @param name
+     * @return
+     */
+    List<Employee> Selectemployee(@Param("id")Integer id);
+    
+    
+=======
     Employee selectlogin(@Param("username") String username, @Param("password") String password);
     
     /*
@@ -39,8 +50,13 @@ public interface EmployeeMapper {
      */
     List<Employee> selectlizhi();
 
+<<<<<<< HEAD
     /*
      * 	修改成离职员工
      */
     int updateyuangong(@Param("emplogenid") String emplogenid,@Param("yuanyin") String yuanyin);
+=======
+
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 }

@@ -63,8 +63,8 @@ public interface MaintaincarMapper {
      * @param maintainid
      * @return
      */
-    @Update("update maintaincar set maintainling=#{maintainling},receiptsid=1 where maintainid=#{maintainid}")
-    int updateMain(@Param("maintainling") Integer maintainling, @Param("maintainid") Integer maintainid);
+    @Update("update maintaincar set maintainling=#{maintainling},receiptsid=1,maintainmoney=#{maintainmoney} where maintainid=#{maintainid}")
+    int updateMain(@Param("maintainling") Integer maintainling, @Param("maintainid") Integer maintainid,@Param("maintainmoney")Double maintainmoney);
 
     /**
      * 锟角否返癸拷状态
@@ -74,6 +74,14 @@ public interface MaintaincarMapper {
      */
     @Select("select * from `maintaincar` where licence=#{licence} and `receiptsid`=4")
     Maintaincar selectzhuangtai(@Param("licence") String licence);
+    /**
+     * 根据车辆id查询维修历史
+     * @param maintainvehicleid
+     * @return
+     */
+    @Select("SELECT * FROM `maintaincar` WHERE `maintainvehicleid`=#{maintainvehicleid} AND `receiptsid` IN(3,5)")
+    List<Maintaincar> selectMaintainvehicleid(@Param("maintainvehicleid")Integer maintainvehicleid);
+    
 
 
 }

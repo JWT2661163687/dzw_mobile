@@ -85,4 +85,12 @@ public class ClientAction {
         });
         return biz.queryVehicle(cid);
     }
+    
+    /**
+     * 查询所有客户信息
+     */
+    @GetMapping("clientAll")
+    public List<Client> queryAllClient(){
+    	return biz.queryAllClient();
+    }
 }

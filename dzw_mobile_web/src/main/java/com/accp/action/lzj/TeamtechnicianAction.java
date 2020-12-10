@@ -66,6 +66,7 @@ public class TeamtechnicianAction {
      */
     @PutMapping("update")
     public Map<String, String> updateTe(@RequestBody Teamtechnician tea) {
+    	System.out.println("idn  "+tea.getTeamid());
     	 Map<String, String> message = new HashMap<String, String>();
         if( biz.updateTe(tea)>0) {
         	 message.put("code", "200");

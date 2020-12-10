@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.accp.pojo.Client;
@@ -25,7 +26,7 @@ public interface MemberMapper {
 
 
     /**
-     * ����������ѯ��Ա
+     * 根据条件查询会员信息
      *
      * @param KaHao
      * @return
@@ -33,7 +34,7 @@ public interface MemberMapper {
     List<Member> queryMember(@Param("KaHao") String KaHao);
 
     /**
-     * ����������ѯ���ǻ�Ա�Ŀͻ�
+     * 查询所有普通用户信息
      *
      * @param cId
      * @return
@@ -41,7 +42,7 @@ public interface MemberMapper {
     List<Client> queryClient(@Param("cId") Integer cId);
 
     /**
-     * �޸Ŀͻ��ĵȼ�
+     * 把普通用户修改为会员用户
      *
      * @param cId
      * @return
@@ -50,7 +51,7 @@ public interface MemberMapper {
     int updateClientGrand(@Param("cId") Integer cId);
 
     /**
-     * ������Ա�ͻ�
+     * 新增会员信息
      *
      * @param memBer
      * @return
@@ -59,7 +60,7 @@ public interface MemberMapper {
     int insertMemberClient(@Param("memBer") Member memBer);
 
     /**
-     * ��Ա��ֵ���(�޸Ļ�Ա���)
+     * 修改为会员
      *
      * @param mId
      * @param jine
@@ -69,7 +70,7 @@ public interface MemberMapper {
     int updateMember(@Param("mId") Integer mId, @Param("jine") Integer jine);
 
     /**
-     * ɾ����Ա
+     * 删除会员用户
      *
      * @param mId
      * @return
@@ -78,8 +79,14 @@ public interface MemberMapper {
     int deleteMember(@Param("mId") Integer mId);
 
     /**
-     * �ѻ�Ա�޸�Ϊ��ͨ�û�
+     * 把会员用户修改为普通用户
      */
     @Update("UPDATE `client` SET cGrade = 1 WHERE cId = #{cid}")
     int updateMemerGrade(@Param("cid") Integer cid);
+    
+    /**
+     * 查询所有的会员卡号
+     */
+    @Select("SELECT mCardNumber FROM member")
+    List<String> queryAllNumber();
 }

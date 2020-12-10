@@ -124,7 +124,7 @@ public class loginjurisdictionAuction {
 	@GetMapping("/employee/loginOut")
 	public Map<String, Object> loginOut(HttpSession session) throws Exception {
 		Map<String, Object> message = new HashMap<String, Object>();
-		session.removeAttribute("USER");
+		session.removeAttribute("employee");
 		session.invalidate();// 立即失效
 		message.put("code", "200");
 		message.put("msg", "ok");

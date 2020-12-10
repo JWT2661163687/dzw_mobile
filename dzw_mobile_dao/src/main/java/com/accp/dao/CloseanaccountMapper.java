@@ -31,7 +31,7 @@ public interface CloseanaccountMapper {
      * @param cid
      * @return
      */
-    List<Maintaincar> queryCar(@Param("mId")Integer mid,@Param("cId")Integer cid);
+    List<Maintaincar> queryCar(@Param("mId")Integer mid,@Param("cId")Integer cid,@Param("date1")Integer date1);
     
     /**
      * 查询所有结算的数据
@@ -76,4 +76,11 @@ public interface CloseanaccountMapper {
      */
     @Update("UPDATE `maintaincar` SET receiptsid = #{teamid} WHERE maintainid = #{carid}")
     int updateCarTeamid(@Param("teamid")Integer teamid,@Param("carid")Integer carid);
+    
+    /**
+     * 查询全部待结算的信息
+     * 
+     */
+    @Select("SELECT * FROM maintaincar WHERE receiptsid = 3")
+    List<Maintaincar> queryCloseAll();
 }

@@ -95,5 +95,15 @@ public class MemberAction {
         }
         return map;
     }
+    
+    
+    /**
+     * 查询所有的会员卡号
+     */
+    @GetMapping("queryAllNumber/{aa}")
+    public List<String> queryAllNumber(@PathVariable String aa){
+    	List<String> list = biz.queryAllNumber();
+    	return list;
+    }
 
 }
