@@ -26,7 +26,6 @@ public interface EmployeeMapper {
      * @param password
      * @return
      */
-    Employee selectlogin(@Param("username")String username,@Param("password")String password);
     /**
      * 根据名字查询
      * @param name

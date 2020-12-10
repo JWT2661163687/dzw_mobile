@@ -29,13 +29,8 @@ public class Post {
     
     
 
-<<<<<<< HEAD
 
-	@Override
-=======
-   
     @Override
->>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 	public String toString() {
 		return "Post [postid=" + postid + ", departmentid=" + departmentid + ", postname=" + postname + ", rcode="
 				+ rcode + ", rstatus=" + rstatus + ", createdate=" + createdate + ", createby=" + createby
