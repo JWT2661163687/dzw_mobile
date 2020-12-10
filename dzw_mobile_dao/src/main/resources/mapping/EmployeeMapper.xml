@@ -324,5 +324,15 @@ INNER JOIN `functiontable` fu ON fu.`fid`=po.`fid` WHERE e.`emplogenid`=#{userna
   </select>
   
   
+  <select id="Selectemployee" resultType="com.accp.pojo.Employee">
+  SELECT * FROM `employee`
+  <where>
+  <if test="id!=null and id!=''">
+  `departmentid`=#{id}
+  </if>
+  </where>
+  </select>
+  
+  
   
 </mapper>

@@ -8,6 +8,29 @@
   <sql id="Base_Column_List" >
     departmentid, depnames
   </sql>
+  
+  
+  
+  <resultMap type="com.accp.pojo.Department" id="DepartmentMap">
+   <id column="departmentid" property="departmentid" />
+   <result column="depnames" property="depnames" />
+   <collection property="post" column="departmentid" select="queryPost">
+   <id column="postid" property="postid"></id>
+   </collection>
+</resultMap>
+<select id="queryPost" resultType="com.accp.pojo.Post">
+		SELECT * FROM post
+		where `departmentid`=#{0}
+	</select>
+
+<select id="loadDepartment" resultMap="DepartmentMap">
+   SELECT * FROM `department`
+</select>
+  
+  
+  
+  
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

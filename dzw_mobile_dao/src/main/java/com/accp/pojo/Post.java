@@ -23,13 +23,25 @@ public class Post {
     
     private List<Postmiddle> postmiddles=new ArrayList<Postmiddle>();
     
+    private List<Employee> employee=new ArrayList<Employee>();
+    
     
 
-    @Override
+
+	@Override
 	public String toString() {
 		return "Post [postid=" + postid + ", departmentid=" + departmentid + ", postname=" + postname + ", rcode="
 				+ rcode + ", rstatus=" + rstatus + ", createdate=" + createdate + ", createby=" + createby
-				+ ", functiontables=" + functiontables + ", postmiddles=" + postmiddles + "]";
+				+ ", functiontables=" + functiontables + ", postmiddles=" + postmiddles + ", employee=" + employee
+				+ "]";
+	}
+
+	public List<Employee> getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(List<Employee> employee) {
+		this.employee = employee;
 	}
 
 	public List<Postmiddle> getPostmiddles() {

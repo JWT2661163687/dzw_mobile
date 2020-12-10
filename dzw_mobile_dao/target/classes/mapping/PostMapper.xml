@@ -13,6 +13,48 @@
   <sql id="Base_Column_List" >
     postid, departmentid, postname, rcode, rstatus, createdate, createby
   </sql>
+ 
+<!--    <select id="selectPost" resultMap="postAll">
+  SELECT * FROM `post` po LEFT JOIN `postmiddle` pm ON po.`postid`=pm.`rid`
+  </select>
+  <resultMap type="com.accp.pojo.Post" id="postAll" autoMapping="true">
+  	<id column="postid" property="postid"/>
+  	<collection property="postmiddles" javaType="com.accp.pojo.Postmiddle">
+  		<id column="pid" property="pid"/>
+  		<result column="codenumber" property="codenumber"/>
+  		<result column="fname" property="fname"/>
+  		<result column="fid" property="fid"/>
+  	</collection>
+  </resultMap>  -->
+  
+  <select id="SelectAll" resultMap="EmployeeList">
+  SELECT * FROM `post` p LEFT JOIN `employee` e ON p.`postid`=e.postid
+  <where>
+  <if test="id!=-1">
+  p.`departmentid`=#{id}
+  </if>
+  </where>
+  </select>
+  <resultMap type="com.accp.pojo.Post" id="EmployeeList" autoMapping="true">
+  	<id column="postid" property="postid"/>
+  	<collection property="employee" javaType="com.accp.pojo.Employee">
+  		<id column="employeeid" property="employeeid"/>
+  		 <result column="empname" property="empname"/>
+  	</collection>
+  </resultMap>
+  
+  
+  <!-- 根据iD循环删除 -->
+  <delete id="DeleteById" parameterType="com.accp.pojo.Post">
+  <foreach collection="Listid" index="index" item="test" >
+    delete from `post` where postid =#{test.postid};
+  </foreach>
+</delete>
+  
+  
+  
+  
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
