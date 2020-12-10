@@ -13,41 +13,41 @@ import com.accp.pojo.Member;
 @ContextConfiguration(locations = {"classpath:spring-ctx.xml"})
 public class Test1 {
 
-	@Autowired
-	private MemBerBiz biz;
-	
-	@Test
-	public void queryMember() {
-		biz.queryMember("123",1,2).getList().forEach(temp->{
-			System.out.println("aa  "+temp);
-		});
-	}
-	
-	@Test
-	public void queryClient() {
-		biz.queryClient(1).forEach(temp->{
-			System.out.println("aa  "+temp);
-		});
-	}
-	
-	@Test
-	public void updateClientGrand() {
-		biz.updateClientGrand(1);
-	}
-	
-	@Test
-	public void insertMemberClient() {
-		Member memBer = new Member(null, "123456", "123456", 1, "ÕÅÈý", 0);
-		biz.insertMemberClient(memBer);
-	}
-	
-	@Test
-	public void updateMember() {
-		biz.updateMember(4, 1);
-	}
-	
-	@Test
-	public void deleteMember() {
-		biz.deleteMember(4);
-	}
+    @Autowired
+    private MemBerBiz biz;
+
+    @Test
+    public void queryMember() {
+        biz.queryMember("123", 1, 2).getList().forEach(temp -> {
+            System.out.println("aa  " + temp);
+        });
+    }
+
+    @Test
+    public void queryClient() {
+        biz.queryClient(1).forEach(temp -> {
+            System.out.println("aa  " + temp);
+        });
+    }
+
+    @Test
+    public void updateClientGrand() {
+        biz.updateClientGrand(1);
+    }
+
+    @Test
+    public void insertMemberClient() {
+        Member memBer = new Member(null, "123456", "123456", 1, "ï¿½ï¿½ï¿½ï¿½", 0);
+        biz.insertMemberClient(memBer);
+    }
+
+    @Test
+    public void updateMember() {
+        biz.updateMember(4, 1);
+    }
+
+    @Test
+    public void deleteMember() {
+        biz.deleteMember(4);
+    }
 }

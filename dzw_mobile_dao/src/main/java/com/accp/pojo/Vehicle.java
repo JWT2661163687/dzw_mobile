@@ -3,27 +3,27 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Vehicle {
-    private Integer vid;			//车辆编号
+    private Integer vid;            //车辆编号
 
-    private Integer cid;			//客户编号
+    private Integer cid;            //客户编号
 
-    private String vdriver;			//驾驶员
+    private String vdriver;            //驾驶员
 
-    private String vlicense;		//车辆号码
+    private String vlicense;        //车牌号码
 
-    private String vbrand;			//车辆品牌
+    private String vbrand;            //车辆品牌
 
-    private String vmodel;			//车辆型号
+    private String vmodel;            //车辆型号
 
-    private String vphone;			//联系电话
+    private String vphone;            //联系电话
 
-    private String vaffiliation;	//车辆归属
+    private String vaffiliation;    //归属
 
-    private Integer vmileage;		//里程
+    private Integer vmileage;        //里程
 
-    private Date registereddate;	//上牌日期
+    private Date registereddate;    //上牌日期
 
-    private Date purchasedate;		//购买日期
+    private Date purchasedate;        //购买日期
 
     public Integer getVid() {
         return vid;

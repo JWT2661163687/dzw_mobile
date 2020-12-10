@@ -1,4 +1,5 @@
 package com.accp.action.kwt;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,8 +22,21 @@ import com.github.pagehelper.PageInfo;
 @RequestMapping("/api/Motorcycles")
 public class MotorcycleAction {
 
-	@Autowired
-	private MotorcycleBiz biz;
+    @Autowired
+    private MotorcycleBiz biz;
+
+
+    /**
+     * 查询id是否相同
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/Motorcycle/{id}")
+    public List<Motorcycle> SelectById(@PathVariable Integer id) {
+        return biz.SelectByid(id);
+    }
+	
 	/**
 	 * 分页查询
 	 * @param pageNum
@@ -49,15 +63,8 @@ public class MotorcycleAction {
 		}
 		return map;
 	}
-	/**
-	 * 查询id是否相同
-	 * @param id
-	 * @return
-	 */
-	@GetMapping("/Motorcycle/{id}")
-	public List<Motorcycle> SelectById(@PathVariable Integer id){
-		return biz.SelectByid(id);
-	}
+	
+
 	/**
 	 * 根据文本框的值进行多条件查询
 	 * @param name

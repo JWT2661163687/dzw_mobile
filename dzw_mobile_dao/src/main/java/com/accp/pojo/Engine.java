@@ -1,9 +1,9 @@
 package com.accp.pojo;
 
 public class Engine {
-    private Integer engineid;      //·¢¶¯»ú±àºÅ
+    private Integer engineid;      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String enginename;     //·¢¶¯»úÃû³Æ
+    private String enginename;     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     public Integer getEngineid() {
         return engineid;
@@ -21,20 +21,20 @@ public class Engine {
         this.enginename = enginename == null ? null : enginename.trim();
     }
 
-	@Override
-	public String toString() {
-		return "Engine [engineid=" + engineid + ", enginename=" + enginename + "]";
-	}
+    @Override
+    public String toString() {
+        return "Engine [engineid=" + engineid + ", enginename=" + enginename + "]";
+    }
 
-	public Engine(Integer engineid, String enginename) {
-		super();
-		this.engineid = engineid;
-		this.enginename = enginename;
-	}
+    public Engine(Integer engineid, String enginename) {
+        super();
+        this.engineid = engineid;
+        this.enginename = enginename;
+    }
 
-	public Engine() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-    
+    public Engine() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
 }

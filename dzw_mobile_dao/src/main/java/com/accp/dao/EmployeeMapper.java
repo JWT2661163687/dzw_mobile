@@ -18,12 +18,15 @@ public interface EmployeeMapper {
     int updateByPrimaryKeySelective(Employee record);
 
     int updateByPrimaryKey(Employee record);
+
     /**
-     * µÇÂ¼
+     * ï¿½ï¿½Â¼
+     *
      * @param username
      * @param password
      * @return
      */
+<<<<<<< HEAD
     Employee selectlogin(@Param("username")String username,@Param("password")String password);
     /**
      * ¸ù¾ÝÃû×Ö²éÑ¯
@@ -33,4 +36,9 @@ public interface EmployeeMapper {
     List<Employee> Selectemployee(@Param("id")Integer id);
     
     
+=======
+    Employee selectlogin(@Param("username") String username, @Param("password") String password);
+
+
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 }

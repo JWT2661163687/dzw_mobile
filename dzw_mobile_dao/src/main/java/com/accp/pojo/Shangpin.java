@@ -12,18 +12,18 @@ public class Shangpin {
     private String spxiaolei;
 
     private String spshoujia;
-    
+
     private Integer daid;
 
-	public Integer getDaid() {
-		return daid;
-	}
+    public Integer getDaid() {
+        return daid;
+    }
 
-	public void setDaid(Integer daid) {
-		this.daid = daid;
-	}
+    public void setDaid(Integer daid) {
+        this.daid = daid;
+    }
 
-	public Integer getSpid() {
+    public Integer getSpid() {
         return spid;
     }
 
@@ -71,5 +71,5 @@ public class Shangpin {
         this.spshoujia = spshoujia == null ? null : spshoujia.trim();
     }
 
-    
+
 }

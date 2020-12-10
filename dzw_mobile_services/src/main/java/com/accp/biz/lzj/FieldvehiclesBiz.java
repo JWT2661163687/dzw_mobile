@@ -14,41 +14,45 @@ import com.github.pagehelper.PageInfo;
 
 @Service("Fieldvehicles")
 public class FieldvehiclesBiz {
-	@Autowired
-	private FieldvehiclesMapper dao;
-	
-	/**
-	 * 查询外勤车辆
-	 * @return
-	 */
-	public List<Fieldvehicles> queryFiel(){
-		return dao.queryFiel();
-	}
-	/**
-	 * 查询班组
-	 * @return
-	 */
-	public List<Team> queryTeam(){
-		return dao.queryTeam();
-	}
-	/**
-	 * 新增车辆
-	 */
-	public int insertFiel(Fieldvehicles fiel) {
-		return dao.insertFiel(fiel);
-	}
-	
-	/**
-	 * 修改车辆
-	 */
-	public int updateFiel(Fieldvehicles ff) {
-		return dao.updateFiel(ff);
-	}
-	
-	/**
-	 * 删除车辆
-	 */
-	public int deleteFiel(int id) {
-		return dao.deleteFiel(id);
-	}
+    @Autowired
+    private FieldvehiclesMapper dao;
+
+    /**
+     * 查询外勤车辆
+     *
+     * @return
+     */
+    public List<Fieldvehicles> queryFiel() {
+        return dao.queryFiel();
+    }
+
+    /**
+     * 查询班组
+     *
+     * @return
+     */
+    public List<Team> queryTeam() {
+        return dao.queryTeam();
+    }
+
+    /**
+     * 新增车辆
+     */
+    public int insertFiel(Fieldvehicles fiel) {
+        return dao.insertFiel(fiel);
+    }
+
+    /**
+     * 修改车辆
+     */
+    public int updateFiel(Fieldvehicles ff) {
+        return dao.updateFiel(ff);
+    }
+
+    /**
+     * 删除车辆
+     */
+    public int deleteFiel(int id) {
+        return dao.deleteFiel(id);
+    }
 }

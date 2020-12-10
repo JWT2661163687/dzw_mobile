@@ -3,29 +3,29 @@ package com.accp.pojo;
 import java.util.Date;
 
 public class Client {
-    private Integer cid;			//客户编号
+    private Integer cid;            //客户编号
 
-    private Integer vid;			//车辆编号
-    
-    private Integer rid;			//单据编号
+    private Integer vid;            //车辆编号
 
-    private Integer rno;			//结算单据编号
+    private Integer rid;            //待结算编号
 
-    private Integer mid;			//会员编号
+    private Integer rno;            //结算编号
 
-    private String cname;			//客户名称
+    private Integer mid;            //会员编号
 
-    private String cphone;			//客户手机号
+    private String cname;            //客户名称
 
-    private Date createdate;		//创建时间
+    private String cphone;            //客户手机
 
-    private Integer climit;			//额度
+    private Date createdate;        //创建时间
 
-    private Integer cintegral;		//积分
+    private Integer climit;            //额度
 
-    private String cremark;			//备注
+    private Integer cintegral;        //积分
 
-    private Integer cgrade;			//客户等级
+    private String cremark;            //备注
+
+    private Integer cgrade;            //等级
 
     public Integer getCid() {
         return cid;
@@ -123,29 +123,29 @@ public class Client {
         this.cgrade = cgrade;
     }
 
-	public Client(Integer cid, String cname, String cphone, Date createdate, Integer climit, Integer cintegral,
-			String cremark, Integer cgrade) {
-		super();
-		this.cid = cid;
-		this.cname = cname;
-		this.cphone = cphone;
-		this.createdate = createdate;
-		this.climit = climit;
-		this.cintegral = cintegral;
-		this.cremark = cremark;
-		this.cgrade = cgrade;
-	}
+    public Client(Integer cid, String cname, String cphone, Date createdate, Integer climit, Integer cintegral,
+                  String cremark, Integer cgrade) {
+        super();
+        this.cid = cid;
+        this.cname = cname;
+        this.cphone = cphone;
+        this.createdate = createdate;
+        this.climit = climit;
+        this.cintegral = cintegral;
+        this.cremark = cremark;
+        this.cgrade = cgrade;
+    }
 
-	public Client() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Client() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	@Override
-	public String toString() {
-		return "Client [cid=" + cid + ", vid=" + vid + ", rid=" + rid + ", rno=" + rno + ", mid=" + mid + ", cname="
-				+ cname + ", cphone=" + cphone + ", createdate=" + createdate + ", climit=" + climit + ", cintegral="
-				+ cintegral + ", cremark=" + cremark + ", cgrade=" + cgrade + "]";
-	}
-    
+    @Override
+    public String toString() {
+        return "Client [cid=" + cid + ", vid=" + vid + ", rid=" + rid + ", rno=" + rno + ", mid=" + mid + ", cname="
+                + cname + ", cphone=" + cphone + ", createdate=" + createdate + ", climit=" + climit + ", cintegral="
+                + cintegral + ", cremark=" + cremark + ", cgrade=" + cgrade + "]";
+    }
+
 }

@@ -1,177 +1,177 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.FrontMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Front" >
-    <id column="frontid" property="frontid" jdbcType="INTEGER" />
-    <result column="carnumber" property="carnumber" jdbcType="INTEGER" />
-    <result column="closeanaccountnumber" property="closeanaccountnumber" jdbcType="INTEGER" />
-    <result column="carrepairingnumber" property="carrepairingnumber" jdbcType="INTEGER" />
-    <result column="repairnumber" property="repairnumber" jdbcType="INTEGER" />
-    <result column="instationnumber" property="instationnumber" jdbcType="INTEGER" />
-    <result column="outsidenumber" property="outsidenumber" jdbcType="INTEGER" />
-    <result column="generalincome" property="generalincome" jdbcType="DOUBLE" />
-    <result column="realincome" property="realincome" jdbcType="DOUBLE" />
-    <result column="owe" property="owe" jdbcType="DOUBLE" />
-    <result column="owenumber" property="owenumber" jdbcType="INTEGER" />
-    <result column="frontdate" property="frontdate" jdbcType="DATE" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    frontid, carnumber, closeanaccountnumber, carrepairingnumber, repairnumber, instationnumber, 
-    outsidenumber, generalincome, realincome, owe, owenumber, frontdate
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from front
-    where frontid = #{frontid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from front
-    where frontid = #{frontid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Front" >
-    insert into front (frontid, carnumber, closeanaccountnumber, 
-      carrepairingnumber, repairnumber, instationnumber, 
-      outsidenumber, generalincome, realincome, 
-      owe, owenumber, frontdate
-      )
-    values (#{frontid,jdbcType=INTEGER}, #{carnumber,jdbcType=INTEGER}, #{closeanaccountnumber,jdbcType=INTEGER}, 
-      #{carrepairingnumber,jdbcType=INTEGER}, #{repairnumber,jdbcType=INTEGER}, #{instationnumber,jdbcType=INTEGER}, 
-      #{outsidenumber,jdbcType=INTEGER}, #{generalincome,jdbcType=DOUBLE}, #{realincome,jdbcType=DOUBLE}, 
-      #{owe,jdbcType=DOUBLE}, #{owenumber,jdbcType=INTEGER}, #{frontdate,jdbcType=DATE}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Front" >
-    insert into front
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="frontid != null" >
-        frontid,
-      </if>
-      <if test="carnumber != null" >
-        carnumber,
-      </if>
-      <if test="closeanaccountnumber != null" >
-        closeanaccountnumber,
-      </if>
-      <if test="carrepairingnumber != null" >
-        carrepairingnumber,
-      </if>
-      <if test="repairnumber != null" >
-        repairnumber,
-      </if>
-      <if test="instationnumber != null" >
-        instationnumber,
-      </if>
-      <if test="outsidenumber != null" >
-        outsidenumber,
-      </if>
-      <if test="generalincome != null" >
-        generalincome,
-      </if>
-      <if test="realincome != null" >
-        realincome,
-      </if>
-      <if test="owe != null" >
-        owe,
-      </if>
-      <if test="owenumber != null" >
-        owenumber,
-      </if>
-      <if test="frontdate != null" >
-        frontdate,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="frontid != null" >
-        #{frontid,jdbcType=INTEGER},
-      </if>
-      <if test="carnumber != null" >
-        #{carnumber,jdbcType=INTEGER},
-      </if>
-      <if test="closeanaccountnumber != null" >
-        #{closeanaccountnumber,jdbcType=INTEGER},
-      </if>
-      <if test="carrepairingnumber != null" >
-        #{carrepairingnumber,jdbcType=INTEGER},
-      </if>
-      <if test="repairnumber != null" >
-        #{repairnumber,jdbcType=INTEGER},
-      </if>
-      <if test="instationnumber != null" >
-        #{instationnumber,jdbcType=INTEGER},
-      </if>
-      <if test="outsidenumber != null" >
-        #{outsidenumber,jdbcType=INTEGER},
-      </if>
-      <if test="generalincome != null" >
-        #{generalincome,jdbcType=DOUBLE},
-      </if>
-      <if test="realincome != null" >
-        #{realincome,jdbcType=DOUBLE},
-      </if>
-      <if test="owe != null" >
-        #{owe,jdbcType=DOUBLE},
-      </if>
-      <if test="owenumber != null" >
-        #{owenumber,jdbcType=INTEGER},
-      </if>
-      <if test="frontdate != null" >
-        #{frontdate,jdbcType=DATE},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Front" >
-    update front
-    <set >
-      <if test="carnumber != null" >
-        carnumber = #{carnumber,jdbcType=INTEGER},
-      </if>
-      <if test="closeanaccountnumber != null" >
+<mapper namespace="com.accp.dao.FrontMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Front">
+        <id column="frontid" property="frontid" jdbcType="INTEGER"/>
+        <result column="carnumber" property="carnumber" jdbcType="INTEGER"/>
+        <result column="closeanaccountnumber" property="closeanaccountnumber" jdbcType="INTEGER"/>
+        <result column="carrepairingnumber" property="carrepairingnumber" jdbcType="INTEGER"/>
+        <result column="repairnumber" property="repairnumber" jdbcType="INTEGER"/>
+        <result column="instationnumber" property="instationnumber" jdbcType="INTEGER"/>
+        <result column="outsidenumber" property="outsidenumber" jdbcType="INTEGER"/>
+        <result column="generalincome" property="generalincome" jdbcType="DOUBLE"/>
+        <result column="realincome" property="realincome" jdbcType="DOUBLE"/>
+        <result column="owe" property="owe" jdbcType="DOUBLE"/>
+        <result column="owenumber" property="owenumber" jdbcType="INTEGER"/>
+        <result column="frontdate" property="frontdate" jdbcType="DATE"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        frontid, carnumber, closeanaccountnumber, carrepairingnumber, repairnumber, instationnumber,
+        outsidenumber, generalincome, realincome, owe, owenumber, frontdate
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from front
+        where frontid = #{frontid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from front
+        where frontid = #{frontid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Front">
+        insert into front (frontid, carnumber, closeanaccountnumber,
+        carrepairingnumber, repairnumber, instationnumber,
+        outsidenumber, generalincome, realincome,
+        owe, owenumber, frontdate
+        )
+        values (#{frontid,jdbcType=INTEGER}, #{carnumber,jdbcType=INTEGER}, #{closeanaccountnumber,jdbcType=INTEGER},
+        #{carrepairingnumber,jdbcType=INTEGER}, #{repairnumber,jdbcType=INTEGER}, #{instationnumber,jdbcType=INTEGER},
+        #{outsidenumber,jdbcType=INTEGER}, #{generalincome,jdbcType=DOUBLE}, #{realincome,jdbcType=DOUBLE},
+        #{owe,jdbcType=DOUBLE}, #{owenumber,jdbcType=INTEGER}, #{frontdate,jdbcType=DATE}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Front">
+        insert into front
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="frontid != null">
+                frontid,
+            </if>
+            <if test="carnumber != null">
+                carnumber,
+            </if>
+            <if test="closeanaccountnumber != null">
+                closeanaccountnumber,
+            </if>
+            <if test="carrepairingnumber != null">
+                carrepairingnumber,
+            </if>
+            <if test="repairnumber != null">
+                repairnumber,
+            </if>
+            <if test="instationnumber != null">
+                instationnumber,
+            </if>
+            <if test="outsidenumber != null">
+                outsidenumber,
+            </if>
+            <if test="generalincome != null">
+                generalincome,
+            </if>
+            <if test="realincome != null">
+                realincome,
+            </if>
+            <if test="owe != null">
+                owe,
+            </if>
+            <if test="owenumber != null">
+                owenumber,
+            </if>
+            <if test="frontdate != null">
+                frontdate,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="frontid != null">
+                #{frontid,jdbcType=INTEGER},
+            </if>
+            <if test="carnumber != null">
+                #{carnumber,jdbcType=INTEGER},
+            </if>
+            <if test="closeanaccountnumber != null">
+                #{closeanaccountnumber,jdbcType=INTEGER},
+            </if>
+            <if test="carrepairingnumber != null">
+                #{carrepairingnumber,jdbcType=INTEGER},
+            </if>
+            <if test="repairnumber != null">
+                #{repairnumber,jdbcType=INTEGER},
+            </if>
+            <if test="instationnumber != null">
+                #{instationnumber,jdbcType=INTEGER},
+            </if>
+            <if test="outsidenumber != null">
+                #{outsidenumber,jdbcType=INTEGER},
+            </if>
+            <if test="generalincome != null">
+                #{generalincome,jdbcType=DOUBLE},
+            </if>
+            <if test="realincome != null">
+                #{realincome,jdbcType=DOUBLE},
+            </if>
+            <if test="owe != null">
+                #{owe,jdbcType=DOUBLE},
+            </if>
+            <if test="owenumber != null">
+                #{owenumber,jdbcType=INTEGER},
+            </if>
+            <if test="frontdate != null">
+                #{frontdate,jdbcType=DATE},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Front">
+        update front
+        <set>
+            <if test="carnumber != null">
+                carnumber = #{carnumber,jdbcType=INTEGER},
+            </if>
+            <if test="closeanaccountnumber != null">
+                closeanaccountnumber = #{closeanaccountnumber,jdbcType=INTEGER},
+            </if>
+            <if test="carrepairingnumber != null">
+                carrepairingnumber = #{carrepairingnumber,jdbcType=INTEGER},
+            </if>
+            <if test="repairnumber != null">
+                repairnumber = #{repairnumber,jdbcType=INTEGER},
+            </if>
+            <if test="instationnumber != null">
+                instationnumber = #{instationnumber,jdbcType=INTEGER},
+            </if>
+            <if test="outsidenumber != null">
+                outsidenumber = #{outsidenumber,jdbcType=INTEGER},
+            </if>
+            <if test="generalincome != null">
+                generalincome = #{generalincome,jdbcType=DOUBLE},
+            </if>
+            <if test="realincome != null">
+                realincome = #{realincome,jdbcType=DOUBLE},
+            </if>
+            <if test="owe != null">
+                owe = #{owe,jdbcType=DOUBLE},
+            </if>
+            <if test="owenumber != null">
+                owenumber = #{owenumber,jdbcType=INTEGER},
+            </if>
+            <if test="frontdate != null">
+                frontdate = #{frontdate,jdbcType=DATE},
+            </if>
+        </set>
+        where frontid = #{frontid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Front">
+        update front
+        set carnumber = #{carnumber,jdbcType=INTEGER},
         closeanaccountnumber = #{closeanaccountnumber,jdbcType=INTEGER},
-      </if>
-      <if test="carrepairingnumber != null" >
         carrepairingnumber = #{carrepairingnumber,jdbcType=INTEGER},
-      </if>
-      <if test="repairnumber != null" >
         repairnumber = #{repairnumber,jdbcType=INTEGER},
-      </if>
-      <if test="instationnumber != null" >
         instationnumber = #{instationnumber,jdbcType=INTEGER},
-      </if>
-      <if test="outsidenumber != null" >
         outsidenumber = #{outsidenumber,jdbcType=INTEGER},
-      </if>
-      <if test="generalincome != null" >
         generalincome = #{generalincome,jdbcType=DOUBLE},
-      </if>
-      <if test="realincome != null" >
         realincome = #{realincome,jdbcType=DOUBLE},
-      </if>
-      <if test="owe != null" >
         owe = #{owe,jdbcType=DOUBLE},
-      </if>
-      <if test="owenumber != null" >
         owenumber = #{owenumber,jdbcType=INTEGER},
-      </if>
-      <if test="frontdate != null" >
-        frontdate = #{frontdate,jdbcType=DATE},
-      </if>
-    </set>
-    where frontid = #{frontid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Front" >
-    update front
-    set carnumber = #{carnumber,jdbcType=INTEGER},
-      closeanaccountnumber = #{closeanaccountnumber,jdbcType=INTEGER},
-      carrepairingnumber = #{carrepairingnumber,jdbcType=INTEGER},
-      repairnumber = #{repairnumber,jdbcType=INTEGER},
-      instationnumber = #{instationnumber,jdbcType=INTEGER},
-      outsidenumber = #{outsidenumber,jdbcType=INTEGER},
-      generalincome = #{generalincome,jdbcType=DOUBLE},
-      realincome = #{realincome,jdbcType=DOUBLE},
-      owe = #{owe,jdbcType=DOUBLE},
-      owenumber = #{owenumber,jdbcType=INTEGER},
-      frontdate = #{frontdate,jdbcType=DATE}
-    where frontid = #{frontid,jdbcType=INTEGER}
-  </update>
+        frontdate = #{frontdate,jdbcType=DATE}
+        where frontid = #{frontid,jdbcType=INTEGER}
+    </update>
 </mapper>

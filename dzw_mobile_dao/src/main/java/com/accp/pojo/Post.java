@@ -18,8 +18,10 @@ public class Post {
     private Date createdate;
 
     private String createby;
+
+    public List<Functiontable> functiontables = new ArrayList<Functiontable>();
+
     
-    public List<Functiontable> functiontables=new ArrayList<Functiontable>();
     
     private List<Postmiddle> postmiddles=new ArrayList<Postmiddle>();
     
@@ -27,8 +29,13 @@ public class Post {
     
     
 
+<<<<<<< HEAD
 
 	@Override
+=======
+   
+    @Override
+>>>>>>> branch 'master' of https://github.com/JWT2661163687/dzw_mobile.git
 	public String toString() {
 		return "Post [postid=" + postid + ", departmentid=" + departmentid + ", postname=" + postname + ", rcode="
 				+ rcode + ", rstatus=" + rstatus + ", createdate=" + createdate + ", createby=" + createby
@@ -58,11 +65,11 @@ public class Post {
 		return functiontables;
 	}
 
-	public void setFunctiontables(List<Functiontable> functiontables) {
-		this.functiontables = functiontables;
-	}
+    public void setFunctiontables(List<Functiontable> functiontables) {
+        this.functiontables = functiontables;
+    }
 
-	public Integer getPostid() {
+    public Integer getPostid() {
         return postid;
     }
 

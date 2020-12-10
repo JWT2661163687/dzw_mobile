@@ -1,169 +1,170 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.CompletedMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Completed" >
-    <id column="completionid" property="completionid" jdbcType="INTEGER" />
-    <result column="completiondate" property="completiondate" jdbcType="TIMESTAMP" />
-    <result column="completiontdate" property="completiontdate" jdbcType="TIMESTAMP" />
-    <result column="inspector" property="inspector" jdbcType="VARCHAR" />
-    <result column="penalty" property="penalty" jdbcType="DOUBLE" />
-    <result column="rework" property="rework" jdbcType="VARCHAR" />
-    <result column="personid" property="personid" jdbcType="INTEGER" />
-    <result column="personname" property="personname" jdbcType="VARCHAR" />
-    <result column="delaytext" property="delaytext" jdbcType="VARCHAR" />
-    <result column="completiontype" property="completiontype" jdbcType="INTEGER" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    completionid, completiondate, completiontdate, inspector, penalty, rework, personid, 
-    personname, delaytext, completiontype
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from completed
-    where completionid = #{completionid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from completed
-    where completionid = #{completionid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Completed" >
-    insert into completed (completionid, completiondate, completiontdate, 
-      inspector, penalty, rework, 
-      personid, personname, delaytext, 
-      completiontype)
-    values (#{completionid,jdbcType=INTEGER}, #{completiondate,jdbcType=TIMESTAMP}, #{completiontdate,jdbcType=TIMESTAMP}, 
-      #{inspector,jdbcType=VARCHAR}, #{penalty,jdbcType=DOUBLE}, #{rework,jdbcType=VARCHAR}, 
-      #{personid,jdbcType=INTEGER}, #{personname,jdbcType=VARCHAR}, #{delaytext,jdbcType=VARCHAR}, 
-      #{completiontype,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Completed" >
-    insert into completed
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="completionid != null" >
-        completionid,
-      </if>
-      <if test="completiondate != null" >
-        completiondate,
-      </if>
-      <if test="completiontdate != null" >
-        completiontdate,
-      </if>
-      <if test="inspector != null" >
-        inspector,
-      </if>
-      <if test="penalty != null" >
-        penalty,
-      </if>
-      <if test="rework != null" >
-        rework,
-      </if>
-      <if test="personid != null" >
-        personid,
-      </if>
-      <if test="personname != null" >
-        personname,
-      </if>
-      <if test="delaytext != null" >
-        delaytext,
-      </if>
-      <if test="completiontype != null" >
-        completiontype,
-      </if>
-      <if test="mainid != null" >
-        mainid,
-      </if>
-      <if test="completiontype != null" >
-        compdate,
-      </if>
-      <if test="maintainling != null" >
-        maintainling,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="completionid != null" >
-        #{completionid,jdbcType=INTEGER},
-      </if>
-      <if test="completiondate != null" >
-        #{completiondate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="completiontdate != null" >
+<mapper namespace="com.accp.dao.CompletedMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Completed">
+        <id column="completionid" property="completionid" jdbcType="INTEGER"/>
+        <result column="completiondate" property="completiondate" jdbcType="TIMESTAMP"/>
+        <result column="completiontdate" property="completiontdate" jdbcType="TIMESTAMP"/>
+        <result column="inspector" property="inspector" jdbcType="VARCHAR"/>
+        <result column="penalty" property="penalty" jdbcType="DOUBLE"/>
+        <result column="rework" property="rework" jdbcType="VARCHAR"/>
+        <result column="personid" property="personid" jdbcType="INTEGER"/>
+        <result column="personname" property="personname" jdbcType="VARCHAR"/>
+        <result column="delaytext" property="delaytext" jdbcType="VARCHAR"/>
+        <result column="completiontype" property="completiontype" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        completionid, completiondate, completiontdate, inspector, penalty, rework, personid,
+        personname, delaytext, completiontype
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from completed
+        where completionid = #{completionid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from completed
+        where completionid = #{completionid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Completed">
+        insert into completed (completionid, completiondate, completiontdate,
+        inspector, penalty, rework,
+        personid, personname, delaytext,
+        completiontype)
+        values (#{completionid,jdbcType=INTEGER}, #{completiondate,jdbcType=TIMESTAMP},
         #{completiontdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="inspector != null" >
-        #{inspector,jdbcType=VARCHAR},
-      </if>
-      <if test="penalty != null" >
-        #{penalty,jdbcType=DOUBLE},
-      </if>
-      <if test="rework != null" >
-        #{rework,jdbcType=VARCHAR},
-      </if>
-      <if test="personid != null" >
-        #{personid,jdbcType=INTEGER},
-      </if>
-      <if test="personname != null" >
-        #{personname,jdbcType=VARCHAR},
-      </if>
-      <if test="delaytext != null" >
-        #{delaytext,jdbcType=VARCHAR},
-      </if>
-      <if test="completiontype != null" >
-        #{completiontype,jdbcType=INTEGER},
-      </if>
-      <if test="mainid != null" >
-       #{mainid,jdbcType=INTEGER},
-      </if>
-      <if test="completiontype != null" >
-        #{compdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="maintainling != null" >
-      #{maintainling,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Completed" >
-    update completed
-    <set >
-      
-      <if test="completiontdate != null and completiontdate != '' " >
+        #{inspector,jdbcType=VARCHAR}, #{penalty,jdbcType=DOUBLE}, #{rework,jdbcType=VARCHAR},
+        #{personid,jdbcType=INTEGER}, #{personname,jdbcType=VARCHAR}, #{delaytext,jdbcType=VARCHAR},
+        #{completiontype,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Completed">
+        insert into completed
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="completionid != null">
+                completionid,
+            </if>
+            <if test="completiondate != null">
+                completiondate,
+            </if>
+            <if test="completiontdate != null">
+                completiontdate,
+            </if>
+            <if test="inspector != null">
+                inspector,
+            </if>
+            <if test="penalty != null">
+                penalty,
+            </if>
+            <if test="rework != null">
+                rework,
+            </if>
+            <if test="personid != null">
+                personid,
+            </if>
+            <if test="personname != null">
+                personname,
+            </if>
+            <if test="delaytext != null">
+                delaytext,
+            </if>
+            <if test="completiontype != null">
+                completiontype,
+            </if>
+            <if test="mainid != null">
+                mainid,
+            </if>
+            <if test="completiontype != null">
+                compdate,
+            </if>
+            <if test="maintainling != null">
+                maintainling,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="completionid != null">
+                #{completionid,jdbcType=INTEGER},
+            </if>
+            <if test="completiondate != null">
+                #{completiondate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="completiontdate != null">
+                #{completiontdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="inspector != null">
+                #{inspector,jdbcType=VARCHAR},
+            </if>
+            <if test="penalty != null">
+                #{penalty,jdbcType=DOUBLE},
+            </if>
+            <if test="rework != null">
+                #{rework,jdbcType=VARCHAR},
+            </if>
+            <if test="personid != null">
+                #{personid,jdbcType=INTEGER},
+            </if>
+            <if test="personname != null">
+                #{personname,jdbcType=VARCHAR},
+            </if>
+            <if test="delaytext != null">
+                #{delaytext,jdbcType=VARCHAR},
+            </if>
+            <if test="completiontype != null">
+                #{completiontype,jdbcType=INTEGER},
+            </if>
+            <if test="mainid != null">
+                #{mainid,jdbcType=INTEGER},
+            </if>
+            <if test="completiontype != null">
+                #{compdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="maintainling != null">
+                #{maintainling,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Completed">
+        update completed
+        <set>
+
+            <if test="completiontdate != null and completiontdate != '' ">
+                completiontdate = #{completiontdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="inspector != null and inspector != '' ">
+                inspector = #{inspector,jdbcType=VARCHAR},
+            </if>
+            <if test="penalty != null and penalty != 0.0 ">
+                penalty = #{penalty,jdbcType=DOUBLE},
+            </if>
+            <if test="rework != null and rework != '' ">
+                rework = #{rework,jdbcType=VARCHAR},
+            </if>
+            <if test="personid != null and personid != 0 ">
+                personid = #{personid,jdbcType=INTEGER},
+            </if>
+            <if test="personname != null and personname != '' ">
+                personname = #{personname,jdbcType=VARCHAR},
+            </if>
+            <if test="delaytext != null and delaytext != '' ">
+                delaytext = #{delaytext,jdbcType=VARCHAR},
+            </if>
+            <if test="completiontype != null and completiontype != 0 ">
+                completiontype = #{completiontype,jdbcType=INTEGER},
+            </if>
+        </set>
+        where completionid = #{completionid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Completed">
+        update completed
+        set completiondate = #{completiondate,jdbcType=TIMESTAMP},
         completiontdate = #{completiontdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="inspector != null and inspector != '' " >
         inspector = #{inspector,jdbcType=VARCHAR},
-      </if>
-      <if test="penalty != null and penalty != 0.0 " >
         penalty = #{penalty,jdbcType=DOUBLE},
-      </if>
-      <if test="rework != null and rework != '' " >
         rework = #{rework,jdbcType=VARCHAR},
-      </if>
-      <if test="personid != null and personid != 0 " >
         personid = #{personid,jdbcType=INTEGER},
-      </if>
-      <if test="personname != null and personname != '' " >
         personname = #{personname,jdbcType=VARCHAR},
-      </if>
-      <if test="delaytext != null and delaytext != '' " >
         delaytext = #{delaytext,jdbcType=VARCHAR},
-      </if>
-      <if test="completiontype != null and completiontype != 0 " >
-        completiontype = #{completiontype,jdbcType=INTEGER},
-      </if>
-    </set>
-    where completionid = #{completionid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Completed" >
-    update completed
-    set completiondate = #{completiondate,jdbcType=TIMESTAMP},
-      completiontdate = #{completiontdate,jdbcType=TIMESTAMP},
-      inspector = #{inspector,jdbcType=VARCHAR},
-      penalty = #{penalty,jdbcType=DOUBLE},
-      rework = #{rework,jdbcType=VARCHAR},
-      personid = #{personid,jdbcType=INTEGER},
-      personname = #{personname,jdbcType=VARCHAR},
-      delaytext = #{delaytext,jdbcType=VARCHAR},
-      completiontype = #{completiontype,jdbcType=INTEGER}
-    where completionid = #{completionid,jdbcType=INTEGER}
-  </update>
+        completiontype = #{completiontype,jdbcType=INTEGER}
+        where completionid = #{completionid,jdbcType=INTEGER}
+    </update>
 </mapper>

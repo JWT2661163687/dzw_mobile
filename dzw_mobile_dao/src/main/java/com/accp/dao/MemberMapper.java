@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.accp.pojo.Client;
@@ -22,58 +23,70 @@ public interface MemberMapper {
     int updateByPrimaryKeySelective(Member record);
 
     int updateByPrimaryKey(Member record);
-    
-    
+
+
     /**
-     * 	¸ù¾İÌõ¼ş²éÑ¯»áÔ±
+     * æ ¹æ®æ¡ä»¶æŸ¥è¯¢ä¼šå‘˜ä¿¡æ¯
+     *
      * @param KaHao
      * @return
      */
-    List<Member> queryMember(@Param("KaHao")String KaHao);
-    
+    List<Member> queryMember(@Param("KaHao") String KaHao);
+
     /**
-     * 	¸ù¾İÌõ¼ş²éÑ¯²»ÊÇ»áÔ±µÄ¿Í»§
+     * æŸ¥è¯¢æ‰€æœ‰æ™®é€šç”¨æˆ·ä¿¡æ¯
+     *
      * @param cId
      * @return
      */
-    List<Client> queryClient(@Param("cId")Integer cId);
-    
+    List<Client> queryClient(@Param("cId") Integer cId);
+
     /**
-     * 	ĞŞ¸Ä¿Í»§µÄµÈ¼¶
+     * æŠŠæ™®é€šç”¨æˆ·ä¿®æ”¹ä¸ºä¼šå‘˜ç”¨æˆ·
+     *
      * @param cId
      * @return
      */
     @Update("UPDATE `client` SET cGrade = 2 WHERE cId = #{cId};")
-    int updateClientGrand(@Param("cId")Integer cId);
-    
+    int updateClientGrand(@Param("cId") Integer cId);
+
     /**
-     * 	ĞÂÔö»áÔ±¿Í»§
+     * æ–°å¢ä¼šå‘˜ä¿¡æ¯
+     *
      * @param memBer
      * @return
      */
     @Insert("INSERT INTO member(`mCardNumber`,`mPass`,`cId`,`cName`,`mBalance`) VALUES(#{memBer.mcardnumber},#{memBer.mpass},#{memBer.cid},#{memBer.cname},0);")
-    int insertMemberClient(@Param("memBer")Member memBer);
-    
+    int insertMemberClient(@Param("memBer") Member memBer);
+
     /**
-     * 	»áÔ±³äÖµ½ğ¶î(ĞŞ¸Ä»áÔ±Óà¶î)
+     * ä¿®æ”¹ä¸ºä¼šå‘˜
+     *
      * @param mId
      * @param jine
      * @return
      */
     @Update("UPDATE `member` SET mBalance=mBalance+#{jine} WHERE `mId` = #{mId};")
-    int updateMember(@Param("mId")Integer mId,@Param("jine")Integer jine);
-    
+    int updateMember(@Param("mId") Integer mId, @Param("jine") Integer jine);
+
     /**
-     *	 É¾³ı»áÔ±
+     * åˆ é™¤ä¼šå‘˜ç”¨æˆ·
+     *
      * @param mId
      * @return
      */
     @Delete("DELETE FROM member WHERE `mId` = #{mId};")
-    int deleteMember(@Param("mId")Integer mId);
-    
+    int deleteMember(@Param("mId") Integer mId);
+
     /**
-     * 	°Ñ»áÔ±ĞŞ¸ÄÎªÆÕÍ¨ÓÃ»§
+     * æŠŠä¼šå‘˜ç”¨æˆ·ä¿®æ”¹ä¸ºæ™®é€šç”¨æˆ·
      */
     @Update("UPDATE `client` SET cGrade = 1 WHERE cId = #{cid}")
-    int updateMemerGrade(@Param("cid")Integer cid);
+    int updateMemerGrade(@Param("cid") Integer cid);
+    
+    /**
+     * æŸ¥è¯¢æ‰€æœ‰çš„ä¼šå‘˜å¡å·
+     */
+    @Select("SELECT mCardNumber FROM member")
+    List<String> queryAllNumber();
 }

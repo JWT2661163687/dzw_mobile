@@ -16,13 +16,29 @@
   		SELECT *  FROM `shangpin`
   		<where>
   			<if test="sousuo=='-1' ">
-  				(`SPbianma` LIKE '%${sousuo}%' OR `SPmingcheng` LIKE '%${sousuo}%'  OR `SPdalei` LIKE '%${sousuo}%' OR SPid>0) AND DAid=#{daid} 
+  				(`SPbianma` LIKE '%${sousuo}%' OR `SPmingcheng` LIKE '%${sousuo}%'  OR `SPdalei` LIKE '%${sousuo}%' OR SPid>0) 
   			</if>
   			<if test="sousuo!='-1' ">
-  				(`SPbianma` LIKE '%${sousuo}%' OR `SPmingcheng` LIKE '%${sousuo}%'  OR `SPdalei` LIKE '%${sousuo}%') AND DAid=#{daid}
+  				(`SPbianma` LIKE '%${sousuo}%' OR `SPmingcheng` LIKE '%${sousuo}%'  OR `SPdalei` LIKE '%${sousuo}%')
   			</if>
   		</where>
   </select>
+  <!-- 修改 -->
+  <update id="updateshangpin">
+  		UPDATE `shangpin` 
+		SET  `SPbianma` =#{xiugai.spbianma}, `SPmingcheng` =#{xiugai.spmingcheng}, `SPdalei` =#{xiugai.spdalei}, `SPxiaolei` =#{xiugai.spxiaolei}, `SPshoujia` = #{xiugai.spshoujia}
+		WHERE `SPid` = #{xiugai.spid};
+  </update>
+  <!-- 新增 -->
+  <insert id="insertshangpin">
+  		INSERT INTO `shangpin` (`SPbianma`,`SPmingcheng`,`SPdalei`,`SPxiaolei`,`SPshoujia`, `DAid`) 
+		VALUES  (#{zeng.spbianma},#{zeng.spmingcheng} , #{zeng.spdalei}, #{zeng.spxiaolei}, #{zeng.spshoujia}, #{zeng.daid} ) ;  
+  </insert>
+  <!-- 删除 -->
+  <delete id="deleteshangpin">
+  		DELETE FROM  `shangpin` WHERE `SPid` =#{spid} ;
+  </delete>
+  
   <!--自动生成 -->
   <sql id="Base_Column_List" >
     SPid, SPbianma, SPmingcheng, SPdalei, SPxiaolei, SPshoujia
@@ -88,34 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Shangpin" >
-    update shangpin
-    <set >
-      <if test="spbianma != null" >
-        SPbianma = #{spbianma,jdbcType=VARCHAR},
-      </if>
-      <if test="spmingcheng != null" >
-        SPmingcheng = #{spmingcheng,jdbcType=VARCHAR},
-      </if>
-      <if test="spdalei != null" >
-        SPdalei = #{spdalei,jdbcType=VARCHAR},
-      </if>
-      <if test="spxiaolei != null" >
-        SPxiaolei = #{spxiaolei,jdbcType=VARCHAR},
-      </if>
-      <if test="spshoujia != null" >
-        SPshoujia = #{spshoujia,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where SPid = #{spid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Shangpin" >
-    update shangpin
-    set SPbianma = #{spbianma,jdbcType=VARCHAR},
-      SPmingcheng = #{spmingcheng,jdbcType=VARCHAR},
-      SPdalei = #{spdalei,jdbcType=VARCHAR},
-      SPxiaolei = #{spxiaolei,jdbcType=VARCHAR},
-      SPshoujia = #{spshoujia,jdbcType=VARCHAR}
-    where SPid = #{spid,jdbcType=INTEGER}
-  </update>
+  
+   
+    
 </mapper>

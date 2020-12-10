@@ -20,10 +20,10 @@
   		SELECT * FROM `weixiu`
   		<where>
   			<if test="sousuo=='-1' ">		<!-- -1表示为空 -->
-  				(`XMleixing` LIKE '%${sousuo}%' OR`XMbianma` LIKE '%${sousuo}%' OR `XMmingcheng` LIKE '%${sousuo}%' OR XMid>0) AND  `cid`=#{cid}
+  				(`XMleixing` LIKE '%${sousuo}%' OR`XMbianma` LIKE '%${sousuo}%' OR `XMmingcheng` LIKE '%${sousuo}%' OR XMid>0)
   			</if>
   			<if test="sousuo!='-1' ">		<!-- 不等于-1表示为有值 -->
-  				(`XMleixing` LIKE '%${sousuo}%' OR`XMbianma` LIKE '%${sousuo}%' OR `XMmingcheng` LIKE '%${sousuo}%') AND  `cid`=1
+  				(`XMleixing` LIKE '%${sousuo}%' OR`XMbianma` LIKE '%${sousuo}%' OR `XMmingcheng` LIKE '%${sousuo}%')
   			</if>
   		</where>
   	</select>
@@ -134,50 +134,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Weixiu" >
-    update weixiu
-    <set >
-      <if test="xmleixing != null" >
-        XMleixing = #{xmleixing,jdbcType=VARCHAR},
-      </if>
-      <if test="xmbianma != null" >
-        XMbianma = #{xmbianma,jdbcType=VARCHAR},
-      </if>
-      <if test="xmmingcheng != null" >
-        XMmingcheng = #{xmmingcheng,jdbcType=VARCHAR},
-      </if>
-      <if test="xmshoujia != null" >
-        XMshoujia = #{xmshoujia,jdbcType=VARCHAR},
-      </if>
-      <if test="xmzhonglei != null" >
-        XMzhonglei = #{xmzhonglei,jdbcType=VARCHAR},
-      </if>
-      <if test="xmbiaozhun != null" >
-        XMbiaozhun = #{xmbiaozhun,jdbcType=INTEGER},
-      </if>
-      <if test="xmhuiyuan != null" >
-        XMhuiyuan = #{xmhuiyuan,jdbcType=INTEGER},
-      </if>
-      <if test="cid != null" >
-        cid = #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="fid != null" >
-        Fid = #{fid,jdbcType=INTEGER},
-      </if>
-    </set>
-    where XMid = #{xmid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Weixiu" >
-    update weixiu
-    set XMleixing = #{xmleixing,jdbcType=VARCHAR},
-      XMbianma = #{xmbianma,jdbcType=VARCHAR},
-      XMmingcheng = #{xmmingcheng,jdbcType=VARCHAR},
-      XMshoujia = #{xmshoujia,jdbcType=VARCHAR},
-      XMzhonglei = #{xmzhonglei,jdbcType=VARCHAR},
-      XMbiaozhun = #{xmbiaozhun,jdbcType=INTEGER},
-      XMhuiyuan = #{xmhuiyuan,jdbcType=INTEGER},
-      cid = #{cid,jdbcType=INTEGER},
-      Fid = #{fid,jdbcType=INTEGER}
-    where XMid = #{xmid,jdbcType=INTEGER}
-  </update>
+ 
+  
+   
+   
 </mapper>

@@ -13,8 +13,13 @@ import com.github.pagehelper.PageInfo;
 @Service("MotorcycleBiz")
 public class MotorcycleBiz {
 
-	@Autowired
-	private MotorcycleMapper motorcycleMapper;
+    @Autowired
+    private MotorcycleMapper motorcycleMapper;
+
+
+
+
+
 	/**
 	 * 查询车型所有，分页
 	 * @param pageNum

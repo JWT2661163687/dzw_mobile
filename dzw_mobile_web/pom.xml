@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>dzw_mobile</artifactId>
-    <groupId>com.accp</groupId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>dzw_mobile</artifactId>
+		<groupId>com.accp</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
 
-  <artifactId>dzw_mobile_web</artifactId>
-  <packaging>war</packaging>
+	<artifactId>dzw_mobile_web</artifactId>
+	<packaging>war</packaging>
 
 
-  <name>dzw_mobile_web</name>
-  <url>http://maven.apache.org</url>
+	<name>dzw_mobile_web</name>
+	<url>http://maven.apache.org</url>
 
-  <dependencies>
+	<dependencies>
 		<!-- WEB依赖 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -57,7 +59,10 @@
 			<artifactId>dzw_mobile_services</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-  </dependencies>
+
+
+		
+	</dependencies>
 
 	<build>
 		<finalName>dzw_moblie</finalName>

@@ -15,14 +15,15 @@ import com.accp.pojo.Post;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-ctx.xml"})
 public class logintest {
-	@Autowired
-	private LoginjurisdictionBiz loginjurisdictionBiz;
+    @Autowired
+    private LoginjurisdictionBiz loginjurisdictionBiz;
+
+    @Test
+    public void aaa() {
+        System.out.println(loginjurisdictionBiz.selectlogin("张三", "123"));
+    }
 	
-	@Test
-	public void  aaa() {
-		System.out.println(loginjurisdictionBiz.selectlogin("张三", "123"));
-	}
-	
+
 	@Test
 	public void bbb() {
 		List<Functiontable> list=loginjurisdictionBiz.selectAllfunctiontable();

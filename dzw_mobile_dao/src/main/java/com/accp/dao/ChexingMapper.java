@@ -5,11 +5,12 @@ import com.accp.pojo.Chexing;
 public interface ChexingMapper {
     int deleteByPrimaryKey(Integer cid);
 
-/**
- * addrdrdfdfdf
- * @param record
- * @return
- */
+    /**
+     * addrdrdfdfdf
+     *
+     * @param record
+     * @return
+     */
 
     int insert(Chexing record);
 

@@ -16,14 +16,14 @@ public class Fieldvehicles {
     private String tename;
 
     public String getTename() {
-		return tename;
-	}
+        return tename;
+    }
 
-	public void setTename(String tename) {
-		this.tename = tename;
-	}
+    public void setTename(String tename) {
+        this.tename = tename;
+    }
 
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -71,5 +71,5 @@ public class Fieldvehicles {
         this.currentmileage = currentmileage == null ? null : currentmileage.trim();
     }
 
-   
+
 }

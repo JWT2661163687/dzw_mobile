@@ -1,14 +1,14 @@
 package com.accp.pojo;
 
 public class Mechanicstar {
-    private Integer meid;//¼¼¹¤±àÂë
+    private Integer meid;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String starrating;//ÐÇ¼¶
+    private String starrating;//ï¿½Ç¼ï¿½
 
-    private String grade;//µÈ¼¶
+    private String grade;//ï¿½È¼ï¿½
 
-    private String weight;//Ìá³ÉÈ¨ÖØ
-   
+    private String weight;//ï¿½ï¿½ï¿½È¨ï¿½ï¿½
+
 
     public Integer getMeid() {
         return meid;

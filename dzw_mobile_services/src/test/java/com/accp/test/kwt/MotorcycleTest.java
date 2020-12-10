@@ -15,9 +15,14 @@ import com.github.pagehelper.PageInfo;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-ctx.xml"})
 public class MotorcycleTest {
+
+    @Autowired
+    private MotorcycleBiz biz;
+
+   
+
+    
 	
-	@Autowired
-	private MotorcycleBiz biz;
 	@Test
 	public void SelectAllPage() {
 		PageInfo<Motorcycle> lists=biz.SelectPage(1, 2);

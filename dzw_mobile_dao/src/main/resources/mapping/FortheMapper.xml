@@ -1,141 +1,141 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.FortheMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Forthe" >
-    <id column="rId" property="rid" jdbcType="INTEGER" />
-    <result column="rType" property="rtype" jdbcType="INTEGER" />
-    <result column="rState" property="rstate" jdbcType="INTEGER" />
-    <result column="cId" property="cid" jdbcType="INTEGER" />
-    <result column="cName" property="cname" jdbcType="VARCHAR" />
-    <result column="vLicense" property="vlicense" jdbcType="VARCHAR" />
-    <result column="rPhone" property="rphone" jdbcType="VARCHAR" />
-    <result column="rCreateDate" property="rcreatedate" jdbcType="TIMESTAMP" />
-    <result column="rEndDate" property="renddate" jdbcType="TIMESTAMP" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    rId, rType, rState, cId, cName, vLicense, rPhone, rCreateDate, rEndDate
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from forthe
-    where rId = #{rid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from forthe
-    where rId = #{rid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Forthe" >
-    insert into forthe (rId, rType, rState, 
-      cId, cName, vLicense, 
-      rPhone, rCreateDate, rEndDate
-      )
-    values (#{rid,jdbcType=INTEGER}, #{rtype,jdbcType=INTEGER}, #{rstate,jdbcType=INTEGER}, 
-      #{cid,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR}, #{vlicense,jdbcType=VARCHAR}, 
-      #{rphone,jdbcType=VARCHAR}, #{rcreatedate,jdbcType=TIMESTAMP}, #{renddate,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Forthe" >
-    insert into forthe
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="rid != null" >
-        rId,
-      </if>
-      <if test="rtype != null" >
-        rType,
-      </if>
-      <if test="rstate != null" >
-        rState,
-      </if>
-      <if test="cid != null" >
-        cId,
-      </if>
-      <if test="cname != null" >
-        cName,
-      </if>
-      <if test="vlicense != null" >
-        vLicense,
-      </if>
-      <if test="rphone != null" >
-        rPhone,
-      </if>
-      <if test="rcreatedate != null" >
-        rCreateDate,
-      </if>
-      <if test="renddate != null" >
-        rEndDate,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="rid != null" >
-        #{rid,jdbcType=INTEGER},
-      </if>
-      <if test="rtype != null" >
-        #{rtype,jdbcType=INTEGER},
-      </if>
-      <if test="rstate != null" >
-        #{rstate,jdbcType=INTEGER},
-      </if>
-      <if test="cid != null" >
-        #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="cname != null" >
-        #{cname,jdbcType=VARCHAR},
-      </if>
-      <if test="vlicense != null" >
-        #{vlicense,jdbcType=VARCHAR},
-      </if>
-      <if test="rphone != null" >
-        #{rphone,jdbcType=VARCHAR},
-      </if>
-      <if test="rcreatedate != null" >
-        #{rcreatedate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="renddate != null" >
-        #{renddate,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Forthe" >
-    update forthe
-    <set >
-      <if test="rtype != null" >
-        rType = #{rtype,jdbcType=INTEGER},
-      </if>
-      <if test="rstate != null" >
+<mapper namespace="com.accp.dao.FortheMapper">
+    <resultMap id="BaseResultMap" type="com.accp.pojo.Forthe">
+        <id column="rId" property="rid" jdbcType="INTEGER"/>
+        <result column="rType" property="rtype" jdbcType="INTEGER"/>
+        <result column="rState" property="rstate" jdbcType="INTEGER"/>
+        <result column="cId" property="cid" jdbcType="INTEGER"/>
+        <result column="cName" property="cname" jdbcType="VARCHAR"/>
+        <result column="vLicense" property="vlicense" jdbcType="VARCHAR"/>
+        <result column="rPhone" property="rphone" jdbcType="VARCHAR"/>
+        <result column="rCreateDate" property="rcreatedate" jdbcType="TIMESTAMP"/>
+        <result column="rEndDate" property="renddate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        rId, rType, rState, cId, cName, vLicense, rPhone, rCreateDate, rEndDate
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from forthe
+        where rId = #{rid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from forthe
+        where rId = #{rid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.accp.pojo.Forthe">
+        insert into forthe (rId, rType, rState,
+        cId, cName, vLicense,
+        rPhone, rCreateDate, rEndDate
+        )
+        values (#{rid,jdbcType=INTEGER}, #{rtype,jdbcType=INTEGER}, #{rstate,jdbcType=INTEGER},
+        #{cid,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR}, #{vlicense,jdbcType=VARCHAR},
+        #{rphone,jdbcType=VARCHAR}, #{rcreatedate,jdbcType=TIMESTAMP}, #{renddate,jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.accp.pojo.Forthe">
+        insert into forthe
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="rid != null">
+                rId,
+            </if>
+            <if test="rtype != null">
+                rType,
+            </if>
+            <if test="rstate != null">
+                rState,
+            </if>
+            <if test="cid != null">
+                cId,
+            </if>
+            <if test="cname != null">
+                cName,
+            </if>
+            <if test="vlicense != null">
+                vLicense,
+            </if>
+            <if test="rphone != null">
+                rPhone,
+            </if>
+            <if test="rcreatedate != null">
+                rCreateDate,
+            </if>
+            <if test="renddate != null">
+                rEndDate,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="rid != null">
+                #{rid,jdbcType=INTEGER},
+            </if>
+            <if test="rtype != null">
+                #{rtype,jdbcType=INTEGER},
+            </if>
+            <if test="rstate != null">
+                #{rstate,jdbcType=INTEGER},
+            </if>
+            <if test="cid != null">
+                #{cid,jdbcType=INTEGER},
+            </if>
+            <if test="cname != null">
+                #{cname,jdbcType=VARCHAR},
+            </if>
+            <if test="vlicense != null">
+                #{vlicense,jdbcType=VARCHAR},
+            </if>
+            <if test="rphone != null">
+                #{rphone,jdbcType=VARCHAR},
+            </if>
+            <if test="rcreatedate != null">
+                #{rcreatedate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="renddate != null">
+                #{renddate,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Forthe">
+        update forthe
+        <set>
+            <if test="rtype != null">
+                rType = #{rtype,jdbcType=INTEGER},
+            </if>
+            <if test="rstate != null">
+                rState = #{rstate,jdbcType=INTEGER},
+            </if>
+            <if test="cid != null">
+                cId = #{cid,jdbcType=INTEGER},
+            </if>
+            <if test="cname != null">
+                cName = #{cname,jdbcType=VARCHAR},
+            </if>
+            <if test="vlicense != null">
+                vLicense = #{vlicense,jdbcType=VARCHAR},
+            </if>
+            <if test="rphone != null">
+                rPhone = #{rphone,jdbcType=VARCHAR},
+            </if>
+            <if test="rcreatedate != null">
+                rCreateDate = #{rcreatedate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="renddate != null">
+                rEndDate = #{renddate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where rId = #{rid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Forthe">
+        update forthe
+        set rType = #{rtype,jdbcType=INTEGER},
         rState = #{rstate,jdbcType=INTEGER},
-      </if>
-      <if test="cid != null" >
         cId = #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="cname != null" >
         cName = #{cname,jdbcType=VARCHAR},
-      </if>
-      <if test="vlicense != null" >
         vLicense = #{vlicense,jdbcType=VARCHAR},
-      </if>
-      <if test="rphone != null" >
         rPhone = #{rphone,jdbcType=VARCHAR},
-      </if>
-      <if test="rcreatedate != null" >
         rCreateDate = #{rcreatedate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="renddate != null" >
-        rEndDate = #{renddate,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where rId = #{rid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Forthe" >
-    update forthe
-    set rType = #{rtype,jdbcType=INTEGER},
-      rState = #{rstate,jdbcType=INTEGER},
-      cId = #{cid,jdbcType=INTEGER},
-      cName = #{cname,jdbcType=VARCHAR},
-      vLicense = #{vlicense,jdbcType=VARCHAR},
-      rPhone = #{rphone,jdbcType=VARCHAR},
-      rCreateDate = #{rcreatedate,jdbcType=TIMESTAMP},
-      rEndDate = #{renddate,jdbcType=TIMESTAMP}
-    where rId = #{rid,jdbcType=INTEGER}
-  </update>
+        rEndDate = #{renddate,jdbcType=TIMESTAMP}
+        where rId = #{rid,jdbcType=INTEGER}
+    </update>
 </mapper>

@@ -23,33 +23,39 @@ public interface ClientMapper {
     int updateByPrimaryKeySelective(Client record);
 
     int updateByPrimaryKey(Client record);
-    
+
     /**
-     * 	¸ù¾İÌõ¼ş²éÑ¯¿Í»§
+     * æ ¹æ®æ¡ä»¶æŸ¥è¯¢å®¢æˆ·ä¿¡æ¯
      */
-    List<Client> queryClient(@Param("cid")Integer cid);
-    
+    List<Client> queryClient(@Param("cid") Integer cid);
+
     /**
-     * 	ĞÂÔöĞÂ¿Í»§
+     * æ–°å¢å®¢æˆ·ä¿¡æ¯
      */
     @Insert("INSERT INTO `client`(`cName`,`cPhone`,`createDate`,`cLimit`,`cIntegral`,`cRemark`,`cGrade`) VALUES(#{client.cname},#{client.cphone},NOW(),#{client.climit},#{client.cintegral},#{client.cremark},1)")
-    int insertClient(@Param("client")Client client);
-    
+    int insertClient(@Param("client") Client client);
+
     /**
-     * 	ĞŞ¸Ä¿Í»§ĞÅÏ¢
+     * ä¿®æ”¹å®¢æˆ·ä¿¡æ¯
      */
     @Update("UPDATE `client` SET `cName` = #{client.cname},`cPhone` = #{client.cphone},`cLimit` = #{client.climit},`cIntegral` = #{client.cintegral},`cRemark` = #{client.cremark} WHERE cId = #{client.cid}")
-    int updateClient(@Param("client")Client client);
-    
+    int updateClient(@Param("client") Client client);
+
     /**
-     * 	É¾³ı¿Í»§ĞÅÏ¢
+     * åˆ é™¤å®¢æˆ·ä¿¡æ¯
      */
     @Delete("DELETE FROM `client` WHERE cId = #{cid}")
-    int deleteClient(@Param("cid")Integer cid);
-    
+    int deleteClient(@Param("cid") Integer cid);
+
     /**
-     *	 Ë«»÷¿Í»§²éÑ¯¸Ã¿Í»§µÄ³µÁ¾ĞÅÏ¢
+     * æ ¹æ®å®¢æˆ·idæŸ¥è¯¢è¯¥å®¢æˆ·çš„è½¦è¾†ä¿¡æ¯
      */
     @Select("SELECT * FROM `vehicle` WHERE cId = #{cid}")
-    List<Vehicle> queryVehicle(@Param("cid")Integer cid);
+    List<Vehicle> queryVehicle(@Param("cid") Integer cid);
+    
+    /**
+     * æŸ¥è¯¢æ‰€æœ‰å®¢æˆ·ä¿¡æ¯
+     */
+    @Select("SELECT * FROM CLIENT")
+    List<Client> queryAllClient();
 }

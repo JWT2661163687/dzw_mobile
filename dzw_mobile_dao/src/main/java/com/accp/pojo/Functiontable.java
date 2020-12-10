@@ -39,14 +39,14 @@ public class Functiontable {
     private Functiontable functiontable;
 
     public Functiontable getFunctiontable() {
-		return functiontable;
-	}
+        return functiontable;
+    }
 
-	public void setFunctiontable(Functiontable functiontable) {
-		this.functiontable = functiontable;
-	}
+    public void setFunctiontable(Functiontable functiontable) {
+        this.functiontable = functiontable;
+    }
 
-	public Integer getFid() {
+    public Integer getFid() {
         return fid;
     }
 
