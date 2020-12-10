@@ -1,5 +1,7 @@
 package com.accp.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.accp.pojo.Employee;
@@ -24,7 +26,15 @@ public interface EmployeeMapper {
      * @param password
      * @return
      */
-    Employee selectlogin(@Param("username") String username, @Param("password") String password);
+    Employee selectlogin(@Param("username")String username,@Param("password")String password);
+    /**
+     * 根据名字查询
+     * @param name
+     * @return
+     */
+    List<Employee> Selectemployee(@Param("id")Integer id);
+    
+    
 
 
 }

@@ -266,64 +266,68 @@
         </set>
         where employeeid = #{employeeid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Employee">
-        update employee
-        set propertyid = #{propertyid,jdbcType=INTEGER},
-        stateid = #{stateid,jdbcType=INTEGER},
-        departmentid = #{departmentid,jdbcType=INTEGER},
-        postid = #{postid,jdbcType=INTEGER},
-        empname = #{empname,jdbcType=VARCHAR},
-        esex = #{esex,jdbcType=INTEGER},
-        emplogenid = #{emplogenid,jdbcType=VARCHAR},
-        emplogepasword = #{emplogepasword,jdbcType=VARCHAR},
-        education = #{education,jdbcType=VARCHAR},
-        graduationschool = #{graduationschool,jdbcType=VARCHAR},
-        major = #{major,jdbcType=VARCHAR},
-        crrdID = #{crrdid,jdbcType=VARCHAR},
-        address = #{address,jdbcType=VARCHAR},
-        newaddress = #{newaddress,jdbcType=VARCHAR},
-        empphone = #{empphone,jdbcType=VARCHAR},
-        emergencyphone = #{emergencyphone,jdbcType=VARCHAR},
-        molphone = #{molphone,jdbcType=VARCHAR},
-        email = #{email,jdbcType=VARCHAR},
-        entrytimes = #{entrytimes,jdbcType=DATE},
-        lztimes = #{lztimes,jdbcType=DATE},
-        brithtimes = #{brithtimes,jdbcType=DATE}
-        where employeeid = #{employeeid,jdbcType=INTEGER}
-    </update>
+   
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Employee" >
+    update employee
+    set propertyid = #{propertyid,jdbcType=INTEGER},
+      stateid = #{stateid,jdbcType=INTEGER},
+      departmentid = #{departmentid,jdbcType=INTEGER},
+      postid = #{postid,jdbcType=INTEGER},
+      empname = #{empname,jdbcType=VARCHAR},
+      esex = #{esex,jdbcType=INTEGER},
+      emplogenid = #{emplogenid,jdbcType=VARCHAR},
+      emplogepasword = #{emplogepasword,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      graduationschool = #{graduationschool,jdbcType=VARCHAR},
+      major = #{major,jdbcType=VARCHAR},
+      crrdID = #{crrdid,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      newaddress = #{newaddress,jdbcType=VARCHAR},
+      empphone = #{empphone,jdbcType=VARCHAR},
+      emergencyphone = #{emergencyphone,jdbcType=VARCHAR},
+      molphone = #{molphone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      entrytimes = #{entrytimes,jdbcType=DATE},
+      lztimes = #{lztimes,jdbcType=DATE},
+      brithtimes = #{brithtimes,jdbcType=DATE}
+    where employeeid = #{employeeid,jdbcType=INTEGER}
+  </update>
+  
+  
+  <select id="selectlogin" resultMap="loginres">
+  	SELECT * FROM `employee` e INNER JOIN `post` p ON e.`postid`=p.`postid` INNER JOIN `postmiddle` po ON p.`postid`=po.`rid`
+INNER JOIN `functiontable` fu ON fu.`fid`=po.`fid` WHERE e.`emplogenid`=#{username} AND e.`emplogepasword`=#{password}
+  </select>
+  
+  <resultMap type="com.accp.pojo.Employee" id="loginres" autoMapping="true">
+  		<id column="employeeid" property="employeeid"/>
+  		<association property="post" resultMap="postres"></association>
+  </resultMap>
+  
+  <resultMap type="com.accp.pojo.Post" id="postres" >
+  	<id column="postid" property="postid"/>
+  	<result column="departmentid" property="departmentid"/> 
+  	<result column="postname" property="postname"/> 
+  	<result column="rcode" property="rcode"/> 
+  	<result column="rstatus" property="rstatus"/> 
+  	<collection property="functiontables" ofType="com.accp.pojo.Functiontable">
+  	<id column="fid" property="fid"/>
+  	<result column="codenumber" property="codenumber"/>
+  	<result column="fname" property="fname"/>
+  	<result column="fpid" property="fpid"/>
+  	<association property="functiontable" column="fpid" select="selectfunc"></association>
+  	</collection>
+  </resultMap>
+  
+  
+  <select id="selectfunc" resultType="com.accp.pojo.Functiontable">
+  select * from functiontable where fid=#{0}
+  </select>
+  
+ 
 
 
-    <select id="selectlogin" resultMap="loginres">
-        SELECT * FROM `employee` e INNER JOIN `post` p ON e.`postid`=p.`postid` INNER JOIN `postmiddle` po ON
-        p.`postid`=po.`rid`
-        INNER JOIN `functiontable` fu ON fu.`fid`=po.`fid` WHERE e.`emplogenid`=#{username} AND
-        e.`emplogepasword`=#{password}
-    </select>
-
-    <resultMap type="com.accp.pojo.Employee" id="loginres" autoMapping="true">
-        <id column="employeeid" property="employeeid"/>
-        <association property="post" resultMap="postres"></association>
-    </resultMap>
-
-    <resultMap type="com.accp.pojo.Post" id="postres">
-        <id column="postid" property="postid"/>
-        <result column="departmentid" property="departmentid"/>
-        <result column="postname" property="postname"/>
-        <result column="rcode" property="rcode"/>
-        <result column="rstatus" property="rstatus"/>
-        <collection property="functiontables" ofType="com.accp.pojo.Functiontable">
-            <id column="fid" property="fid"/>
-            <result column="codenumber" property="codenumber"/>
-            <result column="fname" property="fname"/>
-            <result column="fpid" property="fpid"/>
-            <association property="functiontable" column="fpid" select="selectfunc"></association>
-        </collection>
-    </resultMap>
-
-
-    <select id="selectfunc" resultType="com.accp.pojo.Functiontable">
-        select * from functiontable where fid=#{0}
-    </select>
+   
 
 
 </mapper>
