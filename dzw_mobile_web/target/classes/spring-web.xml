@@ -48,7 +48,6 @@
 			<bean class="com.accp.interceptor.SessionValidateInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors> 
-	
 
 	
 	<!-- 视图资源文件视图解析器 -->

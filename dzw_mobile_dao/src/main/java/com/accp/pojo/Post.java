@@ -30,7 +30,7 @@ public class Post {
     
 
 
-   
+
     @Override
 	public String toString() {
 		return "Post [postid=" + postid + ", departmentid=" + departmentid + ", postname=" + postname + ", rcode="

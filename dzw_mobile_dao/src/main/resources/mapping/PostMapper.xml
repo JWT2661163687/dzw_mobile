@@ -147,6 +147,4 @@
     where postid = #{postid,jdbcType=INTEGER}
   </update>
 
-  
-  
 </mapper>
