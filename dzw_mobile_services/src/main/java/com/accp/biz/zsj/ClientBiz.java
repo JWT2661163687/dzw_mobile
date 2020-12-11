@@ -44,6 +44,13 @@ public class ClientBiz {
     public int deleteClient(@Param("cid") Integer cid) {
         return dao.deleteClient(cid);
     }
+    
+    /**
+     * 删除客户信息时把该客户的车辆也删除
+     */
+    public int deleteVehicle(@Param("cid")Integer cid) {
+    	return dao.deleteVehicle(cid);
+    }
 
     /**
      * 双击客户查询该客户的车辆信息

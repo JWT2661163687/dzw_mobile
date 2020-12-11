@@ -120,4 +120,12 @@ public class CloseanaccountAction {
     public List<Maintaincar> queryCloseAll(){
     	return biz.queryCloseAll();
     }
+	
+	/**
+	 * 根据客户id查询该客户是否为会员
+	 */
+	@GetMapping("mem/{cid}")
+	public Member queryMem(@PathVariable Integer cid) {
+		return biz.queryMember(cid);
+	}
 }

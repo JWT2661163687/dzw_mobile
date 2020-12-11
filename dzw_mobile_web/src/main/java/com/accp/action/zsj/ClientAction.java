@@ -67,6 +67,7 @@ public class ClientAction {
     @DeleteMapping("client/{cid}")
     public Map<String, String> deleteClient(@PathVariable Integer cid) {
         int count = biz.deleteClient(cid);
+        biz.deleteVehicle(cid);
         Map<String, String> map = new HashMap<String, String>();
         if (count > 0) {
             map.put("code", "200");
@@ -79,7 +80,6 @@ public class ClientAction {
      */
     @GetMapping("client1/{cid}")
     public List<Vehicle> queryVehicle(@PathVariable Integer cid) {
-        System.out.println("c  " + cid);
         biz.queryVehicle(cid).forEach(temp -> {
             System.out.println("a " + temp);
         });

@@ -46,6 +46,12 @@ public interface ClientMapper {
      */
     @Delete("DELETE FROM `client` WHERE cId = #{cid}")
     int deleteClient(@Param("cid") Integer cid);
+    
+    /**
+     * 删除客户信息时把该客户的车辆也删除
+     */
+    @Delete("DELETE FROM vehicle WHERE cId = #{cid}")
+    int deleteVehicle(@Param("cid")Integer cid);
 
     /**
      * 根据客户id查询该客户的车辆信息
