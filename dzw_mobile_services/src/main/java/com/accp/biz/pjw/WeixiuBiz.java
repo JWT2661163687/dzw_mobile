@@ -69,7 +69,7 @@ public class WeixiuBiz {
      * 	@param
      */
     public int insertweixiu(Weixiu weixiu) {
-        return weixiumapper.insertweixiu(weixiu);
+        return weixiumapper.insertSelective(weixiu);
     }
 
     
