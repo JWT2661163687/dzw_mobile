@@ -48,4 +48,12 @@ public class PostBiz {
 	public int deleteBypostid(List<Post> Listid) {
 		return postMapper.DeleteById(Listid);
 	}
+	/**
+	 * 根据部门id查询岗位表
+	 * @param id
+	 * @return
+	 */
+	public List<Post> SelectDepartmentByid(Integer id){
+		return postMapper.SelectDepartmentById(id);
+	}
 }

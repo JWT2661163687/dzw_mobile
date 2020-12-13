@@ -52,7 +52,17 @@ public class Employee {
     
     private String yuanyin;
     
-    public String getYuanyin() {
+    private String postname;
+    
+    public String getPostname() {
+		return postname;
+	}
+
+	public void setPostname(String postname) {
+		this.postname = postname;
+	}
+
+	public String getYuanyin() {
 		return yuanyin;
 	}
 

@@ -21,4 +21,8 @@ public class DepartmentAction {
 	public List<Department> SelectTree(){
 		return biz.Departmenttree();
 	}
+	@GetMapping("/Departments")
+	public List<Department> SelectAll(){
+		return biz.SelectAlls();
+	}
 }

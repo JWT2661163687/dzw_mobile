@@ -261,7 +261,7 @@
     <select id="queryTename" resultType="com.accp.pojo.Teamtechnician">
     SELECT * FROM `teamtechnician` t INNER JOIN `team` m WHERE t.`teamid`=m.`teamid`
     <if test="tename!='null'">
-   	 AND tename=#{tename}
+   	 AND t.teamid=#{tename}
     </if>
     </select>
     

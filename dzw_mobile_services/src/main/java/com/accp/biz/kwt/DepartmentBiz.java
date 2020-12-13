@@ -20,4 +20,8 @@ public class DepartmentBiz {
 	public List<Department> Departmenttree(){
 		return departmentMapper.loadDepartment();
 	}
+	
+	public List<Department> SelectAlls(){
+		return departmentMapper.SelectAll();
+	}
 }

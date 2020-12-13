@@ -81,4 +81,8 @@ public class PostAction {
 		}
 		return map;
 	}
+	@GetMapping("/Post/Department/{id}")
+	public List<Post> SelectDepartmentById(@PathVariable Integer id){
+		return biz.SelectDepartmentByid(id);
+	}
 }

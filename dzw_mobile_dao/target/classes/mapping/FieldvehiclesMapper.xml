@@ -67,6 +67,9 @@
             <if test="ascriptionteam != null">
                 ascriptionteam,
             </if>
+            <if test="zhuangtai != null">
+                zhuangtai,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -89,6 +92,9 @@
             </if>
             <if test="ascriptionteam != null">
                 #{ascriptionteam,jdbcType=VARCHAR},
+            </if>
+             <if test="zhuangtai != null">
+             #{zhuangtai,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>

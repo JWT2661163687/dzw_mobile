@@ -51,4 +51,10 @@ public interface EmployeeMapper {
      * 	修改成离职员工
      */
     int updateyuangong(@Param("emplogenid") String emplogenid,@Param("yuanyin") String yuanyin);
+    /**
+     * 根据名字查询
+     * @param name
+     * @return
+     */
+    List<Employee> SelectByName(@Param("name")String name);
 }
