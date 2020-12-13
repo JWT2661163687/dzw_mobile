@@ -44,9 +44,39 @@ public class Employee {
     private Date entrytimes;
 
     private Date lztimes;
+    
+    //´ó¸ç×·¼ÓµÄÈý¸öÊôÐÔ bumen  gangwei  yuanyin
+    private String bumen;
+    
+    private String gangwei;
+    
+    private String yuanyin;
+    
+    public String getYuanyin() {
+		return yuanyin;
+	}
 
+	public void setYuanyin(String yuanyin) {
+		this.yuanyin = yuanyin;
+	}
 
-    private Post post = new Post();//ï¿½ï¿½É«ï¿½ï¿½
+	public String getBumen() {
+		return bumen;
+	}
+
+	public void setBumen(String bumen) {
+		this.bumen = bumen;
+	}
+
+	public String getGangwei() {
+		return gangwei;
+	}
+
+	public void setGangwei(String gangwei) {
+		this.gangwei = gangwei;
+	}
+
+	private Post post = new Post();//ï¿½ï¿½É«ï¿½ï¿½
 
     public Post getPost() {
         return post;
@@ -58,7 +88,22 @@ public class Employee {
 
     private Date brithtimes;
 
-    @Override
+    
+	/*
+	 * @Override public String toString() { return "Employee [employeeid=" +
+	 * employeeid + ", propertyid=" + propertyid + ", stateid=" + stateid +
+	 * ", departmentid=" + departmentid + ", postid=" + postid + ", empname=" +
+	 * empname + ", esex=" + esex + ", emplogenid=" + emplogenid +
+	 * ", emplogepasword=" + emplogepasword + ", education=" + education +
+	 * ", graduationschool=" + graduationschool + ", major=" + major + ", crrdid=" +
+	 * crrdid + ", address=" + address + ", newaddress=" + newaddress +
+	 * ", empphone=" + empphone + ", emergencyphone=" + emergencyphone +
+	 * ", molphone=" + molphone + ", email=" + email + ", entrytimes=" + entrytimes
+	 * + ", lztimes=" + lztimes + ", post=" + post + ", brithtimes=" + brithtimes +
+	 * "]"; }
+	 */
+
+	@Override
 	public String toString() {
 		return "Employee [employeeid=" + employeeid + ", propertyid=" + propertyid + ", stateid=" + stateid
 				+ ", departmentid=" + departmentid + ", postid=" + postid + ", empname=" + empname + ", esex=" + esex
@@ -66,7 +111,8 @@ public class Employee {
 				+ ", graduationschool=" + graduationschool + ", major=" + major + ", crrdid=" + crrdid + ", address="
 				+ address + ", newaddress=" + newaddress + ", empphone=" + empphone + ", emergencyphone="
 				+ emergencyphone + ", molphone=" + molphone + ", email=" + email + ", entrytimes=" + entrytimes
-				+ ", lztimes=" + lztimes + ", post=" + post + ", brithtimes=" + brithtimes + "]";
+				+ ", lztimes=" + lztimes + ", bumen=" + bumen + ", gangwei=" + gangwei + ", yuanyin=" + yuanyin
+				+ ", post=" + post + ", brithtimes=" + brithtimes + "]";
 	}
 
 	public Integer getEmployeeid() {

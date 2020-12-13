@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.accp.biz.lzj.MemBerBiz;
 import com.accp.pojo.Client;
 import com.accp.pojo.Member;
-import com.accp.util.SearcuUtils;
 import com.github.pagehelper.PageInfo;
 
 @RestController

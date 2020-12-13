@@ -1,5 +1,7 @@
 package com.accp.biz.jwt;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -14,6 +16,7 @@ import com.accp.dao.MaintaincarxiangmuMapper;
 import com.accp.dao.MaintainreceiptsMapper;
 import com.accp.dao.TeamtechniciantwoMapper;
 import com.accp.pojo.Completed;
+import com.accp.pojo.Front;
 import com.accp.pojo.Maintaincar;
 import com.accp.pojo.Maintaincarxiangmu;
 import com.accp.pojo.Maintainreceipts;
@@ -31,6 +34,8 @@ public class MaintaincarBiz {
     private MaintainreceiptsMapper maintainreceiptsMapper;
     @Autowired
     private TeamtechniciantwoMapper teamtechniciantwoMapper;
+    @Autowired
+    private FlowBiz flowBiz;
 
     /**
      * 状态查询维修接车表sasdsada
@@ -50,6 +55,17 @@ public class MaintaincarBiz {
      * @return
      */
     public int insertSelective(Maintaincar record) {
+    	Front front=flowBiz.selectAlldate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+    		//执行修改
+    		front.setCarnumber(front.getCarnumber()+1);
+    		front.setCarrepairingnumber(front.getCarrepairingnumber()+1);
+    		if(record.getInside()==1) {
+    			front.setInstationnumber(front.getInstationnumber()+1);
+    		}else {
+    			front.setOutsidenumber(front.getOutsidenumber()+1);
+    		}
+    		flowBiz.updateByPrimaryKeySelective(front);
+    	
         //新增主表
         int co = maintaincarMapper.insertSelective(record);
         for (Teamtechniciantwo item : record.getTeamtechniciantwos()) {

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.accp.biz.pjw.WeixiuBiz;
+import com.accp.pojo.Engine;
+import com.accp.pojo.Motorcycle;
 import com.accp.pojo.Weixiu;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -24,6 +26,7 @@ import com.github.pagehelper.PageInfo;
 public class WeixiuAction {
 		@Autowired
 		private WeixiuBiz weixiubiz;
+	
 		
 		/* 		按维修cid 查询 维修项目信息
 		 * 	    @param cid	 
@@ -35,13 +38,6 @@ public class WeixiuAction {
 			return	weixiubiz.selectcid(page1, page2, sousuo);	    	
 	    }
 		
-		
-		 
-		
-		   
-		   
-		
-
 
     /* 		按维修cid 查询 维修项目信息
      * 	    @param cid
@@ -104,5 +100,20 @@ public class WeixiuAction {
         return message;
     }
 
+    /*
+     * 	康少的dao方法
+     */
+    @GetMapping("kang")
+    public List<Motorcycle> selectAlls(){		//查车型
+    	return	weixiubiz.selectAlls();
+    }
+    
+    /*
+     *	 康少
+     */
+    @GetMapping("kang2")
+    public List<Engine> SelectAll(){		//查发动机
+    	return weixiubiz.SelectAll();    
+    }
 
 }
