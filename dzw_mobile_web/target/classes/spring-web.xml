@@ -50,8 +50,6 @@
 	</mvc:interceptors> 
 
 	
-
-	
 	<!-- 视图资源文件视图解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -31,7 +31,7 @@
     <select id="selectyuangong" resultMap="BaseResultMap" parameterType="java.lang.Integer">
     		SELECT  (SELECT `depnames` FROM `department` WHERE `departmentid`=e.`departmentid`) AS bumen,
 			(SELECT postname FROM `post` WHERE postid=e.`postid`) AS gangwei,
-			e.`employeeid`,e.`emplogenid`,e.`empphone`,e.`email`
+			e.`employeeid`,e.empname,e.`emplogenid`,e.`empphone`,e.`email`
 			 FROM `employee` AS e
 			 <where>
 			 	<if test="employeeid!=-1">
@@ -45,15 +45,14 @@
     <select id="selectlizhi" resultMap="BaseResultMap">
     		SELECT  (SELECT `depnames` FROM `department` WHERE `departmentid`=e.`departmentid`) AS bumen,
 			(SELECT postname FROM `post` WHERE postid=e.`postid`) AS gangwei,
-			e.`employeeid`,e.`emplogenid`,e.`empphone`,e.`email`,e.`lztimes`,e.`yuanyin`
+			e.`employeeid`,e.empname,e.`emplogenid`,e.`empphone`,e.`email`,e.`lztimes`,e.`yuanyin`
 			 FROM `employee` AS e
 			 where e.stateid=2							 
     </select>
     
     <!-- 修改成离职员工 -->
     <update id="updateyuangong">
-    	UPDATE `employee` SET   `stateid` = 2,  `yuanyin` =#{yuanyin} ,`lztimes`=NOW()
-		WHERE `emplogenid` =#{emplogenid}
+    UPDATE `employee` SET `stateid`=2,`yuanyin` =#{yuanyin},`lztimes`=NOW() WHERE `employeeid`=#{emplogenid};
     </update>
     
     
@@ -302,6 +301,7 @@
         </set>
         where employeeid = #{employeeid,jdbcType=INTEGER}
     </update>
+
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Employee" >
     update employee
     set propertyid = #{propertyid,jdbcType=INTEGER},
@@ -330,8 +330,8 @@
   
   
   <select id="selectlogin" resultMap="loginres">
-  	SELECT * FROM `employee` e INNER JOIN `post` p ON e.`postid`=p.`postid` INNER JOIN `postmiddle` po ON p.`postid`=po.`rid`
-INNER JOIN `functiontable` fu ON fu.`fid`=po.`fid` WHERE e.`emplogenid`=#{username} AND e.`emplogepasword`=#{password}
+  	SELECT * FROM `employee` e LEFT JOIN `post` p ON e.`postid`=p.`postid` LEFT JOIN `postmiddle` po ON p.`postid`=po.`rid`
+LEFT JOIN `functiontable` fu ON fu.`fid`=po.`fid` WHERE e.`emplogenid`=#{username} AND e.`emplogepasword`=#{password}
   </select>
   
   <resultMap type="com.accp.pojo.Employee" id="loginres" autoMapping="true">
@@ -359,15 +359,17 @@ INNER JOIN `functiontable` fu ON fu.`fid`=po.`fid` WHERE e.`emplogenid`=#{userna
   select * from functiontable where fid=#{0}
   </select>
   
+ 
   
   <select id="Selectemployee" resultType="com.accp.pojo.Employee">
-  SELECT * FROM `employee`
+  SELECT e.*,p.postname FROM `employee` e,`post` p 
   <where>
+  p.`postid`=e.`postid`
   <if test="id!=null and id!=''">
-  `departmentid`=#{id}
+ and e.`departmentid`=#{id}
   </if>
   </where>
 </select>
 
-   
+
 </mapper>

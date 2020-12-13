@@ -1,6 +1,8 @@
 package com.accp.biz.lzj;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +18,25 @@ import com.github.pagehelper.PageInfo;
 public class FieldvehiclesBiz {
     @Autowired
     private FieldvehiclesMapper dao;
+    
+    
+    
+    
+    /**
+     * 修改状态
+     * @return
+     */
+    public int updateFielzhuangtai(Integer id) {
+        return dao.updateFielzhuangtai(id);
+    }
 
     /**
      * 查询外勤车辆
      *
      * @return
      */
-    public List<Fieldvehicles> queryFiel() {
-        return dao.queryFiel();
+    public List<Fieldvehicles> queryFiel(String zhuangtai) {
+        return dao.queryFiel(zhuangtai);
     }
 
     /**

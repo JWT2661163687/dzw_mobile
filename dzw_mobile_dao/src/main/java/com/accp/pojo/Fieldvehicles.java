@@ -14,8 +14,18 @@ public class Fieldvehicles {
     private String currentmileage;
 
     private String tename;
+    
+    private String zhuangtai;
 
-    public String getTename() {
+    public String getZhuangtai() {
+		return zhuangtai;
+	}
+
+	public void setZhuangtai(String zhuangtai) {
+		this.zhuangtai = zhuangtai;
+	}
+
+	public String getTename() {
         return tename;
     }
 

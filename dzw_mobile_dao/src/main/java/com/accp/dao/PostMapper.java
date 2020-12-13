@@ -53,5 +53,12 @@ public interface PostMapper {
      * @return
      */
     int DeleteById(@Param("Listid")List<Post> Listid);
+    /**
+     * 根据部门id查询岗位表
+     * @param id
+     * @return
+     */
+    @Select("SELECT * FROM `post` WHERE `departmentid`=#{id}")
+    List<Post> SelectDepartmentById(@Param("id")Integer id);
     
 }

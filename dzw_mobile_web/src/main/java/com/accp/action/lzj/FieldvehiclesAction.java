@@ -27,15 +27,28 @@ import com.github.pagehelper.PageInfo;
 public class FieldvehiclesAction {
     @Autowired
     private FieldvehiclesBiz biz;
+    
+    /**
+     * 修改状态
+     * @return
+     */
+    @GetMapping("updatezhuangtai/{id}")
+    public Map<String, String> updateFielzhuangtai(@PathVariable Integer id) {
+        Map<String, String> message = new HashMap<String, String>();
+        biz.updateFielzhuangtai(id);
+        message.put("code", "200");
+        message.put("msg", "ok");
+        return message;
+    }
 
     /**
      * 查询外勤车辆
      *
      * @return
      */
-    @GetMapping("query")
-    public List<Fieldvehicles> getfielListByPage() {
-        return biz.queryFiel();
+    @GetMapping("query/{zhuangtai}")
+    public List<Fieldvehicles> getfielListByPage(@PathVariable String zhuangtai) {
+        return biz.queryFiel(zhuangtai);
     }
 
     /**

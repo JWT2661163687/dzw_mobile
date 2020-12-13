@@ -3,9 +3,12 @@ package com.accp.action.lzj;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,4 +38,25 @@ public class TeamAction {
        }
         return message;
    }
+	
+	@DeleteMapping("/dele/{id}")
+	 public Map<String, String> deleteTeamtechnician(@PathVariable Integer id) {
+        Map<String, String> message = new HashMap<String, String>();
+        if(biz.selectAllid(id).size()>0) {
+        	 message.put("code", "300");
+             message.put("msg", "no");
+             return message;
+        }
+        if( biz.deleteTeamtechnician(id)>0) {
+        	message.put("code", "200");
+            message.put("msg", "ok");
+       }else {
+    	    message.put("code", "300");
+            message.put("msg", "no");
+       }
+        return message;
+   }
+	
+	
+	
 }

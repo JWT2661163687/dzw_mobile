@@ -20,4 +20,20 @@ public class EmployeeBiz {
 	public List<Employee> SelectAll(Integer id){
 		return employeeMapper.Selectemployee(id);
 	}
+	/**
+	 * 新增员工
+	 * @param record
+	 * @return
+	 */
+	public int addEmployee(Employee record) {
+		return employeeMapper.insertSelective(record);
+	}
+	/**
+	 * 根据名字查询
+	 * @param name
+	 * @return
+	 */
+	public List<Employee> SelectByname(String name){
+		return employeeMapper.SelectByName(name);
+	}
 }

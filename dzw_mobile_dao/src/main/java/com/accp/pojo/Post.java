@@ -22,12 +22,12 @@ public class Post {
     public List<Functiontable> functiontables = new ArrayList<Functiontable>();
 
     
-    
     private List<Postmiddle> postmiddles=new ArrayList<Postmiddle>();
     
     private List<Employee> employee=new ArrayList<Employee>();
     
     
+
 
 
     @Override

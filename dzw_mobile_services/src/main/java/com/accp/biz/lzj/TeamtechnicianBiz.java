@@ -29,7 +29,7 @@ public class TeamtechnicianBiz {
      * 新增班组
      */
     public int insertTe(Teamtechnician te) {
-        return dao.insertTe(te);
+        return dao.insertSelective(te);
     }
     
    

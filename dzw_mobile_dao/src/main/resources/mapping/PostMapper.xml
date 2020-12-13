@@ -14,7 +14,7 @@
     postid, departmentid, postname, rcode, rstatus, createdate, createby
   </sql>
  
-<!--    <select id="selectPost" resultMap="postAll">
+    <select id="selectPost" resultMap="postAll">
   SELECT * FROM `post` po LEFT JOIN `postmiddle` pm ON po.`postid`=pm.`rid`
   </select>
   <resultMap type="com.accp.pojo.Post" id="postAll" autoMapping="true">
@@ -25,7 +25,7 @@
   		<result column="fname" property="fname"/>
   		<result column="fid" property="fid"/>
   	</collection>
-  </resultMap>  -->
+  </resultMap>  
   
   <select id="SelectAll" resultMap="EmployeeList">
   SELECT * FROM `post` p LEFT JOIN `employee` e ON p.`postid`=e.postid
@@ -147,5 +147,4 @@
     where postid = #{postid,jdbcType=INTEGER}
   </update>
 
-  
 </mapper>
